@@ -1,11 +1,15 @@
 import React from 'react';
+import { DataProvider } from "./data/DataProvider";
+import Home from './components/PopularMovies'
 import './App.css';
 
 function App() {
   return (
+    <DataProvider>
     <div className="App">
-     <h1>Hi</h1>
+     <Home/>
     </div>
+    </DataProvider>
   );
 }
 
