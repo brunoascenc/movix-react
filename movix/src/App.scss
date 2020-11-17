@@ -618,6 +618,7 @@ header {
   .movie-rating {
     display: flex;
     position: absolute;
+    align-items: center;
     top: 0;
     right: 0;
     background-color: rgba(157, 68, 226, 0.836);
@@ -633,5 +634,30 @@ header {
       margin-right: 0.3rem;
       font-size: 0.8rem;
     }
+  }
+}
+
+
+//footer
+footer {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25vh;
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(10, 10, 14), rgb(21, 17, 24));
+  border-top: solid 1px rgb(27, 22, 31);
+  color: rgb(122, 95, 141);
+  p {
+    margin-bottom: 0.2rem;
+    border-bottom: solid 1px rgb(27, 22, 31);
+    padding: 0 0 0.2rem 0;
+  }
+
+  i {
+    cursor: pointer;
+    margin: 0.2rem;
   }
 }

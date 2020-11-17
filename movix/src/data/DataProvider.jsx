@@ -10,6 +10,7 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY
 export const DataProvider = (props) => {
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
+  const [genres, setGenres] = useState([])
 
   const getData = () => {
     axios.all([
@@ -19,12 +20,18 @@ export const DataProvider = (props) => {
       axios.get(
         `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
       ),
+      axios.get(
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
+      )
     ])
     .then((res) => {
         const upcomingMovies = res[0].data
-        const popularMovies = res[0].data
+        const popularMovies = res[1].data
+        const movieGenres =  res[2].data
+
         setUpcoming(upcomingMovies)
         setPopular(popularMovies)
+        setGenres(movieGenres)
     })
     .catch((err) =>{
         console.log(err)
@@ -37,7 +44,8 @@ export const DataProvider = (props) => {
 
   const value = {
     upcoming: [upcoming, setUpcoming],
-    popular: [popular, setPopular]
+    popular: [popular, setPopular],
+    genres: [genres, setGenres]
   };
 
   return (
