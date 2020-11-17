@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataProvider } from "./data/DataProvider";
-import Home from './components/PopularMovies'
+import Home from './components/Home'
 import './App.css';
 
 function App() {

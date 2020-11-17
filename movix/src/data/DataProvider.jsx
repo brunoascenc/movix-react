@@ -25,7 +25,6 @@ export const DataProvider = (props) => {
         const popularMovies = res[0].data
         setUpcoming(upcomingMovies)
         setPopular(popularMovies)
-        console.log(popularMovies)
     })
     .catch((err) =>{
         console.log(err)

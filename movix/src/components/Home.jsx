@@ -1,14 +1,16 @@
-import React, { useContext } from 'react'
-import { DataContext } from "../data/DataProvider";
+import React from 'react'
 import PopularMovies from './PopularMovies'
+import Header from './Header'
+import '../App.css'
 
-export default function Home() {
-    const value = useContext(DataContext);
-    const [popular] = value.popular;
+const Home = () => {
 
     return (
         <div>
-            <PopularMovies popularMovies={popular}/>  
+            <Header/>
+            <PopularMovies/>  
         </div>
     )
 }
+
+export default Home
