@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../data/DataProvider";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -20,17 +21,19 @@ const PopularMovies = () => {
           popularMovie.map((movie) => {
             return (
               <div key={movie.id} className="movie-item">
-                <div className="img-container">
-                  <img
-                    className="movie-poster"
-                    src={IMAGE_URL + movie.poster_path}
-                    alt={IMAGE_URL}
-                    data-movie-id={movie.id}
-                  />
-                  <div className="details-btn">
-                    <button>Details</button>
+                <Link to={`/details/${movie.id}`}>
+                  <div className="img-container">
+                    <img
+                      className="movie-poster"
+                      src={IMAGE_URL + movie.poster_path}
+                      alt={IMAGE_URL}
+                      data-movie-id={movie.id}
+                    />
+                    <div className="details-btn">
+                      <button>Details</button>
+                    </div>
                   </div>
-                </div>
+                </Link>
                 <span className="movie-title">{movie.title}</span>
                 <div className="movie-rating">
                   <i className="far fa-star"></i>
@@ -42,7 +45,6 @@ const PopularMovies = () => {
       </div>
     </div>
   );
-}
+};
 
-
-export default PopularMovies
+export default PopularMovies;

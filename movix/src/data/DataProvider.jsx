@@ -11,6 +11,9 @@ export const DataProvider = (props) => {
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
   const [genres, setGenres] = useState([])
+  // const [detail, setDetail] = useState([])
+  // const [detailId, setDetailId] = useState()
+  // console.log(props.match.params.id)
 
   const getData = () => {
     axios.all([
@@ -22,7 +25,10 @@ export const DataProvider = (props) => {
       ),
       axios.get(
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
-      )
+      ),
+      // axios.get(
+      //   `https://api.themoviedb.org/3/movie/${detailId}?api_key=${API_KEY}`
+      // )
     ])
     .then((res) => {
         const upcomingMovies = res[0].data
@@ -38,6 +44,20 @@ export const DataProvider = (props) => {
     })
   };
 
+  // useEffect(() => {
+  //   axios.get(
+  //     `https://api.themoviedb.org/3/movie/${detailId}?api_key=${API_KEY}`
+  //   )
+  //   .then((res) => {
+  //     setDetail(res)
+  //     console.log(res)
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
+
+  // },[setDetailId, detail])
+
   useEffect(() => {
     getData();
   }, []);
@@ -45,7 +65,7 @@ export const DataProvider = (props) => {
   const value = {
     upcoming: [upcoming, setUpcoming],
     popular: [popular, setPopular],
-    genres: [genres, setGenres]
+    genres: [genres, setGenres],
   };
 
   return (
