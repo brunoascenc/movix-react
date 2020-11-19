@@ -1,11 +1,11 @@
 import React from 'react'
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const MovieDetails = ({movieDetail}) => {
+const MovieDetails = ({movieDetail, genres}) => {
     return (
         <div id="movie-detail">
           <div className="poster-movie">
-            <img src={IMAGE_URL + movieDetail.poster_path} />
+            <img src={IMAGE_URL + movieDetail.poster_path} alt={movieDetail.title}/>
             <div className="bgimg"></div>
           </div>
           <div className="details-container">
@@ -36,6 +36,7 @@ const MovieDetails = ({movieDetail}) => {
                   <span className="contrast">Release Date:</span>
                   {movieDetail.release_date}
                 </li>
+                <li><span className="contrast">Genre:</span> {genres}</li>
 
                 <li>
                   <span className="contrast">Duration:</span>{" "}

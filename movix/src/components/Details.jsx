@@ -8,7 +8,14 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const Details = (props) => {
   const [movieDetail, setMovieDetail] = useState([]);
-  
+  //Movie Genres
+  const genres = movieDetail.genres
+  let genreOptions
+  if(genres){
+    genreOptions = genres.map((genre) => genre.name).join(', ')
+  }
+
+
   const getDetails = () => {
     axios
       .get(
@@ -42,7 +49,7 @@ const Details = (props) => {
       </div>
 
       <div className="about-movie container">
-        <MovieDetails movieDetail={movieDetail} />
+        <MovieDetails movieDetail={movieDetail} genres={genreOptions}/>
       </div>
     </>
   );
