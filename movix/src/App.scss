@@ -13,7 +13,6 @@
   outline: none;
 }
 
-
 //Styles
 $bgcolor: rgb(10, 10, 14);
 $contrastColor: rgb(14, 14, 17);
@@ -118,7 +117,7 @@ body {
   position: relative;
 }
 
-.container{
+.container {
   width: 1210px;
   margin: 0 auto;
   @include lg-screen {
@@ -610,9 +609,11 @@ header {
 
   .movie-title {
     margin-top: 0.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-    color: rgba(226, 192, 248, 0.836);
+    h1 {
+      font-size: 0.9rem;
+      text-align: center;
+      color: rgba(226, 192, 248, 0.836);
+    }
   }
 
   .movie-rating {
@@ -637,6 +638,213 @@ header {
   }
 }
 
+//Details
+.details-header {
+  background-color: rgba(24, 23, 29, 0.863);
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.3rem 1.3rem 1.3rem;
+  border-radius: 0 0 0.1rem 0.1rem;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+
+//Movie Trailer/Banner
+#movie-banner {
+  width: 100vw;
+  margin: 0 auto;
+  background-position: top;
+  background-size: cover;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 4%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      rgba(31, 28, 28, 0.705),
+      rgba(19, 19, 17, 0.692)
+    );
+    pointer-events: none;
+  }
+
+  .movie-trailer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    a {
+      font-size: 3rem;
+      color: $mainPurple;
+      transition: 0.3s ease;
+      &:hover {
+        color: rgb(183, 114, 240);
+      }
+    }
+  }
+
+  #searchInput,
+  #search {
+    display: none;
+  }
+}
+
+.back-home {
+  a {
+    @include btnStyle();
+    padding: 0.5rem 1rem;
+    @include mobile {
+      font-size: 1rem;
+      padding: 0.4rem 0.7rem;
+    }
+  }
+}
+
+//Movie Detail Layout
+#movie-detail {
+  margin-top: 10%;
+  margin-bottom: 2rem;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 60%;
+  grid-gap: 2rem;
+  @include small-desktop {
+    grid-template-columns: 1fr 55%;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .poster-movie {
+    width: 100%;
+    position: relative;
+    padding: 0;
+    span {
+      position: absolute;
+      bottom: 5rem;
+      right: 50%;
+    }
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      border: solid 2px rgba(143, 48, 221, 0.432);
+      margin: 0 auto;
+
+      @include tablet {
+        width: 360px;
+      }
+    }
+  }
+
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(13, 13, 19),
+      rgba(20, 14, 22, 0.884)
+    );
+    padding: 0.5rem 2rem;
+    @include mobile {
+      padding: 0.2rem 1.3rem;
+    }
+
+    .movie-title {
+      align-self: center;
+      text-align: center;
+      border-bottom: none;
+      margin-bottom: 2rem;
+      @include xs-desktop {
+        margin-bottom: -1rem;
+      }
+      span {
+        display: none;
+      }
+      h1 {
+        font-size: 2.5rem;
+        background: -webkit-linear-gradient(
+          rgba(167, 70, 247, 0.856),
+          rgb(95, 30, 160)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include dt-break {
+          font-size: 2.2rem;
+        }
+        @include xs-desktop {
+          font-size: 1.8rem;
+        }
+        @include tablet {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    .title-section {
+      border-bottom: none;
+      margin-top: 0;
+    }
+
+    .overview {
+      @include xs-desktop {
+        margin-bottom: -1rem;
+      }
+      width: 100%;
+
+      p {
+        width: 100%;
+        line-height: 1.3rem;
+        @include xs-desktop {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .detail-info {
+      margin-bottom: 1rem;
+      li {
+        @include xs-desktop {
+          font-size: 0.9rem;
+        }
+        .contrast {
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 2px;
+          color: rgb(238, 225, 248);
+        }
+      }
+    }
+
+    .title-section {
+      margin-top: 3rem;
+    }
+  }
+}
 
 //footer
 footer {
