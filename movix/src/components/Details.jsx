@@ -34,8 +34,6 @@ const Details = (props) => {
       });
   };
 
-  // console.log(movieDetail)
-
   useEffect(() => {
     getDetails();
   }, [props.match.params.id]);
@@ -51,9 +49,8 @@ const Details = (props) => {
             <a href="/#">Back to home</a>
           </div>
         </header>
-        <div className="movie-trailer">
+        <div className="movie-video">
           <MovieTrailer movieId={props.match.params.id}/>
-        {/* <a className="popup-youtube" href={`https://www.youtube.com/watch?v=${movieDetail.key}`}><i className="far fa-play-circle"></i></a>   */}
         </div>
       </div>
 

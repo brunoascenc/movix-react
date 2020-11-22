@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ModalVideo from "react-modal-video";
-import '../../App.css'
+import "../../App.scss";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
@@ -23,8 +23,6 @@ const MovieTrailer = ({ movieId }) => {
       });
   };
 
-  //   console.log(movieTrailer)
-
   useEffect(() => {
     getMovieTrailer();
   }, [movieId]);
@@ -35,17 +33,17 @@ const MovieTrailer = ({ movieId }) => {
         ""
       ) : (
         <>
-        <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId={movieTrailer.key} onClose={() => setOpen(false)} />
-        <button onClick={()=> setOpen(true)}>
-        <i className="far fa-play-circle"></i>
-        </button>
+          <ModalVideo
+            channel="youtube"
+            autoplay
+            isOpen={isOpen}
+            videoId={movieTrailer.key}
+            onClose={() => setOpen(false)}
+          />
+          <button onClick={() => setOpen(true)}>
+            <i className="far fa-play-circle"></i>
+          </button>
         </>
-        // <a
-        //   className="popup-youtube"
-        //   href={`https://www.youtube.com/watch?v=${movieTrailer.key}`}
-        // >
-        //   <i className="far fa-play-circle"></i>
-        // </a>
       )}
     </>
   );

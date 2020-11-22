@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-// @import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
 
 * {
   margin: 0;
@@ -677,22 +677,6 @@ header {
     pointer-events: none;
   }
 
-  .movie-trailer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 100;
-    a {
-      font-size: 3rem;
-      color: $mainPurple;
-      transition: 0.3s ease;
-      &:hover {
-        color: rgb(183, 114, 240);
-      }
-    }
-  }
-
   #searchInput,
   #search {
     display: none;
@@ -708,6 +692,24 @@ header {
       padding: 0.4rem 0.7rem;
     }
   }
+}
+
+.movie-video{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    button {
+      font-size: 3rem;
+      color: $mainPurple;
+      transition: 0.3s ease;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        color: rgb(183, 114, 240);
+      }
+    }
 }
 
 //Movie Detail Layout
