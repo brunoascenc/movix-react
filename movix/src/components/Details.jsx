@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import MovieDetails from "./DetailElements/MovieDetails";
 import SimilarMovies from './DetailElements/SimilarMovies'
 import MovieReviews from './DetailElements/MovieReviews'
+import MovieTrailer from './DetailElements/MovieTrailer'
 import "../App.css";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const Details = (props) => {
   const [movieDetail, setMovieDetail] = useState([]);
+  const [bannerImg, setBannerImg] = useState([]); // Banner background
   //Movie Genres
   const genres = movieDetail.genres;
   let genreOptions;
@@ -25,11 +27,14 @@ const Details = (props) => {
       .then((res) => {
         const response = res.data;
         setMovieDetail(response);
+        setBannerImg(response.backdrop_path)
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  // console.log(movieDetail)
 
   useEffect(() => {
     getDetails();
@@ -37,7 +42,7 @@ const Details = (props) => {
 
   return (
     <>
-      <div id="movie-banner">
+      <div id="movie-banner" style={{backgroundImage: `url('${'https://image.tmdb.org/t/p/original' + bannerImg}')`}}>
         <header className="details-header">
           <Link to="/">
             <h1>Movix</h1>
@@ -46,7 +51,10 @@ const Details = (props) => {
             <a href="/#">Back to home</a>
           </div>
         </header>
-        <div className="movie-trailer"></div>
+        <div className="movie-trailer">
+          <MovieTrailer movieId={props.match.params.id}/>
+        {/* <a className="popup-youtube" href={`https://www.youtube.com/watch?v=${movieDetail.key}`}><i className="far fa-play-circle"></i></a>   */}
+        </div>
       </div>
 
       <div className="about-movie container">

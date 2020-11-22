@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 import "../../App.css";
 
-SwiperCore.use([Autoplay]);
+
+SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SimilarMovies = ({ movieId }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
+  const swiper = useRef(null)
 
   const getSimilarMovie = () => {
     axios
@@ -35,19 +37,22 @@ const SimilarMovies = ({ movieId }) => {
   return (
     <div className="swiper-slide">
       <Swiper
+        ref={swiper}
         spaceBetween={30}
         slidesPerView={6}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        onInit={(swiper) => swiper.update()}
+        // observeSlideChildren
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
       >
         {similarMovies &&
           similarMovies.map((movie) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={movie.id}>
                 <Link to={`/details/${movie.id}`}>
                   <img
                     className="movie-poster"
