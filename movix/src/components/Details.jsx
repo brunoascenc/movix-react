@@ -64,11 +64,11 @@ const Details = (props) => {
           <h1>Similar Movies</h1>
         </div>
         <div className="similar-movies">
-          <div className="swiper-container">
-            <div className="swiper-wrapper">
+          {/* <div className="swiper-container">
+            <div className="swiper-wrapper"> */}
                 <SimilarMovies movieId={props.match.params.id}/>
-            </div>
-          </div>
+            {/* </div>
+          </div> */}
         </div>
       </div>
 

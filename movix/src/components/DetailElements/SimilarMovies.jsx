@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
+import Slider from "react-slick";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "swiper/swiper-bundle.css";
 import "../../App.css";
-
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -14,7 +12,7 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SimilarMovies = ({ movieId }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
-  const swiper = useRef(null)
+  const swiper = useRef(null);
 
   const getSimilarMovie = () => {
     axios
@@ -35,24 +33,23 @@ const SimilarMovies = ({ movieId }) => {
   }, [movieId]);
 
   return (
-    <div className="swiper-slide">
-      <Swiper
-        ref={swiper}
-        spaceBetween={30}
-        slidesPerView={6}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        onInit={(swiper) => swiper.update()}
-        // observeSlideChildren
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+    <>
+      <Slider
+        dots
+        slidesToShow={3}
+        speed={400}
+        slidesToShow={6}
+        slidesToScroll={1}
+        initialSlide={0}
+        autoplay
+        infinite
+        pauseOnHover
+        swipeToSlide
       >
         {similarMovies &&
           similarMovies.map((movie) => {
             return (
-              <SwiperSlide key={movie.id}>
+              <div className="hehr" key={movie.id}>
                 <Link to={`/details/${movie.id}`}>
                   <img
                     className="movie-poster"
@@ -62,11 +59,11 @@ const SimilarMovies = ({ movieId }) => {
                   />
                   <p>{movie.title}</p>
                 </Link>
-              </SwiperSlide>
+              </div>
             );
           })}
-      </Swiper>
-    </div>
+      </Slider>
+    </>
   );
 };
 
