@@ -1,18 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
-SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SimilarMovies = ({ movieId }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
-  const swiper = useRef(null);
 
   const getSimilarMovie = () => {
     axios
@@ -37,7 +34,7 @@ const SimilarMovies = ({ movieId }) => {
       <Slider
         dots
         slidesToShow={3}
-        speed={400}
+        speed={500}
         slidesToShow={6}
         slidesToScroll={1}
         initialSlide={0}
@@ -49,7 +46,7 @@ const SimilarMovies = ({ movieId }) => {
         {similarMovies &&
           similarMovies.map((movie) => {
             return (
-              <div className="hehr" key={movie.id}>
+              <div key={movie.id}>
                 <Link to={`/details/${movie.id}`}>
                   <img
                     className="movie-poster"

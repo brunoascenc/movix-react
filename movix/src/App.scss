@@ -511,6 +511,35 @@ header {
   }
 }
 
+//upcoming movies
+.upcoming-slide {
+  margin-bottom: 10vh;
+
+  @include mobile {
+    margin-top: 17%;
+  }
+  img {
+    height: 240px;
+    object-fit: cover;
+    @include small-desktop {
+      height: 200px;
+    }
+    @include tablet {
+      height: 220px;
+    }
+    @include mobile {
+      height: 250px;
+    }
+    @include sm-mobile {
+      height: 200px;
+    }
+    @include xs-mobile {
+      height: 250px;
+    }
+  }
+}
+
+
 //Home
 #home-container {
   width: 1210px;

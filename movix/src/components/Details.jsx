@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import MovieDetails from "./DetailElements/MovieDetails";
-import SimilarMovies from './DetailElements/SimilarMovies'
-import MovieReviews from './DetailElements/MovieReviews'
-import MovieTrailer from './DetailElements/MovieTrailer'
+import SimilarMovies from "./DetailElements/SimilarMovies";
+import MovieReviews from "./DetailElements/MovieReviews";
+import MovieTrailer from "./DetailElements/MovieTrailer";
 import "../App.css";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
@@ -27,7 +27,7 @@ const Details = (props) => {
       .then((res) => {
         const response = res.data;
         setMovieDetail(response);
-        setBannerImg(response.backdrop_path)
+        setBannerImg(response.backdrop_path);
       })
       .catch((err) => {
         console.log(err);
@@ -40,7 +40,14 @@ const Details = (props) => {
 
   return (
     <>
-      <div id="movie-banner" style={{backgroundImage: `url('${'https://image.tmdb.org/t/p/original' + bannerImg}')`}}>
+      <div
+        id="movie-banner"
+        style={{
+          backgroundImage: `url('${
+            "https://image.tmdb.org/t/p/original" + bannerImg
+          }')`,
+        }}
+      >
         <header className="details-header">
           <Link to="/">
             <h1>Movix</h1>
@@ -50,7 +57,7 @@ const Details = (props) => {
           </div>
         </header>
         <div className="movie-video">
-          <MovieTrailer movieId={props.match.params.id}/>
+          <MovieTrailer movieId={props.match.params.id} />
         </div>
       </div>
 
@@ -64,11 +71,7 @@ const Details = (props) => {
           <h1>Similar Movies</h1>
         </div>
         <div className="similar-movies">
-          {/* <div className="swiper-container">
-            <div className="swiper-wrapper"> */}
-                <SimilarMovies movieId={props.match.params.id}/>
-            {/* </div>
-          </div> */}
+          <SimilarMovies movieId={props.match.params.id} />
         </div>
       </div>
 
@@ -78,7 +81,7 @@ const Details = (props) => {
           <h1>Reviews</h1>
         </div>
         <div className="movie-reviews">
-        <MovieReviews movieId={props.match.params.id}/>
+          <MovieReviews movieId={props.match.params.id} />
         </div>
       </div>
     </>
