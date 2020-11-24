@@ -31,17 +31,20 @@ const UpcomingMovies = () => {
         {upcoming &&
           upcoming.map((movie) => {
             return (
+              <Link key ={movie.id} to={`/details/${movie.id}`}>
               <div className="upcoming-card" key={movie.id}>
-                <Link to={`/details/${movie.id}`}>
+               
                   <img
                     className="movie-poster"
                     src={IMAGE_URL + movie.poster_path}
                     data-movie-id={movie.id}
                     alt={movie.title}
                   />
-                  <p>{movie.title}</p>
-                </Link>
+                  <span className="movie-date">{movie.release_date}</span>
+                
               </div>
+              </Link>
+    
             );
           })}
       </Slider>

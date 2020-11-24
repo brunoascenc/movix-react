@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import "node_modules/react-modal-video/scss/modal-video.scss";
 
 * {
   margin: 0;
@@ -515,11 +515,15 @@ header {
 .upcoming-slide {
   margin-bottom: 10vh;
 
+ .title-section{
+   margin-bottom: 2vh;
+ }
+
   @include mobile {
     margin-top: 17%;
   }
   img {
-    height: 240px;
+    // height: 240px;
     object-fit: cover;
     @include small-desktop {
       height: 200px;
@@ -537,8 +541,21 @@ header {
       height: 250px;
     }
   }
-}
 
+  .upcoming-card {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+    .movie-date {
+      font-weight: 100;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: rgb(230, 207, 245);
+    }
+  }
+}
 
 //Home
 #home-container {
@@ -723,22 +740,22 @@ header {
   }
 }
 
-.movie-video{
+.movie-video {
   position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 100;
-    button {
-      font-size: 3rem;
-      color: $mainPurple;
-      transition: 0.3s ease;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      &:hover {
-        color: rgb(183, 114, 240);
-      }
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  button {
+    font-size: 3rem;
+    color: $mainPurple;
+    transition: 0.3s ease;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      color: rgb(183, 114, 240);
     }
+  }
 }
 
 //Movie Detail Layout
@@ -880,6 +897,7 @@ header {
 
 //Similar Movies
 .similar-section {
+  display: grid;
   .title-section {
     border-bottom: none;
     margin-top: 5rem;
@@ -901,16 +919,22 @@ header {
   }
 }
 
-//slides
-.slick-slide {
-  padding: 0 20px;
-}
+// slides
+// .slick-slide {
+//   // padding: 0 10px;
+//   overflow: hidden;
+//   // margin: 0 5px;
+//   margin-left:  5px;
+//     margin-right:  5px;
+// }
 
-.slick-list {
-  width: 1200px;
-  margin: 0 -18px;
-}
-
+// .slick-list {
+// //   width: 1200px;
+// //   margin: 0 -10px;
+// //   overflow: hidden;
+//     margin-left:  -5px;
+//     margin-right:  -5px;
+// }
 
 //movie reviews
 .reviews-section {
