@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import "node_modules/react-modal-video/scss/modal-video.scss";
+@import "./styles/variables", "./styles/mixins";
 
 * {
   margin: 0;
@@ -12,97 +13,6 @@
 
 *:focus {
   outline: none;
-}
-
-//Styles
-$bgcolor: rgb(10, 10, 14);
-$contrastColor: rgb(14, 14, 17);
-$mainPurple: rgb(158, 61, 238);
-$gradientBtn: linear-gradient(
-  to bottom right,
-  rgb(160, 63, 240),
-  rgba(84, 29, 139, 0.788)
-);
-$select-color: #fff;
-$select-background: rgba(24, 23, 29, 0.89);
-$select-width: 140px;
-$select-height: 40px;
-
-//Media queries
-$largeScreens: 1440px;
-$small-desktop: 1150px;
-$detailsBreakpoint: 1096px;
-$xs-desktop: 930px;
-$tablet: 780px;
-$xs-tablet: 705px;
-$mobile: 625px;
-$sm-mobile: 565px;
-$xs-mobile: 390px;
-
-//Media Queries
-@mixin small-desktop {
-  @media (max-width: #{$small-desktop}) {
-    @content;
-  }
-}
-
-@mixin dt-break {
-  @media (max-width: #{$detailsBreakpoint}) {
-    @content;
-  }
-}
-
-@mixin lg-screen {
-  @media (max-width: #{$largeScreens}) {
-    @content;
-  }
-}
-
-@mixin xs-desktop {
-  @media (max-width: #{$xs-desktop}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: #{$tablet}) {
-    @content;
-  }
-}
-
-@mixin xs-tablet {
-  @media (max-width: #{$xs-tablet}) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: #{$mobile}) {
-    @content;
-  }
-}
-
-@mixin sm-mobile {
-  @media (max-width: #{$sm-mobile}) {
-    @content;
-  }
-}
-
-@mixin xs-mobile {
-  @media (max-width: #{$xs-mobile}) {
-    @content;
-  }
-}
-
-@mixin btnStyle {
-  text-decoration: none;
-  border: none;
-  color: rgba(230, 207, 245, 0.911);
-  letter-spacing: 1px;
-  font-family: "Bebas Neue", cursive;
-  font-size: 1.1rem;
-  background-color: transparent;
-  background-image: $gradientBtn;
 }
 
 a {

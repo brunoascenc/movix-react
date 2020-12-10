@@ -1,9 +1,9 @@
 import React from "react";
-import HomeLanding from "./HomeLanding";
-import GenreSelect from "./HeaderElements/GenreSelect";
-import FilterSelect from "./HeaderElements/FilterSelect";
-import SearchInput from "./HeaderElements/SearchInput";
-import "../App.css";
+import HomeLanding from "../Home/HomeLanding";
+import GenreSelect from "./GenreSelect";
+import FilterSelect from "./FilterSelect";
+import SearchInput from "./SearchInput";
+import "../../App.css";
 
 export default function Header() {
   return (

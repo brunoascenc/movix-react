@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import MovieDetails from "./DetailElements/MovieDetails";
-import SimilarMovies from "./DetailElements/SimilarMovies";
-import MovieReviews from "./DetailElements/MovieReviews";
-import MovieTrailer from "./DetailElements/MovieTrailer";
-import "../App.css";
+import MovieDetails from "./MovieDetails";
+import SimilarMovies from "./SimilarMovies";
+import MovieReviews from "./MovieReviews";
+import MovieTrailer from "./MovieTrailer";
+import "../../App.css";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 

@@ -1,8 +1,9 @@
 import React from "react";
 import PopularMovies from "./PopularMovies";
 import UpcomingMovies from "./UpcomingMovies";
-import Header from "./Header";
-import "../App.css";
+import Header from "../HomeHeader/Header";
+import "../../App.css";
+
 
 const Home = () => {
   return (

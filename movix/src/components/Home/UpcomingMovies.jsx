@@ -1,8 +1,8 @@
 import React, { useContext }  from 'react'
-import { DataContext } from "../data/DataProvider";
+import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import '../App.css'
+import "../../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import 'swiper/swiper.scss';
 
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
@@ -31,22 +33,14 @@ const SimilarMovies = ({ movieId }) => {
 
   return (
     <>
-      <Slider
-        dots
-        slidesToShow={3}
-        speed={500}
-        slidesToShow={6}
-        slidesToScroll={1}
-        initialSlide={0}
-        autoplay
-        infinite
-        pauseOnHover
-        swipeToSlide
+      <Swiper
+        spaceBetween={5}
+        slidesPerView={5}
       >
         {similarMovies &&
           similarMovies.map((movie) => {
             return (
-              <div key={movie.id}>
+              <SwiperSlide key={movie.id}>
                 <Link to={`/details/${movie.id}`}>
                   <img
                     className="movie-poster"
@@ -56,10 +50,10 @@ const SimilarMovies = ({ movieId }) => {
                   />
                   <p>{movie.title}</p>
                 </Link>
-              </div>
+              </SwiperSlide>
             );
           })}
-      </Slider>
+      </Swiper>
     </>
   );
 };

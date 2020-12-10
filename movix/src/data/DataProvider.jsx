@@ -71,7 +71,7 @@ export const DataProvider = (props) => {
     setMovieName(movies)
   }
 
-  console.log(search)
+  // console.log(search)
 
   useEffect(() => {
     getData();
