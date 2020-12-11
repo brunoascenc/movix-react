@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../data/DataProvider";
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
+import SearchActions from '../../actions/SearchActions'
+
+const API_KEY = process.env.REACT_APP_MOVIEDB_KEY
 
 const SearchInput = () => {
-  const value = useContext(DataContext);
-  const [handleSearch] = value.movieName
-  const [handleXd] = value.xd
+  const [getSearch, setMovieName] = SearchActions()
 
   return (
     <>
-      <input type="text" id="searchInput" placeholder="Search movie" onChange={handleSearch}/>
-      <button id="search" type="submit" onClick={handleXd} >
+      <input type="text" id="searchInput" placeholder="Search movie" onChange={(e) => setMovieName(e.target.value)}/>
+      <button id="search" type="submit" onClick={getSearch} >
         <i className="fas fa-search"></i>
       </button>
     </>

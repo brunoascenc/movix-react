@@ -11,9 +11,9 @@ export const DataProvider = (props) => {
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
   const [genres, setGenres] = useState([])
-  const [search, setSearch] = useState([])
-  const [movies, setMovie] = useState('')
-  const [movieName, setMovieName] = useState('')
+  // const [search, setSearch] = useState([])
+  // const [movies, setMovie] = useState('')
+  // const [movieName, setMovieName] = useState('')
 
   const getData = () => {
     axios.all([
@@ -43,33 +43,33 @@ export const DataProvider = (props) => {
   };
 
   // Searrch data
-  const getSearch = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`
-      )
-      .then((res) => {
-        const response = res.data;
-        setSearch(response)
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // const getSearch = () => {
+  //   axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`
+  //     )
+  //     .then((res) => {
+  //       const response = res.data;
+  //       setSearch(response)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
-  useEffect(() => {
-    getSearch()
-  }, [movieName])
+  // useEffect(() => {
+  //   getSearch()
+  // }, [movieName])
 
-  const handleSearch = (e) => {
-    // e.preventDefault()
-    setMovie(e.target.value)
-    // console.log(e.target.value)
-  }
+  // const handleSearch = (e) => {
+  //   // e.preventDefault()
+  //   setMovie(e.target.value)
+  //   // console.log(e.target.value)
+  // }
 
-  const handleXd = () => {
-    setMovieName(movies)
-  }
+  // const handleXd = () => {
+  //   setMovieName(movies)
+  // }
 
   // console.log(search)
 
@@ -80,11 +80,7 @@ export const DataProvider = (props) => {
   const value = {
     upcoming: [upcoming, setUpcoming],
     popular: [popular, setPopular],
-    genres: [genres, setGenres],
-    searched:[search, setSearch],
-    movieName: [handleSearch],
-    xd: [handleXd]
-
+    genres: [genres, setGenres]
   };
 
   return (
