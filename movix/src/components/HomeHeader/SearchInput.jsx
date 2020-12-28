@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios'
-import SearchActions from '../../actions/SearchActions'
+import React, { useContext } from "react";
+import { DataContext } from "../../data/DataProvider"
 
-const API_KEY = process.env.REACT_APP_MOVIEDB_KEY
 
 const SearchInput = () => {
-  const [getSearch, setMovieName] = SearchActions()
+  const value = useContext(DataContext);
+  const [setMovieName] = value.movieName;
+  const getSearch = value.getSearch
+
 
   return (
     <>

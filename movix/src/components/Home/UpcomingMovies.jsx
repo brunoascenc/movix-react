@@ -19,7 +19,7 @@ const UpcomingMovies = () => {
         <Slider
         dots
         slidesToShow={3}
-        speed={500}
+        // speed={500}
         slidesToShow={6}
         slidesToScroll={1}
         initialSlide={0}

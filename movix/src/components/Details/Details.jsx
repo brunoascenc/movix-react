@@ -19,23 +19,34 @@ const Details = (props) => {
     genreOptions = genres.map((genre) => genre.name).join(", ");
   }
 
-  const getDetails = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
-      )
-      .then((res) => {
-        const response = res.data;
-        setMovieDetail(response);
-        setBannerImg(response.backdrop_path);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const getDetails = () => {
+  //   axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
+  //     )
+  //     .then((res) => {
+  //       const response = res.data;
+  //       setMovieDetail(response);
+  //       setBannerImg(response.backdrop_path);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   useEffect(() => {
-    getDetails();
+    axios
+    .get(
+      `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
+    )
+    .then((res) => {
+      const response = res.data;
+      setMovieDetail(response);
+      setBannerImg(response.backdrop_path);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }, [props.match.params.id]);
 
   return (

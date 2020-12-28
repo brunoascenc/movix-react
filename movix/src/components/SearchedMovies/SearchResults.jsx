@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../../data/DataProvider"
 import { Link } from "react-router-dom";
-import SearchActions from "../../actions/SearchActions";
+// import SearchActions from "../../actions/SearchActions";
 
 import "../../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SearchResults = () => {
-  const { search } = SearchActions();
+  const value = useContext(DataContext);
+  const [search] = value.searchResults;
+  // const { search } = SearchActions();
+  console.log(search)
 
   return (
     <div className="container">
-      <div className="title-section">
+      {/* <div className="title-section">
         <span></span>
         <h1>Popular Movies</h1>
       </div>
@@ -41,7 +45,7 @@ const SearchResults = () => {
               </div>
             );
           })}
-      </div>
+      </div> */}
     </div>
   );
 };

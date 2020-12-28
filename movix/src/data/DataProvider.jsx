@@ -11,6 +11,8 @@ export const DataProvider = (props) => {
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
   const [genres, setGenres] = useState([])
+  const [search, setSearch] = useState([]);
+  const [movieName, setMovieName] = useState("");
   // const [search, setSearch] = useState([])
   // const [movies, setMovie] = useState('')
   // const [movieName, setMovieName] = useState('')
@@ -43,19 +45,22 @@ export const DataProvider = (props) => {
   };
 
   // Searrch data
-  // const getSearch = () => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`
-  //     )
-  //     .then((res) => {
-  //       const response = res.data;
-  //       setSearch(response)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
+  //  Searrch data
+  const getSearch = () => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`
+      )
+      .then((res) => {
+        const response = res.data;
+        console.log(response);
+        setSearch(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
 
   // useEffect(() => {
   //   getSearch()
@@ -80,7 +85,10 @@ export const DataProvider = (props) => {
   const value = {
     upcoming: [upcoming, setUpcoming],
     popular: [popular, setPopular],
-    genres: [genres, setGenres]
+    genres: [genres, setGenres],
+    searchResults: [search],
+    movieName: [setMovieName],
+    getSearch: getSearch,
   };
 
   return (

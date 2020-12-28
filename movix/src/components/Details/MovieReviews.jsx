@@ -8,23 +8,33 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const MovieReviews = ({movieId}) => {
   const [movieReviews, setMovieReviews] = useState([]);
 
-  const getMovieReview = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
-      )
-      .then((res) => {
-        const response = res.data;
-        setMovieReviews(response.results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const getMovieReview = () => {
+  //   axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+  //     )
+  //     .then((res) => {
+  //       const response = res.data;
+  //       setMovieReviews(response.results);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
 
   useEffect(() => {
-    getMovieReview();
+    axios
+    .get(
+      `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+    )
+    .then((res) => {
+      const response = res.data;
+      setMovieReviews(response.results);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }, [movieId]);
 
   return (

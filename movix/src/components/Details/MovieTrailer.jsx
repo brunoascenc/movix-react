@@ -9,22 +9,32 @@ const MovieTrailer = ({ movieId }) => {
   const [movieTrailer, setMovieTrailer] = useState([]);
   const [isOpen, setOpen] = useState(false);
 
-  const getMovieTrailer = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
-      )
-      .then((res) => {
-        const response = res.data;
-        setMovieTrailer(response.results[0]);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const getMovieTrailer = () => {
+  //   axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
+  //     )
+  //     .then((res) => {
+  //       const response = res.data;
+  //       setMovieTrailer(response.results[0]);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   useEffect(() => {
-    getMovieTrailer();
+    axios
+    .get(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
+    )
+    .then((res) => {
+      const response = res.data;
+      setMovieTrailer(response.results[0]);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }, [movieId]);
 
   return (
