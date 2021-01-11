@@ -10,16 +10,15 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 const SearchResults = () => {
   const value = useContext(DataContext);
   const [search] = value.searchResults;
-  // const { search } = SearchActions();
-  console.log(search)
 
   return (
     <div className="container">
-      {/* <div className="title-section">
+      <div className="title-section">
         <span></span>
-        <h1>Popular Movies</h1>
+        <h1>You searched for:</h1>
       </div>
       <div id="movies-container">
+
         {search &&
           search.map((movie) => {
             return (
@@ -45,7 +44,7 @@ const SearchResults = () => {
               </div>
             );
           })}
-      </div> */}
+      </div>
     </div>
   );
 };

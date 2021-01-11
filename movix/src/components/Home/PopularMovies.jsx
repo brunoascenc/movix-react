@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
+import SearchResults from "../SearchedMovies/SearchResults";
 // import SearchActions from '../../actions/SearchActions'
 import "../../App.css";
+import SearchActions from "../../actions/SearchActions";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -10,7 +12,7 @@ const PopularMovies = () => {
   const value = useContext(DataContext);
   const [popular] = value.popular;
   const popularMovie = popular.results;
-  // const {search} = SearchActions()
+  const [search] = value.searchResults;
   // console.log(search)
 
   return (
