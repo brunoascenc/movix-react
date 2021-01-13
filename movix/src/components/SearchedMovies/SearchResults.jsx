@@ -19,7 +19,6 @@ const SearchResults = (props) => {
     )
     .then((res) => {
       const response = res.data;
-      console.log(response)
       setSearch(response.results);
     })
     .catch((err) => {
