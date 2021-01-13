@@ -11,11 +11,6 @@ export const DataProvider = (props) => {
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
   const [genres, setGenres] = useState([])
-  const [search, setSearch] = useState([]);
-  const [movieName, setMovieName] = useState("");
-  // const [search, setSearch] = useState([])
-  // const [movies, setMovie] = useState('')
-  // const [movieName, setMovieName] = useState('')
 
   const getData = () => {
     axios.all([
@@ -44,39 +39,6 @@ export const DataProvider = (props) => {
     })
   };
 
-  // Searrch data
-  //  Searrch data
-  const getSearch = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`
-      )
-      .then((res) => {
-        const response = res.data;
-        setSearch(response.results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-
-  // useEffect(() => {
-  //   getSearch()
-  // }, [movieName])
-
-  // const handleSearch = (e) => {
-  //   // e.preventDefault()
-  //   setMovie(e.target.value)
-  //   // console.log(e.target.value)
-  // }
-
-  // const handleXd = () => {
-  //   setMovieName(movies)
-  // }
-
-  // console.log(search)
-
   useEffect(() => {
     getData();
   }, []);
@@ -85,9 +47,6 @@ export const DataProvider = (props) => {
     upcoming: [upcoming, setUpcoming],
     popular: [popular, setPopular],
     genres: [genres, setGenres],
-    searchResults: [search],
-    movieName: [setMovieName],
-    getSearch: getSearch,
   };
 
   return (

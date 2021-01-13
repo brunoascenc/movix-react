@@ -1,22 +1,19 @@
-import React, { useContext } from "react";
-// import { Link } from "react-router-dom";
-import { DataContext } from "../../data/DataProvider"
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SearchInput = () => {
-  const value = useContext(DataContext);
-  const [setMovieName] = value.movieName;
-  const getSearch = value.getSearch
+  const [movieName, setMovieName] = useState("");
+
 
 
   return (
     <>
       <input type="text" id="searchInput" placeholder="Search movie" onChange={(e) => setMovieName(e.target.value)}/>
-      {/* <Link to ="/searchresults"> */}
-      <button id="search" type="submit" onClick={getSearch} >
+      <Link to ={`/search-results/${movieName}`}>
+      <button id="search" type="submit">
         <i className="fas fa-search"></i>
       </button>
-      {/* </Link> */}
+      </Link>
     </>
   );
 };

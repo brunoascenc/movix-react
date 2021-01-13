@@ -10,6 +10,7 @@ const UpcomingMovies = () => {
     const value = useContext(DataContext);
     const [upcoming] = value.upcoming;
 
+
     return (
         <div className="upcoming-slide container">
         <div className="title-section">
