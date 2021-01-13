@@ -531,6 +531,76 @@ header .nav-active {
   }
 }
 
+.upcoming-slide {
+  margin-bottom: 10vh;
+}
+
+.upcoming-slide .title-section {
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 625px) {
+  .upcoming-slide {
+    margin-top: 17%;
+  }
+}
+
+.upcoming-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 1150px) {
+  .upcoming-slide img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 780px) {
+  .upcoming-slide img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 625px) {
+  .upcoming-slide img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 565px) {
+  .upcoming-slide img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 390px) {
+  .upcoming-slide img {
+    height: 250px;
+  }
+}
+
+.upcoming-slide .upcoming-card {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upcoming-slide .upcoming-card .movie-date {
+  font-weight: 100;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #e6cff5;
+}
+
 #home-container {
   width: 1210px;
   margin: 0 auto;
@@ -675,6 +745,9 @@ header .nav-active {
   padding: 0 0 1rem 0;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .movie-item .movie-title {
@@ -760,26 +833,6 @@ header .nav-active {
   pointer-events: none;
 }
 
-#movie-banner .movie-trailer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  z-index: 100;
-}
-
-#movie-banner .movie-trailer a {
-  font-size: 3rem;
-  color: #9e3dee;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-#movie-banner .movie-trailer a:hover {
-  color: #b772f0;
-}
-
 #movie-banner #searchInput,
 #movie-banner #search {
   display: none;
@@ -803,6 +856,27 @@ header .nav-active {
     font-size: 1rem;
     padding: 0.4rem 0.7rem;
   }
+}
+
+.movie-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}
+
+.movie-video button {
+  font-size: 3rem;
+  color: #9e3dee;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.movie-video button:hover {
+  color: #b772f0;
 }
 
 #movie-detail {
@@ -991,6 +1065,11 @@ header .nav-active {
   margin-top: 3rem;
 }
 
+.similar-section {
+  display: -ms-grid;
+  display: grid;
+}
+
 .similar-section .title-section {
   border-bottom: none;
   margin-top: 5rem;
@@ -1139,5 +1218,9 @@ footer p {
 footer i {
   cursor: pointer;
   margin: 0.2rem;
+}
+
+.search-header {
+  margin-bottom: 120px;
 }
 /*# sourceMappingURL=App.css.map */

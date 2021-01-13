@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
-import Header from '../HomeHeader/Header'
+import SearchHeader from './SearchHeader'
 
 import "../../App.css";
 
@@ -30,10 +30,10 @@ const SearchResults = (props) => {
       e.target.style.display= 'none'
   }
 
-
   return (
-    <div className="container">
-      <Header/>
+    <div className="search-results">
+      <SearchHeader/>
+      <div className="container">
       <div className="title-section">
         <span></span>
         <h1>You searched for {searchQuery}</h1>
@@ -64,8 +64,9 @@ const SearchResults = (props) => {
                 </div>
               </div>
             );
-          })} 
+          }) } 
       </div>
+    </div>
     </div>
   );
 };
