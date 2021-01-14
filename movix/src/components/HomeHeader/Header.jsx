@@ -1,7 +1,7 @@
 import React from "react";
 import HomeLanding from "../Home/HomeLanding";
-import GenreSelect from "./GenreSelect";
-import FilterSelect from "./FilterSelect";
+import Filters from "./Filters";
+// import FilterSelect from "./FilterSelect";
 import SearchInput from "./SearchInput";
 import "../../App.css";
 
@@ -23,11 +23,11 @@ export default function Header() {
           </div>
           <div className="filter-options">
             <span>Order By:</span>
-            <GenreSelect />
-            <FilterSelect />
-            <a className="filter-btn" href="/#">
+            <Filters />
+            {/* <FilterSelect /> */}
+            {/* <a className="filter-btn" href="/#">
               Search
-            </a>
+            </a> */}
           </div>
         </form>
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import GenreSelect from "../HomeHeader/GenreSelect";
-import FilterSelect from "../HomeHeader/FilterSelect";
+import Filters from "../HomeHeader/Filters";
+// import FilterSelect from "../HomeHeader/FilterSelect";
 import SearchInput from "../HomeHeader/SearchInput";
 import "../../App.css";
 
@@ -22,11 +22,11 @@ const SearchHeader = () => {
             </div>
             <div className="filter-options">
               <span>Order By:</span>
-              <GenreSelect />
-              <FilterSelect />
-              <a className="filter-btn" href="/#">
+              <Filters />
+              {/* <FilterSelect /> */}
+              {/* <a className="filter-btn" href="/#">
                 Search
-              </a>
+              </a> */}
             </div>
           </form>
   

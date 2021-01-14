@@ -29,6 +29,8 @@ export const DataProvider = (props) => {
         const popularMovies = res[1].data
         const movieGenres =  res[2].data
 
+        // console.log(movieGenres)
+
 
         setUpcoming(upcomingMovies.results)
         setPopular(popularMovies)
