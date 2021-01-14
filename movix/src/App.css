@@ -1223,4 +1223,34 @@ footer i {
 .search-header {
   margin-bottom: 120px;
 }
+
+.pagination-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination-btn a {
+  cursor: pointer;
+  border-radius: 6rem;
+  border: solid 2px #8e33d3;
+  margin: 0.5rem;
+}
+
+.pagination-btn a:hover {
+  background-color: rgba(168, 83, 224, 0.356);
+  color: #f0e9e9;
+}
+
+.pagination-btn a i {
+  pointer-events: none;
+  padding: 0.5rem 0.7rem;
+  margin: 0.2rem;
+  color: rgba(226, 192, 248, 0.692);
+  font-size: 0.9rem;
+}
 /*# sourceMappingURL=App.css.map */

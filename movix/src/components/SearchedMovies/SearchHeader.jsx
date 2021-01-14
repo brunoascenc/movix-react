@@ -2,6 +2,7 @@ import React from 'react'
 import Filters from "../HomeHeader/Filters";
 // import FilterSelect from "../HomeHeader/FilterSelect";
 import SearchInput from "../HomeHeader/SearchInput";
+import { Link } from "react-router-dom";
 import "../../App.css";
 
 const SearchHeader = () => {
@@ -9,9 +10,9 @@ const SearchHeader = () => {
         <div className="search-header">
         <header>
           <div className="search-container">
-            <a href="/#">
+            <Link to="/">
               <h1>Movix</h1>
-            </a>
+            </Link>
             <SearchInput/>
           </div>
           <form data-scroll-header>

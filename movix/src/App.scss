@@ -965,3 +965,28 @@ footer {
 .search-header{
   margin-bottom: 120px;
 }
+
+//pagination of containers
+.pagination-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  button {
+    cursor: pointer;
+    border-radius: 6rem;
+    background: none;
+    border: solid 2px rgb(142, 51, 211);
+    margin: 0.5rem;
+    &:hover {
+      background-color: rgba(168, 83, 224, 0.356);
+      color: rgb(240, 233, 233);
+    }
+    i {
+      pointer-events: none;
+      padding: 0.5rem 0.7rem;
+      margin: 0.2rem;
+      color: rgba(226, 192, 248, 0.692);
+      font-size: 0.9rem;
+    }
+  }
+}

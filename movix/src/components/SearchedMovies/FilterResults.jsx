@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { DataContext } from "../../data/DataProvider";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchHeader from "./SearchHeader";
@@ -9,14 +10,19 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SearchResults = (props) => {
+  const value = useContext(DataContext);
   const [filterResults, setFilterResults] = useState([]);
+  const [nextPage] = value.nextPageBtn;
+  const [prevPage] = value.prevPageBtn;
+  const [pageNumber] = value.pageNumber;
+
   const genreId = props.match.params.pathname;
   const optionFilter = props.match.params.pathname2;
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=${optionFilter}&vote_count.gte=100`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=${optionFilter}&vote_count.gte=100&page=${pageNumber}`
       )
       .then((res) => {
         const response = res.data;
@@ -25,7 +31,7 @@ const SearchResults = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [genreId, optionFilter]);
+  }, [genreId, optionFilter, pageNumber]);
 
   const handleImgErr = (e) => {
     e.target.style.display = "none";
@@ -69,6 +75,14 @@ const SearchResults = (props) => {
               );
             })}
         </div>
+        <div className="pagination-btn">
+        <button onClick={prevPage} className="filter-prev">
+          <i className="fas fa-chevron-left"></i>
+        </button>
+        <button onClick={nextPage} className="filter-next">
+          <i className="fas fa-chevron-right"></i>
+        </button>
+      </div>
       </div>
     </div>
   );
