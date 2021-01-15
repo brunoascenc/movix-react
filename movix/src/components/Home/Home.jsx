@@ -1,19 +1,18 @@
 import React from "react";
 import PopularMovies from "./PopularMovies";
 import UpcomingMovies from "./UpcomingMovies";
-import Header from "../HomeHeader/Header";
-// import SearchResults from '../SearchedMovies/SearchResults'
-// import SearchActions from '../../actions/SearchActions'
+import LandingTxt from "./LandingTxt";
+import Header from "../Header/Header";
 import "../../App.css";
 
-
 const Home = () => {
-  // const [getSearch, setMovieName] = SearchActions()
 
   return (
     <div>
-      <Header />
-      {/* <SearchResults/> */}
+      <div id="landing-page">
+        <Header />
+        <LandingTxt />
+      </div>
       <UpcomingMovies />
       <PopularMovies />
     </div>

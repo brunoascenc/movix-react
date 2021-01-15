@@ -46,7 +46,7 @@ const GenreSelect = () => {
         <option value="primary_release_date.desc">Release Date</option>
       </select>
 
-      <Link className="filter-btn" to={`/filter-results/${selectGenre}/${selectOption}`}>
+      <Link className="filter-btn" to={`/filter=${selectGenre}&${selectOption}`}>
           Search
       </Link>
     </>

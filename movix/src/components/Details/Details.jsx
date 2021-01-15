@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import SearchHeader from '../SearchedMovies/SearchHeader'
+import Header from "../Header/Header";
 import MovieDetails from "./MovieDetails";
 import SimilarMovies from "./SimilarMovies";
 import MovieReviews from "./MovieReviews";
@@ -12,8 +11,9 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const Details = (props) => {
   const [movieDetail, setMovieDetail] = useState([]);
-  const [bannerImg, setBannerImg] = useState([]); // Banner background
-  //Movie Genres
+
+  const [bannerImg, setBannerImg] = useState([]);
+
   const genres = movieDetail.genres;
   let genreOptions;
   if (genres) {
@@ -22,17 +22,17 @@ const Details = (props) => {
 
   useEffect(() => {
     axios
-    .get(
-      `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
-    )
-    .then((res) => {
-      const response = res.data;
-      setMovieDetail(response);
-      setBannerImg(response.backdrop_path);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .get(
+        `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
+      )
+      .then((res) => {
+        const response = res.data;
+        setMovieDetail(response);
+        setBannerImg(response.backdrop_path);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [props.match.params.id]);
 
   return (
@@ -45,15 +45,7 @@ const Details = (props) => {
           }')`,
         }}
       >
-        <header className="details-header">
-          {/* <SearchHeader/> */}
-          <Link to="/">
-            <h1>Movix</h1>
-          </Link>
-          <div className="back-home">
-            <Link to="/">Back to home</Link>
-          </div>
-        </header>
+        <Header />
         <div className="movie-video">
           <MovieTrailer movieId={props.match.params.id} />
         </div>
@@ -67,12 +59,12 @@ const Details = (props) => {
         <div className="title-section">
           <span></span>
           <h1>Similar Movies</h1>
-        </div>  
+        </div>
       </div>
 
       <div className="similar-movies container">
-          <SimilarMovies movieId={props.match.params.id} />
-        </div>
+        <SimilarMovies movieId={props.match.params.id} />
+      </div>
 
       <div className="reviews-section container">
         <div className="title-section">

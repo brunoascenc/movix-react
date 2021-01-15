@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const HomeLanding = () => {
+const LandingTxt = () => {
   return (
     <div className="container">
       <div className="landing-txt">
@@ -15,4 +15,4 @@ const HomeLanding = () => {
   );
 };
 
-export default HomeLanding;
+export default LandingTxt;

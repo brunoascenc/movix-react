@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
 import "../../App.css";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
@@ -26,7 +25,7 @@ const MovieReviews = ({ movieId }) => {
     return (
       <div className="no-reviews">
         <p>
-          This movie has no reviews yet <i class="far fa-sad-tear"></i>
+          This movie has no reviews yet <i className="far fa-sad-tear"></i>
         </p>
       </div>
     );

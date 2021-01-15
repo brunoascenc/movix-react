@@ -1,73 +1,41 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios'
-import { Link } from "react-router-dom";
-import SearchHeader from './SearchHeader'
+import axios from "axios";
+import ResultsContainer from "./ResultsContainer";
+import NothingFound from "./NothingFound";
+import Header from "../Header/Header";
 
 import "../../App.css";
 
-const API_KEY = process.env.REACT_APP_MOVIEDB_KEY
-const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
+const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const SearchResults = (props) => {
   const [search, setSearch] = useState([]);
-  const searchQuery = props.match.params.pathname
+  const searchQuery = props.match.params.pathname;
 
   useEffect(() => {
     axios
-    .get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
-    )
-    .then((res) => {
-      const response = res.data;
-      setSearch(response.results);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  },[searchQuery])
+      .get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
+      )
+      .then((res) => {
+        const response = res.data;
+        setSearch(response.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [searchQuery]);
 
-  const handleImgErr = (e) => {
-      e.target.style.display= 'none'
-  }
 
   return (
-    <div className="search-results">
-      <SearchHeader/>
-      <div className="container">
-      <div className="title-section">
-        <span></span>
-        <h1>You searched for {searchQuery}</h1>
-      </div>
-      <div id="movies-container">
-         {search &&
-          search.map((movie) => {
-            return (
-              <div key={movie.id} className="movie-item">
-                <Link to={`/details/${movie.id}`}>
-                  <div className="img-container">
-                    <img
-                      onError={handleImgErr}
-                      className="movie-poster"
-                      src={IMAGE_URL + movie.poster_path}
-                      alt={IMAGE_URL}
-                      data-movie-id={movie.id}
-                    />
-                    <div className="details-btn">
-                      <button>Details</button>
-                    </div>
-                  </div>
-                </Link>
-                <span className="movie-title">{movie.title}</span>
-                <div className="movie-rating">
-                  <i className="far fa-star"></i>
-                  <p>{movie.vote_average}</p>
-                </div>
-              </div>
-            );
-          }) } 
-      </div>
-    </div>
-    </div>
+    <>
+      <Header />
+      {searchQuery === undefined ? (
+        <NothingFound />
+      ) : (
+        <ResultsContainer search={search} searchQuery={searchQuery} />
+      )}
+    </>
   );
 };
 

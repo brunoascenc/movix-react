@@ -16,8 +16,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/details/:id" component={Details} />
-            <Route path="/search-results/:pathname" component={SearchResults}/>
-            <Route path="/filter-results/:pathname?/:pathname2?" component={FilterResults}/>
+            <Route path="/search=:pathname?" component={SearchResults}/>
+            <Route path="/filter=:pathname?&:pathname2?" component={FilterResults}/>
           </Switch>
           <Footer/> 
         </div>

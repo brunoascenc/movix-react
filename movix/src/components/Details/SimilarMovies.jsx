@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Slider from "react-slick";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";

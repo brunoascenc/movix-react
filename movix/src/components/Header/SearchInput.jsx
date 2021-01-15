@@ -7,7 +7,7 @@ const SearchInput = () => {
   const history = useHistory();
   const handleKeyPress = e =>{
     if(e.charCode===13){
-      history.push(`/search-results/${movieName}`)
+      history.push(`/search=${movieName}`)
     }
   }
 
@@ -16,7 +16,7 @@ const SearchInput = () => {
   return (
     <>
       <input onKeyPress = {handleKeyPress} type="text" id="searchInput" placeholder="Search movie" onChange={(e) => setMovieName(e.target.value)}/>
-      <Link to ={`/search-results/${movieName}`}>
+      <Link to ={`/search=${movieName}`}>
       <button id="search" type="submit">
         <i className="fas fa-search"></i>
       </button>

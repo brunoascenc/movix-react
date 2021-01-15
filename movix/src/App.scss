@@ -601,16 +601,16 @@ header {
 }
 
 //Details
-.details-header {
-  background-color: rgba(24, 23, 29, 0.863);
-  display: flex;
-  align-items: center;
-  padding: 2rem 1.3rem 1.3rem 1.3rem;
-  border-radius: 0 0 0.1rem 0.1rem;
-  justify-content: space-between;
-  position: relative;
-  z-index: 100;
-}
+// .details-header {
+//   background-color: rgba(24, 23, 29, 0.863);
+//   display: flex;
+//   align-items: center;
+//   padding: 2rem 1.3rem 1.3rem 1.3rem;
+//   border-radius: 0 0 0.1rem 0.1rem;
+//   justify-content: space-between;
+//   position: relative;
+//   z-index: 100;
+// }
 
 //Movie Trailer/Banner
 #movie-banner {
@@ -636,11 +636,6 @@ header {
       rgba(19, 19, 17, 0.692)
     );
     pointer-events: none;
-  }
-
-  #searchInput,
-  #search {
-    display: none;
   }
 }
 
@@ -989,9 +984,12 @@ footer {
 
 
 //search container
-.search-header{
-  margin-bottom: 120px;
+.search-results{
+  height: 100vh;
+  margin-top: 120px;
 }
+
+
 
 //pagination of containers
 .pagination-btn {
