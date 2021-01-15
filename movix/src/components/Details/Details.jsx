@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import SearchHeader from '../SearchedMovies/SearchHeader'
 import MovieDetails from "./MovieDetails";
 import SimilarMovies from "./SimilarMovies";
 import MovieReviews from "./MovieReviews";
@@ -18,21 +19,6 @@ const Details = (props) => {
   if (genres) {
     genreOptions = genres.map((genre) => genre.name).join(", ");
   }
-
-  // const getDetails = () => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
-  //     )
-  //     .then((res) => {
-  //       const response = res.data;
-  //       setMovieDetail(response);
-  //       setBannerImg(response.backdrop_path);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   useEffect(() => {
     axios
@@ -60,11 +46,12 @@ const Details = (props) => {
         }}
       >
         <header className="details-header">
+          {/* <SearchHeader/> */}
           <Link to="/">
             <h1>Movix</h1>
           </Link>
           <div className="back-home">
-            <a href="/#">Back to home</a>
+            <Link to="/">Back to home</Link>
           </div>
         </header>
         <div className="movie-video">
@@ -80,11 +67,12 @@ const Details = (props) => {
         <div className="title-section">
           <span></span>
           <h1>Similar Movies</h1>
-        </div>
-        <div className="similar-movies">
+        </div>  
+      </div>
+
+      <div className="similar-movies container">
           <SimilarMovies movieId={props.match.params.id} />
         </div>
-      </div>
 
       <div className="reviews-section container">
         <div className="title-section">
