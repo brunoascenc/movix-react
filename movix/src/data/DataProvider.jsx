@@ -33,12 +33,14 @@ export const DataProvider = (props) => {
         ),
         axios.get(
           `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
-        ),
+        )
       ])
       .then((res) => {
         const upcomingMovies = res[0].data;
         const popularMovies = res[1].data;
         const movieGenres = res[2].data;
+        
+        // console.log(movieGenres)
 
         setUpcoming(upcomingMovies.results);
         setPopular(popularMovies);

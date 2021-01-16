@@ -48,7 +48,9 @@ const UpcomingMovies = () => {
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
+                    <span className="movie-title">{movie.title}</span>
                     <span className="movie-date">{movie.release_date}</span>
+                    <span className="movie-genres">Action / Drama</span>
                   </div>
                 </Link>
               </SwiperSlide>

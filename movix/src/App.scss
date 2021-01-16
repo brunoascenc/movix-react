@@ -427,17 +427,27 @@ header {
 
 //upcoming movies
 .upcoming-slide {
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
 
  .title-section{
    margin-bottom: 2vh;
+ }
+
+ .movie-title{
+  margin-top: 0.5rem;
+  // text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: rgba(226, 192, 248, 0.836);
  }
 
   @include mobile {
     margin-top: 17%;
   }
   img {
-    // height: 240px;
+    height: 280px;
+    border-radius: 8px;
     object-fit: cover;
     @include small-desktop {
       height: 200px;
@@ -457,18 +467,41 @@ header {
   }
 
   .upcoming-card {
+    position: relative;
     display: flex !important;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
 
-    .movie-date {
-      font-weight: 100;
-      margin-top: 0.3rem;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      color: rgb(230, 207, 245);
-    }
+    // .movie-date {
+    //   font-weight: 100;
+    //   margin-top: 0.3rem;
+    //   font-size: 0.8rem;
+    //   letter-spacing: 1px;
+    //   color: rgb(230, 207, 245);
+    // }
   }
+
+  .movie-date{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    right: 0;
+    background-color: rgba(157, 68, 226, 0.836);
+    padding: 0.3rem;
+    color: rgb(243, 236, 236);
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 8px;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+  }
+}
+
+.movie-genres{
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  color: rgb(141, 141, 150);
 }
 
 //Home
@@ -484,10 +517,11 @@ header {
 
 #movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   grid-gap: 2rem;
-  grid-row-gap: 2rem;
-  margin-top: 1rem;
+  grid-column-gap: 6rem;
+  grid-row-gap: 4rem;
+  margin-top: 2rem;
 
   @include tablet {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -521,6 +555,7 @@ header {
     opacity: 0;
     pointer-events: none;
     transition: 0.3s ease;
+    border-radius: 8px;
 
     button {
       @include btnStyle();
@@ -567,10 +602,15 @@ header {
   flex-direction: column;
   padding: 0 0 1rem 0;
   transition: 0.3s ease;
-  align-items: center;
+  // align-items: center;
 
   .movie-title {
     margin-top: 0.5rem;
+    // text-align: center;
+    font-size: 0.9rem;
+    // letter-spacing: 1px;
+    font-weight: bold;
+
     h1 {
       font-size: 0.9rem;
       text-align: center;
@@ -587,6 +627,8 @@ header {
     background-color: rgba(157, 68, 226, 0.836);
     padding: 0.3rem;
     color: rgb(243, 236, 236);
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 
     p {
       font-size: 0.8rem;
@@ -600,7 +642,11 @@ header {
   }
 
   .movie-poster{
-    height: 250px;
+    max-width: 100%;
+    // height: 310px;
+    border-radius: 8px;
+    object-fit: cover;
+    // object-position: center;
   }
 }
 
