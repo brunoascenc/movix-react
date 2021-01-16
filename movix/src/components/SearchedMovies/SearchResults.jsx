@@ -26,6 +26,13 @@ const SearchResults = (props) => {
       });
   }, [searchQuery]);
 
+  //loop to hide broken images
+  let searchedMovie = [];
+  for (let i in search) {
+    if (search[i].poster_path) {
+      searchedMovie.push(search[i]); 
+    }
+  }
 
   return (
     <>
@@ -33,7 +40,7 @@ const SearchResults = (props) => {
       {searchQuery === undefined ? (
         <NothingFound />
       ) : (
-        <ResultsContainer search={search} searchQuery={searchQuery} />
+        <ResultsContainer search={searchedMovie} searchQuery={searchQuery} />
       )}
     </>
   );

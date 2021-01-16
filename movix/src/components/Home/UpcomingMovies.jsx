@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "../../App.css";
 
 import "swiper/swiper.scss";
-import 'swiper/components/navigation/navigation.scss';
+import "swiper/components/navigation/navigation.scss";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
@@ -15,6 +15,14 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 const UpcomingMovies = () => {
   const value = useContext(DataContext);
   const [upcoming] = value.upcoming;
+
+  //loop to hide broken images
+  let upcomingMovies = [];
+  for (let i in upcoming) {
+    if (upcoming[i].poster_path) {
+      upcomingMovies.push(upcoming[i]); 
+    }
+  }
 
   return (
     <div className="upcoming-slide container">
@@ -28,8 +36,8 @@ const UpcomingMovies = () => {
         navigation
         autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
-        {upcoming &&
-          upcoming.map((movie) => {
+        {upcomingMovies &&
+          upcomingMovies.map((movie) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-card">
                 <Link key={movie.id} to={`/details/${movie.id}`}>

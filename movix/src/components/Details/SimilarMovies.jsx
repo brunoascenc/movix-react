@@ -31,6 +31,14 @@ const SimilarMovies = ({ movieId }) => {
       });
   }, [movieId]);
 
+  //loop do hide broken images
+  let similarResults = [];
+  for (let i in similarMovies) {
+    if (similarMovies[i].poster_path) {
+      similarResults.push(similarMovies[i]); 
+    }
+  }
+
   return (
     <>
       <Swiper
@@ -39,8 +47,8 @@ const SimilarMovies = ({ movieId }) => {
         navigation
         autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
-        {similarMovies &&
-          similarMovies.map((movie) => {
+        {similarResults &&
+          similarResults.map((movie) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-card">
                 <Link to={`/details/${movie.id}`}>

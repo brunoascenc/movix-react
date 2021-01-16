@@ -598,6 +598,10 @@ header {
       font-size: 0.8rem;
     }
   }
+
+  .movie-poster{
+    height: 250px;
+  }
 }
 
 //Details
@@ -985,8 +989,15 @@ footer {
 
 //search container
 .search-results{
-  height: 100vh;
+  // height: 100vh;
   margin-top: 120px;
+}
+
+.search-error{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -1015,3 +1026,7 @@ footer {
     }
   }
 }
+
+// .hehex{
+//   visibility: hidden;
+// }
