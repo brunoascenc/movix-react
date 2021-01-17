@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
+import GenreList from '../Genres/GenreList'
 import { Link } from "react-router-dom";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +15,7 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const UpcomingMovies = () => {
   const value = useContext(DataContext);
+  const [genreName] = GenreList()
   const [upcoming] = value.upcoming;
 
   //loop to hide broken images
@@ -50,7 +52,7 @@ const UpcomingMovies = () => {
                     />
                     <span className="movie-title">{movie.title}</span>
                     <span className="movie-date">{movie.release_date}</span>
-                    <span className="movie-genres">Action / Drama</span>
+                    <span className="movie-genres">{genreName(movie)}</span>
                   </div>
                 </Link>
               </SwiperSlide>

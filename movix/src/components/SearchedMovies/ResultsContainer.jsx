@@ -1,9 +1,12 @@
 import React from 'react'
+import GenreList from '../Genres/GenreList'
 import { Link } from "react-router-dom";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const ResultsContainer = ({search, searchQuery}) => {
+  const [genreName] = GenreList()
+
     return (
      <div className="search-results">
       <div className="container">
@@ -31,6 +34,7 @@ const ResultsContainer = ({search, searchQuery}) => {
                   </div>
                 </Link>
                 <span className="movie-title">{movie.title}</span>
+                <span className="movie-genres">{genreName(movie)}</span>
                 <div className="movie-rating">
                   <i className="far fa-star"></i>
                   <p>{movie.vote_average}</p>

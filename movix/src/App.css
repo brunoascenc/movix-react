@@ -531,6 +531,14 @@ header .nav-active {
   }
 }
 
+.movie-title {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: rgba(226, 192, 248, 0.836);
+}
+
 .upcoming-slide {
   margin-bottom: 15vh;
 }
@@ -621,10 +629,11 @@ header .nav-active {
 }
 
 .movie-genres {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 1px;
-  margin-top: 5px;
-  color: #8d8d96;
+  margin-top: 2px;
+  color: #5f5f64;
+  color: rgba(101, 97, 126, 0.863);
 }
 
 #home-container {
@@ -722,7 +731,7 @@ header .nav-active {
           transform: translate(-50%, 150%);
   margin-bottom: 0;
   opacity: 0;
-  border-radius: 0.1rem;
+  border-radius: 8px;
   letter-spacing: 1px;
   font-size: 1.3rem;
   -webkit-transition: 0.3s ease;
@@ -776,8 +785,7 @@ header .nav-active {
 }
 
 .movie-item .movie-title {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
@@ -1096,13 +1104,40 @@ header .nav-active {
   margin-bottom: 5rem;
 }
 
-.similar-movies div p {
+.similar-movies .movie-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  right: 0;
+  background-color: rgba(157, 68, 226, 0.836);
+  padding: 0.3rem;
+  color: #f3ecec;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.similar-movies .movie-rating p {
   font-size: 0.8rem;
-  text-align: center;
+  letter-spacing: 1px;
+}
+
+.similar-movies .movie-rating i {
+  margin-right: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.similar-movies div .movie-title {
+  font-size: 0.8rem;
 }
 
 .similar-movies div img {
   max-width: 100%;
+  border-radius: 8px;
 }
 
 .similar-movies .swiper-card {

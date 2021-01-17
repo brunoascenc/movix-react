@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import GenreList from "../Genres/GenreList";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "../../App.css";
 
 import "swiper/swiper.scss";
-import 'swiper/components/navigation/navigation.scss';
+import "swiper/components/navigation/navigation.scss";
 
 SwiperCore.use([Navigation, Autoplay]);
 
@@ -16,6 +17,7 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SimilarMovies = ({ movieId }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [genreName] = GenreList();
 
   useEffect(() => {
     axios
@@ -35,7 +37,7 @@ const SimilarMovies = ({ movieId }) => {
   let similarResults = [];
   for (let i in similarMovies) {
     if (similarMovies[i].poster_path) {
-      similarResults.push(similarMovies[i]); 
+      similarResults.push(similarMovies[i]);
     }
   }
 
@@ -58,7 +60,12 @@ const SimilarMovies = ({ movieId }) => {
                     data-movie-id={movie.id}
                     alt={movie.title}
                   />
-                  <p>{movie.title}</p>
+                  <span className="movie-title">{movie.title}</span>
+                  <span className="movie-genres">{genreName(movie)}</span>
+                  <div className="movie-rating">
+                    <i className="far fa-star"></i>
+                    <p>{movie.vote_average}</p>
+                  </div>
                 </Link>
               </SwiperSlide>
             );

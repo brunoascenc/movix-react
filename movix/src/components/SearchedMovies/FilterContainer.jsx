@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import GenreList from '../Genres/GenreList'
 import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
 
@@ -6,6 +7,7 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const FilterContainer = ({filterResults}) => {
   const value = useContext(DataContext);
+  const [genreName] = GenreList()
   const [nextPage] = value.nextPageBtn;
   const [prevPage] = value.prevPageBtn;
 
@@ -38,6 +40,7 @@ const FilterContainer = ({filterResults}) => {
                       </div>
                     </Link>
                     <span className="movie-title">{movie.title}</span>
+                    <span className="movie-genres">{genreName(movie)}</span>
                     <div className="movie-rating">
                       <i className="far fa-star"></i>
                       <p>{movie.vote_average}</p>

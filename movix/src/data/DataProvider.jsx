@@ -40,7 +40,7 @@ export const DataProvider = (props) => {
         const popularMovies = res[1].data;
         const movieGenres = res[2].data;
         
-        // console.log(movieGenres)
+        // console.log(popularMovies.results)
 
         setUpcoming(upcomingMovies.results);
         setPopular(popularMovies);
