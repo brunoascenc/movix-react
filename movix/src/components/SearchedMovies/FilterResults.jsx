@@ -33,7 +33,7 @@ const SearchResults = (props) => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {!genreId ? (
         <NothingFound />
       ) : (

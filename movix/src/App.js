@@ -4,14 +4,16 @@ import Home from "./components/Home/Home";
 import Details from "./components/Details/Details";
 import SearchResults from './components/SearchedMovies/SearchResults'
 import FilterResults from './components/SearchedMovies/FilterResults'
+import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
     <DataProvider>
       <Router>
+      <Header />
         <div className="App">
           <Switch>
             <Route path="/" exact component={Home} />

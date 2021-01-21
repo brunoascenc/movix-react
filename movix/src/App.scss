@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
-// @import "node_modules/react-modal-video/scss/modal-video.scss";
+@import "node_modules/react-modal-video/scss/modal-video.scss";
 @import "./styles/variables", "./styles/mixins";
 
 * {
@@ -68,6 +68,8 @@ img {
 
 //header
 header {
+  position: absolute;
+  top: 0;
   background-color: rgba(24, 23, 29, 0.863);
   display: flex;
   align-items: center;
@@ -78,13 +80,21 @@ header {
   // position: absolute;
   // top: 0;
   margin: 0 auto;
-  width: 1210px;
+  // width: 1210px;
   z-index: 100;
   transition: 0.3s ease;
 
-  @include lg-screen {
+  .header-elements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 85%;
+    margin: 0 auto;
   }
+
+  // @include lg-screen {
+  //   width: 85%;
+  // }
 
   @include sm-mobile {
     width: 100%;
@@ -350,25 +360,23 @@ header {
 }
 
 //home banner
-#landing-page {
-  margin: 0 auto;
-  background: linear-gradient(
-      rgba(34, 33, 33, 0.733),
-      rgba(116, 44, 163, 0.329)
-    ),
-    url("https://image.tmdb.org/t/p/original/orjiB3oUIsyz60hoEqkiGpy5CeO.jpg")
-      no-repeat;
-  background-position: top;
-  background-size: cover;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom: solid 1px rgba(158, 61, 238, 0.164);
-  margin-bottom: 8%;
+.landing-page {
+  // background-color: red;
+  // height: 50vh;
+  // position: relative;
+  margin-bottom: 5%;
+
+  .swiper-card{
+    position: relative;
+
+  }
 
   .landing-txt {
+    position: absolute;
+    top: 150px;
+    left: 120px;
     width: 500px;
+    z-index: 100;
     padding: 10rem 0;
 
     @include tablet {
@@ -499,7 +507,7 @@ header {
   letter-spacing: 1px;
   margin-top: 2px;
   color: rgb(95, 95, 100);
-  color:  rgba(101, 97, 126, 0.863);
+  color: rgba(101, 97, 126, 0.863);
 }
 
 //Home
@@ -601,6 +609,11 @@ header {
   padding: 0 0 1rem 0;
   transition: 0.3s ease;
   // align-items: center;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
 
   .movie-title {
     // margin-top: 0.5rem;
@@ -1093,4 +1106,24 @@ footer {
 
 // .hehex{
 //   visibility: hidden;
+// }
+
+// .now-playing{
+//   position: absolute;
+//   top: 0;
+//   max-width: 100%;
+//   height: 75vh;
+//   z-index: -1;
+
+//   img{
+//     background-position: top;
+//     width: 100vw
+//   };
+// }
+
+// .swiper-card {
+//   // width: 20px;
+//   img {
+//     max-width: 100%;
+//   }
 // }

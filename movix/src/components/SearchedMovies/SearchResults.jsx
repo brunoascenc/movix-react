@@ -36,7 +36,7 @@ const SearchResults = (props) => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {searchQuery === undefined ? (
         <NothingFound />
       ) : (

@@ -45,7 +45,7 @@ const Details = (props) => {
           }')`,
         }}
       >
-        <Header />
+        {/* <Header /> */}
         <div className="movie-video">
           <MovieTrailer movieId={props.match.params.id} />
         </div>

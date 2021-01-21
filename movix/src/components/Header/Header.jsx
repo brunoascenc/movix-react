@@ -8,6 +8,7 @@ export default function Header() {
   return (
     <>
       <header>
+        <div className="header-elements">
         <div className="search-container">
           <Link to="/">
             <h1>Movix</h1>
@@ -30,6 +31,8 @@ export default function Header() {
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3"></div>
+        </div>
+
         </div>
       </header>
     </>
