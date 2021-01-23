@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../Header/Header";
+// import Header from "../Header/Header";
 import MovieDetails from "./MovieDetails";
 import SimilarMovies from "./SimilarMovies";
 import MovieReviews from "./MovieReviews";

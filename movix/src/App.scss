@@ -366,69 +366,76 @@ header {
   // position: relative;
   margin-bottom: 5%;
 
-
-  .swiper-card{
+  .swiper-card {
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 80vh;
     position: relative;
-
-    img{
-      width: 100%;
-      height: 85vh;
-      filter: brightness(50%);
-    }
   }
 
+  .swiper-pagination-bullet-active {
+    background-color: $mainPurple;
+  }
 
   .landing-txt {
-    position: absolute;
-    bottom: -100px;
-    left: 120px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width: 100%;
+    height: 100%;
     z-index: 100;
     padding: 10rem 0;
 
-    h1{
-      font-family: "Mulish", sans-serif;
-      letter-spacing: 1px;
-      font-size: 1.3rem;
-      margin-bottom: 7px;
-      opacity: 0.8;
+    .txt-align{
+      position: absolute;
+      left: 125px;
+      bottom: 80px;
 
-    }
-
-
-    div{
-      display: flex;
-      align-items: center;
-      margin-top: -2px;
-      opacity: 0.8;
-    }
-
-    .movie-rating{
-      display: flex;
-      align-items: center;
-      font-size: 0.8rem;
-      margin-top: 5px;
-      i{
-        margin-right: 7px;
-        margin-left: 5px;
-        color: rgb(195, 202, 207);
-        border: none;
+      h1 {
+        font-family: "Mulish", sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        opacity: 0.8;
       }
+  
+      div {
+        display: flex;
+        align-items: center;
+        margin-top: -5px;
+        opacity: 0.8;
+      }
+  
+      .movie-rating {
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        i {
+          margin-right: 7px;
+          margin-left: 5px;
+          color: rgb(195, 202, 207);
+          border: none;
+        }
+      }
+  
+      .movie-title {
+        font-size: 2rem;
+        color: rgb(228, 212, 220);
+        opacity: 0.9;
+        // margin-top: 5px;
+        letter-spacing: 2px;
+        // font-weight: 100;
+      }
+  
+      .movie-genres {
+        font-size: 1rem;
+        padding: 0 5px 0 0;
+      }
+
     }
 
-    .movie-title{
-      font-size: 2rem;
-      color: rgb(233, 208, 222);
-      opacity: 0.9;
-      margin-top: 150px;
-      letter-spacing: 2px;
-      // font-weight: 100;
-    }
-
-    .movie-genres{
-      font-size: 1rem;
-      padding: 0 5px 0 0;
-    }
 
     @include tablet {
       width: 90%;
@@ -437,7 +444,6 @@ header {
     @include mobile {
       width: 100%;
     }
-
 
     p {
       color: rgb(226, 192, 248);
@@ -489,7 +495,7 @@ header {
     height: 280px;
     border-radius: 8px;
     object-fit: cover;
-   @include small-desktop {
+    @include small-desktop {
       height: 200px;
     }
     @include tablet {
@@ -699,6 +705,8 @@ header {
 //   position: relative;
 //   z-index: 100;
 // }
+
+
 
 //Movie Trailer/Banner
 #movie-banner {

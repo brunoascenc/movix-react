@@ -14,10 +14,10 @@ const GenreList = () => {
           : null
       );
       return (
-        <p key={movie.id}>
+        <span key={movie.id}>
           {genreArray[0] ? genreArray[0].name : ""}
           {genreArray[1] ? ` / ` + genreArray[1].name : ""}
-        </p>
+        </span>
       );
     }
   };

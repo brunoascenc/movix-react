@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ResultsContainer from "./ResultsContainer";
 import NothingFound from "./NothingFound";
-import Header from "../Header/Header";
+// import Header from "../Header/Header";
 
 import "../../App.css";
 
