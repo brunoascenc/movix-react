@@ -18,7 +18,7 @@ const PopularMovies = () => {
     <div className="container">
       <div className="title-section">
         <span></span>
-        <h1>Popular Movies: </h1>
+        <h1>Popular Movies </h1>
       </div>
       <div id="movies-container">
         {popularMovie &&

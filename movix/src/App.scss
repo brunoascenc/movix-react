@@ -398,6 +398,7 @@ header {
         font-size: 1.3rem;
         margin-bottom: 5px;
         opacity: 0.8;
+        color: rgb(185, 158, 190);
       }
   
       div {
@@ -411,18 +412,23 @@ header {
         display: flex;
         align-items: center;
         font-size: 0.8rem;
-        margin-top: 5px;
+        margin-top: 5px; 
         i {
           margin-right: 7px;
           margin-left: 5px;
-          color: rgb(195, 202, 207);
+          // color: rgb(195, 202, 207)
+          color: rgb(185, 158, 190);
           border: none;
+        }
+        p{
+          color: rgb(185, 158, 190);
         }
       }
   
       .movie-title {
         font-size: 2rem;
-        color: rgb(228, 212, 220);
+        // color: rgb(235, 223, 229);
+        color: rgb(225, 212, 228);
         opacity: 0.9;
         // margin-top: 5px;
         letter-spacing: 2px;
@@ -432,6 +438,7 @@ header {
       .movie-genres {
         font-size: 1rem;
         padding: 0 5px 0 0;
+        color: rgb(185, 158, 190);
       }
 
     }
@@ -539,7 +546,7 @@ header {
   font-size: 0.75rem;
   letter-spacing: 1px;
   margin-top: 2px;
-  color: rgb(95, 95, 100);
+  // color: rgb(95, 95, 100);
   color: rgba(101, 97, 126, 0.863);
 }
 
@@ -556,9 +563,9 @@ header {
 
 #movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 2rem;
-  grid-column-gap: 6rem;
+  column-gap: 4rem;
   grid-row-gap: 4rem;
   margin-top: 2rem;
 
@@ -623,15 +630,20 @@ header {
   }
   &:hover .details-btn {
     opacity: 1;
-  }
 
-  &:hover button {
-    opacity: 1;
-    transform: translate(-50%, 100%);
-    @include xs-mobile {
-      transform: translate(-50%, 180%);
+    img{
+      position: relative;
+      top: -15px;
     }
   }
+
+  // &:hover button {
+  //   opacity: 1;
+  //   transform: translate(-50%, 100%);
+  //   @include xs-mobile {
+  //     transform: translate(-50%, 180%);
+  //   }
+  // }
 }
 
 //movies style
@@ -1102,10 +1114,10 @@ footer {
 }
 
 //search container
-.search-results {
-  // height: 100vh;
-  margin-top: 120px;
-}
+// .search-results {
+//   // height: 100vh;
+//   // margin-top: 120px;
+// }
 
 .search-error {
   height: 100vh;
@@ -1162,3 +1174,19 @@ footer {
 //     max-width: 100%;
 //   }
 // }
+
+.login-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  a{
+    background-color: blue;
+    margin-top: 54px;
+    z-index: 100;
+  }
+}
