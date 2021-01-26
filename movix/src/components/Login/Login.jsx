@@ -27,35 +27,21 @@ useEffect(() => {
       });
 }, []);
 
-const createSessionId = () => {
-  // axios.post(`https://api.themoviedb.org/3/authentication/session/new?api_key=${API_KEY}`, {
-  //   request_token: `${requestToken}`
-  // }).then((res) => {
-  //   console.log(res)
-  // })
-  fetch(
-    "https://api.themoviedb.org/3/authentication/session/new?api_key=4a5e130486cb63a2caff652d783f6a36",
-    {
-      method: "POST",
-      body: JSON.stringify({ request_token: `${requestToken}` }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      console.log(res);
-      // const hehe = res.session_id
-      // localStorage.setItem("sessionId", hehe);
 
-    });
-  // }
-}
-useEffect(() => {
-createSessionId()
-},)
-
+// useEffect(() => {
+//   axios
+//     .get(
+//       `https://api.themoviedb.org/3/account/{account_id}/favorite/movies?api_key=${API_KEY}&session_id=${localStorage.getItem(
+//         "session_id"
+//       )}&language=en-US&sort_by=created_at.asc&page=1`
+//     )
+//     .then((res) => {
+//       console.log(res)
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// }, []);
 
     return (
         <div className="login-container">

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
+
 export const DataContext = createContext();
 
 //API Key
@@ -12,6 +13,7 @@ export const DataProvider = (props) => {
   const [nowPlaying, setNowPlaying] = useState([])
   const [genres, setGenres] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [sessionId, setSessionId] = useState('')
 
   function nextPage() {
     setPageNumber(pageNumber + 1);
@@ -55,6 +57,33 @@ export const DataProvider = (props) => {
       });
   }, [pageNumber]);
 
+
+  //Login
+  const url = new URL(window.location);
+  const tokenApproved = url.searchParams.get("approved");
+  const token = url.searchParams.get("request_token")
+
+  useEffect(() => {
+    if(tokenApproved){
+      fetch(
+        `https://api.themoviedb.org/3/authentication/session/new?api_key=${API_KEY}`,
+        {
+          method: "POST",
+          body: JSON.stringify({ request_token: `${token}` }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          const sessionId = res.session_id
+          localStorage.setItem("session_id", sessionId);
+          setSessionId(sessionId)
+        });
+  }
+  },[token, tokenApproved])
+
   const value = {
     upcoming: [upcoming, setUpcoming],
     popular: [popular, setPopular],
@@ -62,6 +91,7 @@ export const DataProvider = (props) => {
     genres: [genres, setGenres],
     nextPageBtn: [nextPage],
     prevPageBtn: [prevPage],
+    sessionId: [sessionId],
     pageNumber: [pageNumber]
   };
 

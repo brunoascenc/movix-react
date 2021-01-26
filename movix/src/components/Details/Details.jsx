@@ -35,6 +35,28 @@ const Details = (props) => {
       });
   }, [props.match.params.id]);
 
+    //Mark as favorite
+    const addFavoriteList = () => {
+      fetch(
+        `https://api.themoviedb.org/3/account/{account_id}/favorite?api_key=4a5e130486cb63a2caff652d783f6a36&session_id=${localStorage.getItem("session_id")}`, 
+        {
+          method: "POST",
+          body: JSON.stringify({
+            media_type: "movie",
+            media_id: `${props.match.params.id}`,
+            favorite: true,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+        });
+    }
+
   return (
     <>
       <div
@@ -52,7 +74,7 @@ const Details = (props) => {
       </div>
 
       <div className="about-movie container">
-        <MovieDetails movieDetail={movieDetail} genres={genreOptions} />
+        <MovieDetails addMovie={addFavoriteList} movieDetail={movieDetail} genres={genreOptions} />
       </div>
 
       <div className="similar-section container">
