@@ -1,7 +1,7 @@
 import React from "react";
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const MovieDetails = ({movieDetail, genres, addMovie}) => {
+const MovieDetails = ({movieDetail, genres, addMovie, addWatchList}) => {
 
   return (
     <div id="movie-detail">
@@ -55,6 +55,7 @@ const MovieDetails = ({movieDetail, genres, addMovie}) => {
           </ul>
 
           <button onClick={addMovie}>Add to list</button>
+          <button onClick={addWatchList}>Add watch list</button>
         </div>
       </div>
     </div>

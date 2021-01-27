@@ -11,8 +11,6 @@ const SearchInput = () => {
     }
   }
 
-
-
   return (
     <>
       <input onKeyPress = {handleKeyPress} type="text" id="searchInput" placeholder="Search movie" onChange={(e) => setMovieName(e.target.value)}/>

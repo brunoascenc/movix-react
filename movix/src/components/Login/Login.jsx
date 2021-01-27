@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
-import '../../App.scss'
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "../../App.scss";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
@@ -9,51 +8,44 @@ const Login = () => {
   const [requestToken, setRequestToken] = useState("");
   const redirectUrl = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000/`;
 
-
-useEffect(() => {
+  useEffect(() => {
     axios
       .get(
         `https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`
       )
       .then((res) => {
         const response = res.data;
-        const request_token = response.request_token
+        const request_token = response.request_token;
 
-        sessionStorage.setItem('request_token', request_token);
+        sessionStorage.setItem("request_token", request_token);
         setRequestToken(request_token);
       })
       .catch((err) => {
         console.log(err);
       });
-}, []);
+  }, []);
 
+  return (
+    <section className="login-container">
+      <div className="login-wpp"></div>
 
-// useEffect(() => {
-//   axios
-//     .get(
-//       `https://api.themoviedb.org/3/account/{account_id}/favorite/movies?api_key=${API_KEY}&session_id=${localStorage.getItem(
-//         "session_id"
-//       )}&language=en-US&sort_by=created_at.asc&page=1`
-//     )
-//     .then((res) => {
-//       console.log(res)
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }, []);
+      <form action="">
+        {/* <img src={Logo} alt="logo" /> */}
+        <h1>Movix</h1>
+        <p>Entre e crie sua lista de filmes favoritos!</p>
 
-    return (
-        <div className="login-container">
-
-          <div className="link">
-          <a href={redirectUrl}>
-            xd
+        <div className="signin">
+          <a href={redirectUrl} className="login1">
+            Entrar
           </a>
-          </div>
-            
         </div>
-    )
-}
 
-export default Login
+        {/* <div className="signup"> */}
+          {/* <!-- <p>Entre e crie sua lista de filmes e séries favoritas!</p> --> */}
+        {/* </div> */}
+      </form>
+    </section>
+  );
+};
+
+export default Login;

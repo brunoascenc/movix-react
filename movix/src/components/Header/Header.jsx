@@ -1,35 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../../data/DataProvider";
 import Filters from "./Filters";
 import SearchInput from "./SearchInput";
 import { Link } from "react-router-dom";
 import "../../App.css";
-// import axios from "axios";
-
-// const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export default function Header() {
-  // const [requestToken, setRequestToken] = useState("");
-  //   const redirectUrl = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000/`;
+  const value = useContext(DataContext);
+  const [accountDetails] = value.accountDetails;
 
-  // const getRequestToken = () => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`
-  //     )
-  //     .then((res) => {
-  //       const response = res.data;
-  //       setRequestToken(response.request_token);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  const sessionId = localStorage.getItem("session_id");
 
-  // console.log(requestToken)
-
-  // useEffect(() => {
-  //   getRequestToken()
-  // }, [getRequestToken]);
+  // localStorage.removeItem('session_id')
 
   return (
     <>
@@ -59,8 +41,12 @@ export default function Header() {
             <div className="line3"></div>
           </div>
         </div>
-
-        <Link to='/login'>login</Link>
+        {/* <Link to="/login">login</Link> */}
+        {sessionId ? (
+          <Link to="/user">{accountDetails.username}</Link>
+        ) : (
+          <Link to="/login">login</Link>
+        )}
       </header>
     </>
   );
