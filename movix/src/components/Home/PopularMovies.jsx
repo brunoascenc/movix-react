@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
 import GenreList from "../Genres/GenreList";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import "../../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -34,7 +35,8 @@ const PopularMovies = () => {
                       data-movie-id={movie.id}
                     />
                     <div className="details-btn">
-                      <button>Details</button>
+                    
+                      <button>Details <HiOutlineArrowNarrowRight className="arrow"/></button>
                     </div>
                   </div>
                 </Link>

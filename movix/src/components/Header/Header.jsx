@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../data/DataProvider";
+import React, { useState } from "react";
 import Filters from "./Filters";
 import SearchInput from "./SearchInput";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
 export default function Header() {
-  const value = useContext(DataContext);
-  const [accountDetails] = value.accountDetails;
+  const [click, setClick] = useState(false);
 
-  const sessionId = localStorage.getItem("session_id");
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  // const sessionId = localStorage.getItem("session_id");
 
   // localStorage.removeItem('session_id')
 
@@ -23,30 +24,22 @@ export default function Header() {
             </Link>
             <SearchInput />
           </div>
-          <form data-scroll-header>
-            <div className="close-nav">
-              <div className="line1"></div>
-              <div className="line2"></div>
-              <div className="line3"></div>
-            </div>
+          <form className={click ? "nav-active" : null} data-scroll-header>
             <div className="filter-options">
               <span>Order By:</span>
-              <Filters />
+              <Filters closeMenu={closeMobileMenu} />
             </div>
           </form>
 
-          <div className="burger nav">
+          <div
+            className={click ? "close-nav" : "burger nav"}
+            onClick={handleClick}
+          >
             <div className="line1"></div>
             <div className="line2"></div>
             <div className="line3"></div>
           </div>
         </div>
-        {/* <Link to="/login">login</Link> */}
-        {sessionId ? (
-          <Link to="/user">{accountDetails.username}</Link>
-        ) : (
-          <Link to="/login">login</Link>
-        )}
       </header>
     </>
   );

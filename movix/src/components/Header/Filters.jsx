@@ -4,8 +4,7 @@ import { DataContext } from "../../data/DataProvider";
 
 import { Link } from "react-router-dom";
 
-
-const GenreSelect = () => {
+const GenreSelect = ({ closeMenu }) => {
   const value = useContext(DataContext);
   const [genres] = value.genres;
   const genreName = genres.genres;
@@ -46,8 +45,12 @@ const GenreSelect = () => {
         <option value="primary_release_date.desc">Release Date</option>
       </select>
 
-      <Link className="filter-btn" to={`/filter=${selectGenre}&${selectOption}`}>
-          Search
+      <Link
+        onClick={closeMenu}
+        className="filter-btn"
+        to={`/filter=${selectGenre}&${selectOption}`}
+      >
+        Search
       </Link>
     </>
   );

@@ -47,7 +47,25 @@ const SimilarMovies = ({ movieId }) => {
         spaceBetween={65}
         slidesPerView={5}
         navigation
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        breakpoints={{
+          390: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+        },
+        640: {
+            slidesPerView: 3,
+            spaceBetween: 35,
+        },
+        780: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+        920: {
+            slidesPerView: 5,
+            spaceBetween: 65,
+        },
+        }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         {similarResults &&
           similarResults.map((movie) => {

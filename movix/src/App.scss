@@ -71,7 +71,8 @@ img {
 header {
   // position: absolute;
   // top: 0;
-  background-color: rgba(24, 23, 29, 0.863);
+  background-color: rgb(24, 23, 29);
+  // background-color: $mainPurple;
   display: flex;
   align-items: center;
   padding: 2rem 1.3rem 1.3rem 1.3rem;
@@ -81,21 +82,21 @@ header {
   // position: absolute;
   // top: 0;
   margin: 0 auto;
-  // width: 1210px;
   z-index: 100;
   transition: 0.3s ease;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 
   .header-elements {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 85%;
+    width: 1210px;
     margin: 0 auto;
+    // @include lg-screen {
+    //   width: 85%;
+    // }
   }
-
-  // @include lg-screen {
-  //   width: 85%;
-  // }
 
   @include sm-mobile {
     width: 100%;
@@ -142,7 +143,7 @@ header {
       border: solid 1px rgba(53, 50, 66, 0.863);
       letter-spacing: 1px;
       color: rgba(230, 207, 245, 0.644);
-      border-radius: 0.1rem;
+      border-radius: 6px;
       padding: 0.5rem;
       width: 140px;
       margin: 4px;
@@ -179,9 +180,10 @@ header {
       border: none;
       color: rgb(230, 207, 245);
       text-align: center;
-      border-radius: 0.1rem;
+      border-radius: 6px;
       letter-spacing: 1px;
       font-weight: 100;
+      margin-left: 10px;
       font-size: 1.1rem;
       font-family: "Bebas Neue", cursive;
       background-image: linear-gradient(
@@ -189,6 +191,7 @@ header {
         rgb(160, 63, 240),
         rgba(84, 29, 139, 0.788)
       );
+      
       @include xs-desktop {
         margin-top: 0.7rem;
         width: 35%;
@@ -208,7 +211,7 @@ header {
       z-index: 100;
       opacity: 0;
       transform: translateX(100%);
-      transition: transform 0.5s ease-in;
+      transition: transform 0.5s ease-in-out;
       background-color: rgba(24, 23, 29, 0.925);
       color: rgb(139, 136, 136);
     }
@@ -235,8 +238,9 @@ header {
 
   .search-container {
     display: flex;
-    position: relative;
+    // position: relative;
     width: 50%;
+    // background-color: red;
     @include small-desktop {
       width: 45%;
     }
@@ -251,16 +255,17 @@ header {
   }
 
   input {
+    position: relative;
     background-color: rgb(44, 43, 51);
     background-color: transparent;
     border: solid 1px rgba(53, 50, 66, 0.863);
     padding: 0.6rem;
-    border-radius: 0.1rem;
+    border-radius: 6px;
     width: 100%;
     color: rgba(222, 220, 231, 0.849);
     transition: 0.1s ease-in-out;
     height: 40px;
-    margin-left: 1.2rem;
+    margin-left: 1.8rem;
     @include xs-desktop {
       height: 100%;
       margin-left: 3.5rem;
@@ -268,6 +273,7 @@ header {
     @include mobile {
       margin-top: 0.3rem;
       margin-left: 0;
+      height: 45px;
     }
   }
 
@@ -288,15 +294,16 @@ header {
     position: absolute;
     background-color: transparent;
     border: none;
-    top: 9px;
+    top: 12px;
     right: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgba(78, 69, 85, 0.644);
+    // color: $mainPurple;
     @include xs-desktop {
-      top: 7px;
+      top: 10px;
     }
     @include mobile {
-      top: 51px;
+      top: 59px;
     }
   }
 
@@ -308,6 +315,7 @@ header {
     position: absolute;
     right: 1rem;
     top: 2.4rem;
+    z-index: 100;
     @include xs-desktop {
       display: block;
     }
@@ -346,7 +354,7 @@ header {
     height: 2px;
     background-color: $mainPurple;
     margin: 5px;
-    transition: all 0.3s ease;
+    // transition: all 0.3s ease;
   }
 
   .nav-active {
@@ -362,9 +370,6 @@ header {
 
 //home banner
 .landing-page {
-  // background-color: red;
-  // height: 50vh;
-  // position: relative;
   margin-bottom: 5%;
 
   .swiper-card {
@@ -375,6 +380,14 @@ header {
     position: relative;
   }
 
+  .swiper-pagination-progressbar{
+    background: transparent;
+  }
+
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: $mainPurple;
+ }
+
   .swiper-pagination-bullet-active {
     background-color: $mainPurple;
   }
@@ -382,16 +395,20 @@ header {
   .landing-txt {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     position: relative;
-    width: 100%;
+    margin: 0 auto;
+    width: 1210px;
     height: 100%;
     z-index: 100;
     padding: 10rem 0;
+    // background-color: red;
+    @include lg-screen{
+      width: 85%;
+    }
 
     .txt-align{
-      position: absolute;
-      left: 125px;
-      bottom: 80px;
+      margin-bottom: -60px;
 
       h1 {
         font-family: "Mulish", sans-serif;
@@ -400,6 +417,9 @@ header {
         margin-bottom: 5px;
         opacity: 0.8;
         color: rgb(185, 158, 190);
+        @include tablet{
+          font-size: 1.2rem;
+        }
       }
   
       div {
@@ -434,24 +454,30 @@ header {
         // margin-top: 5px;
         letter-spacing: 2px;
         // font-weight: 100;
+        @include tablet{
+          font-size: 1.5rem;
+        }
       }
   
       .movie-genres {
         font-size: 1rem;
         padding: 0 5px 0 0;
         color: rgb(185, 158, 190);
+        @include tablet{
+          font-size: 0.8rem;
+        }
       }
 
     }
 
 
-    @include tablet {
-      width: 90%;
-    }
+    // @include tablet {
+    //   width: 90%;
+    // }
 
-    @include mobile {
-      width: 100%;
-    }
+    // @include mobile {
+    //   width: 100%;
+    // }
 
     p {
       color: rgb(226, 192, 248);
@@ -459,8 +485,8 @@ header {
       // font-size: 1.3rem;
       line-height: 2rem;
       @include tablet {
-        font-size: 1.1rem;
-        line-height: 1.5rem;
+        // font-size: rem;
+        // line-height: 1.5rem;
       }
 
       @include mobile {
@@ -522,16 +548,27 @@ header {
 
   .upcoming-card {
     position: relative;
+    top: 0;
     display: flex !important;
     flex-direction: column;
-    opacity: 0.6;
+    opacity: 0.8;
+    transition: 0.2s ease;
+    padding-top: 10px;
+
+    &:hover{
+      opacity: 1;
+      position: relative;
+      top: -10px;
+    }
+
+    
   }
 
   .movie-date {
     display: flex;
     position: absolute;
     align-items: center;
-    top: 0;
+    top: 10px;
     right: 0;
     background-color: rgba(157, 68, 226, 0.836);
     padding: 0.3rem;
@@ -583,10 +620,14 @@ header {
   border-radius: 2px;
 
   .details-btn {
-    background-color: rgba(158, 61, 238, 0.096);
+    // background-color: rgba(158, 61, 238, 0.096);
+    // background-image: linear-gradient(
+    //   rgba(27, 24, 29, 0.342),
+    //   rgba(30, 25, 32, 0.555)
+    // );
     background-image: linear-gradient(
-      rgba(27, 24, 29, 0.342),
-      rgba(30, 25, 32, 0.555)
+      rgba(37, 34, 39, 0.151),
+      rgba(159, 33, 209, 0.692)
     );
     position: absolute;
     top: 0;
@@ -606,6 +647,9 @@ header {
 
     button {
       @include btnStyle();
+      display: flex;
+      align-items: center;
+      background: transparent;
       padding: 0.8rem 2rem;
       position: absolute;
       top: 50%;
@@ -614,10 +658,15 @@ header {
       margin-bottom: 0;
       opacity: 0;
       border-radius: 8px;
-      letter-spacing: 1px;
-      font-size: 1.3rem;
+      letter-spacing: 2px;
+      font-size: 1.6rem;
       transition: 0.3s ease;
       width: 150px;
+      // border-radius: 0;
+      // background: rgba(10, 10, 14, 0.788);
+      // border-bottom: solid 1px rgb(10, 10, 14);
+      display: none;
+
 
       @include tablet {
         width: 120px;
@@ -638,27 +687,29 @@ header {
     }
   }
 
-  // &:hover button {
-  //   opacity: 1;
-  //   transform: translate(-50%, 100%);
-  //   @include xs-mobile {
-  //     transform: translate(-50%, 180%);
-  //   }
-  // }
+  &:hover button {
+    opacity: 1;
+    transform: translate(-50%, 100%);
+    @include xs-mobile {
+      transform: translate(-50%, 180%);
+    }
+  }
 }
 
 //movies style
 .movie-item {
   position: relative;
+  top: 0;
   display: flex;
   flex-direction: column;
   padding: 0 0 1rem 0;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
   // align-items: center;
-  opacity: 0.7;
+  opacity: 0.8;
 
   &:hover {
     opacity: 1;
+    top: -10px;
   }
 
   .movie-title {
@@ -819,7 +870,11 @@ header {
       height: 100%;
       object-fit: cover;
       border: solid 2px rgba(143, 48, 221, 0.432);
+      border: solid 2px transparent;
       margin: 0 auto;
+      border-radius: 6px;
+      // margin-top: -200px;
+      // height: 320px;
 
       @include tablet {
         width: 360px;
@@ -832,6 +887,7 @@ header {
     flex-direction: column;
     justify-content: center;
     border: solid 1px rgb(18, 18, 24);
+    border-radius: 6px;
     background-image: linear-gradient(
       to bottom right,
       rgb(13, 13, 19),
@@ -963,6 +1019,16 @@ header {
   }
   .swiper-card {
     display: flex;
+    opacity: 0.8;
+    transition: 0.2s ease;
+
+    &:hover{
+      opacity: 1;
+    }
+    a{
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
@@ -1261,7 +1327,6 @@ footer {
   .list-wrapper{
     width: 1000px;
     margin: 0 auto;
-
     margin-top: 100px;
     margin-bottom: 50px;
   

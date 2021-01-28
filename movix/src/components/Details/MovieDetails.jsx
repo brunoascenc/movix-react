@@ -1,7 +1,7 @@
 import React from "react";
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const MovieDetails = ({movieDetail, genres, addMovie, addWatchList}) => {
+const MovieDetails = ({movieDetail, genres}) => {
 
   return (
     <div id="movie-detail">
@@ -10,7 +10,6 @@ const MovieDetails = ({movieDetail, genres, addMovie, addWatchList}) => {
           src={IMAGE_URL + movieDetail.poster_path}
           alt={movieDetail.title}
         />
-        <div className="bgimg"></div>
       </div>
       <div className="details-container">
         <div className="movie-title">
@@ -54,8 +53,6 @@ const MovieDetails = ({movieDetail, genres, addMovie, addWatchList}) => {
             </li>
           </ul>
 
-          <button onClick={addMovie}>Add to list</button>
-          <button onClick={addWatchList}>Add watch list</button>
         </div>
       </div>
     </div>

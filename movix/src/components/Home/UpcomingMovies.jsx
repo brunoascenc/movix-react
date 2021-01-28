@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
-import GenreList from '../Genres/GenreList'
+import GenreList from "../Genres/GenreList";
 import { Link } from "react-router-dom";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,14 +15,14 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const UpcomingMovies = () => {
   const value = useContext(DataContext);
-  const [genreName] = GenreList()
+  const [genreName] = GenreList();
   const [upcoming] = value.upcoming;
 
   //loop to hide broken images
   let upcomingMovies = [];
   for (let i in upcoming) {
     if (upcoming[i].poster_path) {
-      upcomingMovies.push(upcoming[i]); 
+      upcomingMovies.push(upcoming[i]);
     }
   }
 
@@ -36,7 +36,25 @@ const UpcomingMovies = () => {
         spaceBetween={65}
         slidesPerView={5}
         navigation
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
+        breakpoints={{
+          390: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 35,
+          },
+          780: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          920: {
+            slidesPerView: 5,
+            spaceBetween: 65,
+          },
+        }}
       >
         {upcomingMovies &&
           upcomingMovies.map((movie) => {

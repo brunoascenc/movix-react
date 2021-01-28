@@ -24,7 +24,7 @@ const LandingPage = () => {
       <Swiper
         // spaceBetween={65}
         slidesPerView={1}
-        pagination={{ clickable: true, dynamicBullets: true }}
+        pagination={{ clickable: true, dynamicBullets: true, type: 'progressbar' }}
         // navigation
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop
