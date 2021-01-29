@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
 import GenreList from "../Genres/GenreList";
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import "../../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -10,13 +9,14 @@ const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 const PopularMovies = () => {
   const value = useContext(DataContext);
   const [genreName] = GenreList();
+  const [scrollTop] = value.scrollTop;
   const [popular] = value.popular;
   const [nextPage] = value.nextPageBtn;
   const [prevPage] = value.prevPageBtn;
   const popularMovie = popular.results;
 
   return (
-    <div className="container">
+    <div className="container" ref={scrollTop}>
       <div className="title-section">
         <span></span>
         <h1>Popular Movies </h1>
@@ -34,10 +34,6 @@ const PopularMovies = () => {
                       alt={IMAGE_URL}
                       data-movie-id={movie.id}
                     />
-                    <div className="details-btn">
-                    
-                      <button>Details <HiOutlineArrowNarrowRight className="arrow"/></button>
-                    </div>
                   </div>
                 </Link>
                 <span className="movie-title">{movie.title}</span>

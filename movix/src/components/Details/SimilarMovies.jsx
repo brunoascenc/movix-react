@@ -7,11 +7,14 @@ import { Link } from "react-router-dom";
 
 import "../../App.css";
 
+//Swiper css
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 
+//Swiper
 SwiperCore.use([Navigation, Autoplay]);
 
+//env config
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -48,24 +51,27 @@ const SimilarMovies = ({ movieId }) => {
         slidesPerView={5}
         navigation
         breakpoints={{
+          100: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
           390: {
             slidesPerView: 3,
             spaceBetween: 15,
-        },
-        640: {
+          },
+          640: {
             slidesPerView: 3,
             spaceBetween: 35,
-        },
-        780: {
+          },
+          780: {
             slidesPerView: 4,
             spaceBetween: 30,
-        },
-        920: {
+          },
+          920: {
             slidesPerView: 5,
             spaceBetween: 65,
-        },
+          },
         }}
-        // autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         {similarResults &&
           similarResults.map((movie) => {

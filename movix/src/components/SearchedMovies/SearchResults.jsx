@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ResultsContainer from "./ResultsContainer";
 import NothingFound from "./NothingFound";
-// import Header from "../Header/Header";
 
 import "../../App.css";
 
@@ -30,13 +29,12 @@ const SearchResults = (props) => {
   let searchedMovie = [];
   for (let i in search) {
     if (search[i].poster_path) {
-      searchedMovie.push(search[i]); 
+      searchedMovie.push(search[i]);
     }
   }
 
   return (
     <>
-      {/* <Header /> */}
       {searchQuery === undefined ? (
         <NothingFound />
       ) : (

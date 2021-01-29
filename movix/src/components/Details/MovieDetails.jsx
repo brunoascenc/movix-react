@@ -1,8 +1,7 @@
 import React from "react";
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const MovieDetails = ({movieDetail, genres}) => {
-
+const MovieDetails = ({ movieDetail, genres }) => {
   return (
     <div id="movie-detail">
       <div className="poster-movie">
@@ -52,7 +51,6 @@ const MovieDetails = ({movieDetail, genres}) => {
               {movieDetail.vote_average}
             </li>
           </ul>
-
         </div>
       </div>
     </div>

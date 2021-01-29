@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 export const DataContext = createContext();
@@ -12,13 +12,16 @@ export const DataProvider = (props) => {
   const [nowPlaying, setNowPlaying] = useState([]);
   const [genres, setGenres] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const scrollTop = useRef();
 
   function nextPage() {
+    scrollTop.current.scrollIntoView({ behavior: "smooth", block: "start" });
     setPageNumber(pageNumber + 1);
   }
 
   function prevPage() {
     if (pageNumber > 1) {
+      scrollTop.current.scrollIntoView({ behavior: "smooth" });
       setPageNumber(pageNumber - 1);
     }
   }
@@ -45,7 +48,6 @@ export const DataProvider = (props) => {
         const movieGenres = res[2].data;
         const nowPlaying = res[3].data;
 
-
         setUpcoming(upcomingMovies.results);
         setPopular(popularMovies);
         setGenres(movieGenres);
@@ -56,7 +58,6 @@ export const DataProvider = (props) => {
       });
   }, [pageNumber]);
 
-
   const value = {
     upcoming: [upcoming, setUpcoming],
     popular: [popular, setPopular],
@@ -65,6 +66,7 @@ export const DataProvider = (props) => {
     nextPageBtn: [nextPage],
     prevPageBtn: [prevPage],
     pageNumber: [pageNumber],
+    scrollTop: [scrollTop],
   };
 
   return (

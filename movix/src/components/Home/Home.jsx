@@ -1,18 +1,13 @@
 import React from "react";
 import PopularMovies from "./PopularMovies";
 import UpcomingMovies from "./UpcomingMovies";
-import LandingPage from '../LandingPage/LandingPage'
+import LandingPage from "../LandingPage/LandingPage";
 import "../../App.css";
 
 const Home = () => {
   return (
     <div>
-     
-      {/* <div> */}
-        {/* <Header /> */}
-        {/* <LandingTxt /> */}
-        <LandingPage/>
-      {/* </div> */}
+      <LandingPage />
       <UpcomingMovies />
       <PopularMovies />
     </div>

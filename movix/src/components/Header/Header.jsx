@@ -10,10 +10,6 @@ export default function Header() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  // const sessionId = localStorage.getItem("session_id");
-
-  // localStorage.removeItem('session_id')
-
   return (
     <>
       <header>

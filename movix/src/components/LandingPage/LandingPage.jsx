@@ -12,8 +12,6 @@ import "swiper/components/pagination/pagination.scss";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-// const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
-
 const LandingPage = () => {
   const value = useContext(DataContext);
   const [nowPlaying] = value.nowPlaying;
@@ -22,10 +20,12 @@ const LandingPage = () => {
   return (
     <section className="landing-page">
       <Swiper
-        // spaceBetween={65}
         slidesPerView={1}
-        pagination={{ clickable: true, dynamicBullets: true, type: 'progressbar' }}
-        // navigation
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+          type: "progressbar",
+        }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop
       >
@@ -42,15 +42,6 @@ const LandingPage = () => {
                 }}
               >
                 <Link to={`/details/${movie.id}`}>
-                  {/* <img
-                    className="movie-poster"
-                    src={
-                      "https://image.tmdb.org/t/p/original" +
-                      movie.backdrop_path
-                    }
-                    data-movie-id={movie.id}
-                    alt={movie.title}
-                  /> */}
                   <div className="overlay"></div>
 
                   <div className="landing-txt">

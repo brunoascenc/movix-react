@@ -32,6 +32,7 @@ body {
 .container {
   width: 1210px;
   margin: 0 auto;
+  scroll-margin-top: 13rem;
   @include lg-screen {
     width: 85%;
   }
@@ -69,23 +70,17 @@ img {
 
 //header
 header {
-  // position: absolute;
-  // top: 0;
+  position: sticky;
+  top: 0;
   background-color: rgb(24, 23, 29);
-  // background-color: $mainPurple;
   display: flex;
   align-items: center;
   padding: 2rem 1.3rem 1.3rem 1.3rem;
   border-radius: 0 0 0.1rem 0.1rem;
   width: 100%;
   justify-content: space-between;
-  // position: absolute;
-  // top: 0;
   margin: 0 auto;
   z-index: 100;
-  transition: 0.3s ease;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
 
   .header-elements {
     display: flex;
@@ -93,9 +88,6 @@ header {
     justify-content: space-between;
     width: 1210px;
     margin: 0 auto;
-    // @include lg-screen {
-    //   width: 85%;
-    // }
   }
 
   @include sm-mobile {
@@ -191,7 +183,7 @@ header {
         rgb(160, 63, 240),
         rgba(84, 29, 139, 0.788)
       );
-      
+
       @include xs-desktop {
         margin-top: 0.7rem;
         width: 35%;
@@ -238,9 +230,7 @@ header {
 
   .search-container {
     display: flex;
-    // position: relative;
     width: 50%;
-    // background-color: red;
     @include small-desktop {
       width: 45%;
     }
@@ -298,7 +288,6 @@ header {
     right: 10px;
     font-size: 1rem;
     color: rgba(78, 69, 85, 0.644);
-    // color: $mainPurple;
     @include xs-desktop {
       top: 10px;
     }
@@ -354,7 +343,6 @@ header {
     height: 2px;
     background-color: $mainPurple;
     margin: 5px;
-    // transition: all 0.3s ease;
   }
 
   .nav-active {
@@ -380,13 +368,13 @@ header {
     position: relative;
   }
 
-  .swiper-pagination-progressbar{
+  .swiper-pagination-progressbar {
     background: transparent;
   }
 
   .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     background-color: $mainPurple;
- }
+  }
 
   .swiper-pagination-bullet-active {
     background-color: $mainPurple;
@@ -402,12 +390,11 @@ header {
     height: 100%;
     z-index: 100;
     padding: 10rem 0;
-    // background-color: red;
-    @include lg-screen{
+    @include lg-screen {
       width: 85%;
     }
 
-    .txt-align{
+    .txt-align {
       margin-bottom: -60px;
 
       h1 {
@@ -417,77 +404,58 @@ header {
         margin-bottom: 5px;
         opacity: 0.8;
         color: rgb(185, 158, 190);
-        @include tablet{
+        @include tablet {
           font-size: 1.2rem;
         }
       }
-  
+
       div {
         display: flex;
         align-items: center;
         margin-top: -5px;
         opacity: 0.8;
       }
-  
+
       .movie-rating {
         display: flex;
         align-items: center;
         font-size: 0.8rem;
-        margin-top: 5px; 
+        margin-top: 5px;
         i {
           margin-right: 7px;
           margin-left: 5px;
-          // color: rgb(195, 202, 207)
           color: rgb(185, 158, 190);
           border: none;
         }
-        p{
+        p {
           color: rgb(185, 158, 190);
         }
       }
-  
+
       .movie-title {
         font-size: 2rem;
-        // color: rgb(235, 223, 229);
         color: rgb(225, 212, 228);
         opacity: 0.9;
-        // margin-top: 5px;
         letter-spacing: 2px;
-        // font-weight: 100;
-        @include tablet{
+        @include tablet {
           font-size: 1.5rem;
         }
       }
-  
+
       .movie-genres {
         font-size: 1rem;
         padding: 0 5px 0 0;
         color: rgb(185, 158, 190);
-        @include tablet{
+        @include tablet {
           font-size: 0.8rem;
         }
       }
-
     }
-
-
-    // @include tablet {
-    //   width: 90%;
-    // }
-
-    // @include mobile {
-    //   width: 100%;
-    // }
 
     p {
       color: rgb(226, 192, 248);
       color: rgb(235, 229, 240);
-      // font-size: 1.3rem;
       line-height: 2rem;
-      @include tablet {
-        // font-size: rem;
-        // line-height: 1.5rem;
-      }
 
       @include mobile {
         font-size: 1rem;
@@ -555,13 +523,11 @@ header {
     transition: 0.2s ease;
     padding-top: 10px;
 
-    &:hover{
+    &:hover {
       opacity: 1;
       position: relative;
       top: -10px;
     }
-
-    
   }
 
   .movie-date {
@@ -584,7 +550,6 @@ header {
   font-size: 0.75rem;
   letter-spacing: 1px;
   margin-top: 2px;
-  // color: rgb(95, 95, 100);
   color: rgba(101, 97, 126, 0.863);
 }
 
@@ -619,79 +584,12 @@ header {
   align-items: center;
   border-radius: 2px;
 
-  .details-btn {
-    // background-color: rgba(158, 61, 238, 0.096);
-    // background-image: linear-gradient(
-    //   rgba(27, 24, 29, 0.342),
-    //   rgba(30, 25, 32, 0.555)
-    // );
-    background-image: linear-gradient(
-      rgba(37, 34, 39, 0.151),
-      rgba(159, 33, 209, 0.692)
-    );
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    height: 98.9%;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s ease;
-    border-radius: 8px;
-
-    button {
-      @include btnStyle();
-      display: flex;
-      align-items: center;
-      background: transparent;
-      padding: 0.8rem 2rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, 150%);
-      margin-bottom: 0;
-      opacity: 0;
-      border-radius: 8px;
-      letter-spacing: 2px;
-      font-size: 1.6rem;
-      transition: 0.3s ease;
-      width: 150px;
-      // border-radius: 0;
-      // background: rgba(10, 10, 14, 0.788);
-      // border-bottom: solid 1px rgb(10, 10, 14);
-      display: none;
-
-
-      @include tablet {
-        width: 120px;
-      }
-
-      @include xs-mobile {
-        width: 180px;
-        transform: translate(-50%, 220%);
-      }
-    }
-  }
   &:hover .details-btn {
     opacity: 1;
 
-    img{
+    img {
       position: relative;
       top: -15px;
-    }
-  }
-
-  &:hover button {
-    opacity: 1;
-    transform: translate(-50%, 100%);
-    @include xs-mobile {
-      transform: translate(-50%, 180%);
     }
   }
 }
@@ -704,7 +602,6 @@ header {
   flex-direction: column;
   padding: 0 0 1rem 0;
   transition: 0.2s ease;
-  // align-items: center;
   opacity: 0.8;
 
   &:hover {
@@ -713,10 +610,7 @@ header {
   }
 
   .movie-title {
-    // margin-top: 0.5rem;
-    // text-align: center;
     font-size: 0.8rem;
-    // letter-spacing: 1px;
     font-weight: bold;
 
     h1 {
@@ -751,26 +645,10 @@ header {
 
   .movie-poster {
     max-width: 100%;
-    // height: 310px;
     border-radius: 8px;
     object-fit: cover;
-    // object-position: center;
   }
 }
-
-//Details
-// .details-header {
-//   background-color: rgba(24, 23, 29, 0.863);
-//   display: flex;
-//   align-items: center;
-//   padding: 2rem 1.3rem 1.3rem 1.3rem;
-//   border-radius: 0 0 0.1rem 0.1rem;
-//   justify-content: space-between;
-//   position: relative;
-//   z-index: 100;
-// }
-
-
 
 //Movie Trailer/Banner
 #movie-banner {
@@ -779,9 +657,6 @@ header {
   background-position: top;
   background-size: cover;
   min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
   margin-bottom: 4%;
 
@@ -797,33 +672,25 @@ header {
     );
     pointer-events: none;
   }
-}
 
-.back-home {
-  a {
-    @include btnStyle();
-    padding: 0.5rem 1rem;
-    @include mobile {
-      font-size: 1rem;
-      padding: 0.4rem 0.7rem;
-    }
-  }
-}
-
-.movie-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 100;
-  button {
-    font-size: 3rem;
-    color: $mainPurple;
-    transition: 0.3s ease;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    &:hover {
-      color: rgb(183, 114, 240);
+  .movie-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    button {
+      font-size: 3rem;
+      color: $mainPurple;
+      transition: 0.3s ease;
+      background: transparent;
+      opacity: 0.7;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
@@ -873,8 +740,6 @@ header {
       border: solid 2px transparent;
       margin: 0 auto;
       border-radius: 6px;
-      // margin-top: -200px;
-      // height: 320px;
 
       @include tablet {
         width: 360px;
@@ -1022,32 +887,24 @@ header {
     opacity: 0.8;
     transition: 0.2s ease;
 
-    &:hover{
+    &:hover .details-btn {
+      opacity: 1;
+
+      img {
+        position: relative;
+        top: -15px;
+      }
+    }
+
+    &:hover {
       opacity: 1;
     }
-    a{
+    a {
       display: flex;
       flex-direction: column;
     }
   }
 }
-
-// slides
-// .slick-slide {
-//   // padding: 0 10px;
-//   overflow: hidden;
-//   // margin: 0 5px;
-//   margin-left:  5px;
-//     margin-right:  5px;
-// }
-
-// .slick-list {
-// //   width: 1200px;
-// //   margin: 0 -10px;
-// //   overflow: hidden;
-//     margin-left:  -5px;
-//     margin-right:  -5px;
-// }
 
 //movie reviews
 .reviews-section {
@@ -1056,7 +913,6 @@ header {
   }
 
   .no-reviews {
-    // background-color: red;
     width: 100%;
     height: 100%;
     display: flex;
@@ -1077,6 +933,15 @@ header {
 .swiper-button-next {
   color: rgb(158, 68, 226);
 }
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
 
 .movie-reviews {
   background-color: rgb(30, 30, 61);
@@ -1093,6 +958,7 @@ header {
   scrollbar-color: rgb(160, 63, 240) rgba(26, 23, 31, 0.363);
   display: flex;
   flex-direction: column;
+  border-radius: 6px;
 
   h1 {
     margin-bottom: 1rem;
@@ -1161,6 +1027,8 @@ footer {
   width: 100%;
   height: 10rem;
   display: flex;
+  justify-content: space-between;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   margin-top: 25vh;
@@ -1174,17 +1042,16 @@ footer {
     padding: 0 0 0.2rem 0;
   }
 
-  i {
+  a {
     cursor: pointer;
     margin: 0.2rem;
+    color: rgb(122, 95, 141);
+  }
+
+  .socials {
+    margin-top: 10px;
   }
 }
-
-//search container
-// .search-results {
-//   // height: 100vh;
-//   // margin-top: 120px;
-// }
 
 .search-error {
   height: 100vh;
@@ -1218,79 +1085,54 @@ footer {
   }
 }
 
-// .hehex{
-//   visibility: hidden;
-// }
-
-// .now-playing{
-//   position: absolute;
-//   top: 0;
-//   max-width: 100%;
-//   height: 75vh;
-//   z-index: -1;
-
-//   img{
-//     background-position: top;
-//     width: 100vw
-//   };
-// }
-
-// .swiper-card {
-//   // width: 20px;
-//   img {
-//     max-width: 100%;
-//   }
-// }
-
-.login-container{
+.login-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.link{
+.link {
   height: 100vh;
   display: flex;
   justify-content: center;
-  a{
+  a {
     background-color: blue;
     margin-top: 54px;
     z-index: 100;
   }
 }
 
-
 /*--------Login---------*/
 .login-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
-  // background-color: red;
   margin-bottom: -25vh;
 
-  .login-wpp{
+  .login-wpp {
     height: 100vh;
     background-color: red;
-    background: linear-gradient(rgba(31, 28, 28, 0.39),rgba(14, 14, 13, 0.61)), url("https://www.10wallpaper.com/wallpaper/2560x1440/1804/2018_Avengers_Infinity_War_4K_Film_2560x1440.jpg")
-      no-repeat;
+    background: linear-gradient(rgba(31, 28, 28, 0.39), rgba(14, 14, 13, 0.61)),
+      url("https://www.10wallpaper.com/wallpaper/2560x1440/1804/2018_Avengers_Infinity_War_4K_Film_2560x1440.jpg")
+        no-repeat;
     background-size: cover;
     background-position: bottom;
   }
 
-  form{
+  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    h1{
+
+    h1 {
       font-family: "Black Han Sans", sans-serif;
-    font-weight: 100;
-    color: $mainPurple;
-    margin-bottom: 0.5rem;
+      font-weight: 100;
+      color: $mainPurple;
+      margin-bottom: 0.5rem;
     }
 
-    .signin{
+    .signin {
       margin-top: 2rem;
-      a{
+      a {
         @include btnStyle();
         padding: 0.8rem 3rem 0.8rem 3rem;
         font-size: 1.5rem;
@@ -1301,51 +1143,46 @@ footer {
   }
 }
 
-
 //User List
-.user-section{
+.user-section {
   display: grid;
   grid-template-columns: 200px 1fr;
   margin-bottom: -25vh;
-  // width: 1210px;
 
-  .title-section{
+  .title-section {
     margin-bottom: 10px;
   }
 
-  .user-info{
+  .user-info {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color:  rgba(24, 23, 29, 0.863);
+    background-color: rgba(24, 23, 29, 0.863);
     width: 250px;
-    
-
   }
 
-  .list-wrapper{
+  .list-wrapper {
     width: 1000px;
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 50px;
-  
-    .list-card{
+
+    .list-card {
       display: flex;
       flex-direction: column;
       opacity: 0.7;
       transition: 0.3s ease;
-      img{
+      img {
         border-radius: 4px;
       }
-      &:hover{
+      &:hover {
         opacity: 1;
       }
     }
-  
-    .favorite-list{
+
+    .favorite-list {
       margin-bottom: 100px;
     }
   }
-
 }

@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
 import axios from "axios";
-// import Header from "../Header/Header";
 import FilterContainer from "./FilterContainer";
 import NothingFound from "./NothingFound";
 
@@ -33,7 +32,6 @@ const SearchResults = (props) => {
 
   return (
     <>
-      {/* <Header /> */}
       {!genreId ? (
         <NothingFound />
       ) : (

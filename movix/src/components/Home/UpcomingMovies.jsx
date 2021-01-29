@@ -36,8 +36,11 @@ const UpcomingMovies = () => {
         spaceBetween={65}
         slidesPerView={5}
         navigation
-        // autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
+          100: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
           390: {
             slidesPerView: 3,
             spaceBetween: 15,
