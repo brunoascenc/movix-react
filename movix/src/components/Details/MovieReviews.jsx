@@ -21,11 +21,11 @@ const MovieReviews = ({ movieId }) => {
       });
   }, [movieId]);
 
-  const hasNoReviews = () => {
+  const noReviews = () => {
     return (
       <div className="no-reviews">
         <p>
-          This movie has no reviews yet <i className="far fa-sad-tear"></i>
+          Nothing Found <i className="far fa-sad-tear"></i>
         </p>
       </div>
     );
@@ -34,7 +34,7 @@ const MovieReviews = ({ movieId }) => {
   return (
     <div>
       {movieReviews.length === 0
-        ? hasNoReviews()
+        ? noReviews()
         : movieReviews.map((review) => {
             return (
               <div key={review.id}>

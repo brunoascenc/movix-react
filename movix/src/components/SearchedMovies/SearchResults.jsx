@@ -4,19 +4,23 @@ import ResultsContainer from "./ResultsContainer";
 import NothingFound from "./NothingFound";
 
 import "../../App.css";
+import FullPageLoader from "../FullPageLoader/FullPageLoader";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const SearchResults = (props) => {
   const [search, setSearch] = useState([]);
+  const [loading, setLoading] = useState(false);
   const searchQuery = props.match.params.pathname;
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
       )
       .then((res) => {
+        setLoading(false);
         const response = res.data;
         setSearch(response.results);
       })
@@ -37,6 +41,8 @@ const SearchResults = (props) => {
     <>
       {searchQuery === undefined ? (
         <NothingFound />
+      ) : loading ? (
+        <FullPageLoader />
       ) : (
         <ResultsContainer search={searchedMovie} searchQuery={searchQuery} />
       )}

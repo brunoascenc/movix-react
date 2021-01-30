@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
 import GenreList from "../Genres/GenreList";
+import FullPageLoader from "../FullPageLoader/FullPageLoader";
 import "../../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -10,6 +11,7 @@ const PopularMovies = () => {
   const value = useContext(DataContext);
   const [genreName] = GenreList();
   const [scrollTop] = value.scrollTop;
+  const [loading] = value.loading;
   const [popular] = value.popular;
   const [nextPage] = value.nextPageBtn;
   const [prevPage] = value.prevPageBtn;
@@ -22,7 +24,10 @@ const PopularMovies = () => {
         <h1>Popular Movies </h1>
       </div>
       <div id="movies-container">
-        {popularMovie &&
+        {loading ? (
+          <FullPageLoader />
+        ) : (
+          popularMovie &&
           popularMovie.map((movie) => {
             return (
               <div key={movie.id} className="movie-item">
@@ -44,7 +49,8 @@ const PopularMovies = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        )}
       </div>
       <div className="pagination-btn">
         <button onClick={prevPage} className="filter-prev">

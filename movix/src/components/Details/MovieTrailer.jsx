@@ -29,14 +29,16 @@ const MovieTrailer = ({ movieId }) => {
         ""
       ) : (
         <>
-          <ModalVideo
+       <div className="movie-video">
+        <ModalVideo
             channel="youtube"
             autoplay
             isOpen={isOpen}
             videoId={movieTrailer.key}
             onClose={() => setOpen(false)}
           />
-          <button onClick={() => setOpen(true)}>
+        </div>
+          <button className="modal-btn" onClick={() => setOpen(true)}>
             <i className="far fa-play-circle"></i>
           </button>
         </>

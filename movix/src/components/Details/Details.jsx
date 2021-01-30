@@ -5,12 +5,14 @@ import SimilarMovies from "./SimilarMovies";
 import MovieReviews from "./MovieReviews";
 import MovieTrailer from "./MovieTrailer";
 import "../../App.css";
+import FullPageLoader from "../FullPageLoader/FullPageLoader";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const Details = (props) => {
   const [movieDetail, setMovieDetail] = useState([]);
   const [bannerImg, setBannerImg] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const genres = movieDetail.genres;
   let genreOptions;
@@ -19,11 +21,13 @@ const Details = (props) => {
   }
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
       )
       .then((res) => {
+        setLoading(false);
         const response = res.data;
         setMovieDetail(response);
         setBannerImg(response.backdrop_path);
@@ -43,13 +47,17 @@ const Details = (props) => {
           }')`,
         }}
       >
-        <div className="movie-video">
+        <div>
           <MovieTrailer movieId={props.match.params.id} />
         </div>
       </div>
 
       <div className="about-movie container">
-        <MovieDetails movieDetail={movieDetail} genres={genreOptions} />
+        {loading ? (
+          <FullPageLoader />
+        ) : (
+          <MovieDetails movieDetail={movieDetail} genres={genreOptions} />
+        )}
       </div>
 
       <div className="similar-section container">

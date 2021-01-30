@@ -12,6 +12,7 @@ export const DataProvider = (props) => {
   const [nowPlaying, setNowPlaying] = useState([]);
   const [genres, setGenres] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [loading, setLoading] = useState(false);
   const scrollTop = useRef();
 
   function nextPage() {
@@ -27,6 +28,7 @@ export const DataProvider = (props) => {
   }
 
   useEffect(() => {
+    setLoading(true);
     axios
       .all([
         axios.get(
@@ -43,6 +45,7 @@ export const DataProvider = (props) => {
         ),
       ])
       .then((res) => {
+        setLoading(false);
         const upcomingMovies = res[0].data;
         const popularMovies = res[1].data;
         const movieGenres = res[2].data;
@@ -66,6 +69,7 @@ export const DataProvider = (props) => {
     nextPageBtn: [nextPage],
     prevPageBtn: [prevPage],
     pageNumber: [pageNumber],
+    loading: [loading],
     scrollTop: [scrollTop],
   };
 

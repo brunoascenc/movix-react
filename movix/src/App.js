@@ -17,29 +17,22 @@ function App() {
 
   return (
     <DataProvider>
-          <ScrollToTop>
-            <div className="App">
-            <Header />
-            <TransitionGroup>
-    <CSSTransition timeout={300} classNames="fade" key={location.key}>
-              <Switch location={location}>
-                <Route path="/" exact component={Home} />
-                <Route path="/details/:id" component={Details} />
-                <Route path="/search=:pathname?" component={SearchResults} />
-                <Route
-                  path="/filter=:pathname?&:pathname2?"
-                  component={FilterResults}
-                />
-              </Switch>
-              </CSSTransition>
-      </TransitionGroup>
-              <Footer />
-            </div>
-
-          </ScrollToTop>
+      <ScrollToTop>
+        <div className="App">
+          <Header />
+          <Switch location={location}>
+            <Route path="/" exact component={Home} />
+            <Route path="/details/:id" component={Details} />
+            <Route path="/search=:pathname?" component={SearchResults} />
+            <Route
+              path="/filter=:pathname?&:pathname2?"
+              component={FilterResults}
+            />
+          </Switch>
+          <Footer />
+        </div>
+      </ScrollToTop>
     </DataProvider>
-
-
   );
 }
 
