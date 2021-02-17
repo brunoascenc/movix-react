@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "../../data/DataProvider";
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchMovies} from '../../reducers/movieActions'
 import { Link } from "react-router-dom";
 import GenreList from "../Genres/GenreList";
 import FullPageLoader from "../FullPageLoader/FullPageLoader";
@@ -8,6 +10,16 @@ import "../../App.css";
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const PopularMovies = () => {
+  const popularMovies = useSelector(state => state.popularMovie.results)
+  // const dispatch = useDispatch()
+  
+
+  // useEffect(() => {
+
+  //   fetchMovies()
+  // },[])
+
+
   const value = useContext(DataContext);
   const [genreName] = GenreList();
   const [scrollTop] = value.scrollTop;
