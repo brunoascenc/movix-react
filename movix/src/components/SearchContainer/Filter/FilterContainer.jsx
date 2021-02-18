@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import GenreList from "../Genres/GenreList";
-import { DataContext } from "../../data/DataProvider";
+import useGenres from '../../hooks/useGenres'
+import { DataContext } from "../../../data/DataProvider";
 import { Link } from "react-router-dom";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const FilterContainer = ({ filterResults }) => {
   const value = useContext(DataContext);
-  const [genreName] = GenreList();
+  const [genreName] = useGenres();
   const [scrollTop] = value.scrollTop;
   const [nextPage] = value.nextPageBtn;
   const [prevPage] = value.prevPageBtn;

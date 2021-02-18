@@ -1,7 +1,7 @@
 import React from "react";
-import PopularMovies from "./PopularMovies";
-import UpcomingMovies from "./UpcomingMovies";
-import LandingPage from "../LandingPage/LandingPage";
+import PopularMovies from "./PopularMovies/PopularMovies";
+import UpcomingMovies from "./UpcomingMovies/UpcomingMovies";
+import LandingPage from "./LandingPage/LandingPage";
 import "../../App.css";
 
 const Home = () => {

@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../data/DataProvider";
+import { DataContext } from "../../../data/DataProvider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
-import GenreList from "../Genres/GenreList";
+import useGenres from '../../hooks/useGenres'
 import { Link } from "react-router-dom";
-import "../../App.css";
 
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
@@ -15,7 +14,7 @@ SwiperCore.use([Navigation, Autoplay, Pagination]);
 const LandingPage = () => {
   const value = useContext(DataContext);
   const [nowPlaying] = value.nowPlaying;
-  const [genreName] = GenreList();
+  const [genreName] = useGenres();
 
   return (
     <section className="landing-page">

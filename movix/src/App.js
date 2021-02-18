@@ -2,14 +2,14 @@ import React from "react";
 import { DataProvider } from "./data/DataProvider";
 import Home from "./components/Home/Home";
 import Details from "./components/Details/Details";
-import SearchResults from "./components/SearchedMovies/SearchResults";
-import FilterResults from "./components/SearchedMovies/FilterResults";
+import SearchResults from "./components/SearchContainer/Search/SearchResults";
+import FilterResults from "./components/SearchContainer/Filter/FilterResults";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./App.scss";
 
 function App() {

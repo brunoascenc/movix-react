@@ -1,33 +1,38 @@
 import React, { useContext, useEffect } from "react";
-import { DataContext } from "../../data/DataProvider";
+import { DataContext } from "../../../data/DataProvider";
 import {useSelector, useDispatch} from 'react-redux'
-import {fetchMovies} from '../../reducers/movieActions'
+import {fetchPopularMovies} from '../../../actions/getPopularMovies'
 import { Link } from "react-router-dom";
-import GenreList from "../Genres/GenreList";
-import FullPageLoader from "../FullPageLoader/FullPageLoader";
-import "../../App.css";
+import useGenres from '../../hooks/useGenres'
+// import usePagination from '../../hooks/usePagination'
+import FullPageLoader from "../../FullPageLoader/FullPageLoader";
+// import "../../App.css";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const PopularMovies = () => {
-  const popularMovies = useSelector(state => state.popularMovie.results)
-  // const dispatch = useDispatch()
-  
-
-  // useEffect(() => {
-
-  //   fetchMovies()
-  // },[])
-
-
   const value = useContext(DataContext);
-  const [genreName] = GenreList();
+  // const [genreName] = GenreList();
+  const [genreName] = useGenres();
   const [scrollTop] = value.scrollTop;
   const [loading] = value.loading;
-  const [popular] = value.popular;
+  // const [popular] = value.popular;
   const [nextPage] = value.nextPageBtn;
   const [prevPage] = value.prevPageBtn;
-  const popularMovie = popular.results;
+  const [pageNumber] = value.pageNumber;
+  // const popularMovie = popular.results;
+
+
+  const popularMovies = useSelector(state => state.popularMovie.results)
+  const popularMovie = popularMovies.results;
+  const dispatch = useDispatch()
+  
+
+  useEffect(() => {
+    dispatch(fetchPopularMovies(pageNumber))
+  },[pageNumber, dispatch])
+
+
 
   return (
     <div className="container" ref={scrollTop}>

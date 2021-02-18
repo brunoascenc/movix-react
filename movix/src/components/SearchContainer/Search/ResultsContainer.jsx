@@ -1,11 +1,11 @@
 import React from "react";
-import GenreList from "../Genres/GenreList";
+import useGenres from '../../hooks/useGenres'
 import { Link } from "react-router-dom";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const ResultsContainer = ({ search, searchQuery }) => {
-  const [genreName] = GenreList();
+  const [genreName] = useGenres();
 
   return (
     <div className="search-results">

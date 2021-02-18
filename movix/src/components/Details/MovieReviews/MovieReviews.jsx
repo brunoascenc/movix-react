@@ -1,11 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../../App.css";
+
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchMovieReviews} from '../../../actions/getMovieReviews'
+// import "../../App.css";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const MovieReviews = ({ movieId }) => {
   const [movieReviews, setMovieReviews] = useState([]);
+
+  const reviews = useSelector(state => state.movieReview.results)
+  // setMovieReviews(reviews.results)
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+    dispatch(fetchMovieReviews(movieId))
+  },[movieId, dispatch])
 
   useEffect(() => {
     axios

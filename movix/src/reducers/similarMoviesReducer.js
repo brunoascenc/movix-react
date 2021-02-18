@@ -1,5 +1,5 @@
 import {
-  GET_POPULAR_MOVIES,
+  GET_SIMILAR_MOVIES,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
 } from "../actions/types";
@@ -10,14 +10,14 @@ const initialState = {
   error: "",
 };
 
-const getPopularMovies = (state = initialState, action) => {
+const getSimilarMovies = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIES_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case GET_POPULAR_MOVIES:
+    case GET_SIMILAR_MOVIES:
       return {
         ...state,
         results: action.payload,
@@ -34,4 +34,4 @@ const getPopularMovies = (state = initialState, action) => {
   }
 };
 
-export default getPopularMovies;
+export default getSimilarMovies;

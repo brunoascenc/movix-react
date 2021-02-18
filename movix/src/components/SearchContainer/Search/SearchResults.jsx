@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ResultsContainer from "./ResultsContainer";
-import NothingFound from "./NothingFound";
-
-import "../../App.css";
-import FullPageLoader from "../FullPageLoader/FullPageLoader";
+import NothingFound from "../NothingFound";
+import FullPageLoader from "../../FullPageLoader/FullPageLoader";
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 

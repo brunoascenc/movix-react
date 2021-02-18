@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import GenreList from "../Genres/GenreList";
+import useGenres from '../../hooks/useGenres'
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchSimilarMovies} from '../../../actions/getSimilarMovies'
 
-import "../../App.css";
+// import "../../App.css";
 
 //Swiper css
 import "swiper/swiper.scss";
@@ -19,22 +21,30 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SimilarMovies = ({ movieId }) => {
-  const [similarMovies, setSimilarMovies] = useState([]);
-  const [genreName] = GenreList();
+  // const [similarMovies, setSimilarMovies] = useState([]);
+  const [genreName] = useGenres();
+
+  const similar = useSelector(state => state.similarMovies.results)
+  const similarMovies = similar.results
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}`
-      )
-      .then((res) => {
-        const response = res.data;
-        setSimilarMovies(response.results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [movieId]);
+    dispatch(fetchSimilarMovies(movieId))
+  },[movieId, dispatch])
+
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}`
+  //     )
+  //     .then((res) => {
+  //       const response = res.data;
+  //       setSimilarMovies(response.results);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [movieId]);
 
   //loop do hide broken images
   let similarResults = [];
