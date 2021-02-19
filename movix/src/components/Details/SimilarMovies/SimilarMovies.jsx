@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useGenres from '../../hooks/useGenres'
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchSimilarMovies} from '../../../actions/getSimilarMovies'
@@ -17,7 +17,7 @@ import "swiper/components/navigation/navigation.scss";
 SwiperCore.use([Navigation, Autoplay]);
 
 //env config
-const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
+// const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const SimilarMovies = ({ movieId }) => {

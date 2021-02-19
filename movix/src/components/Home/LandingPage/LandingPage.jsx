@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../../data/DataProvider";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
-import useGenres from '../../hooks/useGenres'
+import useGenres from "../../hooks/useGenres";
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { fetchNowPlaying } from "../../../actions/getNowPlaying";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -12,9 +12,14 @@ import "swiper/components/pagination/pagination.scss";
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const LandingPage = () => {
-  const value = useContext(DataContext);
-  const [nowPlaying] = value.nowPlaying;
   const [genreName] = useGenres();
+  const nowPlayingMovies = useSelector((state) => state.nowPlaying.results);
+  const nowPlaying = nowPlayingMovies.results;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchNowPlaying());
+  }, [dispatch]);
 
   return (
     <section className="landing-page">

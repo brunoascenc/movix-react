@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../data/DataProvider";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchGenres } from "../../actions/getGenres";
 
 const GenreList = () => {
-  const value = useContext(DataContext);
-  const [genres] = value.genres;
-  const genre = genres.genres;
+  const genreList = useSelector((state) => state.genreList.results);
+  const genre = genreList.genres;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+  }, [dispatch]);
 
   const genreName = (movie) => {
     if (genre) {

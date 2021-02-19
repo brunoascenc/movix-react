@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Filters from "./Filters";
-import SearchInput from "./SearchInput";
+import Filters from "./Filters/Filters";
+import SearchInput from "./Search/SearchInput";
 import { Link } from "react-router-dom";
 import "../../App.css";
 

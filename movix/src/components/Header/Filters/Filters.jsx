@@ -1,13 +1,16 @@
-import React, { useContext, useState } from "react";
-
-import { DataContext } from "../../data/DataProvider";
-
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchGenres } from "../../../actions/getGenres";
 import { Link } from "react-router-dom";
 
 const GenreSelect = ({ closeMenu }) => {
-  const value = useContext(DataContext);
-  const [genres] = value.genres;
-  const genreName = genres.genres;
+  const genreList = useSelector((state) => state.genreList.results);
+  const genreName = genreList.genres;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+  }, [dispatch]);
 
   const [selectGenre, setSelectGenre] = useState("");
   const [selectOption, setSelectOption] = useState("");

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import ModalVideo from "react-modal-video";
 
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchMovieTrailer} from '../../../actions/getMovieTrailer'
 // import "../../App.scss";
 
-const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
+// const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 const MovieTrailer = ({ movieId }) => {
   // const [movieTrailer, setMovieTrailer] = useState([]);

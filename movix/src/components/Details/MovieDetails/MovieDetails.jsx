@@ -6,7 +6,7 @@ const MovieDetails = ({ movieDetail, genres }) => {
     <div id="movie-detail">
       <div className="poster-movie">
         <img
-          src={IMAGE_URL + movieDetail.poster_path}
+          src={movieDetail.poster_path && IMAGE_URL + movieDetail.poster_path}
           alt={movieDetail.title}
         />
       </div>

@@ -1,32 +1,22 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import MovieDetails from "./MovieDetails/MovieDetails";
 import SimilarMovies from "./SimilarMovies/SimilarMovies";
 import MovieReviews from "./MovieReviews/MovieReviews";
 import MovieTrailer from "./MovieTrailer/MovieTrailer";
-import "../../App.css";
 import FullPageLoader from "../FullPageLoader/FullPageLoader";
-
-import {useSelector, useDispatch} from 'react-redux'
-import {fetchMovieDetail} from '../../actions/getMovieDetail'
-
-const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
+import { useSelector, useDispatch } from "react-redux";
+import { fetchMovieDetail } from "../../actions/getMovieDetail";
 
 const Details = (props) => {
-  // const [movieDetail, setMovieDetail] = useState([]);
-  const [bannerImg, setBannerImg] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const movieId = props.match.params.id
+  const [loading] = useState(false);
+  const movieId = props.match.params.id;
 
-
-  const movieDetail = useSelector(state => state.movieDetail.results)
-  const dispatch = useDispatch()
+  const movieDetail = useSelector((state) => state.movieDetail.results);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovieDetail(movieId))
-  },[movieId, dispatch])
-
-  // console.log(movieDetail.backdrop_path)
+    dispatch(fetchMovieDetail(movieId));
+  }, [movieId, dispatch]);
 
   const genres = movieDetail.genres;
   let genreOptions;
@@ -34,29 +24,13 @@ const Details = (props) => {
     genreOptions = genres.map((genre) => genre.name).join(", ");
   }
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=${API_KEY}`
-  //     )
-  //     .then((res) => {
-  //       setLoading(false);
-  //       const response = res.data;
-  //       setMovieDetail(response);
-  //       setBannerImg(response.backdrop_path);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [props.match.params.id]);
-
   return (
     <>
       <div
         id="movie-banner"
         style={{
           backgroundImage: `url('${
+            movieDetail.backdrop_path &&
             "https://image.tmdb.org/t/p/original" + movieDetail.backdrop_path
           }')`,
         }}

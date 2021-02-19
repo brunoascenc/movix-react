@@ -1,31 +1,24 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import ResultsContainer from "./ResultsContainer";
 import NothingFound from "../NothingFound";
 import FullPageLoader from "../../FullPageLoader/FullPageLoader";
-
-const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
+import { useSelector, useDispatch } from "react-redux";
+import { fetchSearchResults } from "../../../actions/getSearchResults";
 
 const SearchResults = (props) => {
-  const [search, setSearch] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading] = useState(false);
+  const searchResults = useSelector((state) => state.searchResults.results);
+  const loading = useSelector((state) => state.searchResults.loading);
+  const search = searchResults.results;
+  const dispatch = useDispatch();
+
+  // console.log(loading)
+
   const searchQuery = props.match.params.pathname;
 
   useEffect(() => {
-    setLoading(true);
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
-      )
-      .then((res) => {
-        setLoading(false);
-        const response = res.data;
-        setSearch(response.results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [searchQuery]);
+    dispatch(fetchSearchResults(searchQuery));
+  }, [searchQuery, dispatch]);
 
   //loop to hide broken images
   let searchedMovie = [];
@@ -39,8 +32,8 @@ const SearchResults = (props) => {
     <>
       {searchQuery === undefined ? (
         <NothingFound />
-      ) : loading ? (
-        <FullPageLoader />
+      ) : loading.true ? (
+        console.log('oi')
       ) : (
         <ResultsContainer search={searchedMovie} searchQuery={searchQuery} />
       )}

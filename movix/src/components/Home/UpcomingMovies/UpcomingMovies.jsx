@@ -1,15 +1,10 @@
-import React, { useContext, useEffect } from "react";
-import { DataContext } from "../../../data/DataProvider";
-// import GenreList from "../../Genres/GenreList";
-import {useSelector, useDispatch} from 'react-redux'
-import {fetchUpcomingMovies} from '../../../actions/getUpcomingMovies'
-import useGenres from '../../hooks/useGenres'
-
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUpcomingMovies } from "../../../actions/getUpcomingMovies";
+import useGenres from "../../hooks/useGenres";
 import { Link } from "react-router-dom";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import "../../App.css";
-
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 
@@ -18,16 +13,14 @@ SwiperCore.use([Navigation, Autoplay, Pagination]);
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const UpcomingMovies = () => {
-  const value = useContext(DataContext);
   const [genreName] = useGenres();
-
-  const upcoming = useSelector(state => state.upcomingMovies.results)
-  const upcomingList = upcoming.results
-  const dispatch = useDispatch()
+  const upcoming = useSelector((state) => state.upcomingMovies.results);
+  const upcomingList = upcoming.results;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUpcomingMovies())
-  },[dispatch])
+    dispatch(fetchUpcomingMovies());
+  }, [dispatch]);
 
   //loop to hide broken images
   let upcomingMovies = [];
