@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ResultsContainer from "./ResultsContainer";
 import NothingFound from "../NothingFound";
-import FullPageLoader from "../../FullPageLoader/FullPageLoader";
+// import FullPageLoader from "../../FullPageLoader/FullPageLoader";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchResults } from "../../../actions/getSearchResults";
 

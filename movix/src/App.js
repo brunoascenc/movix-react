@@ -1,5 +1,5 @@
 import React from "react";
-import { DataProvider } from "./data/DataProvider";
+// import { DataProvider } from "./data/DataProvider";
 import Home from "./components/Home/Home";
 import Details from "./components/Details/Details";
 import SearchResults from "./components/SearchContainer/Search/SearchResults";
@@ -16,7 +16,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <DataProvider>
+    // <DataProvider>
       <ScrollToTop>
         <div className="App">
           <Header />
@@ -32,7 +32,7 @@ function App() {
           <Footer />
         </div>
       </ScrollToTop>
-     </DataProvider> 
+    //  </DataProvider> 
   );
 }
 
