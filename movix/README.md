@@ -33,3 +33,4 @@ Para visitar o site:
 * axios (https://github.com/axios/axios)
 * React icons (https://react-icons.github.io/react-icons/)
 * FontAwesome (https://fontawesome.com/)
+* Redux (https://redux.js.org/)

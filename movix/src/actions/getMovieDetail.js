@@ -32,9 +32,7 @@ export const fetchMovieDetail = (movieId) => {
   return (dispatch) => {
     dispatch(fetchMoviesRequest());
     axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`
-      )
+      .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
       .then((res) => {
         const detail = res.data;
         dispatch(fecthMoviesSuccess(detail));
