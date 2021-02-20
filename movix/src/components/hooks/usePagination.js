@@ -4,8 +4,10 @@ const usePagination = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const scrollTop = useRef();
 
+
   function nextPage() {
-    scrollTop.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // scrollTop.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.scrollTo(0, 0);
     setPageNumber(pageNumber + 1);
   }
 

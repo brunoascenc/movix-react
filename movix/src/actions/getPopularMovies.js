@@ -10,7 +10,7 @@ const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: GET_MOVIES_REQUEST
   };
 };
 
@@ -30,7 +30,7 @@ export const fetchMoviesFailure = (error) => {
 
 export const fetchPopularMovies = (pageNumber) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest);
+    dispatch(fetchMoviesRequest());
     axios
       .get(
         `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${pageNumber}`

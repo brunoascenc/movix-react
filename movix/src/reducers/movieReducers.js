@@ -19,7 +19,7 @@ const getPopularMovies = (state = initialState, action) => {
       };
     case GET_POPULAR_MOVIES:
       return {
-        ...state,
+        loading: false,
         results: action.payload,
         error: "",
       };

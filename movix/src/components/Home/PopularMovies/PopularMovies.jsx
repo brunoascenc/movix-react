@@ -1,36 +1,37 @@
 import React, { useEffect } from "react";
-// import { DataContext } from "../../../data/DataProvider";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPopularMovies } from "../../../actions/getPopularMovies";
 import { Link } from "react-router-dom";
 import useGenres from "../../hooks/useGenres";
-import usePagination from '../../hooks/usePagination'
-// import FullPageLoader from "../../FullPageLoader/FullPageLoader";
+import usePagination from "../../hooks/usePagination";
+import FullPageLoader from "../../FullPageLoader/FullPageLoader";
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const PopularMovies = () => {
-  // const value = useContext(DataContext);
   const [genreName] = useGenres();
-  // const loading = value.loading
   const popularMovies = useSelector((state) => state.popularMovie.results);
+  const loading = useSelector((state) => state.popularMovie.loading);
   const popularMovie = popularMovies.results;
   const dispatch = useDispatch();
 
-  const [pageNumber, nextPage, prevPage, scrollTop] = usePagination()
+  const [pageNumber, nextPage, prevPage, scrollTop] = usePagination();
 
   useEffect(() => {
     dispatch(fetchPopularMovies(pageNumber));
+   
   }, [pageNumber, dispatch]);
 
   return (
-    <div className="container" ref={scrollTop}>
+    <div className="container hehe" ref={scrollTop}>
       <div className="title-section">
         <span></span>
         <h1>Popular Movies </h1>
       </div>
       <div id="movies-container">
-        {
+        {loading ? (
+          <FullPageLoader />
+        ) : (
           popularMovie &&
           popularMovie.map((movie) => {
             return (
@@ -53,7 +54,7 @@ const PopularMovies = () => {
                 </div>
               </div>
             );
-          }
+          })
         )}
       </div>
       <div className="pagination-btn">

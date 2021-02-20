@@ -30,7 +30,7 @@ export const fetchMoviesFailure = (error) => {
 
 export const fetchMovieDetail = (movieId) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest);
+    dispatch(fetchMoviesRequest());
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`

@@ -1,37 +1,15 @@
 import React, { useEffect } from "react";
-// import axios from "axios";
-
-import {useSelector, useDispatch} from 'react-redux'
-import {fetchMovieReviews} from '../../../actions/getMovieReviews'
-// import "../../App.css";
-
-// const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
+import { useSelector, useDispatch } from "react-redux";
+import { fetchMovieReviews } from "../../../actions/getMovieReviews";
 
 const MovieReviews = ({ movieId }) => {
-  // const [movieReviews, setMovieReviews] = useState([]);
-
-  const reviews = useSelector(state => state.movieReview.results)
-  const movieReviews = reviews.results
-  const dispatch = useDispatch()
+  const reviews = useSelector((state) => state.movieReview.results);
+  const movieReviews = reviews.results;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovieReviews(movieId))
-  },[movieId, dispatch])
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
-  //     )
-  //     .then((res) => {
-  //       const response = res.data;
-  //       console.log(response)
-  //       setMovieReviews(response.results);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [movieId]);
+    dispatch(fetchMovieReviews(movieId));
+  }, [movieId, dispatch]);
 
   const noReviews = () => {
     return (
@@ -47,7 +25,8 @@ const MovieReviews = ({ movieId }) => {
     <div>
       {movieReviews && movieReviews.length === 0
         ? noReviews()
-        : movieReviews && movieReviews.map((review) => {
+        : movieReviews &&
+          movieReviews.map((review) => {
             return (
               <div key={review.id}>
                 <h3>By: {review.author}</h3>

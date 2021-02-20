@@ -35,6 +35,8 @@ body {
 
 .container {
   width: 1210px;
+  // height: 100vh;
+  // background: red;
   margin: 0 auto;
   scroll-margin-top: 13rem;
   @include lg-screen {
