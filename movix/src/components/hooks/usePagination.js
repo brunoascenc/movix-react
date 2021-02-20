@@ -6,8 +6,7 @@ const usePagination = () => {
 
 
   function nextPage() {
-    // scrollTop.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.scrollTo(0, 0);
+    scrollTop.current.scrollIntoView({ behavior: "smooth", block: "start" });
     setPageNumber(pageNumber + 1);
   }
 
