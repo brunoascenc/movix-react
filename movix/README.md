@@ -28,7 +28,6 @@ Para visitar o site:
 ## Tecnologias utilizadas
 
 * ReactJS
-* Context API
 * Swiper JS (https://swiperjs.com/react)
 * axios (https://github.com/axios/axios)
 * React icons (https://react-icons.github.io/react-icons/)
