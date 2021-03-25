@@ -19,11 +19,7 @@ Instalação:
 
 Para iniciar o servidor:
 
-`npm start`  
-
-Para visitar o site:
-
-`localhost:3000/`  
+`npm start`   
 
 ## Tecnologias utilizadas
 
