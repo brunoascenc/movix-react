@@ -5,9 +5,7 @@ import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFilterResults } from '../../redux/movies-filter/getFilterResults';
-import { Link } from 'react-router-dom';
-
-const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
+import MoviesCard from '../../components/MoviesCard/MoviesCard';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -37,29 +35,7 @@ const SearchResults = (props) => {
               <h1>You searched for</h1>
             </div>
             <div id="movies-container">
-              {filterResults &&
-                filterResults.map((movie) => {
-                  return (
-                    <div key={movie.id} className="movie-item">
-                      <Link to={`/details/${movie.id}`}>
-                        <div className="img-container">
-                          <img
-                            className="movie-poster"
-                            src={IMAGE_URL + movie.poster_path}
-                            alt={IMAGE_URL}
-                            data-movie-id={movie.id}
-                          />
-                        </div>
-                      </Link>
-                      <span className="movie-title">{movie.title}</span>
-                      <span className="movie-genres">{genreName(movie)}</span>
-                      <div className="movie-rating">
-                        <i className="far fa-star"></i>
-                        <p>{movie.vote_average}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+              <MoviesCard movies={filterResults} genreName={genreName} />
             </div>
             <div className="pagination-btn">
               <button onClick={prevPage} className="filter-prev">
