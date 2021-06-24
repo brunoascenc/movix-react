@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUpcomingMovies } from '../../../redux/upcoming-movies/getUpcomingMovies';
+import { fetchUpcomingMovies } from '../../redux/upcoming-movies/getUpcomingMovies';
 import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';

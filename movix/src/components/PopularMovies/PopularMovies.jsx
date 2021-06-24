@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPopularMovies } from '../../../redux/popular-movies/getPopularMovies';
+import { fetchPopularMovies } from '../../redux/popular-movies/getPopularMovies';
 import { Link } from 'react-router-dom';
 import useGenres from '../../hooks/useGenres';
 import usePagination from '../../hooks/usePagination';
-import FullPageLoader from '../../FullPageLoader/FullPageLoader';
+import FullPageLoader from '../FullPageLoader/FullPageLoader';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 

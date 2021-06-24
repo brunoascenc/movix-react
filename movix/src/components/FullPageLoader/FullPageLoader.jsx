@@ -1,5 +1,5 @@
-import React from "react";
-import Loader from '../../images/loader.svg'
+import React from 'react';
+import Loader from '../../images/loader.svg';
 
 const FullPageLoader = () => {
   return (

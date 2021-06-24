@@ -1,6 +1,6 @@
-import React from "react";
-import useGenres from '../../hooks/useGenres'
-import { Link } from "react-router-dom";
+import React from 'react';
+import useGenres from '../../hooks/useGenres';
+import { Link } from 'react-router-dom';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import MovieDetails from './MovieDetails/MovieDetails';
-import SimilarMovies from './SimilarMovies/SimilarMovies';
-import MovieReviews from './MovieReviews/MovieReviews';
-import MovieTrailer from './MovieTrailer/MovieTrailer';
-import FullPageLoader from '../FullPageLoader/FullPageLoader';
+import MovieDetails from '../../components/MovieDetails/MovieDetails';
+import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
+import MovieReviews from '../../components/MovieReviews/MovieReviews';
+import MovieTrailer from '../../components/MovieTrailer/MovieTrailer';
+import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchMovieDetail,

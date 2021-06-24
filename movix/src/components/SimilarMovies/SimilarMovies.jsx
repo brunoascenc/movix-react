@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchSimilarMovies } from '../../../redux/similar-movies/getSimilarMovies';
+import { fetchSimilarMovies } from '../../redux/similar-movies/getSimilarMovies';
 
 //Swiper css
 import 'swiper/swiper.scss';
