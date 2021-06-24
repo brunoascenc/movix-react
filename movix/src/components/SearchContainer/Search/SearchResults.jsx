@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import ResultsContainer from "./ResultsContainer";
-import NothingFound from "../NothingFound";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchSearchResults } from "../../../actions/getSearchResults";
-import FullPageLoader from "../../FullPageLoader/FullPageLoader";
+import React, { useEffect } from 'react';
+import ResultsContainer from './ResultsContainer';
+import NothingFound from '../NothingFound';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchSearchResults } from '../../../redux/movies-search/getSearchResults';
+import FullPageLoader from '../../FullPageLoader/FullPageLoader';
 
 const SearchResults = (props) => {
   const searchResults = useSelector((state) => state.searchResults.results);

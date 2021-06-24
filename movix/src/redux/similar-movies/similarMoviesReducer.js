@@ -1,27 +1,27 @@
 import {
-  GET_UPCOMING_MOVIES,
+  GET_SIMILAR_MOVIES,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
-} from "../actions/types";
+} from '../types';
 
 const initialState = {
   loading: false,
   results: [],
-  error: "",
+  error: '',
 };
 
-const getUpcomingMovies = (state = initialState, action) => {
+const getSimilarMovies = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIES_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case GET_UPCOMING_MOVIES:
+    case GET_SIMILAR_MOVIES:
       return {
         ...state,
         results: action.payload,
-        error: "",
+        error: '',
       };
     case GET_MOVIES_FAILURE:
       return {
@@ -34,4 +34,4 @@ const getUpcomingMovies = (state = initialState, action) => {
   }
 };
 
-export default getUpcomingMovies;
+export default getSimilarMovies;

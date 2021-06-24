@@ -1,16 +1,16 @@
-import axios from "axios";
+import axios from 'axios';
 
 import {
   GET_POPULAR_MOVIES,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
-} from "./types";
+} from '../types';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST
+    type: GET_MOVIES_REQUEST,
   };
 };
 

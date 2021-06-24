@@ -1,10 +1,9 @@
-import axios from "axios";
-
+import axios from 'axios';
 import {
-  GET_MOVIE_DETAIL,
+  GET_UPCOMING_MOVIES,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
-} from "./types";
+} from '../types';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
@@ -16,7 +15,7 @@ export const fetchMoviesRequest = () => {
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_MOVIE_DETAIL,
+    type: GET_UPCOMING_MOVIES,
     payload: movies,
   };
 };
@@ -28,14 +27,16 @@ export const fetchMoviesFailure = (error) => {
   };
 };
 
-export const fetchMovieDetail = (movieId) => {
+export const fetchUpcomingMovies = () => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchMoviesRequest);
     axios
-      .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
+      .get(
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&region=US`
+      )
       .then((res) => {
-        const detail = res.data;
-        dispatch(fecthMoviesSuccess(detail));
+        const upcomingMovies = res.data;
+        dispatch(fecthMoviesSuccess(upcomingMovies));
       })
       .catch((err) => {
         const error = err.message;

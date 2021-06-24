@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
-import useGenres from "../../hooks/useGenres";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchNowPlaying } from "../../../actions/getNowPlaying";
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
-import "swiper/components/pagination/pagination.scss";
+import React, { useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
+import useGenres from '../../hooks/useGenres';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchNowPlaying } from '../../../redux/movie-playing/getNowPlaying';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
@@ -28,7 +28,7 @@ const LandingPage = () => {
         pagination={{
           clickable: true,
           dynamicBullets: true,
-          type: "progressbar",
+          type: 'progressbar',
         }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop
@@ -41,7 +41,7 @@ const LandingPage = () => {
                 className="swiper-card"
                 style={{
                   backgroundImage: `linear-gradient(rgba(31, 28, 28, 0.329),rgba(14, 14, 13, 0.89)), url(${
-                    "https://image.tmdb.org/t/p/original" + movie.backdrop_path
+                    'https://image.tmdb.org/t/p/original' + movie.backdrop_path
                   })`,
                 }}
               >

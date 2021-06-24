@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUpcomingMovies } from "../../../actions/getUpcomingMovies";
-import useGenres from "../../hooks/useGenres";
-import { Link } from "react-router-dom";
-import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUpcomingMovies } from '../../../redux/upcoming-movies/getUpcomingMovies';
+import useGenres from '../../hooks/useGenres';
+import { Link } from 'react-router-dom';
+import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 

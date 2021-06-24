@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchMovieReviews } from "../../../actions/getMovieReviews";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchMovieReviews } from '../../../redux/movie-reviews/getMovieReviews';
 
 const MovieReviews = ({ movieId }) => {
   const reviews = useSelector((state) => state.movieReview.results);

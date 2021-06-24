@@ -1,27 +1,27 @@
 import {
+  GET_MOVIE_REVIEW,
   GET_MOVIES_REQUEST,
-  GET_SEARCH_RESULTS,
-  GET_MOVIES_FAILURE
-} from "../actions/types";
+  GET_MOVIES_FAILURE,
+} from '../types';
 
 const initialState = {
   loading: false,
   results: [],
-  error: "",
+  error: '',
 };
 
-const getSearchResults = (state = initialState, action) => {
+const getMovieReview = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIES_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case GET_SEARCH_RESULTS:
+    case GET_MOVIE_REVIEW:
       return {
-        loading: false,
+        ...state,
         results: action.payload,
-        error: "",
+        error: '',
       };
     case GET_MOVIES_FAILURE:
       return {
@@ -34,4 +34,4 @@ const getSearchResults = (state = initialState, action) => {
   }
 };
 
-export default getSearchResults;
+export default getMovieReview;

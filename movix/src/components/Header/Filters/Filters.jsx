@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchGenres } from "../../../actions/getGenres";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchGenres } from '../../../redux/movie-genres/getGenres';
+import { Link } from 'react-router-dom';
 
 const GenreSelect = ({ closeMenu }) => {
   const genreList = useSelector((state) => state.genreList.results);
@@ -12,8 +12,8 @@ const GenreSelect = ({ closeMenu }) => {
     dispatch(fetchGenres());
   }, [dispatch]);
 
-  const [selectGenre, setSelectGenre] = useState("");
-  const [selectOption, setSelectOption] = useState("");
+  const [selectGenre, setSelectGenre] = useState('');
+  const [selectOption, setSelectOption] = useState('');
 
   const handleGenre = (e) => {
     setSelectGenre(e.target.value);

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import ModalVideo from "react-modal-video";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchMovieTrailer } from "../../../actions/getMovieTrailer";
+import React, { useState, useEffect } from 'react';
+import ModalVideo from 'react-modal-video';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchMovieTrailer } from '../../../redux/movie-trailer/getMovieTrailer';
 
 const MovieTrailer = ({ movieId }) => {
   const [isOpen, setOpen] = useState(false);
@@ -15,7 +15,7 @@ const MovieTrailer = ({ movieId }) => {
   return (
     <>
       {movieTrailer === undefined ? (
-        ""
+        ''
       ) : (
         <>
           <div className="movie-video">

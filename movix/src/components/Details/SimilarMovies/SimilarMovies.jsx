@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import SwiperCore, { Navigation, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import useGenres from "../../hooks/useGenres";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchSimilarMovies } from "../../../actions/getSimilarMovies";
+import React, { useEffect } from 'react';
+import SwiperCore, { Navigation, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import useGenres from '../../hooks/useGenres';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchSimilarMovies } from '../../../redux/similar-movies/getSimilarMovies';
 
 //Swiper css
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 //Swiper
 SwiperCore.use([Navigation, Autoplay]);

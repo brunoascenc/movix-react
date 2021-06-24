@@ -1,27 +1,27 @@
 import {
-  GET_POPULAR_MOVIES,
+  GET_NOWPLAYING_RESULTS,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
-} from "../actions/types";
+} from '../types';
 
 const initialState = {
   loading: false,
   results: [],
-  error: "",
+  error: '',
 };
 
-const getPopularMovies = (state = initialState, action) => {
+const getNowPlaying = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIES_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case GET_POPULAR_MOVIES:
+    case GET_NOWPLAYING_RESULTS:
       return {
-        loading: false,
+        ...state,
         results: action.payload,
-        error: "",
+        error: '',
       };
     case GET_MOVIES_FAILURE:
       return {
@@ -34,4 +34,4 @@ const getPopularMovies = (state = initialState, action) => {
   }
 };
 
-export default getPopularMovies;
+export default getNowPlaying;

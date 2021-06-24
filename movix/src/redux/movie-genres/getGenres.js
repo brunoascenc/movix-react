@@ -1,23 +1,23 @@
-import axios from "axios";
+import axios from 'axios';
 
 import {
+  GET_GENRE_RESULTS,
   GET_MOVIES_REQUEST,
-  GET_SEARCH_RESULTS,
   GET_MOVIES_FAILURE,
-} from "./types";
+} from '../types';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST
+    type: GET_MOVIES_REQUEST,
   };
 };
 
-export const fecthMoviesSuccess = (movies) => {
+export const fecthMoviesSuccess = (genres) => {
   return {
-    type: GET_SEARCH_RESULTS,
-    payload: movies,
+    type: GET_GENRE_RESULTS,
+    payload: genres,
   };
 };
 
@@ -28,16 +28,14 @@ export const fetchMoviesFailure = (error) => {
   };
 };
 
-export const fetchSearchResults = (searchQuery) => {
+export const fetchGenres = () => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchMoviesRequest);
     axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
-      )
+      .get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
       .then((res) => {
-        const searchResults = res.data;
-        dispatch(fecthMoviesSuccess(searchResults));
+        const genreList = res.data;
+        dispatch(fecthMoviesSuccess(genreList));
       })
       .catch((err) => {
         const error = err.message;

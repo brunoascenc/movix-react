@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 import {
-  GET_NOWPLAYING_RESULTS,
   GET_MOVIES_REQUEST,
+  GET_SEARCH_RESULTS,
   GET_MOVIES_FAILURE,
-} from "./types";
+} from '../types';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
@@ -16,7 +16,7 @@ export const fetchMoviesRequest = () => {
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_NOWPLAYING_RESULTS,
+    type: GET_SEARCH_RESULTS,
     payload: movies,
   };
 };
@@ -28,16 +28,16 @@ export const fetchMoviesFailure = (error) => {
   };
 };
 
-export const fetchNowPlaying = () => {
+export const fetchSearchResults = (searchQuery) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest);
+    dispatch(fetchMoviesRequest());
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
       )
       .then((res) => {
-        const nowPlaying = res.data;
-        dispatch(fecthMoviesSuccess(nowPlaying));
+        const searchResults = res.data;
+        dispatch(fecthMoviesSuccess(searchResults));
       })
       .catch((err) => {
         const error = err.message;

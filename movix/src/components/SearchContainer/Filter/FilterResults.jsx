@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import useGenres from "../../hooks/useGenres";
-import NothingFound from "../NothingFound";
-import FullPageLoader from "../../FullPageLoader/FullPageLoader";
-import usePagination from "../../hooks/usePagination";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchFilterResults } from "../../../actions/getFilterResults";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import useGenres from '../../hooks/useGenres';
+import NothingFound from '../NothingFound';
+import FullPageLoader from '../../FullPageLoader/FullPageLoader';
+import usePagination from '../../hooks/usePagination';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFilterResults } from '../../../redux/movies-filter/getFilterResults';
+import { Link } from 'react-router-dom';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 

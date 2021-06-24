@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import MovieDetails from "./MovieDetails/MovieDetails";
-import SimilarMovies from "./SimilarMovies/SimilarMovies";
-import MovieReviews from "./MovieReviews/MovieReviews";
-import MovieTrailer from "./MovieTrailer/MovieTrailer";
-import FullPageLoader from "../FullPageLoader/FullPageLoader";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import MovieDetails from './MovieDetails/MovieDetails';
+import SimilarMovies from './SimilarMovies/SimilarMovies';
+import MovieReviews from './MovieReviews/MovieReviews';
+import MovieTrailer from './MovieTrailer/MovieTrailer';
+import FullPageLoader from '../FullPageLoader/FullPageLoader';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchMovieDetail,
   fetchMoviesRequest,
-} from "../../actions/getMovieDetail";
+} from '../../redux/movie-details/getMovieDetail';
 
 const Details = (props) => {
   const [loading] = useState(false);
@@ -27,7 +27,7 @@ const Details = (props) => {
   const genres = movieDetail.genres;
   let genreOptions;
   if (genres) {
-    genreOptions = genres.map((genre) => genre.name).join(", ");
+    genreOptions = genres.map((genre) => genre.name).join(', ');
   }
 
   return (
@@ -41,7 +41,7 @@ const Details = (props) => {
             style={{
               backgroundImage: `url('${
                 movieDetail.backdrop_path &&
-                "https://image.tmdb.org/t/p/original" +
+                'https://image.tmdb.org/t/p/original' +
                   movieDetail.backdrop_path
               }')`,
             }}

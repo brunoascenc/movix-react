@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchGenres } from "../../actions/getGenres";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchGenres } from '../../redux/movie-genres/getGenres';
 
 const GenreList = () => {
   const genreList = useSelector((state) => state.genreList.results);
@@ -20,8 +20,8 @@ const GenreList = () => {
       );
       return (
         <span key={movie.id}>
-          {genreArray[0] ? genreArray[0].name : ""}
-          {genreArray[1] ? ` / ` + genreArray[1].name : ""}
+          {genreArray[0] ? genreArray[0].name : ''}
+          {genreArray[1] ? ` / ` + genreArray[1].name : ''}
         </span>
       );
     }

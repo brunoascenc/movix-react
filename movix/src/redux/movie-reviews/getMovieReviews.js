@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 import {
-  GET_SIMILAR_MOVIES,
+  GET_MOVIE_REVIEW,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
-} from "./types";
+} from '../types';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
@@ -16,7 +16,7 @@ export const fetchMoviesRequest = () => {
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_SIMILAR_MOVIES,
+    type: GET_MOVIE_REVIEW,
     payload: movies,
   };
 };
@@ -28,16 +28,16 @@ export const fetchMoviesFailure = (error) => {
   };
 };
 
-export const fetchSimilarMovies = (movieId) => {
+export const fetchMovieReviews = (movieId) => {
   return (dispatch) => {
     dispatch(fetchMoviesRequest);
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}`
+        `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
       )
       .then((res) => {
-        const similarMovies = res.data;
-        dispatch(fecthMoviesSuccess(similarMovies));
+        const reviews = res.data;
+        dispatch(fecthMoviesSuccess(reviews));
       })
       .catch((err) => {
         const error = err.message;

@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 import {
-  GET_FILTER_RESULTS,
+  GET_MOVIE_TRAILER,
   GET_MOVIES_REQUEST,
   GET_MOVIES_FAILURE,
-} from "./types";
+} from '../types';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
@@ -16,7 +16,7 @@ export const fetchMoviesRequest = () => {
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_FILTER_RESULTS,
+    type: GET_MOVIE_TRAILER,
     payload: movies,
   };
 };
@@ -28,16 +28,16 @@ export const fetchMoviesFailure = (error) => {
   };
 };
 
-export const fetchFilterResults = (genreId, optionFilter, pageNumber) => {
+export const fetchMovieTrailer = (movieId) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchMoviesRequest);
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=${optionFilter}&vote_count.gte=100&page=${pageNumber}`
+        `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
       )
       .then((res) => {
-        const filterResults = res.data;
-        dispatch(fecthMoviesSuccess(filterResults));
+        const movieTrailer = res.data;
+        dispatch(fecthMoviesSuccess(movieTrailer.results[0]));
       })
       .catch((err) => {
         const error = err.message;
