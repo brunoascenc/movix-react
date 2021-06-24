@@ -3,12 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchUpcomingMovies } from '../../redux/upcoming-movies/getUpcomingMovies';
 import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
-import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-
-SwiperCore.use([Navigation, Autoplay, Pagination]);
+import { SwiperSlide } from 'swiper/react';
+import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -36,33 +32,7 @@ const UpcomingMovies = () => {
         <span></span>
         <h1>Upcoming Movies</h1>
       </div>
-      <Swiper
-        spaceBetween={65}
-        slidesPerView={5}
-        navigation
-        breakpoints={{
-          100: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          390: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-          },
-          640: {
-            slidesPerView: 3,
-            spaceBetween: 35,
-          },
-          780: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          920: {
-            slidesPerView: 5,
-            spaceBetween: 65,
-          },
-        }}
-      >
+      <MoviesSwiper>
         {upcomingMovies &&
           upcomingMovies.map((movie) => {
             return (
@@ -83,7 +53,7 @@ const UpcomingMovies = () => {
               </SwiperSlide>
             );
           })}
-      </Swiper>
+      </MoviesSwiper>
     </div>
   );
 };
