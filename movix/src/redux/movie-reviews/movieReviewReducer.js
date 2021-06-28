@@ -1,7 +1,6 @@
 import ReviewsActionTypes from './movieReviewsTypes';
 
 const initialState = {
-  loading: false,
   results: [],
   error: '',
 };
@@ -11,18 +10,15 @@ const getMovieReview = (state = initialState, action) => {
     case ReviewsActionTypes.FETCH_REVIEWS_START:
       return {
         ...state,
-        loading: true,
       };
     case ReviewsActionTypes.FETCH_REVIEWS_SUCCESS:
       return {
         ...state,
         results: action.payload,
-        error: '',
       };
     case ReviewsActionTypes.FETCH_REVIEWS_FAILURE:
       return {
-        loading: false,
-        results: [],
+        ...state,
         error: action.payload,
       };
     default:

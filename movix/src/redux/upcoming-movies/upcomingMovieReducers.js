@@ -16,13 +16,13 @@ const getUpcomingMovies = (state = initialState, action) => {
     case UpcomingActionTypes.FETCH_UPCOMING_SUCCESS:
       return {
         ...state,
+        loading: false,
         results: action.payload,
-        error: '',
       };
     case UpcomingActionTypes.FETCH_UPCOMING_FAILURE:
       return {
+        ...state,
         loading: false,
-        results: [],
         error: action.payload,
       };
     default:

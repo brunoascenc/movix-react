@@ -4,20 +4,20 @@ import DetailsActionTypes from './detailActionTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
-export const fetchMoviesRequest = () => {
+export const fetchDetailsRequest = () => {
   return {
     type: DetailsActionTypes.FETCH_DETAILS_START,
   };
 };
 
-export const fecthMoviesSuccess = (movies) => {
+export const fecthDetailsSuccess = (movies) => {
   return {
     type: DetailsActionTypes.FETCH_DETAILS_SUCCESS,
     payload: movies,
   };
 };
 
-export const fetchMoviesFailure = (error) => {
+export const fetchDetailsFailure = (error) => {
   return {
     type: DetailsActionTypes.FETCH_DETAILS_FAILURE,
     payload: error,
@@ -26,16 +26,16 @@ export const fetchMoviesFailure = (error) => {
 
 export const fetchMovieDetail = (movieId) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchDetailsRequest());
     axios
       .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
       .then((res) => {
         const detail = res.data;
-        dispatch(fecthMoviesSuccess(detail));
+        dispatch(fecthDetailsSuccess(detail));
       })
       .catch((err) => {
         const error = err.message;
-        dispatch(fetchMoviesFailure(error));
+        dispatch(fetchDetailsFailure(error));
       });
   };
 };

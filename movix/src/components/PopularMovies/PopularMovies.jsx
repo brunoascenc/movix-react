@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPopularMovies } from '../../redux/popular-movies/moviesAction';
+import {
+  fetchPopularMovies,
+  fetchPopularRequest,
+} from '../../redux/popular-movies/popularMoviesAction';
 import useGenres from '../../hooks/useGenres';
 import usePagination from '../../hooks/usePagination';
 import FullPageLoader from '../FullPageLoader/FullPageLoader';
@@ -16,7 +19,11 @@ const PopularMovies = () => {
   const [pageNumber, nextPage, prevPage, scrollTop] = usePagination();
 
   useEffect(() => {
-    dispatch(fetchPopularMovies(pageNumber));
+    dispatch(fetchPopularRequest());
+    setTimeout(() => {
+      dispatch(fetchPopularMovies(pageNumber));
+    }, 1000);
+    // dispatch(fetchPopularMovies(pageNumber));
   }, [pageNumber, dispatch]);
 
   return (

@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-@import "node_modules/react-modal-video/scss/modal-video.scss";
-@import "./styles/variables", "./styles/mixins";
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import './styles/variables', './styles/mixins';
 
 * {
   margin: 0;
@@ -28,7 +28,7 @@ a {
 body {
   background-color: $bgcolor;
   color: rgba(226, 192, 248, 0.836);
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   overflow-x: hidden;
   position: relative;
 }
@@ -59,7 +59,7 @@ body {
 }
 
 h1 {
-  font-family: "Bebas Neue", cursive;
+  font-family: 'Bebas Neue', cursive;
   font-weight: 100;
   letter-spacing: 2px;
   font-size: 3rem;
@@ -102,7 +102,7 @@ header {
   }
 
   h1 {
-    font-family: "Black Han Sans", sans-serif;
+    font-family: 'Black Han Sans', sans-serif;
     font-weight: 100;
     color: $mainPurple;
   }
@@ -183,7 +183,7 @@ header {
       font-weight: 100;
       margin-left: 10px;
       font-size: 1.1rem;
-      font-family: "Bebas Neue", cursive;
+      font-family: 'Bebas Neue', cursive;
       background-image: linear-gradient(
         to bottom right,
         rgb(160, 63, 240),
@@ -404,7 +404,7 @@ header {
       margin-bottom: -60px;
 
       h1 {
-        font-family: "Mulish", sans-serif;
+        font-family: 'Mulish', sans-serif;
         letter-spacing: 1px;
         font-size: 1.3rem;
         margin-bottom: 5px;
@@ -667,7 +667,7 @@ header {
   margin-bottom: 4%;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     width: 100%;
@@ -679,7 +679,7 @@ header {
     pointer-events: none;
   }
 
-  .movie-video{
+  .movie-video {
     z-index: 100;
   }
 
@@ -1111,7 +1111,7 @@ footer {
     height: 100vh;
     background-color: red;
     background: linear-gradient(rgba(31, 28, 28, 0.39), rgba(14, 14, 13, 0.61)),
-      url("https://www.10wallpaper.com/wallpaper/2560x1440/1804/2018_Avengers_Infinity_War_4K_Film_2560x1440.jpg")
+      url('https://www.10wallpaper.com/wallpaper/2560x1440/1804/2018_Avengers_Infinity_War_4K_Film_2560x1440.jpg')
         no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -1123,7 +1123,7 @@ footer {
     align-items: center;
 
     h1 {
-      font-family: "Black Han Sans", sans-serif;
+      font-family: 'Black Han Sans', sans-serif;
       font-weight: 100;
       color: $mainPurple;
       margin-bottom: 0.5rem;

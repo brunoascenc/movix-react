@@ -21,8 +21,8 @@ const getNowPlaying = (state = initialState, action) => {
       };
     case NowPlayingActionTypes.FETCH_NOWPLAYING_FAILURE:
       return {
+        ...state,
         loading: false,
-        results: [],
         error: action.payload,
       };
     default:

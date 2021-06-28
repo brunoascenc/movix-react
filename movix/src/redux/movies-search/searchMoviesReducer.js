@@ -15,14 +15,14 @@ const getSearchResults = (state = initialState, action) => {
       };
     case SearchActionTypes.FETCH_SEARCH_SUCCESS:
       return {
+        ...state,
         loading: false,
         results: action.payload,
-        error: '',
       };
     case SearchActionTypes.FETCH_SEARCH_FAILURE:
       return {
+        ...state,
         loading: false,
-        results: [],
         error: action.payload,
       };
     default:

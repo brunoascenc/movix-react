@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import MovieDetails from '../../components/MovieDetails/MovieDetails';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 import MovieReviews from '../../components/MovieReviews/MovieReviews';
@@ -7,18 +7,17 @@ import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchMovieDetail,
-  fetchMoviesRequest,
+  fetchDetailsRequest,
 } from '../../redux/movie-details/movieDetailActions';
 
 const Details = (props) => {
-  const [loading] = useState(false);
   const movieId = props.match.params.id;
-
   const movieDetail = useSelector((state) => state.movieDetail.results);
+  const loading = useSelector((state) => state.movieDetail.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchDetailsRequest());
     setTimeout(() => {
       dispatch(fetchMovieDetail(movieId));
     }, 1000);

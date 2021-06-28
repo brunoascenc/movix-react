@@ -1,21 +1,26 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from 'react';
 
 const usePagination = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const scrollTop = useRef();
 
-
   function nextPage() {
-    scrollTop.current.scrollIntoView({ behavior: "smooth", block: "start" });
     setPageNumber(pageNumber + 1);
+    // setTimeout(() => {
+    //   scrollTop.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // }, 1000);
   }
 
   function prevPage() {
     if (pageNumber > 1) {
-      scrollTop.current.scrollIntoView({ behavior: "smooth" });
+      // scrollTop.current.scrollIntoView({ behavior: 'smooth' });
       setPageNumber(pageNumber - 1);
     }
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [nextPage, prevPage]);
 
   return [pageNumber, nextPage, prevPage, scrollTop];
 };

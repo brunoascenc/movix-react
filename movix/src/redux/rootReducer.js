@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import movieReducer from './popular-movies/movieReducers';
+import movieReducer from './popular-movies/popularMoviesReducer';
 import upcomingMovieReducer from './upcoming-movies/upcomingMovieReducers';
 import movieDetail from './movie-details/detailReducer';
 import similarMoviesReducer from './similar-movies/similarMoviesReducer';

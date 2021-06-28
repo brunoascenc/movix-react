@@ -1,7 +1,6 @@
 import SimilarActionTypes from './similarMoviesTypes';
 
 const initialState = {
-  loading: false,
   results: [],
   error: '',
 };
@@ -11,18 +10,15 @@ const getSimilarMovies = (state = initialState, action) => {
     case SimilarActionTypes.FETCH_SIMILAR_START:
       return {
         ...state,
-        loading: true,
       };
     case SimilarActionTypes.FETCH_SIMILAR_SUCCESS:
       return {
         ...state,
         results: action.payload,
-        error: '',
       };
     case SimilarActionTypes.FETCH_SIMILAR_FAILURE:
       return {
-        loading: false,
-        results: [],
+        ...state,
         error: action.payload,
       };
     default:

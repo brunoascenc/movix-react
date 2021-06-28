@@ -1,8 +1,3 @@
-// import {
-//   GET_POPULAR_MOVIES,
-//   GET_MOVIES_REQUEST,
-//   GET_MOVIES_FAILURE,
-// } from '../types';
 import PopularActionTypes from './popularMoviesTypes';
 
 const initialState = {

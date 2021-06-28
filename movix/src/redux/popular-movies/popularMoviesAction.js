@@ -1,29 +1,23 @@
 import axios from 'axios';
 
-// import {
-//   GET_POPULAR_MOVIES,
-//   GET_MOVIES_REQUEST,
-//   GET_MOVIES_FAILURE,
-// } from '../types';
-
 import PopularActionTypes from './popularMoviesTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
-export const fetchMoviesRequest = () => {
+export const fetchPopularRequest = () => {
   return {
     type: PopularActionTypes.FETCH_POPULAR_START,
   };
 };
 
-export const fecthMoviesSuccess = (movies) => {
+export const fecthPopularSuccess = (movies) => {
   return {
     type: PopularActionTypes.FETCH_POPULAR_SUCCESS,
     payload: movies,
   };
 };
 
-export const fetchMoviesFailure = (error) => {
+export const fetchPopularFailure = (error) => {
   return {
     type: PopularActionTypes.FETCH_POPULAR_FAILURE,
     payload: error,
@@ -32,18 +26,18 @@ export const fetchMoviesFailure = (error) => {
 
 export const fetchPopularMovies = (pageNumber) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchPopularRequest());
     axios
       .get(
         `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${pageNumber}`
       )
       .then((res) => {
         const popularMovies = res.data;
-        dispatch(fecthMoviesSuccess(popularMovies));
+        dispatch(fecthPopularSuccess(popularMovies));
       })
       .catch((err) => {
         const error = err.message;
-        dispatch(fetchMoviesFailure(error));
+        dispatch(fetchPopularFailure(error));
       });
   };
 };

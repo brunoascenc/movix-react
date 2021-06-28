@@ -16,13 +16,13 @@ const getMovieDetail = (state = initialState, action) => {
     case DetailsActionTypes.FETCH_DETAILS_SUCCESS:
       return {
         ...state,
+        loading: false,
         results: action.payload,
-        error: '',
       };
     case DetailsActionTypes.FETCH_DETAILS_FAILURE:
       return {
+        ...state,
         loading: false,
-        results: [],
         error: action.payload,
       };
     default:

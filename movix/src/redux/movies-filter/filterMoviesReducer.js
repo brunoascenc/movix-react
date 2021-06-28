@@ -16,13 +16,13 @@ const getFilterResults = (state = initialState, action) => {
     case FilterActionTypes.FETCH_FILTER_SUCCESS:
       return {
         ...state,
+        loading: false,
         results: action.payload,
-        error: '',
       };
     case FilterActionTypes.FETCH_FILTER_FAILURE:
       return {
+        ...state,
         loading: false,
-        results: [],
         error: action.payload,
       };
     default:

@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useGenres from '../../hooks/useGenres';
 import NothingFound from '../../components/Error/NothingFound';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
+import {
+  fetchFilterResults,
+  fetchFilterRequest,
+} from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
-  const [loading] = useState(false);
   const [pageNumber, nextPage, prevPage, scrollTop] = usePagination();
   const genreId = props.match.params.pathname;
   const optionFilter = props.match.params.pathname2;
   const filter = useSelector((state) => state.filterResults.results);
+  const loading = useSelector((state) => state.filterResults.loading);
   const filterResults = filter.results;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
+    dispatch(fetchFilterRequest());
+    setTimeout(() => {
+      dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
+    }, 1000);
+    // dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (

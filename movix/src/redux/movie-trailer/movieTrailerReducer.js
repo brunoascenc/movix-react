@@ -1,7 +1,6 @@
 import TrailerActionTypes from './movieTrailerTypes';
 
 const initialState = {
-  loading: false,
   results: [],
   error: '',
 };
@@ -11,18 +10,15 @@ const getMovieTrailer = (state = initialState, action) => {
     case TrailerActionTypes.FETCH_TRAILER_START:
       return {
         ...state,
-        loading: true,
       };
     case TrailerActionTypes.FETCH_TRAILER_SUCCESS:
       return {
         ...state,
         results: action.payload,
-        error: '',
       };
     case TrailerActionTypes.FETCH_TRAILER_FAILURE:
       return {
-        loading: false,
-        results: [],
+        ...state,
         error: action.payload,
       };
     default:
