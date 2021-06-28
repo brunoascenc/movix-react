@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchGenres } from '../../../redux/movie-genres/getGenres';
+import { fetchGenres } from '../../../redux/movie-genres/genreActions';
 import { Link } from 'react-router-dom';
 
 const GenreSelect = ({ closeMenu }) => {

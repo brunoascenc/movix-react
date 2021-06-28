@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchGenres } from '../redux/movie-genres/getGenres';
+import { fetchGenres } from '../redux/movie-genres/genreActions';
 
 const GenreList = () => {
   const genreList = useSelector((state) => state.genreList.results);

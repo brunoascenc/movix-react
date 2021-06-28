@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchNowPlaying } from '../../redux/movie-playing/getNowPlaying';
+import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';

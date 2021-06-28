@@ -1,43 +1,37 @@
 import axios from 'axios';
 
-import {
-  GET_NOWPLAYING_RESULTS,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import DetailsActionTypes from './detailActionTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: DetailsActionTypes.FETCH_DETAILS_START,
   };
 };
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_NOWPLAYING_RESULTS,
+    type: DetailsActionTypes.FETCH_DETAILS_SUCCESS,
     payload: movies,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: DetailsActionTypes.FETCH_DETAILS_FAILURE,
     payload: error,
   };
 };
 
-export const fetchNowPlaying = () => {
+export const fetchMovieDetail = (movieId) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest);
+    dispatch(fetchMoviesRequest());
     axios
-      .get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
-      )
+      .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
       .then((res) => {
-        const nowPlaying = res.data;
-        dispatch(fecthMoviesSuccess(nowPlaying));
+        const detail = res.data;
+        dispatch(fecthMoviesSuccess(detail));
       })
       .catch((err) => {
         const error = err.message;

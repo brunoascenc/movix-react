@@ -4,7 +4,7 @@ import NothingFound from '../../components/Error/NothingFound';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchFilterResults } from '../../redux/movies-filter/getFilterResults';
+import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
 
 const SearchResults = (props) => {

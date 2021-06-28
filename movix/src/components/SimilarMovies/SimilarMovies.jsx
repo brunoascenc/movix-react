@@ -3,7 +3,7 @@ import { SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchSimilarMovies } from '../../redux/similar-movies/getSimilarMovies';
+import { fetchSimilarMovies } from '../../redux/similar-movies/similarMoviesActions';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;

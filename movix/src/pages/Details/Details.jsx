@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchMovieDetail,
   fetchMoviesRequest,
-} from '../../redux/movie-details/getMovieDetail';
+} from '../../redux/movie-details/movieDetailActions';
 
 const Details = (props) => {
   const [loading] = useState(false);

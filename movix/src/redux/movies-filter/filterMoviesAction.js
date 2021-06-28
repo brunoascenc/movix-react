@@ -1,29 +1,25 @@
 import axios from 'axios';
 
-import {
-  GET_FILTER_RESULTS,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import FilterActionTypes from './filterMovieTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: FilterActionTypes.FETCH_FILTER_START,
   };
 };
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_FILTER_RESULTS,
+    type: FilterActionTypes.FETCH_FILTER_SUCCESS,
     payload: movies,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: FilterActionTypes.FETCH_FILTER_FAILURE,
     payload: error,
   };
 };

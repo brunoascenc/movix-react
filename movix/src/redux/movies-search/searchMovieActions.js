@@ -1,43 +1,39 @@
 import axios from 'axios';
 
-import {
-  GET_SIMILAR_MOVIES,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import SearchActionTypes from './searchMoviesTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: SearchActionTypes.FETCH_SEARCH_START,
   };
 };
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_SIMILAR_MOVIES,
+    type: SearchActionTypes.FETCH_SEARCH_SUCCESS,
     payload: movies,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: SearchActionTypes.FETCH_SEARCH_FAILURE,
     payload: error,
   };
 };
 
-export const fetchSimilarMovies = (movieId) => {
+export const fetchSearchResults = (searchQuery) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest);
+    dispatch(fetchMoviesRequest());
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
       )
       .then((res) => {
-        const similarMovies = res.data;
-        dispatch(fecthMoviesSuccess(similarMovies));
+        const searchResults = res.data;
+        dispatch(fecthMoviesSuccess(searchResults));
       })
       .catch((err) => {
         const error = err.message;

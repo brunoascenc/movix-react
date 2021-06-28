@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ModalVideo from 'react-modal-video';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMovieTrailer } from '../../redux/movie-trailer/getMovieTrailer';
+import { fetchMovieTrailer } from '../../redux/movie-trailer/movieTrailerActions';
 
 const MovieTrailer = ({ movieId }) => {
   const [isOpen, setOpen] = useState(false);

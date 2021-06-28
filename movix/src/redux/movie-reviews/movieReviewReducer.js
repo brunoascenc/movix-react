@@ -1,8 +1,4 @@
-import {
-  GET_MOVIE_REVIEW,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import ReviewsActionTypes from './movieReviewsTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getMovieReview = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case ReviewsActionTypes.FETCH_REVIEWS_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_MOVIE_REVIEW:
+    case ReviewsActionTypes.FETCH_REVIEWS_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case ReviewsActionTypes.FETCH_REVIEWS_FAILURE:
       return {
         loading: false,
         results: [],

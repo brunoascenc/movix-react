@@ -1,29 +1,24 @@
 import axios from 'axios';
 
-import {
-  GET_GENRE_RESULTS,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
-
+import GenreActionTypes from './genreActionTypes';
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: GenreActionTypes.FETCH_GENRES_START,
   };
 };
 
 export const fecthMoviesSuccess = (genres) => {
   return {
-    type: GET_GENRE_RESULTS,
+    type: GenreActionTypes.FETCH_GENRES_SUCCESS,
     payload: genres,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: GenreActionTypes.FETCH_GENRES_FAILURE,
     payload: error,
   };
 };

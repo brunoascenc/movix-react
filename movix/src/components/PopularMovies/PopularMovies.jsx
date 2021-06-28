@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPopularMovies } from '../../redux/popular-movies/getPopularMovies';
+import { fetchPopularMovies } from '../../redux/popular-movies/moviesAction';
 import useGenres from '../../hooks/useGenres';
 import usePagination from '../../hooks/usePagination';
 import FullPageLoader from '../FullPageLoader/FullPageLoader';

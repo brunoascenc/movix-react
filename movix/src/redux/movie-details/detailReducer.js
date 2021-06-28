@@ -1,8 +1,4 @@
-import {
-  GET_MOVIE_DETAIL,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import DetailsActionTypes from './detailActionTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getMovieDetail = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case DetailsActionTypes.FETCH_DETAILS_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_MOVIE_DETAIL:
+    case DetailsActionTypes.FETCH_DETAILS_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case DetailsActionTypes.FETCH_DETAILS_FAILURE:
       return {
         loading: false,
         results: [],

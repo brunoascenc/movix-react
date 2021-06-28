@@ -1,8 +1,4 @@
-import {
-  GET_GENRE_RESULTS,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import GenreActionTypes from './genreActionTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getGenreResults = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case GenreActionTypes.FETCH_GENRES_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_GENRE_RESULTS:
+    case GenreActionTypes.FETCH_GENRES_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case GenreActionTypes.FETCH_GENRES_FAILURE:
       return {
         loading: false,
         results: [],

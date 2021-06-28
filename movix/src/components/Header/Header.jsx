@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Filters from "./Filters/Filters";
-import SearchInput from "./Search/SearchInput";
-import { Link } from "react-router-dom";
-import "../../App.css";
+import React, { useState } from 'react';
+import Filters from './Filters/Filters';
+import SearchInput from './Search/SearchInput';
+import { Link } from 'react-router-dom';
+import '../../App.css';
 
 export default function Header() {
   const [click, setClick] = useState(false);
@@ -20,7 +20,7 @@ export default function Header() {
             </Link>
             <SearchInput />
           </div>
-          <form className={click ? "nav-active" : null} data-scroll-header>
+          <form className={click ? 'nav-active' : null} data-scroll-header>
             <div className="filter-options">
               <span>Order By:</span>
               <Filters closeMenu={closeMobileMenu} />
@@ -28,7 +28,7 @@ export default function Header() {
           </form>
 
           <div
-            className={click ? "close-nav" : "burger nav"}
+            className={click ? 'close-nav' : 'burger nav'}
             onClick={handleClick}
           >
             <div className="line1"></div>

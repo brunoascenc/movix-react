@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUpcomingMovies } from '../../redux/upcoming-movies/getUpcomingMovies';
+import { fetchUpcomingMovies } from '../../redux/upcoming-movies/upcomingActions';
 import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';

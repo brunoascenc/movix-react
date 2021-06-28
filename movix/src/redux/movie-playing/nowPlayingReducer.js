@@ -1,8 +1,4 @@
-import {
-  GET_NOWPLAYING_RESULTS,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import NowPlayingActionTypes from './nowPlayingTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getNowPlaying = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case NowPlayingActionTypes.FETCH_NOWPLAYING_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_NOWPLAYING_RESULTS:
+    case NowPlayingActionTypes.FETCH_NOWPLAYING_SUCCESS:
       return {
         ...state,
+        loading: false,
         results: action.payload,
-        error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case NowPlayingActionTypes.FETCH_NOWPLAYING_FAILURE:
       return {
         loading: false,
         results: [],

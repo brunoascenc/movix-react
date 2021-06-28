@@ -1,8 +1,4 @@
-import {
-  GET_UPCOMING_MOVIES,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import UpcomingActionTypes from './upcomingTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getUpcomingMovies = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case UpcomingActionTypes.FETCH_UPCOMING_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_UPCOMING_MOVIES:
+    case UpcomingActionTypes.FETCH_UPCOMING_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case UpcomingActionTypes.FETCH_UPCOMING_FAILURE:
       return {
         loading: false,
         results: [],

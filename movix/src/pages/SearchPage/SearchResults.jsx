@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ResultsContainer from '../../components/Search/ResultsContainer';
 import NothingFound from '../../components/Error/NothingFound';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchSearchResults } from '../../redux/movies-search/getSearchResults';
+import { fetchSearchResults } from '../../redux/movies-search/searchMovieActions';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 
 const SearchResults = (props) => {

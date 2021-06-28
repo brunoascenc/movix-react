@@ -1,8 +1,4 @@
-import {
-  GET_MOVIE_TRAILER,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import TrailerActionTypes from './movieTrailerTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getMovieTrailer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case TrailerActionTypes.FETCH_TRAILER_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_MOVIE_TRAILER:
+    case TrailerActionTypes.FETCH_TRAILER_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case TrailerActionTypes.FETCH_TRAILER_FAILURE:
       return {
         loading: false,
         results: [],

@@ -1,8 +1,9 @@
-import {
-  GET_POPULAR_MOVIES,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+// import {
+//   GET_POPULAR_MOVIES,
+//   GET_MOVIES_REQUEST,
+//   GET_MOVIES_FAILURE,
+// } from '../types';
+import PopularActionTypes from './popularMoviesTypes';
 
 const initialState = {
   loading: false,
@@ -12,21 +13,21 @@ const initialState = {
 
 const getPopularMovies = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case PopularActionTypes.FETCH_POPULAR_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_POPULAR_MOVIES:
+    case PopularActionTypes.FETCH_POPULAR_SUCCESS:
       return {
+        ...state,
         loading: false,
         results: action.payload,
-        error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case PopularActionTypes.FETCH_POPULAR_FAILURE:
       return {
+        ...state,
         loading: false,
-        results: [],
         error: action.payload,
       };
     default:

@@ -1,8 +1,4 @@
-import {
-  GET_SIMILAR_MOVIES,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import SimilarActionTypes from './similarMoviesTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getSimilarMovies = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case SimilarActionTypes.FETCH_SIMILAR_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_SIMILAR_MOVIES:
+    case SimilarActionTypes.FETCH_SIMILAR_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case SimilarActionTypes.FETCH_SIMILAR_FAILURE:
       return {
         loading: false,
         results: [],

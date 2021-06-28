@@ -1,0 +1,7 @@
+const FilterActionTypes = {
+  FETCH_FILTER_START: 'FETCH_FILTER_START',
+  FETCH_FILTER_SUCCESS: 'FETCH_FILTER_SUCCESS',
+  FETCH_FILTER_FAILURE: 'FETCH_FILTER_FAILURE',
+};
+
+export default FilterActionTypes;

@@ -1,43 +1,39 @@
 import axios from 'axios';
 
-import {
-  GET_MOVIES_REQUEST,
-  GET_SEARCH_RESULTS,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import NowPlayingActionTypes from './nowPlayingTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: NowPlayingActionTypes.FETCH_NOWPLAYING_START,
   };
 };
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_SEARCH_RESULTS,
+    type: NowPlayingActionTypes.FETCH_NOWPLAYING_SUCCESS,
     payload: movies,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: NowPlayingActionTypes.FETCH_NOWPLAYING_FAILURE,
     payload: error,
   };
 };
 
-export const fetchSearchResults = (searchQuery) => {
+export const fetchNowPlaying = () => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest());
+    dispatch(fetchMoviesRequest);
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
       )
       .then((res) => {
-        const searchResults = res.data;
-        dispatch(fecthMoviesSuccess(searchResults));
+        const nowPlaying = res.data;
+        dispatch(fecthMoviesSuccess(nowPlaying));
       })
       .catch((err) => {
         const error = err.message;

@@ -1,8 +1,4 @@
-import {
-  GET_FILTER_RESULTS,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import FilterActionTypes from './filterMovieTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getFilterResults = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case FilterActionTypes.FETCH_FILTER_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_FILTER_RESULTS:
+    case FilterActionTypes.FETCH_FILTER_SUCCESS:
       return {
         ...state,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case FilterActionTypes.FETCH_FILTER_FAILURE:
       return {
         loading: false,
         results: [],

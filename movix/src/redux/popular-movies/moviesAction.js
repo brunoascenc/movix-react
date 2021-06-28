@@ -1,29 +1,31 @@
 import axios from 'axios';
 
-import {
-  GET_POPULAR_MOVIES,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+// import {
+//   GET_POPULAR_MOVIES,
+//   GET_MOVIES_REQUEST,
+//   GET_MOVIES_FAILURE,
+// } from '../types';
+
+import PopularActionTypes from './popularMoviesTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: PopularActionTypes.FETCH_POPULAR_START,
   };
 };
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_POPULAR_MOVIES,
+    type: PopularActionTypes.FETCH_POPULAR_SUCCESS,
     payload: movies,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: PopularActionTypes.FETCH_POPULAR_FAILURE,
     payload: error,
   };
 };

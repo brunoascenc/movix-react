@@ -1,43 +1,38 @@
 import axios from 'axios';
-
-import {
-  GET_MOVIE_REVIEW,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import UpcomingActionTypes from './upcomingTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
 export const fetchMoviesRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: UpcomingActionTypes.FETCH_UPCOMING_START,
   };
 };
 
 export const fecthMoviesSuccess = (movies) => {
   return {
-    type: GET_MOVIE_REVIEW,
+    type: UpcomingActionTypes.FETCH_UPCOMING_SUCCESS,
     payload: movies,
   };
 };
 
 export const fetchMoviesFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: UpcomingActionTypes.FETCH_UPCOMING_FAILURE,
     payload: error,
   };
 };
 
-export const fetchMovieReviews = (movieId) => {
+export const fetchUpcomingMovies = () => {
   return (dispatch) => {
     dispatch(fetchMoviesRequest);
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&region=US`
       )
       .then((res) => {
-        const reviews = res.data;
-        dispatch(fecthMoviesSuccess(reviews));
+        const upcomingMovies = res.data;
+        dispatch(fecthMoviesSuccess(upcomingMovies));
       })
       .catch((err) => {
         const error = err.message;

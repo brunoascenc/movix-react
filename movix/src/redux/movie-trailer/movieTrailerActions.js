@@ -1,47 +1,43 @@
 import axios from 'axios';
 
-import {
-  GET_MOVIE_TRAILER,
-  GET_MOVIES_REQUEST,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import TrailerActionTypes from './movieTrailerTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
 
-export const fetchMoviesRequest = () => {
+export const fetchTrailerRequest = () => {
   return {
-    type: GET_MOVIES_REQUEST,
+    type: TrailerActionTypes.FETCH_TRAILER_START,
   };
 };
 
-export const fecthMoviesSuccess = (movies) => {
+export const fecthTrailerSuccess = (movies) => {
   return {
-    type: GET_MOVIE_TRAILER,
+    type: TrailerActionTypes.FETCH_TRAILER_SUCCESS,
     payload: movies,
   };
 };
 
-export const fetchMoviesFailure = (error) => {
+export const fetchTrailerFailure = (error) => {
   return {
-    type: GET_MOVIES_FAILURE,
+    type: TrailerActionTypes.FETCH_TRAILER_FAILURE,
     payload: error,
   };
 };
 
 export const fetchMovieTrailer = (movieId) => {
   return (dispatch) => {
-    dispatch(fetchMoviesRequest);
+    dispatch(fetchTrailerRequest);
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
       )
       .then((res) => {
         const movieTrailer = res.data;
-        dispatch(fecthMoviesSuccess(movieTrailer.results[0]));
+        dispatch(fecthTrailerSuccess(movieTrailer.results[0]));
       })
       .catch((err) => {
         const error = err.message;
-        dispatch(fetchMoviesFailure(error));
+        dispatch(fetchTrailerFailure(error));
       });
   };
 };

@@ -1,8 +1,4 @@
-import {
-  GET_MOVIES_REQUEST,
-  GET_SEARCH_RESULTS,
-  GET_MOVIES_FAILURE,
-} from '../types';
+import SearchActionTypes from './searchMoviesTypes';
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const getSearchResults = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIES_REQUEST:
+    case SearchActionTypes.FETCH_SEARCH_START:
       return {
         ...state,
         loading: true,
       };
-    case GET_SEARCH_RESULTS:
+    case SearchActionTypes.FETCH_SEARCH_SUCCESS:
       return {
         loading: false,
         results: action.payload,
         error: '',
       };
-    case GET_MOVIES_FAILURE:
+    case SearchActionTypes.FETCH_SEARCH_FAILURE:
       return {
         loading: false,
         results: [],
