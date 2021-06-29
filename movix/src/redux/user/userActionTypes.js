@@ -1,0 +1,7 @@
+const UserActionTypes = {
+  FETCH_TOKEN_START: 'FETCH_TOKEN_START',
+  FETCH_TOKEN_SUCCESS: 'FETCH_TOKEN_SUCCESS',
+  FETCH_TOKEN_FAILURE: 'FETCH_TOKEN_FAILURE',
+};
+
+export default UserActionTypes;
