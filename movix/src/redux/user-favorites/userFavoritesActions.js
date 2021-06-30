@@ -32,7 +32,6 @@ export const fetchFavoriteMovies = (id) => {
       )
       .then((res) => {
         const favoriteMovies = res.data;
-        console.log(favoriteMovies.results);
         dispatch(fecthFavoritesSuccess(favoriteMovies.results));
       })
       .catch((err) => {
