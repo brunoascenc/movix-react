@@ -8,6 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import { SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
+import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -40,6 +41,11 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
                     <span className="movie-genres">{genreName(movie)}</span>
                   </div>
                 </Link>
+                <button
+                  onClick={() => removeFromFavorite(userId.sessionId, movie.id)}
+                >
+                  remove
+                </button>
               </SwiperSlide>
             );
           })}

@@ -8,6 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import { SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
+import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -40,6 +41,13 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
                     <span className="movie-genres">{genreName(movie)}</span>
                   </div>
                 </Link>
+                <button
+                  onClick={() =>
+                    removeFromWatchlist(userId.sessionId, movie.id)
+                  }
+                >
+                  remove
+                </button>
               </SwiperSlide>
             );
           })}
