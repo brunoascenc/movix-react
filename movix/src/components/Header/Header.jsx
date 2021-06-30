@@ -1,31 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Filters from './Filters/Filters';
 import SearchInput from './Search/SearchInput';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import { fetchTokenAuth } from '../../redux/user/userActions';
+import { fetchTokenAuth } from '../../redux/user-token/userTokenActions';
+import { fetchSessionId } from '../../redux/user-session/userSessionActions';
+import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
+import { selectToken } from '../../redux/user-token/userTokenSelector';
+import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 
-const Header = ({ fetchTokenAuth }) => {
+const Header = ({
+  fetchTokenAuth,
+  userToken,
+  sessionId,
+  userId,
+  fetchUserDetails,
+}) => {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  // const handleLogin = () => {
-  //   axios
-  //     .get(
-  //       'https://api.themoviedb.org/3/authentication/token/new?api_key=4a5e130486cb63a2caff652d783f6a36'
-  //     )
-  //     .then((res) => {
-  //       const token = res.data;
-  //       window.location = `https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=http://localhost:3000/`;
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  useEffect(() => {
+    sessionId(userToken.token);
+    fetchUserDetails(userId.sessionId);
+  });
 
   return (
     <>
@@ -53,14 +53,22 @@ const Header = ({ fetchTokenAuth }) => {
             <div className="line3"></div>
           </div>
         </div>
-        <button onClick={fetchTokenAuth}>login</button>
+        {/* <button onClick={fetchTokenAuth}>login</button> */}
+        <Link to="/login">Login</Link>
       </header>
     </>
   );
 };
 
-const mapDipatchToProps = (dispatch) => ({
-  fetchTokenAuth: () => dispatch(fetchTokenAuth()),
+const mapStateToProps = createStructuredSelector({
+  userToken: selectToken,
+  userId: selectSessionId,
 });
 
-export default connect(null, mapDipatchToProps)(Header);
+const mapDipatchToProps = (dispatch) => ({
+  fetchTokenAuth: () => dispatch(fetchTokenAuth()),
+  sessionId: (token) => dispatch(fetchSessionId(token)),
+  fetchUserDetails: (id) => dispatch(fetchUserDetails(id)),
+});
+
+export default connect(mapStateToProps, mapDipatchToProps)(Header);

@@ -9,14 +9,17 @@ import movieReviewReducer from './movie-reviews/movieReviewReducer';
 import searchMoviesReducer from './movies-search/searchMoviesReducer';
 import filterMoviesReducer from './movies-filter/filterMoviesReducer';
 import nowPlayingReducer from './movie-playing/nowPlayingReducer';
-import userToken from './user/userReducer';
+import user from './user-details/userDetailsReducer';
+import userFavorites from './user-favorites/userFavoritesReducer';
+import sessionId from './user-session/userSessionReducer';
+import userToken from './user-token/userTokenReducer';
 import genreReducer from './movie-genres/genreReducer';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'sessionId', 'user'],
 };
 
 const rootReducer = combineReducers({
@@ -31,6 +34,9 @@ const rootReducer = combineReducers({
   nowPlaying: nowPlayingReducer,
   genreList: genreReducer,
   auth: userToken,
+  sessionId: sessionId,
+  user: user,
+  userFavorites: userFavorites,
 });
 
 export default persistReducer(persistConfig, rootReducer);

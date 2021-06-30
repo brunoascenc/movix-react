@@ -1,22 +1,22 @@
-import UserActionTypes from './userActionTypes';
+import UserSessionTypes from './userSessionTypes';
 
 const initialState = {
-  token: undefined,
+  sessionId: undefined,
   error: '',
 };
 
 const getUserToken = (state = initialState, action) => {
   switch (action.type) {
-    case UserActionTypes.FETCH_TOKEN_START:
+    case UserSessionTypes.FETCH_SESSION_START:
       return {
         ...state,
       };
-    case UserActionTypes.FETCH_TOKEN_SUCCESS:
+    case UserSessionTypes.FETCH_SESSION_SUCCESS:
       return {
         ...state,
-        token: action.payload,
+        sessionId: action.payload,
       };
-    case UserActionTypes.FETCH_TOKEN_FAILURE:
+    case UserSessionTypes.FETCH_SESSION_FAILURE:
       return {
         ...state,
         error: action.payload,

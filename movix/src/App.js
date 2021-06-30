@@ -1,16 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectSessionId } from './redux/user-session/userSessionSelector';
 import Home from './pages/Home/Home';
 import Details from './pages/Details/Details';
 import SearchResults from './pages/SearchPage/SearchResults';
 import FilterResults from './pages/Filter/FilterResults';
+import Login from './pages/Login/Login';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
+import User from './pages/User/User';
 import './App.scss';
 
-function App() {
+function App({ userId }) {
   const location = useLocation();
 
   return (
@@ -21,6 +26,14 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/details/:id" component={Details} />
           <Route path="/search=:pathname?" component={SearchResults} />
+          <Route path="/user" component={User} />
+          <Route
+            exact
+            path="/login"
+            render={() =>
+              userId.sessionId ? <Redirect to="/user" /> : <Login />
+            }
+          />
           <Route
             path="/filter=:pathname?&:pathname2?"
             component={FilterResults}
@@ -32,4 +45,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  userId: selectSessionId,
+});
+
+export default connect(mapStateToProps)(App);
