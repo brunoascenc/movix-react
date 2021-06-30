@@ -9,10 +9,13 @@ import {
   fetchMovieDetail,
   fetchDetailsRequest,
 } from '../../redux/movie-details/movieDetailActions';
+import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
+import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 
 const Details = (props) => {
   const movieId = props.match.params.id;
   const movieDetail = useSelector((state) => state.movieDetail.results);
+  const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
   const dispatch = useDispatch();
 
@@ -56,6 +59,12 @@ const Details = (props) => {
             ) : (
               <MovieDetails movieDetail={movieDetail} genres={genreOptions} />
             )}
+            <button onClick={() => addToWatchlist(userId, movieId)}>
+              watchlist
+            </button>
+            <button onClick={() => addToFavorite(userId, movieId)}>
+              favorite
+            </button>
           </div>
 
           <div className="similar-section container">

@@ -32,7 +32,6 @@ export const fetchWatchlistMovies = (id) => {
       )
       .then((res) => {
         const watchlistMovies = res.data;
-        console.log(watchlistMovies.results);
         dispatch(fecthWatchlistSuccess(watchlistMovies.results));
       })
       .catch((err) => {
