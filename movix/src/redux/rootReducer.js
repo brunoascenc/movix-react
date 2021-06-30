@@ -11,6 +11,7 @@ import filterMoviesReducer from './movies-filter/filterMoviesReducer';
 import nowPlayingReducer from './movie-playing/nowPlayingReducer';
 import user from './user-details/userDetailsReducer';
 import userFavorites from './user-favorites/userFavoritesReducer';
+import userWatchlist from './user-watchlist/userWatchlistReducer';
 import sessionId from './user-session/userSessionReducer';
 import userToken from './user-token/userTokenReducer';
 import genreReducer from './movie-genres/genreReducer';
@@ -37,6 +38,7 @@ const rootReducer = combineReducers({
   sessionId: sessionId,
   user: user,
   userFavorites: userFavorites,
+  userWatchlist: userWatchlist,
 });
 
 export default persistReducer(persistConfig, rootReducer);
