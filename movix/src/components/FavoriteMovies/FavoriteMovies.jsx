@@ -54,8 +54,12 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
             );
           })}
       </MoviesSwiper>
-      <MdKeyboardArrowLeft className="left-arrow" />
-      <MdKeyboardArrowRight className="right-arrow" />
+      <MdKeyboardArrowLeft
+        className={favorites.length > 5 ? 'left-arrow' : 'hide-nav'}
+      />
+      <MdKeyboardArrowRight
+        className={favorites.length > 5 ? 'right-arrow' : 'hide-nav'}
+      />
     </div>
   );
 };

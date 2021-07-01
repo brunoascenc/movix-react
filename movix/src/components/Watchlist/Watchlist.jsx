@@ -66,8 +66,12 @@ const Watchlist = ({ userId, fetchWatchlistMovies, fetchRequest }) => {
             );
           })}
       </MoviesSwiper>
-      <MdKeyboardArrowLeft className="left-arrow" />
-      <MdKeyboardArrowRight className="right-arrow" />
+      <MdKeyboardArrowLeft
+        className={watchlist.length > 5 ? 'left-arrow' : 'hide-nav'}
+      />
+      <MdKeyboardArrowRight
+        className={watchlist.length > 5 ? 'right-arrow' : 'hide-nav'}
+      />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSimilarMovies } from '../../redux/similar-movies/similarMoviesActions';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -51,6 +52,12 @@ const SimilarMovies = ({ movieId }) => {
             );
           })}
       </MoviesSwiper>
+      <MdKeyboardArrowLeft
+        className={similarResults.length > 5 ? 'left-arrow' : 'hide-nav'}
+      />
+      <MdKeyboardArrowRight
+        className={similarResults.length > 5 ? 'right-arrow' : 'hide-nav'}
+      />
     </>
   );
 };
