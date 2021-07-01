@@ -1344,3 +1344,54 @@ footer {
     letter-spacing: 1px;
   }
 }
+
+//user-page
+.user-page {
+  margin-top: 85px;
+
+  .swiper-card {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    button {
+      position: absolute;
+      top: -5px;
+      font-size: 35px;
+      right: 0;
+      align-self: flex-end;
+      cursor: pointer;
+      margin-top: 5px;
+      background: $mainPurple;
+      border: none;
+      color: rgba(217, 184, 240, 0.911);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 6px 0 6px;
+
+      &:hover {
+        color: rgba(237, 229, 243, 0.911);
+      }
+    }
+  }
+
+  .watchlist {
+    margin-top: 85px;
+  }
+}
+
+.list-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0.6;
+  transition: 0.2s ease;
+
+  img {
+    border-radius: 8px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

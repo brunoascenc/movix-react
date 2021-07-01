@@ -1714,4 +1714,75 @@ footer .socials {
   font-size: 25px;
   letter-spacing: 1px;
 }
+
+.user-page {
+  margin-top: 85px;
+}
+
+.user-page .swiper-card {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-page .swiper-card button {
+  position: absolute;
+  top: -5px;
+  font-size: 35px;
+  right: 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  margin-top: 5px;
+  background: #9e3dee;
+  border: none;
+  color: rgba(217, 184, 240, 0.911);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0 6px 0 6px;
+}
+
+.user-page .swiper-card button:hover {
+  color: rgba(237, 229, 243, 0.911);
+}
+
+.user-page .watchlist {
+  margin-top: 85px;
+}
+
+.list-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0.6;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.list-card img {
+  border-radius: 8px;
+}
+
+.list-card:hover {
+  opacity: 1;
+}
 /*# sourceMappingURL=App.css.map */

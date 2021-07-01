@@ -3,6 +3,7 @@ import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { TiDeleteOutline } from 'react-icons/ti';
 import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
 import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
@@ -22,14 +23,17 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
 
   return (
     <div className="watchlist">
-      <h3>Your Favorite movies</h3>
+      <div className="title-section">
+        <span></span>
+        <h1>Your favorite movies </h1>
+      </div>
       <MoviesSwiper>
         {favorites &&
           favorites.map((movie) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-card">
                 <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <div className="upcoming-card" key={movie.id}>
+                  <div className="list-card" key={movie.id}>
                     <img
                       className="movie-poster"
                       src={IMAGE_URL + movie.poster_path}
@@ -37,14 +41,13 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
                       alt={movie.title}
                     />
                     <span className="movie-title">{movie.title}</span>
-                    <span className="movie-date">{movie.release_date}</span>
                     <span className="movie-genres">{genreName(movie)}</span>
                   </div>
                 </Link>
                 <button
                   onClick={() => removeFromFavorite(userId.sessionId, movie.id)}
                 >
-                  remove
+                  <TiDeleteOutline />
                 </button>
               </SwiperSlide>
             );

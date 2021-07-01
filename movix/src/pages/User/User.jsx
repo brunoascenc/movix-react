@@ -16,8 +16,7 @@ const User = ({ userId, fetchUserDetails, userDetails }) => {
   }, [userId.sessionId, fetchUserDetails]);
 
   return (
-    <div>
-      <h1>Olá {username}</h1>
+    <div className="container user-page">
       <div className="user-content">
         <FavoriteMovies />
 
