@@ -506,9 +506,46 @@ header {
   color: rgba(226, 192, 248, 0.836);
 }
 
+.left-arrow,
+.right-arrow {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.left-arrow {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+}
+
+.right-arrow {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+}
+
 //upcoming movies
 .upcoming-slide {
+  position: relative;
   margin-bottom: 15vh;
+
+  // .left-arrow,
+  // .right-arrow {
+  //   cursor: pointer;
+  //   font-size: 30px;
+  // }
+
+  // .left-arrow {
+  //   position: absolute;
+  //   left: -35px;
+  //   top: 50%;
+  // }
+
+  // .right-arrow {
+  //   position: absolute;
+  //   right: -35px;
+  //   top: 50%;
+  // }
 
   .title-section {
     margin-bottom: 2vh;
@@ -878,6 +915,7 @@ header {
 //Similar Movies
 .similar-section {
   display: grid;
+  position: relative;
   .title-section {
     border-bottom: none;
     margin-top: 5rem;
@@ -885,9 +923,22 @@ header {
 }
 
 .similar-movies {
+  position: relative;
   grid-gap: 2rem;
   margin-top: 0.5rem;
   margin-bottom: 5rem;
+
+  .left-arrow {
+    position: absolute;
+    left: -35px;
+    top: 37%;
+  }
+
+  .right-arrow {
+    position: absolute;
+    right: -35px;
+    top: 37%;
+  }
 
   .movie-rating {
     display: flex;
@@ -1382,6 +1433,11 @@ footer {
 
   .watchlist {
     margin-top: 85px;
+  }
+
+  .watchlist,
+  .favorite {
+    position: relative;
   }
 }
 

@@ -620,7 +620,26 @@ header .nav-active {
   color: rgba(226, 192, 248, 0.836);
 }
 
+.left-arrow,
+.right-arrow {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.left-arrow {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+}
+
+.right-arrow {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+}
+
 .upcoming-slide {
+  position: relative;
   margin-bottom: 15vh;
 }
 
@@ -1095,6 +1114,7 @@ header .nav-active {
 .similar-section {
   display: -ms-grid;
   display: grid;
+  position: relative;
 }
 
 .similar-section .title-section {
@@ -1103,9 +1123,22 @@ header .nav-active {
 }
 
 .similar-movies {
+  position: relative;
   grid-gap: 2rem;
   margin-top: 0.5rem;
   margin-bottom: 5rem;
+}
+
+.similar-movies .left-arrow {
+  position: absolute;
+  left: -35px;
+  top: 37%;
+}
+
+.similar-movies .right-arrow {
+  position: absolute;
+  right: -35px;
+  top: 37%;
 }
 
 .similar-movies .movie-rating {
@@ -1767,6 +1800,11 @@ footer .socials {
 
 .user-page .watchlist {
   margin-top: 85px;
+}
+
+.user-page .watchlist,
+.user-page .favorite {
+  position: relative;
 }
 
 .list-card {

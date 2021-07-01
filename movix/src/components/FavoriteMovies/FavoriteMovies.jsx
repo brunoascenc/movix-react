@@ -10,6 +10,7 @@ import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import { SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
 import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -22,7 +23,7 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
   }, [userId.sessionId, fetchFavoriteMovies]);
 
   return (
-    <div className="watchlist">
+    <div className="favorite">
       <div className="title-section">
         <span></span>
         <h1>Your favorite movies </h1>
@@ -53,6 +54,8 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
             );
           })}
       </MoviesSwiper>
+      <MdKeyboardArrowLeft className="left-arrow" />
+      <MdKeyboardArrowRight className="right-arrow" />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const MoviesSwiper = ({ children }) => {
       <Swiper
         spaceBetween={65}
         slidesPerView={5}
-        navigation
+        navigation={{ nextEl: '.right-arrow', prevEl: '.left-arrow' }}
         breakpoints={{
           100: {
             slidesPerView: 2,

@@ -5,6 +5,7 @@ import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import MovieTrailer from '../../components/MovieTrailer/MovieTrailer';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import {
   fetchMovieDetail,
   fetchDetailsRequest,
@@ -75,6 +76,8 @@ const Details = (props) => {
 
           <div className="similar-movies container">
             <SimilarMovies movieId={movieId} />
+            <MdKeyboardArrowLeft className="left-arrow" />
+            <MdKeyboardArrowRight className="right-arrow" />
           </div>
 
           <div className="reviews-section container">

@@ -23,7 +23,6 @@ const PopularMovies = () => {
     setTimeout(() => {
       dispatch(fetchPopularMovies(pageNumber));
     }, 1000);
-    // dispatch(fetchPopularMovies(pageNumber));
   }, [pageNumber, dispatch]);
 
   return (
