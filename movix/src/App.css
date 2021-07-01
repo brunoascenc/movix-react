@@ -1643,4 +1643,75 @@ footer .socials {
   margin-left: 10px;
   height: 40px;
 }
+
+.login-page {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: -25vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 13, 13, 0.781)), to(rgba(14, 14, 13, 0.89))), url("https://wallpaperaccess.com/full/1895586.jpg");
+  background-image: linear-gradient(rgba(14, 13, 13, 0.781), rgba(14, 14, 13, 0.89)), url("https://wallpaperaccess.com/full/1895586.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-page .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -180px;
+  background: rgba(10, 10, 10, 0.822);
+  padding: 45px;
+  height: 250px;
+  border-radius: 6px;
+}
+
+@media (max-width: 565px) {
+  .login-page .content {
+    padding: 25px;
+  }
+}
+
+.login-page h1 {
+  color: #9e3dee;
+  font-size: 45px;
+}
+
+.login-page button {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  color: rgba(230, 207, 245, 0.911);
+  letter-spacing: 1px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.1rem;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#a03ff0), to(rgba(84, 29, 139, 0.788)));
+  background-image: linear-gradient(to bottom right, #a03ff0, rgba(84, 29, 139, 0.788));
+  width: 160px;
+  height: 45px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
 /*# sourceMappingURL=App.css.map */
