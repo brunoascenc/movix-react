@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react';
+import { BsHeart, BsListTask } from 'react-icons/bs';
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const MovieDetails = ({ movieDetail, genres }) => {
+const MovieDetails = ({
+  movieDetail,
+  genres,
+  addToWatchlist,
+  addToFavorite,
+}) => {
   return (
     <div id="movie-detail">
       <div className="poster-movie">
@@ -43,14 +49,22 @@ const MovieDetails = ({ movieDetail, genres }) => {
             </li>
 
             <li>
-              <span className="contrast">Duration:</span> {movieDetail.runtime}{" "}
+              <span className="contrast">Duration:</span> {movieDetail.runtime}{' '}
               min
             </li>
             <li>
-              <span className="contrast">Rating</span>{" "}
+              <span className="contrast">Rating</span>{' '}
               {movieDetail.vote_average}
             </li>
           </ul>
+        </div>
+        <div className="list-btn">
+          <button onClick={addToWatchlist}>
+            <BsHeart className="list-icons" /> Favorite
+          </button>
+          <button onClick={addToFavorite}>
+            <BsListTask className="list-icons" /> Watchlist
+          </button>
         </div>
       </div>
     </div>

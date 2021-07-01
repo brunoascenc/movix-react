@@ -988,9 +988,15 @@ header .nav-active {
   padding: 0.5rem 2rem;
 }
 
+@media screen and (max-width: 780px) {
+  #movie-detail .details-container {
+    padding-bottom: 45px;
+  }
+}
+
 @media (max-width: 625px) {
   #movie-detail .details-container {
-    padding: 0.2rem 1.3rem;
+    padding: 45px 1.3rem;
   }
 }
 
@@ -1716,6 +1722,7 @@ footer .socials {
 }
 
 .user-page {
+  height: 100vh;
   margin-top: 85px;
 }
 
@@ -1784,5 +1791,36 @@ footer .socials {
 
 .list-card:hover {
   opacity: 1;
+}
+
+.list-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.list-btn button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #9e3dee;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(230, 206, 247, 0.911);
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.list-btn button:first-child {
+  margin-right: 10px;
+}
+
+.list-btn button .list-icons {
+  margin-right: 5px;
 }
 /*# sourceMappingURL=App.css.map */

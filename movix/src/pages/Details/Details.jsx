@@ -57,14 +57,13 @@ const Details = (props) => {
             {loading ? (
               <FullPageLoader />
             ) : (
-              <MovieDetails movieDetail={movieDetail} genres={genreOptions} />
+              <MovieDetails
+                movieDetail={movieDetail}
+                genres={genreOptions}
+                addToWatchlist={() => addToWatchlist(userId, movieId)}
+                addToFavorite={() => addToFavorite(userId, movieId)}
+              />
             )}
-            <button onClick={() => addToWatchlist(userId, movieId)}>
-              watchlist
-            </button>
-            <button onClick={() => addToFavorite(userId, movieId)}>
-              favorite
-            </button>
           </div>
 
           <div className="similar-section container">

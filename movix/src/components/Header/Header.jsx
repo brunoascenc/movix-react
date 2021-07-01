@@ -29,12 +29,10 @@ const Header = ({
   const closeMobileMenu = () => setClick(false);
   const username = userDetails.details.username;
 
-  console.log(userDetails.details.username);
-
   useEffect(() => {
     sessionId(userToken.token);
     fetchUserDetails(userId.sessionId);
-  }, []);
+  }, [fetchUserDetails, sessionId, userId.sessionId, userToken.token]);
 
   return (
     <>
