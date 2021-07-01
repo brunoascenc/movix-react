@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 const SearchInput = () => {
-  const [movieName, setMovieName] = useState("");
+  const [movieName, setMovieName] = useState('');
 
   const history = useHistory();
   const handleKeyPress = (e) => {

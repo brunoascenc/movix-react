@@ -2,30 +2,39 @@ import React, { useState, useEffect } from 'react';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Filters from './Filters/Filters';
+import { FaUser } from 'react-icons/fa';
+import { AiOutlineLogout } from 'react-icons/ai';
 import SearchInput from './Search/SearchInput';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import { fetchTokenAuth } from '../../redux/user-token/userTokenActions';
-import { fetchSessionId } from '../../redux/user-session/userSessionActions';
+import {
+  fetchSessionId,
+  signOutSuccess,
+} from '../../redux/user-session/userSessionActions';
 import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
 import { selectToken } from '../../redux/user-token/userTokenSelector';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
+import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
 
 const Header = ({
-  fetchTokenAuth,
   userToken,
   sessionId,
   userId,
   fetchUserDetails,
+  signOutSuccess,
+  userDetails,
 }) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const username = userDetails.details.username;
+
+  console.log(userDetails.details.username);
 
   useEffect(() => {
     sessionId(userToken.token);
     fetchUserDetails(userId.sessionId);
-  });
+  }, []);
 
   return (
     <>
@@ -42,6 +51,21 @@ const Header = ({
               <span>Order By:</span>
               <Filters closeMenu={closeMobileMenu} />
             </div>
+
+            {userId.sessionId ? (
+              <div className="user-links">
+                <Link to="/user">
+                  <FaUser className="user-icon" /> {username}
+                </Link>
+                <Link className="logout" to="/" onClick={signOutSuccess}>
+                  <AiOutlineLogout className="logout-icon" /> LogOut
+                </Link>
+              </div>
+            ) : (
+              <Link className="login-link" to="/login">
+                <FaUser className="user-icon" /> Login
+              </Link>
+            )}
           </form>
 
           <div
@@ -53,8 +77,6 @@ const Header = ({
             <div className="line3"></div>
           </div>
         </div>
-        {/* <button onClick={fetchTokenAuth}>login</button> */}
-        <Link to="/login">Login</Link>
       </header>
     </>
   );
@@ -63,12 +85,13 @@ const Header = ({
 const mapStateToProps = createStructuredSelector({
   userToken: selectToken,
   userId: selectSessionId,
+  userDetails: selectUserDetails,
 });
 
 const mapDipatchToProps = (dispatch) => ({
-  fetchTokenAuth: () => dispatch(fetchTokenAuth()),
   sessionId: (token) => dispatch(fetchSessionId(token)),
   fetchUserDetails: (id) => dispatch(fetchUserDetails(id)),
+  signOutSuccess: () => dispatch(signOutSuccess()),
 });
 
 export default connect(mapStateToProps, mapDipatchToProps)(Header);

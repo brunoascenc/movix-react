@@ -22,6 +22,19 @@ export const fetchSessionFailure = (error) => {
   };
 };
 
+export const signOutStart = () => ({
+  type: UserSessionTypes.SIGN_OUT_START,
+});
+
+export const signOutSuccess = () => ({
+  type: UserSessionTypes.SIGN_OUT_SUCCESS,
+});
+
+export const signOutFailure = (error) => ({
+  type: UserSessionTypes.SIGN_OUT_FAILURE,
+  payload: error,
+});
+
 export const fetchSessionId = (token) => {
   return (dispatch) => {
     dispatch(fetchSessionRequest);
