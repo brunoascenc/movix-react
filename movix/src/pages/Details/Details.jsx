@@ -18,6 +18,10 @@ const Details = (props) => {
   const movieDetail = useSelector((state) => state.movieDetail.results);
   const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
+  const similar = useSelector((state) => state.similarMovies.results);
+  const reviews = useSelector((state) => state.movieReview.results);
+  const movieReviews = reviews.results;
+  const similarMovies = similar.results;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -67,25 +71,39 @@ const Details = (props) => {
             )}
           </div>
 
-          <div className="similar-section container">
-            <div className="title-section">
-              <span></span>
-              <h1>Similar Movies</h1>
+          {similarMovies && similarMovies.length === 0 ? (
+            ''
+          ) : (
+            <div className="similar-section container">
+              <div className="title-section">
+                <span></span>
+                <h1>Similar Movies</h1>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="similar-movies container">
             <SimilarMovies movieId={movieId} />
-            {/* <MdKeyboardArrowLeft className="left-arrow" />
-            <MdKeyboardArrowRight className="right-arrow" /> */}
           </div>
 
           <div className="reviews-section container">
-            <div className="title-section">
-              <span></span>
-              <h1>Reviews</h1>
-            </div>
-            <div className="movie-reviews">
+            {movieReviews && movieReviews.length <= 0 ? (
+              ''
+            ) : (
+              <>
+                <div className="title-section">
+                  <span></span>
+                  <h1>Reviews</h1>
+                </div>
+              </>
+            )}
+            <div
+              className={
+                movieReviews && movieReviews.length === 0
+                  ? 'hide-div'
+                  : 'movie-reviews'
+              }
+            >
               <MovieReviews movieId={movieId} />
             </div>
           </div>

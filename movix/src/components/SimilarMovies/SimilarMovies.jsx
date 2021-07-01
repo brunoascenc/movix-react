@@ -45,7 +45,7 @@ const SimilarMovies = ({ movieId }) => {
                   <span className="movie-genres">{genreName(movie)}</span>
                   <div className="movie-rating">
                     <i className="far fa-star"></i>
-                    <p>{movie.vote_average}</p>
+                    <p>{movie.vote_average.toFixed(1)}</p>
                   </div>
                 </Link>
               </SwiperSlide>
