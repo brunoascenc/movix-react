@@ -1921,4 +1921,26 @@ footer .socials {
 .search-results .container {
   margin-top: 50px;
 }
+
+.empty-lists {
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.empty-lists p {
+  font-size: 21px;
+  text-align: center;
+}
+
+.empty-lists a {
+  border-bottom: dotted 1px #706b6b;
+}
 /*# sourceMappingURL=App.css.map */

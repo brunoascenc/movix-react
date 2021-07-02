@@ -1506,3 +1506,19 @@ footer {
     margin-top: 50px;
   }
 }
+
+//empty-list
+.empty-lists {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  a {
+    border-bottom: dotted 1px rgb(112, 107, 107);
+  }
+}

@@ -11,6 +11,7 @@ import { SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
 import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import Empty from '../EmptyList/Empty';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -29,7 +30,10 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
         <h1>Your favorite movies </h1>
       </div>
       <MoviesSwiper>
-        {favorites &&
+        {favorites.length === 0 ? (
+          <Empty />
+        ) : (
+          favorites &&
           favorites.map((movie) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-card">
@@ -52,7 +56,8 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
                 </button>
               </SwiperSlide>
             );
-          })}
+          })
+        )}
       </MoviesSwiper>
       <MdKeyboardArrowLeft
         className={favorites.length > 5 ? 'left-arrow' : 'hide-nav'}

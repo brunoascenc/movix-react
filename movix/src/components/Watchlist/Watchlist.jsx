@@ -11,6 +11,7 @@ import { SwiperSlide } from 'swiper/react';
 import useGenres from '../../hooks/useGenres';
 import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import Empty from '../EmptyList/Empty';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -29,7 +30,10 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
         <h1>Your watchlist </h1>
       </div>
       <MoviesSwiper>
-        {watchlist &&
+        {watchlist.length === 0 ? (
+          <Empty />
+        ) : (
+          watchlist &&
           watchlist.map((movie) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-card">
@@ -54,7 +58,8 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
                 </button>
               </SwiperSlide>
             );
-          })}
+          })
+        )}
       </MoviesSwiper>
       <MdKeyboardArrowLeft
         className={watchlist.length > 5 ? 'left-arrow' : 'hide-nav'}
