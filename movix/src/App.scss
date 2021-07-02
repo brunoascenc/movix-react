@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-@import 'node_modules/react-modal-video/scss/modal-video.scss';
+// @import 'node_modules/react-modal-video/scss/modal-video.scss';
 @import './styles/variables', './styles/mixins';
 
 * {
@@ -15,10 +15,6 @@
 *:focus {
   outline: none;
 }
-
-// .modal-video-close{
-//   margin-top: 1000px;
-// }
 
 a {
   text-decoration: none;
@@ -235,13 +231,6 @@ header {
     .filter-options {
       position: relative;
       margin-right: 70px;
-      // @include xs-desktop {
-      //   display: flex;
-      //   flex-direction: column;
-      //   width: 85%;
-      //   margin: 0 auto;
-      //   align-items: center;
-      // }
       @media screen and (max-width: 1035px) {
         display: flex;
         flex-direction: column;
@@ -516,36 +505,24 @@ header {
   position: absolute;
   left: -35px;
   top: 50%;
+  @include sm-mobile {
+    left: -28px;
+  }
 }
 
 .right-arrow {
   position: absolute;
   right: -35px;
   top: 50%;
+  @include sm-mobile {
+    right: -28px;
+  }
 }
 
 //upcoming movies
 .upcoming-slide {
   position: relative;
   margin-bottom: 15vh;
-
-  // .left-arrow,
-  // .right-arrow {
-  //   cursor: pointer;
-  //   font-size: 30px;
-  // }
-
-  // .left-arrow {
-  //   position: absolute;
-  //   left: -35px;
-  //   top: 50%;
-  // }
-
-  // .right-arrow {
-  //   position: absolute;
-  //   right: -35px;
-  //   top: 50%;
-  // }
 
   .title-section {
     margin-bottom: 2vh;
@@ -1308,8 +1285,13 @@ footer {
     display: flex;
     align-items: center;
     text-transform: capitalize;
-    color: rgba(209, 180, 228, 0.911);
+    color: rgba(230, 207, 245, 0.644);
     width: unset;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: rgba(226, 192, 248, 0.959);
+    }
   }
 
   .logout {
@@ -1331,16 +1313,22 @@ footer {
 
 .login-link {
   background: none;
+  border-radius: 0;
   font-family: unset;
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
   text-transform: capitalize;
-  color: rgba(209, 180, 228, 0.911);
+  color: rgba(230, 207, 245, 0.644);
+  transition: 0.2s ease;
   @media screen and (max-width: 1035px) {
     margin-top: 40px;
     margin-left: 75px;
+  }
+
+  &:hover {
+    color: rgba(226, 192, 248, 0.959);
   }
 }
 
@@ -1402,7 +1390,7 @@ footer {
 
 //user-page
 .user-page {
-  height: 100vh;
+  height: 100%;
   margin-top: 85px;
 
   .swiper-card {
@@ -1433,6 +1421,14 @@ footer {
 
   .watchlist {
     margin-top: 85px;
+  }
+
+  .favorite {
+    h1 {
+      @include sm-mobile {
+        font-size: 31px;
+      }
+    }
   }
 
   .watchlist,
@@ -1474,6 +1470,7 @@ footer {
     font-size: 16px;
     letter-spacing: 1px;
     color: rgba(230, 206, 247, 0.911);
+    background-image: $gradientBtn;
     border: none;
     padding: 6px;
     border-radius: 6px;
@@ -1502,4 +1499,10 @@ footer {
   color: rgb(233, 221, 221);
   border-radius: 8px;
   margin-top: 130px;
+}
+
+.search-results {
+  .container {
+    margin-top: 50px;
+  }
 }

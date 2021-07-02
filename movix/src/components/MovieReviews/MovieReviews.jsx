@@ -11,16 +11,6 @@ const MovieReviews = ({ movieId }) => {
     dispatch(fetchMovieReviews(movieId));
   }, [movieId, dispatch]);
 
-  const noReviews = () => {
-    return (
-      <div className="no-reviews">
-        <p>
-          Nothing Found <i className="far fa-sad-tear"></i>
-        </p>
-      </div>
-    );
-  };
-
   return (
     <>
       {movieReviews &&

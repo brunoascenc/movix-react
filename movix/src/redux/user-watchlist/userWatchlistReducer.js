@@ -1,8 +1,8 @@
 import WatchlistActionTypes from './userWatchlistTypes';
 
 const initialState = {
-  loading: false,
   results: [],
+  loading: false,
   error: '',
 };
 

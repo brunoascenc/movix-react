@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Filters from './Filters/Filters';
-import { FaUser } from 'react-icons/fa';
+import { AiOutlineUser } from 'react-icons/ai';
 import { AiOutlineLogout } from 'react-icons/ai';
 import SearchInput from './Search/SearchInput';
 import { Link } from 'react-router-dom';
@@ -53,7 +53,7 @@ const Header = ({
             {userId.sessionId ? (
               <div className="user-links">
                 <Link to="/user">
-                  <FaUser className="user-icon" /> {username}
+                  <AiOutlineUser className="user-icon" /> {username}
                 </Link>
                 <Link className="logout" to="/" onClick={signOutSuccess}>
                   <AiOutlineLogout className="logout-icon" /> LogOut
@@ -61,7 +61,7 @@ const Header = ({
               </div>
             ) : (
               <Link className="login-link" to="/login">
-                <FaUser className="user-icon" /> Login
+                <AiOutlineUser className="user-icon" /> Login
               </Link>
             )}
           </form>

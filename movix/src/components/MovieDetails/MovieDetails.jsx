@@ -53,7 +53,7 @@ const MovieDetails = ({
               min
             </li>
             <li>
-              <span className="contrast">Rating</span>{' '}
+              <span className="contrast">Rating:</span>{' '}
               {movieDetail.vote_average}
             </li>
           </ul>

@@ -25,7 +25,6 @@ const SearchResults = (props) => {
     setTimeout(() => {
       dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
     }, 1000);
-    // dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (

@@ -1,23 +1,39 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  fetchUserDetails,
+  fetchUserRequest,
+} from '../../redux/user-details/userDetailsAction';
 import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import Watchlist from '../../components/Watchlist/Watchlist';
 import FavoriteMovies from '../../components/FavoriteMovies/FavoriteMovies';
+import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 
 const User = ({ userId }) => {
+  const loading = useSelector((state) => state.user.loading);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchUserDetails(userId.sessionId);
-  }, [userId.sessionId]);
+    dispatch(fetchUserRequest());
+    setTimeout(() => {
+      dispatch(fetchUserDetails(userId.sessionId));
+    }, 1000);
+  }, [userId.sessionId, dispatch]);
 
   return (
     <div className="container user-page">
       <div className="user-content">
-        <FavoriteMovies />
-
-        <Watchlist />
+        {loading ? (
+          <FullPageLoader />
+        ) : (
+          <>
+            <FavoriteMovies />
+            <Watchlist />{' '}
+          </>
+        )}
       </div>
     </div>
   );
