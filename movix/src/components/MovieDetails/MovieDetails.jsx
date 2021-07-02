@@ -59,10 +59,10 @@ const MovieDetails = ({
           </ul>
         </div>
         <div className="list-btn">
-          <button onClick={addToWatchlist}>
+          <button onClick={addToFavorite}>
             <BsHeart className="list-icons" /> Favorite
           </button>
-          <button onClick={addToFavorite}>
+          <button onClick={addToWatchlist}>
             <BsListTask className="list-icons" /> Watchlist
           </button>
         </div>

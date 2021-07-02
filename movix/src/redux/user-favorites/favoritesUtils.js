@@ -40,7 +40,7 @@ export const removeFromFavorite = (id, movieId) => {
     }
   )
     .then((res) => res.json())
-    .then((res) => {
+    .then(() => {
       window.location.reload();
     })
     .catch((err) => {

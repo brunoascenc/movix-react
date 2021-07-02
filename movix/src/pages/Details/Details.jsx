@@ -5,7 +5,7 @@ import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import MovieTrailer from '../../components/MovieTrailer/MovieTrailer';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
-// import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { useAlert } from 'react-alert';
 import {
   fetchMovieDetail,
   fetchDetailsRequest,
@@ -21,6 +21,7 @@ const Details = (props) => {
   const similar = useSelector((state) => state.similarMovies.results);
   const reviews = useSelector((state) => state.movieReview.results);
   const movieReviews = reviews.results;
+  const alert = useAlert();
   const similarMovies = similar.results;
   const dispatch = useDispatch();
 
@@ -65,8 +66,32 @@ const Details = (props) => {
               <MovieDetails
                 movieDetail={movieDetail}
                 genres={genreOptions}
-                addToWatchlist={() => addToWatchlist(userId, movieId)}
-                addToFavorite={() => addToFavorite(userId, movieId)}
+                addToFavorite={
+                  //check if theres no session id
+                  !userId
+                    ? () => {
+                        alert.show('You must login first...');
+                      }
+                    : () =>
+                        addToFavorite(
+                          userId,
+                          movieId,
+                          alert.show('Movie added to the list!')
+                        )
+                }
+                addToWatchlist={
+                  //check if theres no session id
+                  !userId
+                    ? () => {
+                        alert.show('You must login first...');
+                      }
+                    : () =>
+                        addToWatchlist(
+                          userId,
+                          movieId,
+                          alert.show('Movie added to the list!')
+                        )
+                }
               />
             )}
           </div>

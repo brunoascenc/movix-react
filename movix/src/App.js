@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from './redux/user-session/userSessionSelector';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import Home from './pages/Home/Home';
 import Details from './pages/Details/Details';
 import SearchResults from './pages/SearchPage/SearchResults';
@@ -14,34 +15,45 @@ import { useLocation } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
 import User from './pages/User/User';
 import './App.scss';
+import { AlertTemplate } from './components/AlertTemplate/AlertTemplate';
+
+//alert config
+const options = {
+  position: positions.TOP_CENTER,
+  timeout: 3000,
+  offset: '30px',
+  transition: transitions.SCALE,
+};
 
 function App({ userId }) {
   const location = useLocation();
 
   return (
-    <ScrollToTop>
-      <div className="App">
-        <Header />
-        <Switch location={location}>
-          <Route path="/" exact component={Home} />
-          <Route path="/details/:id" component={Details} />
-          <Route path="/search=:pathname?" component={SearchResults} />
-          <Route path="/user" component={User} />
-          <Route
-            exact
-            path="/login"
-            render={() =>
-              userId.sessionId ? <Redirect to="/user" /> : <Login />
-            }
-          />
-          <Route
-            path="/filter=:pathname?&:pathname2?"
-            component={FilterResults}
-          />
-        </Switch>
-        <Footer />
-      </div>
-    </ScrollToTop>
+    <AlertProvider template={AlertTemplate} {...options}>
+      <ScrollToTop>
+        <div className="App">
+          <Header />
+          <Switch location={location}>
+            <Route path="/" exact component={Home} />
+            <Route path="/details/:id" component={Details} />
+            <Route path="/search=:pathname?" component={SearchResults} />
+            <Route path="/user" component={User} />
+            <Route
+              exact
+              path="/login"
+              render={() =>
+                userId.sessionId ? <Redirect to="/user" /> : <Login />
+              }
+            />
+            <Route
+              path="/filter=:pathname?&:pathname2?"
+              component={FilterResults}
+            />
+          </Switch>
+          <Footer />
+        </div>
+      </ScrollToTop>
+    </AlertProvider>
   );
 }
 
