@@ -56,7 +56,7 @@ const Header = ({
                   <AiOutlineUser className="user-icon" /> {username}
                 </Link>
                 <Link className="logout" to="/" onClick={signOutSuccess}>
-                  <AiOutlineLogout className="logout-icon" /> LogOut
+                  <AiOutlineLogout className="logout-icon" /> Logout
                 </Link>
               </div>
             ) : (
