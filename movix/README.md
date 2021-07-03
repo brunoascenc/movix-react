@@ -8,13 +8,13 @@ O Movix é um site para descobrir e pesquisar seus filmes favoritos. No app é p
 
 ## Login
 
-Para que seja possível adiconar filmes na sua lista, é necessário efetuar o login no movixapp.
+Para que seja possível adiconar filmes à sua lista lista, é necessário efetuar o login no movixapp.
 
 ![](src/images/loginpage.png)
 
 ## Autenticação
 
-Todo o sistema de login é feito atraves da api do [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction), é necessário que o usuário crie uma conta e autorize o movixapp na utilização de seus dados.
+Todo o sistema de login é feito atraves da api do site [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction), é necessário que o usuário crie uma conta e autorize o movixapp na utilização de seus dados.
 
 ![](src/images/auth.png)
 
