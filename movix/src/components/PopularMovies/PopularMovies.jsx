@@ -22,7 +22,7 @@ const PopularMovies = () => {
     dispatch(fetchPopularRequest());
     setTimeout(() => {
       dispatch(fetchPopularMovies(pageNumber));
-    }, 1000);
+    }, 700);
   }, [pageNumber, dispatch]);
 
   return (

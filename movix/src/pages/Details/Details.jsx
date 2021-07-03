@@ -29,7 +29,7 @@ const Details = (props) => {
     dispatch(fetchDetailsRequest());
     setTimeout(() => {
       dispatch(fetchMovieDetail(movieId));
-    }, 1000);
+    }, 700);
   }, [movieId, dispatch]);
 
   const genres = movieDetail.genres;

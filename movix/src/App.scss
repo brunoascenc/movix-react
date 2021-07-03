@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-// @import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
 @import './styles/variables', './styles/mixins';
 
 * {
@@ -1032,6 +1032,7 @@ header {
     @include btnStyle();
     padding: 0.5rem 2rem;
     margin-top: 5rem;
+    border-radius: 6px;
   }
 
   div {

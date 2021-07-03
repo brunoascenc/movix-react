@@ -20,7 +20,7 @@ const User = ({ userId }) => {
     dispatch(fetchUserRequest());
     setTimeout(() => {
       dispatch(fetchUserDetails(userId.sessionId));
-    }, 1000);
+    }, 700);
   }, [userId.sessionId, dispatch]);
 
   return (

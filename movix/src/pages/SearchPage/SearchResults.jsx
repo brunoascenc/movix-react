@@ -20,7 +20,7 @@ const SearchResults = (props) => {
     dispatch(fetchSearchRequest());
     setTimeout(() => {
       dispatch(fetchSearchResults(searchQuery));
-    }, 1000);
+    }, 700);
   }, [searchQuery, dispatch]);
 
   //loop to hide broken images

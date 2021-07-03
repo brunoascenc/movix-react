@@ -34,7 +34,7 @@ export const fetchTokenAuth = () => {
         const data = res.data;
         const token = data.request_token;
         dispatch(fecthTokenSuccess(token));
-        window.location = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:3000/`;
+        window.location = `https://www.themoviedb.org/authenticate/${token}?redirect_to=https://movixapp.netlify.app/`;
         console.log(token);
       })
       .catch((err) => {
