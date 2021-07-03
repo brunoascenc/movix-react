@@ -34,6 +34,11 @@ const Header = ({
     fetchUserDetails(userId.sessionId);
   }, [fetchUserDetails, sessionId, userId.sessionId, userToken.token]);
 
+  const handleSignOut = () => {
+    closeMobileMenu();
+    signOutSuccess();
+  };
+
   return (
     <>
       <header>
@@ -52,16 +57,24 @@ const Header = ({
 
             {userId.sessionId ? (
               <div className="user-links">
-                <Link to="/user">
+                <Link to="/user" onClick={closeMobileMenu}>
                   <AiOutlineUser className="user-icon" /> {username}
                 </Link>
-                <Link className="logout" to="/" onClick={signOutSuccess}>
+                <Link className="logout" to="/" onClick={handleSignOut}>
                   <AiOutlineLogout className="logout-icon" /> Logout
                 </Link>
               </div>
             ) : (
-              <Link className="login-link" to="/login">
-                <AiOutlineUser className="user-icon" /> Login
+              <Link
+                className="login-link"
+                to="/login"
+                onClick={closeMobileMenu}
+              >
+                <AiOutlineUser
+                  className="user-icon"
+                  onClick={closeMobileMenu}
+                />{' '}
+                Login
               </Link>
             )}
           </form>

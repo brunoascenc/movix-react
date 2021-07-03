@@ -1324,8 +1324,8 @@ footer {
   color: rgba(230, 207, 245, 0.644);
   transition: 0.2s ease;
   @media screen and (max-width: 1035px) {
-    margin-top: 40px;
-    margin-left: 75px;
+    margin-top: 20px;
+    justify-content: center;
   }
 
   &:hover {
