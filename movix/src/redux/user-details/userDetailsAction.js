@@ -30,7 +30,6 @@ export const fetchUserDetails = (id) => {
         `https://api.themoviedb.org/3/account?api_key=${API_KEY}&session_id=${id}`
       )
       .then((res) => {
-        // console.log(res);
         const userDetails = res.data;
         dispatch(fecthUserSuccess(userDetails));
       })

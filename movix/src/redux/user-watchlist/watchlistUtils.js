@@ -16,9 +16,6 @@ export const addToWatchlist = (id, movieId) => {
     }
   )
     .then((res) => res.json())
-    .then((res) => {
-      console.log(res);
-    })
     .catch((err) => {
       const error = err.message;
       console.log(error);

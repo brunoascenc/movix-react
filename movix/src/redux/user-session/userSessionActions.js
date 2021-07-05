@@ -56,7 +56,6 @@ export const fetchSessionId = (token) => {
           const sessionId = res.session_id;
           dispatch(fecthSessionSuccess(sessionId));
           window.location = 'https://movixapp.netlify.app/';
-          console.log(res);
         })
         .catch((err) => {
           const error = err.message;
