@@ -15,6 +15,7 @@ import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
 import { selectToken } from '../../redux/user-token/userTokenSelector';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
+import { HeaderComponent, SearchContainer } from './HeaderStyles';
 
 const Header = ({
   userToken,
@@ -41,54 +42,45 @@ const Header = ({
 
   return (
     <>
-      <header>
-        <div className="header-elements">
-          <div className="search-container">
-            <Link to="/">
-              <h1>Movix</h1>
-            </Link>
-            <SearchInput />
+      <HeaderComponent>
+        <SearchContainer>
+          <Link to="/">
+            <h1>Movix</h1>
+          </Link>
+          <SearchInput />
+        </SearchContainer>
+        <form className={click ? 'nav-active' : null} data-scroll-header>
+          <div className="filter-options">
+            <span>Order By:</span>
+            <Filters closeMenu={closeMobileMenu} />
           </div>
-          <form className={click ? 'nav-active' : null} data-scroll-header>
-            <div className="filter-options">
-              <span>Order By:</span>
-              <Filters closeMenu={closeMobileMenu} />
-            </div>
 
-            {userId.sessionId ? (
-              <div className="user-links">
-                <Link to="/user" onClick={closeMobileMenu}>
-                  <AiOutlineUser className="user-icon" /> {username}
-                </Link>
-                <Link className="logout" to="/" onClick={handleSignOut}>
-                  <AiOutlineLogout className="logout-icon" /> Logout
-                </Link>
-              </div>
-            ) : (
-              <Link
-                className="login-link"
-                to="/login"
-                onClick={closeMobileMenu}
-              >
-                <AiOutlineUser
-                  className="user-icon"
-                  onClick={closeMobileMenu}
-                />{' '}
-                Login
+          {userId.sessionId ? (
+            <div className="user-links">
+              <Link to="/user" onClick={closeMobileMenu}>
+                <AiOutlineUser className="user-icon" /> {username}
               </Link>
-            )}
-          </form>
-
-          <div
-            className={click ? 'close-nav' : 'burger nav'}
-            onClick={handleClick}
-          >
-            <div className="line1"></div>
-            <div className="line2"></div>
-            <div className="line3"></div>
-          </div>
-        </div>
-      </header>
+              <Link className="logout" to="/" onClick={handleSignOut}>
+                <AiOutlineLogout className="logout-icon" /> Logout
+              </Link>
+            </div>
+          ) : (
+            <Link className="login-link" to="/login" onClick={closeMobileMenu}>
+              <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '}
+              Login
+            </Link>
+          )}
+        </form>
+        {/* 
+        <mobileMenu
+          className={click ? 'close-nav' : 'burger nav'}
+          onClick={handleClick}
+        >
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </mobileMenu> */}
+      </HeaderComponent>
     </>
   );
 };

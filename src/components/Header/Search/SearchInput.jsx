@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { Input, SearchButton, InputContainer } from '../HeaderStyles';
 
 const SearchInput = () => {
   const [movieName, setMovieName] = useState('');
@@ -12,8 +13,8 @@ const SearchInput = () => {
   };
 
   return (
-    <>
-      <input
+    <InputContainer>
+      <Input
         onKeyPress={handleKeyPress}
         type="text"
         id="searchInput"
@@ -21,11 +22,11 @@ const SearchInput = () => {
         onChange={(e) => setMovieName(e.target.value)}
       />
       <Link to={`/search=${movieName}`}>
-        <button id="search" type="submit">
+        <SearchButton id="search" type="submit">
           <i className="fas fa-search"></i>
-        </button>
+        </SearchButton>
       </Link>
-    </>
+    </InputContainer>
   );
 };
 
