@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGenres } from '../../../redux/movie-genres/genreActions';
 import { Link } from 'react-router-dom';
+import { Select } from '../HeaderStyles';
 
 const GenreSelect = ({ closeMenu }) => {
   const genreList = useSelector((state) => state.genreList.results);
@@ -25,7 +26,7 @@ const GenreSelect = ({ closeMenu }) => {
 
   return (
     <>
-      <select name="genres" id="select-genre" onChange={handleGenre}>
+      <Select name="genres" id="select-genre" onChange={handleGenre}>
         <option value=""> Selecione </option>
         {genreName &&
           genreName.map((genre) => {
@@ -35,9 +36,9 @@ const GenreSelect = ({ closeMenu }) => {
               </option>
             );
           })}
-      </select>
+      </Select>
 
-      <select name="popular" id="filter-movie" onChange={handleOption}>
+      <Select name="popular" id="filter-movie" onChange={handleOption}>
         <option value=""> Selecione </option>
         <option value="popularity.desc" defaultValue>
           Popularity
@@ -46,7 +47,7 @@ const GenreSelect = ({ closeMenu }) => {
         <option value="vote_count.desc">Most voted</option>
         <option value="vote_average.desc">Top Rated</option>
         <option value="primary_release_date.desc">Release Date</option>
-      </select>
+      </Select>
 
       <Link
         onClick={closeMenu}

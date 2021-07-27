@@ -5,6 +5,7 @@ import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
+import {LandingPageContainer, Overlay} from './LandingPageStyles'
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -22,15 +23,15 @@ const LandingPage = () => {
   }, [dispatch]);
 
   return (
-    <section className="landing-page">
+    <LandingPageContainer>
       <Swiper
         slidesPerView={1}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-          type: 'progressbar',
-        }}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        // pagination={{
+        //   clickable: true,
+        //   dynamicBullets: true,
+        //   type: 'progressbar',
+        // }}
+        autoplay={{ delay: 7000, disableOnInteraction: false }}
         loop
       >
         {nowPlaying &&
@@ -40,13 +41,13 @@ const LandingPage = () => {
                 key={movie.id}
                 className="swiper-card"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(31, 28, 28, 0.329),rgba(14, 14, 13, 0.89)), url(${
+                  backgroundImage: `linear-gradient(rgba(31, 28, 28, 0.2),#121212), url(${
                     'https://image.tmdb.org/t/p/original' + movie.backdrop_path
                   })`,
                 }}
               >
                 <Link to={`/details/${movie.id}`}>
-                  <div className="overlay"></div>
+                  <Overlay></Overlay>
 
                   <div className="landing-txt">
                     <div className="txt-align">
@@ -66,7 +67,7 @@ const LandingPage = () => {
             );
           })}
       </Swiper>
-    </section>
+    </LandingPageContainer>
   );
 };
 

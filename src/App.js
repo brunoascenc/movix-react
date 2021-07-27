@@ -16,6 +16,7 @@ import ScrollToTop from './hooks/ScrollToTop';
 import User from './pages/User/User';
 import './App.scss';
 import { AlertTemplate } from './components/AlertTemplate/AlertTemplate';
+import GlobalStyle from './globalStyles';
 
 //alert config
 const options = {
@@ -30,6 +31,7 @@ function App({ userId }) {
 
   return (
     <AlertProvider template={AlertTemplate} {...options}>
+      <GlobalStyle />
       <ScrollToTop>
         <div className="App">
           <Header />

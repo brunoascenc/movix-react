@@ -15,7 +15,7 @@ import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
 import { selectToken } from '../../redux/user-token/userTokenSelector';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
-import { HeaderComponent, SearchContainer } from './HeaderStyles';
+import { HeaderComponent, SearchContainer, FilteOptions, Form } from './HeaderStyles';
 
 const Header = ({
   userToken,
@@ -42,23 +42,23 @@ const Header = ({
 
   return (
     <>
-      <HeaderComponent>
+      <HeaderComponent className="container">
         <SearchContainer>
           <Link to="/">
             <h1>Movix</h1>
           </Link>
           <SearchInput />
         </SearchContainer>
-        <form className={click ? 'nav-active' : null} data-scroll-header>
-          <div className="filter-options">
+        <Form className={click ? 'nav-active' : null} data-scroll-header>
+          <FilteOptions>
             <span>Order By:</span>
             <Filters closeMenu={closeMobileMenu} />
-          </div>
+          </FilteOptions>
 
           {userId.sessionId ? (
             <div className="user-links">
               <Link to="/user" onClick={closeMobileMenu}>
-                <AiOutlineUser className="user-icon" /> {username}
+                {/* <AiOutlineUser className="user-icon" /> {username} */}
               </Link>
               <Link className="logout" to="/" onClick={handleSignOut}>
                 <AiOutlineLogout className="logout-icon" /> Logout
@@ -66,11 +66,11 @@ const Header = ({
             </div>
           ) : (
             <Link className="login-link" to="/login" onClick={closeMobileMenu}>
-              <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '}
+              {/* <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '} */}
               Login
             </Link>
           )}
-        </form>
+        </Form>
         {/* 
         <mobileMenu
           className={click ? 'close-nav' : 'burger nav'}
