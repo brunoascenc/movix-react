@@ -5,7 +5,7 @@ import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
-import {LandingPageContainer, Overlay} from './LandingPageStyles'
+import {LandingPageContainer, Overlay, LandingMovieTitle, LandingText, LandingInfo} from './LandingPageStyles'
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -31,7 +31,7 @@ const LandingPage = () => {
         //   dynamicBullets: true,
         //   type: 'progressbar',
         // }}
-        autoplay={{ delay: 7000, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
       >
         {nowPlaying &&
@@ -49,19 +49,19 @@ const LandingPage = () => {
                 <Link to={`/details/${movie.id}`}>
                   <Overlay></Overlay>
 
-                  <div className="landing-txt">
+                  <LandingText>
                     <div className="txt-align">
-                      <h1>Now Playing </h1>
-                      <span className="movie-title">{movie.title}</span>
-                      <div>
+                      {/* <h1>Now Playing </h1> */}
+                      <LandingMovieTitle>{movie.title}</LandingMovieTitle>
+                      <LandingInfo>
                         <p className="movie-genres">{genreName(movie)}</p> |
                         <div className="movie-rating">
                           <i className="far fa-star"></i>
                           <p>{movie.vote_average}</p>
                         </div>
-                      </div>
+                      </LandingInfo>
                     </div>
-                  </div>
+                  </LandingText>
                 </Link>
               </SwiperSlide>
             );
