@@ -5,7 +5,13 @@ import useGenres from '../../hooks/useGenres';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
-import {LandingPageContainer, Overlay, LandingMovieTitle, LandingText, LandingInfo} from './LandingPageStyles'
+import {
+  LandingPageContainer,
+  Overlay,
+  LandingMovieTitle,
+  LandingText,
+  LandingInfo,
+} from './LandingPageStyles';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -41,7 +47,7 @@ const LandingPage = () => {
                 key={movie.id}
                 className="swiper-card"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(31, 28, 28, 0.2),#121212), url(${
+                  backgroundImage: `linear-gradient(rgba(17, 16, 16, 0.034),rgb(10, 10, 14)), url(${
                     'https://image.tmdb.org/t/p/original' + movie.backdrop_path
                   })`,
                 }}
@@ -53,13 +59,16 @@ const LandingPage = () => {
                     <div className="txt-align">
                       {/* <h1>Now Playing </h1> */}
                       <LandingMovieTitle>{movie.title}</LandingMovieTitle>
-                      <LandingInfo>
+                        <a>
+                          Details
+                        </a>
+                      {/* <LandingInfo>
                         <p className="movie-genres">{genreName(movie)}</p> |
                         <div className="movie-rating">
                           <i className="far fa-star"></i>
                           <p>{movie.vote_average}</p>
                         </div>
-                      </LandingInfo>
+                      </LandingInfo> */}
                     </div>
                   </LandingText>
                 </Link>

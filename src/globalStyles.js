@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Noto Sans JP', sans-serif;
     background: #121212;
+    background: rgb(10, 10, 14);
     color: #f2e9e9;
   }
 
