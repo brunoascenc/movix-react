@@ -26,7 +26,7 @@ export const Overlay = styled.div`
 
 export const LandingText = styled.div`
   color: white;
-  width: 450px;
+  width: 600px;
   margin-left: 10%;
   margin-top: 100px;
 
