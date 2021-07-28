@@ -32,7 +32,6 @@ export const InputContainer = styled.div`
 
 export const Input = styled.input`
   background: transparent;
-  border: solid 1px #d1cdc0;
   padding: 7px 16px;
   border-radius: 16px;
   margin-left: 20px;
@@ -55,13 +54,10 @@ export const SearchButton = styled.button`
 
 
 export const Select = styled.select`
-  background: #EFE6E3;
   background: transparent;
   border-radius: 16px;
-  padding: 6px;
   padding: 7px 12px;
   border: solid 1px rgb(239, 229, 229, 0.3);
-  color: #0D0D0D;
   color: #EFE6E3;
   margin-left: 5px;
 
@@ -77,14 +73,15 @@ export const FilteOptions = styled.div`
     border-radius: 16px;
     color: white;
     background: rgb(158, 61, 238);
+    background: transparent;
     margin-left: 10px;
     margin-right: -10px;
-    border: none;
-    background-image: linear-gradient(
+    border: solid 1px rgb(239, 229, 229, 0.3);
+    /* background-image: linear-gradient(
       to bottom right,
       rgb(160, 63, 240),
       rgba(84, 29, 139, 0.788)
-    );
+    ); */
   }
 
 `

@@ -43,7 +43,7 @@ const LandingPage = () => {
         //   // dynamicBullets: true,
         //   // type: 'progressbar',
         // }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
       >
         {bestRating &&
@@ -53,7 +53,7 @@ const LandingPage = () => {
                 key={movie.id}
                 className="swiper-card"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(17, 16, 16, 0.034),rgb(10, 10, 14)), url(${
+                  backgroundImage: `linear-gradient(rgba(17, 16, 16, 0.3),rgb(10, 10, 14)), url(${
                     'https://image.tmdb.org/t/p/original' + movie.backdrop_path
                   })`,
                 }}
