@@ -34,8 +34,8 @@ const LandingPage = () => {
         slidesPerView={1}
         // pagination={{
         //   clickable: true,
-        //   dynamicBullets: true,
-        //   type: 'progressbar',
+        //   // dynamicBullets: true,
+        //   // type: 'progressbar',
         // }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
@@ -53,7 +53,7 @@ const LandingPage = () => {
                 }}
               >
                 <Link to={`/details/${movie.id}`}>
-                  {/* <Overlay></Overlay> */}
+
 
                   <LandingText>
                     <div className="txt-align">
@@ -66,9 +66,9 @@ const LandingPage = () => {
                           <p>{movie.vote_average}</p>
                         </div>
                       </LandingInfo>
-                        <a>
+                        <button>
                           Details
-                        </a>
+                        </button>
                     </div>
                   </LandingText>
                 </Link>

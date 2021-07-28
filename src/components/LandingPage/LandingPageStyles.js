@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LandingPageContainer = styled.div`
   height: 75vh;
-  z-index: -1;
+  /* z-index: -1; */
   margin-bottom: 100px;
   position: relative;
 
@@ -35,13 +35,15 @@ export const LandingText = styled.div`
   flex-direction: column;
   }
 
-  a{
+  button{
     padding: 8px 16px;
     width: 100px;
     display: flex;
     justify-content: center;
     border-radius: 16px;
     color: white;
+    border: none;
+    font-size: 13px;
     background: rgb(158, 61, 238);
     margin-top: 10px;
     margin-left: 2px;

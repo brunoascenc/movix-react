@@ -31,15 +31,15 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  background:#EFE6E3;
+  background: transparent;
   border: solid 1px #d1cdc0;
-  padding: 6px;
+  padding: 7px 16px;
   border-radius: 16px;
   margin-left: 20px;
   width: 250px;
-  border: solid 2px #EFE6E3;
+  border: solid 1px rgb(239, 229, 229, 0.3);
   ::placeholder {
-    color: #0D0D0D;
+    color: #EFE6E3;
   }
 `;
 
@@ -48,19 +48,21 @@ export const SearchButton = styled.button`
   background: transparent;
   border: none;
   position: absolute;
-  top: 7px;
-  right: 8px;
-  color: black;
+  top: 8px;
+  right: 12px;
+  color: #EFE6E3;
 `;
 
 
 export const Select = styled.select`
   background: #EFE6E3;
+  background: transparent;
   border-radius: 16px;
   padding: 6px;
   padding: 7px 12px;
-  border: none;
+  border: solid 1px rgb(239, 229, 229, 0.3);
   color: #0D0D0D;
+  color: #EFE6E3;
   margin-left: 5px;
 
   option:not(:first-of-type) {
@@ -76,6 +78,8 @@ export const FilteOptions = styled.div`
     color: white;
     background: rgb(158, 61, 238);
     margin-left: 10px;
+    margin-right: -10px;
+    border: none;
     background-image: linear-gradient(
       to bottom right,
       rgb(160, 63, 240),
@@ -89,11 +93,11 @@ export const Form = styled.form`
   display: flex;
   align-items: center;
   a{
-    color: #252526;
+    color: #EFE6E3;
     letter-spacing: 1px;
     padding: 6px 16px;
     border-radius: 16px;
-    background: #edeff2;
-    borde: none;
+    background: transparent;
+    border: solid 1px rgb(239, 229, 229, 0.3);
   }
 `
