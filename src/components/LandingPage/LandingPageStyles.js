@@ -29,6 +29,30 @@ export const LandingText = styled.div`
   width: 450px;
   margin-left: 10%;
   margin-top: 100px;
+
+  .txt-align{
+      display: flex;
+  flex-direction: column;
+  }
+
+  a{
+    padding: 8px 16px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    color: white;
+    background: rgb(158, 61, 238);
+    margin-top: 10px;
+    margin-left: 2px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(160, 63, 240),
+      rgba(84, 29, 139, 0.788)
+    );
+  }
 `;
 
 export const LandingMovieTitle = styled.span`
@@ -41,7 +65,8 @@ export const LandingMovieTitle = styled.span`
 
 export const LandingInfo = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-left: 3px;
   align-items: center;
   color: #ced1d6;
   .movie-genres {

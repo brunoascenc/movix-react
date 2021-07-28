@@ -53,22 +53,22 @@ const LandingPage = () => {
                 }}
               >
                 <Link to={`/details/${movie.id}`}>
-                  <Overlay></Overlay>
+                  {/* <Overlay></Overlay> */}
 
                   <LandingText>
                     <div className="txt-align">
                       {/* <h1>Now Playing </h1> */}
                       <LandingMovieTitle>{movie.title}</LandingMovieTitle>
-                        <a>
-                          Details
-                        </a>
-                      {/* <LandingInfo>
+                      <LandingInfo>
                         <p className="movie-genres">{genreName(movie)}</p> |
                         <div className="movie-rating">
                           <i className="far fa-star"></i>
                           <p>{movie.vote_average}</p>
                         </div>
-                      </LandingInfo> */}
+                      </LandingInfo>
+                        <a>
+                          Details
+                        </a>
                     </div>
                   </LandingText>
                 </Link>
