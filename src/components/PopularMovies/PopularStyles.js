@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const PopularContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 70px;
   position: relative;
+  margin-bottom: 50px;
 
   .left-arrow,
   .right-arrow {
@@ -39,7 +40,8 @@ export const SectionTitle = styled.h2`
 
 export const Image = styled.img`
     height: 260px;
-    border-radius: 16px;
+    border-radius: 12px;
+    border: solid 1px rgb(44, 44, 51,0.5);
 `;
 
 export const MovieInfo = styled.span``;

@@ -39,7 +39,8 @@ export const UpcomingCard = styled.div`
 
 export const Image = styled.img`
     height: 260px;
-    border-radius: 16px;
+    border-radius: 12px;
+    border: solid 1px rgb(44, 44, 51,0.5);
 `;
 
 export const MovieInfo = styled.span``;

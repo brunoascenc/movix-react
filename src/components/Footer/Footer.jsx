@@ -1,10 +1,11 @@
 import React from "react";
 import Logo from "../../images/tmdblogo.svg";
+import {FooterContainer} from './FooterStyles';
 import "../../App.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterContainer>
       <p>
         <span>Movix</span> © 2021
       </p>
@@ -21,7 +22,7 @@ const Footer = () => {
           <i className="fas fa-link"></i>
         </a>
       </div>
-    </footer>
+    </FooterContainer>
   );
 };
 
