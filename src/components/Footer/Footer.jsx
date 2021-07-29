@@ -1,16 +1,18 @@
 import React from "react";
 import Logo from "../../images/tmdblogo.svg";
-import {FooterContainer} from './FooterStyles';
+import {FooterContainer,TMDBLogo, FooterContent, Text, TMDBSocials, SocialsLinks} from './FooterStyles';
 import "../../App.css";
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <p>
-        <span>Movix</span> © 2021
-      </p>
-      <div className="socials">
-        <img src={Logo} alt="logo" />
+    <FooterContainer className="container">
+      <FooterContent>
+        <Text><span>Movix</span> © 2021</Text>
+        <Text>Created by <a href="https://brunoascencao.web.app/">Bruno Ascenção</a></Text>
+      </FooterContent>
+      <TMDBSocials>
+        <TMDBLogo src={Logo} alt="logo" />
+        <SocialsLinks>
         <a href="https://twitter.com/themoviedb">
           <i className="fab fa-twitter"></i>
         </a>
@@ -21,7 +23,8 @@ const Footer = () => {
         <a href="https://www.themoviedb.org/documentation/api">
           <i className="fas fa-link"></i>
         </a>
-      </div>
+        </SocialsLinks>
+      </TMDBSocials>
     </FooterContainer>
   );
 };

@@ -41,7 +41,7 @@ export const SectionTitle = styled.h2`
 export const Image = styled.img`
     height: 260px;
     border-radius: 12px;
-    border: solid 1px rgb(44, 44, 51,0.5);
+    border: solid 1px rgb(44, 44, 51,0.4);
 `;
 
 export const MovieInfo = styled.span``;
