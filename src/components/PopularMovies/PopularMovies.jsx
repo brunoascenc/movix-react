@@ -4,10 +4,17 @@ import {
   fetchPopularMovies,
   fetchPopularRequest,
 } from '../../redux/popular-movies/popularMoviesAction';
+import { Link } from 'react-router-dom';
 import useGenres from '../../hooks/useGenres';
 import usePagination from '../../hooks/usePagination';
 import FullPageLoader from '../FullPageLoader/FullPageLoader';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import {PopularContainer,MoviesContainer,SectionTitle, Image} from './PopularStyles';
+import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
+import { SwiperSlide } from 'swiper/react';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+
+const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const PopularMovies = () => {
   const [genreName] = useGenres();
@@ -26,27 +33,30 @@ const PopularMovies = () => {
   }, [pageNumber, dispatch]);
 
   return (
-    <div className="container hehe" ref={scrollTop}>
-      <div className="title-section">
-        <span></span>
-        <h1>Popular Movies </h1>
-      </div>
-      <div id="movies-container">
-        {loading ? (
-          <FullPageLoader />
-        ) : (
-          <MoviesCard movies={popularMovie} genreName={genreName} />
-        )}
-      </div>
-      <div className="pagination-btn">
-        <button onClick={prevPage} className="filter-prev">
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <button onClick={nextPage} className="filter-next">
-          <i className="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
+    <PopularContainer className="container" ref={scrollTop}>
+      <SectionTitle>Popular Movies </SectionTitle>
+      <MoviesSwiper>
+      {popularMovie &&
+          popularMovie.map((movie) => {
+            return (
+              <SwiperSlide key={movie.id} className="swiper-container">
+                <Link key={movie.id} to={`/details/${movie.id}`}>
+                  <div key={movie.id}>
+                    <Image
+                      className="movie-poster"
+                      src={IMAGE_URL + movie.poster_path}
+                      data-movie-id={movie.id}
+                      alt={movie.title}
+                    />
+                  </div>
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+      </MoviesSwiper>
+      <MdKeyboardArrowLeft className="left-arrow" />
+      <MdKeyboardArrowRight className="right-arrow" />
+    </PopularContainer>
   );
 };
 

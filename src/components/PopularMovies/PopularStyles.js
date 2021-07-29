@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
-export const UpcomingContainer = styled.div`
-  /* position: absolute */
-  margin-top: -100px;
+export const PopularContainer = styled.div`
+  margin-top: 50px;
   position: relative;
 
-
-
-    .left-arrow,
-    .right-arrow {
+  .left-arrow,
+  .right-arrow {
         cursor: pointer;
         font-size: 18px;
         color: #e0d2d1;
     }
+    
      .left-arrow{
         position: absolute;
         top: 165px;
@@ -24,17 +22,19 @@ export const UpcomingContainer = styled.div`
         top: 165px;
         right: 21px;
     }
-
 `;
 
+export const MoviesContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 100px));
+  /* grid-gap: 2rem; */
+  column-gap: 1rem;
+  grid-row-gap: 4rem;
+  margin-top: 2rem;
+`
 
 export const SectionTitle = styled.h2`
     margin-bottom: 15px;
-    /* z-index: 10; */
-`;
-
-export const UpcomingCard = styled.div`
-  /* display: flex; */
 `;
 
 export const Image = styled.img`
