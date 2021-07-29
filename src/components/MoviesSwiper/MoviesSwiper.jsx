@@ -13,31 +13,31 @@ const MoviesSwiper = ({ children }) => {
   return (
     <>
       <Swiper
-        spaceBetween={65}
-        slidesPerView={5}
+        spaceBetween={15}
+        slidesPerView={7}
         navigation={{ nextEl: '.right-arrow', prevEl: '.left-arrow' }}
-        breakpoints={{
-          100: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          390: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          640: {
-            slidesPerView: 3,
-            spaceBetween: 35,
-          },
-          780: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          920: {
-            slidesPerView: 5,
-            spaceBetween: 65,
-          },
-        }}
+        // breakpoints={{
+        //   100: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 10,
+        //   },
+        //   390: {
+        //     slidesPerView: 2,
+        //     spaceBetween: 15,
+        //   },
+        //   640: {
+        //     slidesPerView: 3,
+        //     spaceBetween: 35,
+        //   },
+        //   780: {
+        //     slidesPerView: 4,
+        //     spaceBetween: 30,
+        //   },
+        //   920: {
+        //     slidesPerView: 5,
+        //     spaceBetween: 65,
+        //   },
+        // }}
       >
         {children}
       </Swiper>

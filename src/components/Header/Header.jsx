@@ -15,7 +15,12 @@ import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
 import { selectToken } from '../../redux/user-token/userTokenSelector';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
-import { HeaderComponent, SearchContainer, FilteOptions, Form } from './HeaderStyles';
+import {
+  HeaderComponent,
+  SearchContainer,
+  FilteOptions,
+  Form,
+} from './HeaderStyles';
 
 const Header = ({
   userToken,

@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     background: #121212;
     background: rgb(10, 10, 14);
     color: #f2e9e9;
+    overflow-x: hidden;
   }
 
   .container{

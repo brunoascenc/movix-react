@@ -6,6 +6,13 @@ import { Link } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
+import {
+  UpcomingContainer,
+  SectionTitle,
+  UpcomingCard,
+  Image,
+  MovieInfo,
+} from './UpcomingStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -28,28 +35,29 @@ const UpcomingMovies = () => {
   }
 
   return (
-    <div className="upcoming-slide container">
-      <div className="title-section">
-        <span></span>
-        <h1>Upcoming Movies</h1>
-      </div>
+    <UpcomingContainer className="upcoming-slide container">
+      <SectionTitle>Coming soon</SectionTitle>
       <MoviesSwiper>
         {upcomingMovies &&
           upcomingMovies.map((movie) => {
             return (
-              <SwiperSlide key={movie.id} className="swiper-card">
+              <SwiperSlide key={movie.id} className="swiper-container">
                 <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <div className="upcoming-card" key={movie.id}>
-                    <img
+                  <UpcomingCard key={movie.id}>
+                    <Image
                       className="movie-poster"
                       src={IMAGE_URL + movie.poster_path}
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
-                    <span className="movie-title">{movie.title}</span>
-                    <span className="movie-date">{movie.release_date}</span>
-                    <span className="movie-genres">{genreName(movie)}</span>
-                  </div>
+                    {/* <MovieInfo className="movie-title">{movie.title}</MovieInfo>
+                    <MovieInfo className="movie-date">
+                      {movie.release_date}
+                    </MovieInfo>
+                    <MovieInfo className="movie-genres">
+                      {genreName(movie)}
+                    </MovieInfo> */}
+                  </UpcomingCard>
                 </Link>
               </SwiperSlide>
             );
@@ -57,7 +65,7 @@ const UpcomingMovies = () => {
       </MoviesSwiper>
       <MdKeyboardArrowLeft className="left-arrow" />
       <MdKeyboardArrowRight className="right-arrow" />
-    </div>
+    </UpcomingContainer>
   );
 };
 
