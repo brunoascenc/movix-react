@@ -10,6 +10,7 @@ import {
 } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
 import {FilterContainer,SectionTitle, Pagination, Button} from './FilterPageStyles'
+import MovieBanner from '../../components/MovieBanner/MovieBanner'
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -28,6 +29,7 @@ const SearchResults = (props) => {
     }, 700);
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
+
   return (
     <>
       {!genreId ? (
@@ -35,7 +37,9 @@ const SearchResults = (props) => {
       ) : loading ? (
         <FullPageLoader />
       ) : (
-        <FilterContainer className="container" ref={scrollTop}>
+       <>
+          <MovieBanner movieInfo={filterResults}/>
+          <FilterContainer className="container" ref={scrollTop}>
             <SectionTitle>You searched for</SectionTitle>
             <MoviesCard movies={filterResults} genreName={genreName} />
             <Pagination>
@@ -46,7 +50,8 @@ const SearchResults = (props) => {
                 <i className="fas fa-chevron-right"></i>
               </Button>
             </Pagination>
-        </FilterContainer>
+         </FilterContainer>
+       </>
       )}
     </>
   );
