@@ -34,7 +34,9 @@ export const LandingText = styled.div`
     flex-direction: column;
   }
 
-  button{
+  div{
+        display: flex;
+    button{
     padding: 8px 16px;
     width: 100px;
     display: flex;
@@ -52,8 +54,16 @@ export const LandingText = styled.div`
       to bottom right,
       rgb(160, 63, 240),
       rgba(84, 29, 139, 0.788)
-    );
-  }
+         );
+     }
+
+     .watchlist{
+         margin-left: 15px;
+         background: #ffffff;
+         color: black;
+         border: none;
+     }
+    }
 `;
 
 export const LandingMovieTitle = styled.span`

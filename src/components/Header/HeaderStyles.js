@@ -30,6 +30,7 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
+  color: #efe6e3;
   background: transparent;
   padding: 7px 16px;
   border-radius: 16px;

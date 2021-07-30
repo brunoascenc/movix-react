@@ -24,11 +24,12 @@ const LandingPage = () => {
   const nowPlaying = nowPlayingMovies.results;
   const dispatch = useDispatch();
 
-  let bestRating = []
+  let bestRating = [];
 
-  nowPlaying && nowPlaying.map(movies => {
-    return movies.vote_average >= 8.0 ? bestRating.push(movies) : null
-  })
+  nowPlaying &&
+    nowPlaying.map((movies) => {
+      return movies.vote_average >= 8.0 ? bestRating.push(movies) : null;
+    });
 
   useEffect(() => {
     dispatch(fetchNowPlaying());
@@ -59,8 +60,6 @@ const LandingPage = () => {
                 }}
               >
                 <Link to={`/details/${movie.id}`}>
-
-
                   <LandingText>
                     <div className="txt-align">
                       {/* <h1>Now Playing </h1> */}
@@ -72,15 +71,11 @@ const LandingPage = () => {
                           <p>{movie.vote_average}</p>
                         </div>
                       </LandingInfo>
-                            
-                   <div>
-                     <button>
-                        Details
-                     </button>
-                     <button className="watchlist">
-                        Watchlist
-                     </button>
-                   </div>
+
+                      <div>
+                        <button>Details</button>
+                        <button className="watchlist">Watchlist</button>
+                      </div>
                     </div>
                   </LandingText>
                 </Link>

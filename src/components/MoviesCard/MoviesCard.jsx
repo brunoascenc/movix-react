@@ -13,12 +13,12 @@ const MoviesCard = ({ movies, genreName }) => {
             <MovieCard key={movie.id}>
               <Link to={`/details/${movie.id}`}>
                 {/* <div className="img-container"> */}
-                  <Image
-                    className="movie-poster"
-                    src={IMAGE_URL + movie.poster_path}
-                    alt={IMAGE_URL}
-                    data-movie-id={movie.id}
-                  />
+                <Image
+                  className="movie-poster"
+                  src={IMAGE_URL + movie.poster_path}
+                  alt={IMAGE_URL}
+                  data-movie-id={movie.id}
+                />
                 {/* </div> */}
               </Link>
               {/* <span className="movie-title">{movie.title}</span>
