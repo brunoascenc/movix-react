@@ -7,6 +7,8 @@ import {
   fetchSearchRequest,
 } from '../../redux/movies-search/searchMovieActions';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
+import MovieBanner from '../../components/MovieBanner/MovieBanner'
+
 
 const SearchResults = (props) => {
   const searchResults = useSelector((state) => state.searchResults.results);
@@ -38,7 +40,10 @@ const SearchResults = (props) => {
       ) : loading ? (
         <FullPageLoader />
       ) : (
+        <>
+        <MovieBanner movieInfo={searchedMovie}/>
         <ResultsContainer search={searchedMovie} searchQuery={searchQuery} />
+        </>
       )}
     </>
   );

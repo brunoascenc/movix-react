@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const SearchResultsMovies = styled.div`
-    margin-top: 100px;
+export const SearchContainer = styled.div`
+    margin-top: -30px;
 `
 
 export const SectionTitle = styled.h2`

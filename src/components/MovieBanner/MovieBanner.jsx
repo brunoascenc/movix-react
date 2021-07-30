@@ -2,7 +2,7 @@ import React from 'react'
 import { MovieImage, BannerContent, MovieTitle } from './MovieBannerStyles'
 
 function MovieBanner({movieInfo}) {
-    const firstMovie = movieInfo && movieInfo[0]
+    let firstMovie = movieInfo && movieInfo[0]
 
     return (
         <>
