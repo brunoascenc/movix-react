@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HeaderComponent = styled.header`
   position: absolute;
@@ -67,31 +68,19 @@ export const Select = styled.select`
 
 export const FilteOptions = styled.div`
   margin-right: 25px;
-  .filter-btn {
-    padding: 7px 16px;
-    border-radius: 16px;
-    color: white;
-    background: transparent;
-    margin-left: 10px;
-    margin-right: -10px;
-    border: solid 1px rgb(239, 229, 229, 0.3);
-    /* background-image: linear-gradient(
-      to bottom right,
-      rgb(160, 63, 240),
-      rgba(84, 29, 139, 0.788)
-    ); */
-  }
 `;
 
 export const Form = styled.form`
   display: flex;
   align-items: center;
-  a {
-    color: #efe6e3;
-    letter-spacing: 1px;
-    padding: 6px 16px;
-    border-radius: 16px;
-    background: transparent;
-    border: solid 1px rgb(239, 229, 229, 0.3);
-  }
+`;
+
+export const NavLink = styled(Link)`
+  padding: 7px 16px;
+  border-radius: 16px;
+  color: white;
+  background: transparent;
+  margin-left: ${(props) => (props.login ? '-15px' : '10px')};
+  margin-right: ${(props) => (props.login ? '15px' : '0')};
+  border: solid 1px rgb(239, 229, 229, 0.3);
 `;

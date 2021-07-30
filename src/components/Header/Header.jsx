@@ -20,6 +20,7 @@ import {
   SearchContainer,
   FilteOptions,
   Form,
+  NavLink,
 } from './HeaderStyles';
 
 const Header = ({
@@ -70,10 +71,10 @@ const Header = ({
               </Link>
             </div>
           ) : (
-            <Link className="login-link" to="/login" onClick={closeMobileMenu}>
+            <NavLink to="/login" onClick={closeMobileMenu} login>
               {/* <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '} */}
               Login
-            </Link>
+            </NavLink>
           )}
         </Form>
         {/* 
