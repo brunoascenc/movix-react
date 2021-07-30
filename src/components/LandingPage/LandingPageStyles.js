@@ -29,44 +29,31 @@ export const LandingText = styled.div`
   margin-left: 10%;
   margin-top: 100px;
 
-  .txt-align{
+  div {
     display: flex;
-    flex-direction: column;
   }
-
-  div{
-        display: flex;
-    button{
-    padding: 8px 16px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    border-radius: 16px;
-    color: white;
-    border: none;
-    font-size: 13px;
-    background: rgb(158, 61, 238);
-    margin-top: 10px;
-    margin-left: 2px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    background-image: linear-gradient(
-      to bottom right,
-      rgb(160, 63, 240),
-      rgba(84, 29, 139, 0.788)
-         );
-     }
-
-     .watchlist{
-         margin-left: 15px;
-         background: #ffffff;
-         color: black;
-         border: none;
-     }
-    }
 `;
 
-export const LandingMovieTitle = styled.span`
+export const Button = styled.button`
+  padding: 8px 16px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border-radius: 16px;
+  color: ${(props) => (props.primary ? 'white' : 'black')};
+  border: none;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-left: ${(props) => (props.secondary ? '12px' : '2px')};
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-image: ${(props) =>
+    props.primary
+      ? 'linear-gradient(to bottom right,rgb(160, 63, 240),rgba(84, 29, 139, 0.788))'
+      : null};
+`;
+
+export const LandingMovieTitle = styled.h1`
   font-family: 'Archivo Black', sans-serif;
   font-size: 45px;
   letter-spacing: -1px;

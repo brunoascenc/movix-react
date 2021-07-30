@@ -1,5 +1,10 @@
 import React from 'react';
-import { MovieImage, BannerContent, MovieTitle } from './MovieBannerStyles';
+import {
+  MovieImage,
+  BannerContent,
+  MovieTitle,
+  Button,
+} from './MovieBannerStyles';
 
 function MovieBanner({ movieInfo }) {
   let firstMovie = movieInfo && movieInfo[0];
@@ -19,8 +24,8 @@ function MovieBanner({ movieInfo }) {
             <p>{firstMovie.overview}</p>
 
             <div>
-              <button>Details</button>
-              <button className="watchlist">Watchlist</button>
+              <Button primary>Details</Button>
+              <Button secondary>Watchlist</Button>
             </div>
           </BannerContent>
         </MovieImage>

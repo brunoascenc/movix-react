@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
 import {
   LandingPageContainer,
-  Overlay,
+  Button,
   LandingMovieTitle,
   LandingText,
   LandingInfo,
@@ -15,7 +15,6 @@ import {
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const LandingPage = () => {
@@ -61,21 +60,18 @@ const LandingPage = () => {
               >
                 <Link to={`/details/${movie.id}`}>
                   <LandingText>
-                    <div className="txt-align">
-                      {/* <h1>Now Playing </h1> */}
-                      <LandingMovieTitle>{movie.title}</LandingMovieTitle>
-                      <LandingInfo>
-                        <p className="movie-genres">{genreName(movie)}</p> |
-                        <div className="movie-rating">
-                          <i className="far fa-star"></i>
-                          <p>{movie.vote_average}</p>
-                        </div>
-                      </LandingInfo>
-
-                      <div>
-                        <button>Details</button>
-                        <button className="watchlist">Watchlist</button>
+                    <LandingMovieTitle>{movie.title}</LandingMovieTitle>
+                    <LandingInfo>
+                      <p className="movie-genres">{genreName(movie)}</p> |
+                      <div className="movie-rating">
+                        <i className="far fa-star"></i>
+                        <p>{movie.vote_average}</p>
                       </div>
+                    </LandingInfo>
+
+                    <div>
+                      <Button primary>Details</Button>
+                      <Button secondary>Watchlist</Button>
                     </div>
                   </LandingText>
                 </Link>
