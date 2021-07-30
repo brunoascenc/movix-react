@@ -72,9 +72,15 @@ const LandingPage = () => {
                           <p>{movie.vote_average}</p>
                         </div>
                       </LandingInfo>
-                        <button>
-                          Details
-                        </button>
+                            
+                   <div>
+                     <button>
+                        Details
+                     </button>
+                     <button className="watchlist">
+                        Watchlist
+                     </button>
+                   </div>
                     </div>
                   </LandingText>
                 </Link>
