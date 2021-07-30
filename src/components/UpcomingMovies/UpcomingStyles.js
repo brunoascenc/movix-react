@@ -29,8 +29,7 @@ export const UpcomingContainer = styled.div`
 
 
 export const SectionTitle = styled.h2`
-    margin-bottom: 15px;
-    /* z-index: 10; */
+    margin-bottom: 15px
 `;
 
 export const UpcomingCard = styled.div`

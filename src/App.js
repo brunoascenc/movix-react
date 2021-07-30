@@ -14,7 +14,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
 import User from './pages/User/User';
-import './App.scss';
+// import './App.scss';
 import { AlertTemplate } from './components/AlertTemplate/AlertTemplate';
 import GlobalStyle from './globalStyles';
 

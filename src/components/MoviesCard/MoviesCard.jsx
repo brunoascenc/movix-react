@@ -1,26 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Image} from './MoviesCardStyles';
-
+import { Image, MovieCard, MovieCardContainer } from './MoviesCardStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const MoviesCard = ({ movies, genreName }) => {
   return (
-    <>
+    <MovieCardContainer>
       {movies &&
         movies.map((movie) => {
           return (
-            <div key={movie.id} className="movie-item">
+            <MovieCard key={movie.id}>
               <Link to={`/details/${movie.id}`}>
-                <div className="img-container">
+                {/* <div className="img-container"> */}
                   <Image
                     className="movie-poster"
                     src={IMAGE_URL + movie.poster_path}
                     alt={IMAGE_URL}
                     data-movie-id={movie.id}
                   />
-                </div>
+                {/* </div> */}
               </Link>
               {/* <span className="movie-title">{movie.title}</span>
               <span className="movie-genres">{genreName(movie)}</span>
@@ -28,10 +27,10 @@ const MoviesCard = ({ movies, genreName }) => {
                 <i className="far fa-star"></i>
                 <p>{movie.vote_average.toFixed(1)}</p>
               </div> */}
-            </div>
+            </MovieCard>
           );
         })}
-    </>
+    </MovieCardContainer>
   );
 };
 

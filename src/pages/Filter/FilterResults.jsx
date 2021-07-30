@@ -9,6 +9,7 @@ import {
   fetchFilterRequest,
 } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
+import {FilterContainer,SectionTitle, Pagination, Button} from './FilterPageStyles'
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -34,25 +35,18 @@ const SearchResults = (props) => {
       ) : loading ? (
         <FullPageLoader />
       ) : (
-        <div className="search-results" ref={scrollTop}>
-          <div className="container">
-            <div className="title-section">
-              <span></span>
-              <h1>You searched for</h1>
-            </div>
-            <div id="movies-container">
-              <MoviesCard movies={filterResults} genreName={genreName} />
-            </div>
-            <div className="pagination-btn">
-              <button onClick={prevPage} className="filter-prev">
+        <FilterContainer className="container" ref={scrollTop}>
+            <SectionTitle>You searched for</SectionTitle>
+            <MoviesCard movies={filterResults} genreName={genreName} />
+            <Pagination>
+              <Button onClick={prevPage}>
                 <i className="fas fa-chevron-left"></i>
-              </button>
-              <button onClick={nextPage} className="filter-next">
+              </Button>
+              <Button onClick={nextPage}>
                 <i className="fas fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+              </Button>
+            </Pagination>
+        </FilterContainer>
       )}
     </>
   );

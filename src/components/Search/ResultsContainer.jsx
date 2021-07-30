@@ -1,22 +1,18 @@
 import React from 'react';
 import useGenres from '../../hooks/useGenres';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import {SearchResultsMovies} from './SearchStyles'
 
 const ResultsContainer = ({ search, searchQuery }) => {
   const [genreName] = useGenres();
 
   return (
-    <div className="search-results">
-      <div className="container">
-        <div className="title-section">
-          <span></span>
-          <h1>You searched for {searchQuery}</h1>
-        </div>
-        <div id="movies-container">
+    <SearchResultsMovies>
+        <h2>You searched for {searchQuery}</h2>
+        <div className="xdd">
           <MoviesCard movies={search} genreName={genreName} />
         </div>
-      </div>
-    </div>
+    </SearchResultsMovies>
   );
 };
 
