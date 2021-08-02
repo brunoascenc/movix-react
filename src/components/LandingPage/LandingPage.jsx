@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 import useGenres from '../../hooks/useGenres';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
 import {
@@ -11,6 +10,8 @@ import {
   LandingMovieTitle,
   LandingText,
   LandingInfo,
+  HorizontalOverlay,
+  LinkLanding,
 } from './LandingPageStyles';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -38,11 +39,6 @@ const LandingPage = () => {
     <LandingPageContainer>
       <Swiper
         slidesPerView={1}
-        // pagination={{
-        //   clickable: true,
-        //   // dynamicBullets: true,
-        //   // type: 'progressbar',
-        // }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
       >
@@ -58,11 +54,11 @@ const LandingPage = () => {
                   })`,
                 }}
               >
-                <Link to={`/details/${movie.id}`}>
-                  <LandingText>
+                <LinkLanding to={`/details/${movie.id}`}>
+                  <LandingText className="container">
                     <LandingMovieTitle>{movie.title}</LandingMovieTitle>
                     <LandingInfo>
-                      <p className="movie-genres">{genreName(movie)}</p> |
+                      <p className="movie-genres">{genreName(movie)}</p>
                       <div className="movie-rating">
                         <i className="far fa-star"></i>
                         <p>{movie.vote_average}</p>
@@ -74,7 +70,8 @@ const LandingPage = () => {
                       <Button secondary>Watchlist</Button>
                     </div>
                   </LandingText>
-                </Link>
+                </LinkLanding>
+                <HorizontalOverlay></HorizontalOverlay>
               </SwiperSlide>
             );
           })}

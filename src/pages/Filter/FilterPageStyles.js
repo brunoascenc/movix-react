@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const FilterContainer = styled.div`
-  margin-top: -30px;
+  /* margin-top: -30px; */
   display: flex;
   flex-direction: column;
 `;
 
 export const SectionTitle = styled.h2`
   margin-bottom: 15px;
+  /* z-index: 2; */
 `;
 
 export const Pagination = styled.div`

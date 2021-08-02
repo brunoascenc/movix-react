@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const LandingPageContainer = styled.div`
   height: 75vh;
   margin-bottom: 100px;
-  position: relative;
+  /* position: relative; */
 
   .swiper-card {
     height: 75vh;
@@ -11,27 +12,37 @@ export const LandingPageContainer = styled.div`
     align-items: center;
     background-size: cover;
     background-position: top;
+    position: relative;
     width: 100%;
   }
 `;
 
-export const Overlay = styled.div`
+export const HorizontalOverlay = styled.div`
   position: absolute;
-  top: 100px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 75vh;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgb(10, 10, 14, 0.7) 30%,
+    transparent 60%
+  );
+  z-index: 1;
 `;
 
 export const LandingText = styled.div`
   color: white;
   width: 600px;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 100px;
-
   div {
     display: flex;
   }
+`;
+
+export const LinkLanding = styled(Link)`
+  z-index: 2;
 `;
 
 export const Button = styled.button`

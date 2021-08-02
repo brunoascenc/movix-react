@@ -9,7 +9,7 @@ const ResultsContainer = ({ search, searchQuery }) => {
   return (
     <SearchContainer className="container">
       <SectionTitle>You searched for {searchQuery}</SectionTitle>
-      <div className="xdd">
+      <div>
         <MoviesCard movies={search} genreName={genreName} />
       </div>
     </SearchContainer>

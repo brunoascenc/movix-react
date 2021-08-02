@@ -9,11 +9,19 @@ export const MovieImage = styled.div`
   align-items: center;
 `;
 
+export const BannerContainer = styled.div`
+  position: relative;
+  z-index: 1;
+`;
+
 export const BannerContent = styled.div`
+  z-index: 2;
   width: 600px;
   p {
     margin-left: 2px;
     margin-top: 15px;
+    line-height: 23px;
+    color: #a1a6ad;
   }
 
   div {
@@ -45,5 +53,18 @@ export const MovieTitle = styled.h1`
   font-size: 45px;
   letter-spacing: -1px;
   line-height: 45px;
-  color: #edeff2;
+  color: #f0f5f1;
+`;
+
+export const HorizontalOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75vh;
+  background: linear-gradient(
+    to right,
+    rgb(10, 10, 14, 0.7) 30%,
+    transparent 65%
+  );
 `;
