@@ -4,7 +4,21 @@ export const LoginContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100vh;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 4%;
+  position: relative;
+  background-image: linear-gradient(rgb(13, 13, 18, 0.3), rgb(13, 13, 18));
+  video {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* filter: brightness(50%); */
+  }
 `;
 
 export const Button = styled.button`
@@ -33,7 +47,7 @@ export const LoginLink = styled.div`
   width: 420px;
 
   p {
-    color: grey;
+    /* color: grey; */
     margin-top: 15px;
     line-height: 22px;
     text-align: center;
