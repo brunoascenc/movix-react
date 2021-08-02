@@ -1,14 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTokenAuth } from '../../redux/user-token/userTokenActions';
-import { LoginContainer } from './LoginStyles';
+import { LoginContainer, Button, LoginLink } from './LoginStyles';
 
 const Login = ({ fetchTokenAuth }) => {
   return (
     <LoginContainer>
-      <h1>Movix</h1>
-      <p>Login to save your favorite movies</p>
-      <button onClick={fetchTokenAuth}>Login</button>
+      <LoginLink>
+        <h1>Login to your account</h1>
+        <p>Please login to your account so we can save your favorite movies</p>
+        <Button onClick={fetchTokenAuth} primary>
+          Login
+        </Button>
+      </LoginLink>
     </LoginContainer>
   );
 };
