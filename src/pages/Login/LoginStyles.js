@@ -7,7 +7,7 @@ export const LoginContainer = styled.div`
   justify-content: flex-start;
   padding-left: 4%;
   position: relative;
-  background-image: linear-gradient(rgb(13, 13, 18, 0.3), rgb(13, 13, 18));
+  background: linear-gradient(to bottom, rgb(13, 13, 18, 0.3), rgb(13, 13, 18));
   video {
     position: absolute;
     width: 100%;
@@ -17,13 +17,28 @@ export const LoginContainer = styled.div`
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
+
     /* filter: brightness(50%); */
   }
 `;
 
+export const HorizontalOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgb(13, 13, 18, 0.7) 25%,
+    transparent 60%
+  );
+  z-index: 1;
+`;
+
 export const Button = styled.button`
   padding: 12px 16px;
-  width: 406px;
+  width: 300px;
   display: flex;
   justify-content: center;
   border-radius: 16px;
@@ -41,15 +56,21 @@ export const Button = styled.button`
 `;
 
 export const LoginLink = styled.div`
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 420px;
+  width: 300px;
 
   p {
-    /* color: grey; */
+    color: #afb5bd;
     margin-top: 15px;
     line-height: 22px;
     text-align: center;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
   }
 `;

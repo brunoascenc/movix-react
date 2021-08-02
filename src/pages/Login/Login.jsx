@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTokenAuth } from '../../redux/user-token/userTokenActions';
-import { LoginContainer, Button, LoginLink } from './LoginStyles';
+import {
+  LoginContainer,
+  Button,
+  LoginLink,
+  HorizontalOverlay,
+} from './LoginStyles';
 import BgVideo from '../../images/spider.mp4';
 
 const Login = ({ fetchTokenAuth }) => {
   return (
     <LoginContainer>
+      <HorizontalOverlay></HorizontalOverlay>
       <video autoPlay loop muted>
         <source src={BgVideo} type="video/mp4" />
       </video>
