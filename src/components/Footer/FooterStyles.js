@@ -4,6 +4,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   height: 250px;
   background: #0d0d12;
+  background: rgb(11, 9, 13);
   justify-content: space-between;
   align-items: center;
   /* margin-top: 100px; */

@@ -49,7 +49,7 @@ const LandingPage = () => {
                 key={movie.id}
                 className="swiper-card"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(17, 16, 16, 0.3),rgb(10, 10, 14)), url(${
+                  backgroundImage: `linear-gradient(rgba(7, 5, 8, 0.4),rgb(7, 5, 8)), url(${
                     'https://image.tmdb.org/t/p/original' + movie.backdrop_path
                   })`,
                 }}

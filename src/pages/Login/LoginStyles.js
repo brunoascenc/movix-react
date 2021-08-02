@@ -7,7 +7,11 @@ export const LoginContainer = styled.div`
   justify-content: flex-start;
   padding-left: 4%;
   position: relative;
-  background: linear-gradient(to bottom, rgb(13, 13, 18, 0.3), rgb(13, 13, 18));
+  background: linear-gradient(
+    to bottom,
+    rgb(11, 9, 13, 0.3),
+    rgb(11, 9, 13) 95%
+  );
   video {
     position: absolute;
     width: 100%;
@@ -30,7 +34,7 @@ export const HorizontalOverlay = styled.div`
   height: 100%;
   background: linear-gradient(
     to right,
-    rgb(13, 13, 18, 0.7) 25%,
+    rgb(11, 9, 13, 0.7) 25%,
     transparent 60%
   );
   z-index: 1;

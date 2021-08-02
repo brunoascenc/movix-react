@@ -62,9 +62,5 @@ export const HorizontalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 75vh;
-  background: linear-gradient(
-    to right,
-    rgb(10, 10, 14, 0.7) 30%,
-    transparent 65%
-  );
+  background: linear-gradient(to right, rgb(7, 5, 8, 0.7) 30%, transparent 65%);
 `;
