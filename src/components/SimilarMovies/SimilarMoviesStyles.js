@@ -5,6 +5,7 @@ export const Similar = styled.div`
 `;
 
 export const Image = styled.img`
+  width: 175px;
   height: 260px;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
