@@ -6,7 +6,7 @@ export const DetailsContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  height: 600px;
+  height: 450px;
   width: 30%;
   position: relative;
 `;

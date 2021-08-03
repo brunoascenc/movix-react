@@ -12,7 +12,12 @@ import {
 } from '../../redux/movie-details/movieDetailActions';
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
-import { MovieBanner, HorizontalOverlay } from './DetailsPageStyles';
+import {
+  MovieBanner,
+  HorizontalOverlay,
+  SimilarContainer,
+  SectionTitle,
+} from './DetailsPageStyles';
 
 const Details = (props) => {
   const movieId = props.match.params.id;
@@ -92,17 +97,14 @@ const Details = (props) => {
           {similarMovies && similarMovies.length === 0 ? (
             ''
           ) : (
-            <div className="similar-section container">
-              <div className="title-section">
-                <span></span>
-                <h1>Similar Movies</h1>
-              </div>
-            </div>
+            <SimilarContainer className="container">
+              <SectionTitle>Similar Movies</SectionTitle>
+            </SimilarContainer>
           )}
 
-          <div className="similar-movies container">
+          <SimilarContainer className="container">
             <SimilarMovies movieId={movieId} />
-          </div>
+          </SimilarContainer>
 
           <div className="reviews-section container">
             {movieReviews && movieReviews.length <= 0 ? (

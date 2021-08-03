@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchSimilarMovies } from '../../redux/similar-movies/similarMoviesActions';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { Image } from './SimilarMoviesStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -35,18 +36,18 @@ const SimilarMovies = ({ movieId }) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-card">
                 <Link to={`/details/${movie.id}`}>
-                  <img
+                  <Image
                     className="movie-poster"
                     src={IMAGE_URL + movie.poster_path}
                     data-movie-id={movie.id}
                     alt={movie.title}
                   />
-                  <span className="movie-title">{movie.title}</span>
+                  {/* <span className="movie-title">{movie.title}</span>
                   <span className="movie-genres">{genreName(movie)}</span>
                   <div className="movie-rating">
                     <i className="far fa-star"></i>
                     <p>{movie.vote_average.toFixed(1)}</p>
-                  </div>
+                  </div> */}
                 </Link>
               </SwiperSlide>
             );
