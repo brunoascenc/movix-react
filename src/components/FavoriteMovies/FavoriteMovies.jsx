@@ -12,6 +12,12 @@ import useGenres from '../../hooks/useGenres';
 import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import Empty from '../EmptyList/Empty';
+import {
+  FavoriteContainer,
+  Image,
+  ListCard,
+  SectionTitle,
+} from './FavoriteStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -24,48 +30,48 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
   }, [userId.sessionId, fetchFavoriteMovies]);
 
   return (
-    <div className="favorite">
-      <div className="title-section">
-        <span></span>
-        <h1>Your favorite movies </h1>
-      </div>
-      <MoviesSwiper>
+    <>
+      <SectionTitle>Favorite Movies</SectionTitle>
+      <FavoriteContainer>
+        {/* <h1>Your favorite movies </h1> */}
+        {/* <MoviesSwiper> */}
         {favorites.length === 0 ? (
           <Empty />
         ) : (
           favorites &&
           favorites.map((movie) => {
             return (
-              <SwiperSlide key={movie.id} className="swiper-card">
+              <>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <div className="list-card" key={movie.id}>
-                    <img
+                  <ListCard key={movie.id}>
+                    <Image
                       className="movie-poster"
                       src={IMAGE_URL + movie.poster_path}
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
-                    <span className="movie-title">{movie.title}</span>
-                    <span className="movie-genres">{genreName(movie)}</span>
-                  </div>
+                    {/* <span className="movie-title">{movie.title}</span>
+                  <span className="movie-genres">{genreName(movie)}</span> */}
+                  </ListCard>
                 </Link>
-                <button
-                  onClick={() => removeFromFavorite(userId.sessionId, movie.id)}
-                >
-                  <TiDeleteOutline />
-                </button>
-              </SwiperSlide>
+                {/* <button
+                onClick={() => removeFromFavorite(userId.sessionId, movie.id)}
+              >
+                <TiDeleteOutline />
+              </button> */}
+              </>
             );
           })
         )}
-      </MoviesSwiper>
+        {/* </MoviesSwiper>
       <MdKeyboardArrowLeft
         className={favorites.length > 5 ? 'left-arrow' : 'hide-nav'}
       />
       <MdKeyboardArrowRight
         className={favorites.length > 5 ? 'right-arrow' : 'hide-nav'}
-      />
-    </div>
+      /> */}
+      </FavoriteContainer>
+    </>
   );
 };
 

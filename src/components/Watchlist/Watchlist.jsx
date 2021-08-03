@@ -12,6 +12,7 @@ import useGenres from '../../hooks/useGenres';
 import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import Empty from '../EmptyList/Empty';
+import { WatchlistContainer, SectionTitle, Image } from './WatchlistStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -24,50 +25,49 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
   }, [userId.sessionId, fetchWatchlistMovies]);
 
   return (
-    <div className="watchlist">
-      <div className="title-section">
-        <span></span>
-        <h1>Your watchlist </h1>
-      </div>
-      <MoviesSwiper>
+    <>
+      <SectionTitle>Your watchlist </SectionTitle>
+      <WatchlistContainer>
+        {/* <MoviesSwiper> */}
         {watchlist.length === 0 ? (
           <Empty />
         ) : (
           watchlist &&
           watchlist.map((movie) => {
             return (
-              <SwiperSlide key={movie.id} className="swiper-card">
+              <>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
                   <div className="list-card" key={movie.id}>
-                    <img
+                    <Image
                       className="movie-poster"
                       src={IMAGE_URL + movie.poster_path}
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
-                    <span className="movie-title">{movie.title}</span>
-                    <span className="movie-genres">{genreName(movie)}</span>
+                    {/* <span className="movie-title">{movie.title}</span>
+                    <span className="movie-genres">{genreName(movie)}</span> */}
                   </div>
                 </Link>
-                <button
+                {/* <button
                   onClick={() =>
                     removeFromWatchlist(userId.sessionId, movie.id)
                   }
                 >
                   <TiDeleteOutline />
-                </button>
-              </SwiperSlide>
+                </button> */}
+              </>
             );
           })
         )}
-      </MoviesSwiper>
+        {/* </MoviesSwiper>
       <MdKeyboardArrowLeft
         className={watchlist.length > 5 ? 'left-arrow' : 'hide-nav'}
       />
       <MdKeyboardArrowRight
         className={watchlist.length > 5 ? 'right-arrow' : 'hide-nav'}
-      />
-    </div>
+      /> */}
+      </WatchlistContainer>
+    </>
   );
 };
 
