@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsHeart, BsListTask } from 'react-icons/bs';
+import { DetailsContainer } from './MovieDetailsStyles';
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const MovieDetails = ({
@@ -9,8 +10,8 @@ const MovieDetails = ({
   addToFavorite,
 }) => {
   return (
-    <div id="movie-detail">
-      <div className="poster-movie">
+    <DetailsContainer>
+      <div>
         <img
           src={movieDetail.poster_path && IMAGE_URL + movieDetail.poster_path}
           alt={movieDetail.title}
@@ -67,7 +68,7 @@ const MovieDetails = ({
           </button>
         </div>
       </div>
-    </div>
+    </DetailsContainer>
   );
 };
 

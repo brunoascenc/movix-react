@@ -12,6 +12,7 @@ import {
 } from '../../redux/movie-details/movieDetailActions';
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
+import { MovieBanner, HorizontalOverlay } from './DetailsPageStyles';
 
 const Details = (props) => {
   const movieId = props.match.params.id;
@@ -44,20 +45,12 @@ const Details = (props) => {
         <FullPageLoader />
       ) : (
         <>
-          <div
-            id="movie-banner"
-            style={{
-              backgroundImage: `url('${
-                movieDetail.backdrop_path &&
-                'https://image.tmdb.org/t/p/original' +
-                  movieDetail.backdrop_path
-              }')`,
-            }}
-          >
+          <MovieBanner backdrop={movieDetail.backdrop_path}>
             <div>
               <MovieTrailer movieId={props.match.params.id} />
             </div>
-          </div>
+            <HorizontalOverlay></HorizontalOverlay>
+          </MovieBanner>
 
           <div className="about-movie container">
             {loading ? (

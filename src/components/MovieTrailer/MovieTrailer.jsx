@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ModalVideo from 'react-modal-video';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovieTrailer } from '../../redux/movie-trailer/movieTrailerActions';
+import { BsPlay } from 'react-icons/bs';
+import { Modal, PlayButton } from './MovieTrailerStyles';
 
 const MovieTrailer = ({ movieId }) => {
   const [isOpen, setOpen] = useState(false);
@@ -18,7 +20,7 @@ const MovieTrailer = ({ movieId }) => {
         ''
       ) : (
         <>
-          <div className="movie-video">
+          <Modal>
             <ModalVideo
               channel="youtube"
               autoplay
@@ -26,10 +28,10 @@ const MovieTrailer = ({ movieId }) => {
               videoId={movieTrailer.key}
               onClose={() => setOpen(false)}
             />
-          </div>
-          <button className="modal-btn" onClick={() => setOpen(true)}>
-            <i className="far fa-play-circle"></i>
-          </button>
+          </Modal>
+          <PlayButton onClick={() => setOpen(true)}>
+            <BsPlay />
+          </PlayButton>
         </>
       )}
     </>

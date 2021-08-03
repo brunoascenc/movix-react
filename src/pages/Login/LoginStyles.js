@@ -32,11 +32,7 @@ export const HorizontalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgb(11, 9, 13, 0.7) 25%,
-    transparent 60%
-  );
+  background: linear-gradient(to right, rgb(11, 9, 13, 0.9) 30%, transparent);
   z-index: 1;
 `;
 
