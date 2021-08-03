@@ -31,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 3%;
     padding-right: 3%;
   }
+
+  ul{
+    list-style: none;
+  }
 `;
 
 export default GlobalStyle;

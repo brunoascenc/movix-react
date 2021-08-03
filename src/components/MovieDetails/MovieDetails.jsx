@@ -1,6 +1,13 @@
 import React from 'react';
 import { BsHeart, BsListTask } from 'react-icons/bs';
-import { DetailsContainer } from './MovieDetailsStyles';
+import {
+  DetailsContainer,
+  MovieImage,
+  ImageContainer,
+  MovieInfo,
+  ButtonStyle,
+  ButtonsContainer,
+} from './MovieDetailsStyles';
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const MovieDetails = ({
@@ -11,32 +18,23 @@ const MovieDetails = ({
 }) => {
   return (
     <DetailsContainer>
-      <div>
-        <img
+      <ImageContainer>
+        <MovieImage
           src={movieDetail.poster_path && IMAGE_URL + movieDetail.poster_path}
           alt={movieDetail.title}
         />
-      </div>
-      <div className="details-container">
-        <div className="movie-title">
-          <span></span>
-          <h1>{movieDetail.title}</h1>
-        </div>
+      </ImageContainer>
+      <MovieInfo>
+        {/* <h1>{movieDetail.title}</h1> */}
         <div className="overview">
-          <div className="title-section">
-            <span></span>
-            <h1>Movie overview</h1>
-          </div>
+          <h1>Movie overview</h1>
           <article>
             <p>{movieDetail.overview}</p>
           </article>
         </div>
 
         <div className="detail-info">
-          <div className="title-section">
-            <span></span>
-            <h1>Movie Details</h1>
-          </div>
+          <h1>Movie Details</h1>
           <ul>
             <li>
               <span className="contrast">Title:</span> {movieDetail.title}
@@ -59,15 +57,15 @@ const MovieDetails = ({
             </li>
           </ul>
         </div>
-        <div className="list-btn">
-          <button onClick={addToFavorite}>
+        <ButtonsContainer>
+          <ButtonStyle onClick={addToFavorite} primary>
             <BsHeart className="list-icons" /> Favorite
-          </button>
-          <button onClick={addToWatchlist}>
+          </ButtonStyle>
+          <ButtonStyle onClick={addToWatchlist} secondary>
             <BsListTask className="list-icons" /> Watchlist
-          </button>
-        </div>
-      </div>
+          </ButtonStyle>
+        </ButtonsContainer>
+      </MovieInfo>
     </DetailsContainer>
   );
 };
