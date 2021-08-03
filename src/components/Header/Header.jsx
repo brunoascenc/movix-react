@@ -64,7 +64,7 @@ const Header = ({
           {userId.sessionId ? (
             <div className="user-links">
               <Link to="/user" onClick={closeMobileMenu}>
-                {/* <AiOutlineUser className="user-icon" /> {username} */}
+                <AiOutlineUser className="user-icon" /> {username}
               </Link>
               <Link className="logout" to="/" onClick={handleSignOut}>
                 <AiOutlineLogout className="logout-icon" /> Logout
