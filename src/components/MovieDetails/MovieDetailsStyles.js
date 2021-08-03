@@ -16,6 +16,7 @@ export const MovieImage = styled.img`
   position: absolute;
   top: -150px;
   border-radius: 12px;
+  border: solid 1px rgb(44, 44, 51, 0.4);
 `;
 
 export const MovieInfo = styled.div`
