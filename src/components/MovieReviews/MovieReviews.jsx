@@ -19,7 +19,7 @@ const MovieReviews = ({ movieId }) => {
             <div key={review.id}>
               <h3>By: {review.author}</h3>
               <p>{review.content}</p>
-              <a href={review.url}>official review</a>
+              {/* <a href={review.url}>official review</a> */}
             </div>
           );
         })}

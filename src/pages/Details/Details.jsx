@@ -17,6 +17,8 @@ import {
   HorizontalOverlay,
   SimilarContainer,
   SectionTitle,
+  ReviewsContainer,
+  ReviewsSection,
 } from './DetailsPageStyles';
 
 const Details = (props) => {
@@ -106,27 +108,18 @@ const Details = (props) => {
             <SimilarMovies movieId={movieId} />
           </SimilarContainer>
 
-          <div className="reviews-section container">
+          <ReviewsSection className="container">
             {movieReviews && movieReviews.length <= 0 ? (
               ''
             ) : (
               <>
-                <div className="title-section">
-                  <span></span>
-                  <h1>Reviews</h1>
-                </div>
+                <SectionTitle>Reviews</SectionTitle>
               </>
             )}
-            <div
-              className={
-                movieReviews && movieReviews.length === 0
-                  ? 'hide-div'
-                  : 'movie-reviews'
-              }
-            >
+            <ReviewsContainer>
               <MovieReviews movieId={movieId} />
-            </div>
-          </div>
+            </ReviewsContainer>
+          </ReviewsSection>
         </>
       )}
     </>
