@@ -8,6 +8,16 @@ import { Modal, PlayButton } from './MovieTrailerStyles';
 const MovieTrailer = ({ movieId }) => {
   const [isOpen, setOpen] = useState(false);
   const movieTrailer = useSelector((state) => state.movieTrailer.results);
+  let officialTrailers = [];
+
+  {
+    movieTrailer.map((trailer) => {
+      return trailer.type === 'Trailer' ? officialTrailers.push(trailer) : null;
+    });
+  }
+
+  const trailer = officialTrailers[0];
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +35,7 @@ const MovieTrailer = ({ movieId }) => {
               channel="youtube"
               autoplay
               isOpen={isOpen}
-              videoId={movieTrailer.key}
+              videoId={trailer && trailer.key}
               onClose={() => setOpen(false)}
             />
           </Modal>

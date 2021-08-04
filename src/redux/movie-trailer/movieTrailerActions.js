@@ -33,7 +33,7 @@ export const fetchMovieTrailer = (movieId) => {
       )
       .then((res) => {
         const movieTrailer = res.data;
-        dispatch(fecthTrailerSuccess(movieTrailer.results[0]));
+        dispatch(fecthTrailerSuccess(movieTrailer.results));
       })
       .catch((err) => {
         const error = err.message;
