@@ -22,8 +22,6 @@ export const LoginContainer = styled.div`
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
-
-    /* filter: brightness(50%); */
   }
 `;
 
