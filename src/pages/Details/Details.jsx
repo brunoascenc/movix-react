@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import MovieDetails from '../../components/MovieDetails/MovieDetails';
-import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import MovieTrailer from '../../components/MovieTrailer/MovieTrailer';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
@@ -14,11 +13,11 @@ import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 import {
   MovieBanner,
-  HorizontalOverlay,
   SimilarContainer,
   ReviewsContainer,
   ReviewsSection,
 } from './DetailsPageStyles';
+import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
 const Details = (props) => {
   const movieId = props.match.params.id;
@@ -55,7 +54,6 @@ const Details = (props) => {
             <div>
               <MovieTrailer movieId={props.match.params.id} />
             </div>
-            <HorizontalOverlay></HorizontalOverlay>
           </MovieBanner>
 
           <div className="about-movie container">
@@ -94,28 +92,11 @@ const Details = (props) => {
               />
             )}
           </div>
-
-          {similarMovies && similarMovies.length === 0 ? (
-            ''
-          ) : (
-            <SimilarContainer className="container">
-              <h2 className="section-title">Similar Movies</h2>
-            </SimilarContainer>
-          )}
-
-          <SimilarContainer className="container">
-            <SimilarMovies movieId={movieId} />
-          </SimilarContainer>
+          <SimilarMovies movieId={movieId} />
 
           <ReviewsSection className="container">
-            {movieReviews && movieReviews.length <= 0 ? (
-              ''
-            ) : (
-              <>
-                <h2 className="section-title">Reviews</h2>
-              </>
-            )}
-            <ReviewsContainer>
+            <h2 className="section-title">Reviews</h2>
+            <ReviewsContainer className="container">
               <MovieReviews movieId={movieId} />
             </ReviewsContainer>
           </ReviewsSection>
