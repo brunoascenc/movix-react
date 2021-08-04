@@ -17,16 +17,6 @@ export const LandingPageContainer = styled.div`
   }
 `;
 
-export const HorizontalOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgb(7, 5, 8, 0.6) 15%, transparent 55%);
-  z-index: 1;
-`;
-
 export const LandingText = styled.div`
   color: white;
   width: 600px;

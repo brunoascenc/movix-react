@@ -1,10 +1,10 @@
 import React from 'react';
 import { CustomButton } from '../CustomButton/CustomButton';
+import { HorizontalOverlay } from '../HorizontalOverlay/HorizontalOverlay';
 import {
   MovieImage,
   BannerContent,
   MovieTitle,
-  HorizontalOverlay,
   BannerContainer,
 } from './MovieBannerStyles';
 
@@ -32,7 +32,11 @@ function MovieBanner({ movieInfo }) {
           </BannerContent>
         </MovieImage>
       ) : null}
-      <HorizontalOverlay></HorizontalOverlay>
+      <HorizontalOverlay
+        overlay={
+          'linear-gradient(to right, rgb(7, 5, 8, 0.7) 30%, transparent 65%)'
+        }
+      ></HorizontalOverlay>
     </BannerContainer>
   );
 }

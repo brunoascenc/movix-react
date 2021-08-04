@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import ResultsContainer from '../../components/Search/ResultsContainer';
 import NothingFound from '../../components/Error/NothingFound';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -7,10 +6,13 @@ import {
   fetchSearchRequest,
 } from '../../redux/movies-search/searchMovieActions';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
-import MovieBanner from '../../components/MovieBanner/MovieBanner'
-
+import MovieBanner from '../../components/MovieBanner/MovieBanner';
+import { SearchContainer } from './SearchPageStyles';
+import useGenres from '../../hooks/useGenres';
+import MoviesCard from '../../components/MoviesCard/MoviesCard';
 
 const SearchResults = (props) => {
+  const [genreName] = useGenres();
   const searchResults = useSelector((state) => state.searchResults.results);
   const loading = useSelector((state) => state.searchResults.loading);
   const search = searchResults.results;
@@ -41,8 +43,13 @@ const SearchResults = (props) => {
         <FullPageLoader />
       ) : (
         <>
-        <MovieBanner movieInfo={searchedMovie}/>
-        <ResultsContainer search={searchedMovie} searchQuery={searchQuery} />
+          <MovieBanner movieInfo={searchedMovie} />
+          <SearchContainer className="container">
+            <h2 className="section-title">You searched for {searchQuery}</h2>
+            <div>
+              <MoviesCard movies={searchedMovie} genreName={genreName} />
+            </div>
+          </SearchContainer>
         </>
       )}
     </>

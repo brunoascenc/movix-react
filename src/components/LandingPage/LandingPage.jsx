@@ -9,13 +9,13 @@ import {
   LandingMovieTitle,
   LandingText,
   LandingInfo,
-  HorizontalOverlay,
   LinkLanding,
 } from './LandingPageStyles';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import { CustomButton } from '../CustomButton/CustomButton';
+import { HorizontalOverlay } from '../HorizontalOverlay/HorizontalOverlay';
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const LandingPage = () => {
@@ -71,7 +71,11 @@ const LandingPage = () => {
                     </div>
                   </LandingText>
                 </LinkLanding>
-                <HorizontalOverlay></HorizontalOverlay>
+                <HorizontalOverlay
+                  overlay={
+                    'linear-gradient(to right, rgb(7, 5, 8, 0.6) 15%, transparent 55%)'
+                  }
+                ></HorizontalOverlay>
               </SwiperSlide>
             );
           })}

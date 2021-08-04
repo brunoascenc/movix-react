@@ -26,16 +26,6 @@ export const LoginContainer = styled.div`
   }
 `;
 
-export const HorizontalOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgb(11, 9, 13, 0.9) 30%, transparent);
-  z-index: 1;
-`;
-
 export const Button = styled.button`
   padding: 12px 16px;
   width: 300px;

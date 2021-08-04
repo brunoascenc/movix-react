@@ -36,12 +36,3 @@ export const MovieTitle = styled.h1`
   line-height: 45px;
   color: #f0f5f1;
 `;
-
-export const HorizontalOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75vh;
-  background: linear-gradient(to right, rgb(7, 5, 8, 0.7) 30%, transparent 65%);
-`;
