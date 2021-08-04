@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const FavoriteSection = styled.div`
+  margin-top: 150px;
+`;
+
 export const FavoriteContainer = styled.div`
   display: flex;
   overflow-x: scroll;
@@ -24,8 +28,3 @@ export const Image = styled.img`
 `;
 
 export const ListCard = styled.div``;
-
-export const SectionTitle = styled.h2`
-  margin-bottom: 15px;
-  margin-top: 150px;
-`;

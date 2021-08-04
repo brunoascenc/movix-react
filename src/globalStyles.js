@@ -35,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
   ul{
     list-style: none;
   }
+
+  .section-title{
+    margin-bottom: 15px;
+  }
 `;
 
 export default GlobalStyle;

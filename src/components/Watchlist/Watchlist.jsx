@@ -12,7 +12,12 @@ import useGenres from '../../hooks/useGenres';
 import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import Empty from '../EmptyList/Empty';
-import { WatchlistContainer, SectionTitle, Image } from './WatchlistStyles';
+import {
+  WatchlistContainer,
+  SectionTitle,
+  Image,
+  WatchlistSection,
+} from './WatchlistStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -25,8 +30,8 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
   }, [userId.sessionId, fetchWatchlistMovies]);
 
   return (
-    <>
-      <SectionTitle>Your watchlist </SectionTitle>
+    <WatchlistSection>
+      <h2 className="section-title">Your watchlist </h2>
       <WatchlistContainer>
         {/* <MoviesSwiper> */}
         {watchlist.length === 0 ? (
@@ -67,7 +72,7 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
         className={watchlist.length > 5 ? 'right-arrow' : 'hide-nav'}
       /> */}
       </WatchlistContainer>
-    </>
+    </WatchlistSection>
   );
 };
 

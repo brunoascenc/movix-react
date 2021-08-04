@@ -8,7 +8,7 @@ const ResultsContainer = ({ search, searchQuery }) => {
 
   return (
     <SearchContainer className="container">
-      <SectionTitle>You searched for {searchQuery}</SectionTitle>
+      <h2 className="section-title">You searched for {searchQuery}</h2>
       <div>
         <MoviesCard movies={search} genreName={genreName} />
       </div>

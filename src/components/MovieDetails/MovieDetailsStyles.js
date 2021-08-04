@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CustomButton } from '../CustomButton/CustomButton';
 
 export const DetailsContainer = styled.div`
   display: flex;
@@ -46,24 +47,8 @@ export const ButtonsContainer = styled.div`
   display: flex;
 `;
 
-export const ButtonStyle = styled.button`
-  padding: 8px 16px;
-  width: 100px;
-  display: flex;
+export const ButtonStyle = styled(CustomButton)`
   align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  color: ${(props) => (props.primary ? 'white' : 'black')};
-  border: none;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-left: ${(props) => (props.secondary ? '12px' : '0')};
-  letter-spacing: 1px;
-  cursor: pointer;
-  background-image: ${(props) =>
-    props.primary
-      ? 'linear-gradient(to bottom right,rgb(160, 63, 240),rgba(84, 29, 139, 0.788))'
-      : null};
 
   .list-icons {
     margin-right: 5px;

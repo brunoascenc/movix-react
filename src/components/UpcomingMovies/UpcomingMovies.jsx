@@ -8,7 +8,6 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import {
   UpcomingContainer,
-  SectionTitle,
   UpcomingCard,
   Image,
   MovieInfo,
@@ -36,7 +35,7 @@ const UpcomingMovies = () => {
 
   return (
     <UpcomingContainer className="upcoming-slide container">
-      <SectionTitle>Coming soon</SectionTitle>
+      <h2 className="section-title">Coming soon</h2>
       <MoviesSwiper>
         {upcomingMovies &&
           upcomingMovies.map((movie) => {

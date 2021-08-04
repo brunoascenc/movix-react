@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const WatchlistSection = styled.div`
+  margin-top: 80px;
+`;
+
 export const WatchlistContainer = styled.div`
   display: flex;
   overflow-x: scroll;
@@ -27,5 +31,4 @@ export const ListCard = styled.div``;
 
 export const SectionTitle = styled.h2`
   margin-bottom: 15px;
-  margin-top: 80px;
 `;

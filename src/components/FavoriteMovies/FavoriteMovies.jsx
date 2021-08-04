@@ -16,7 +16,7 @@ import {
   FavoriteContainer,
   Image,
   ListCard,
-  SectionTitle,
+  FavoriteSection,
 } from './FavoriteStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -30,8 +30,8 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
   }, [userId.sessionId, fetchFavoriteMovies]);
 
   return (
-    <>
-      <SectionTitle>Favorite Movies</SectionTitle>
+    <FavoriteSection>
+      <h2 className="section-title">Favorite Movies</h2>
       <FavoriteContainer>
         {/* <h1>Your favorite movies </h1> */}
         {/* <MoviesSwiper> */}
@@ -71,7 +71,7 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
         className={favorites.length > 5 ? 'right-arrow' : 'hide-nav'}
       /> */}
       </FavoriteContainer>
-    </>
+    </FavoriteSection>
   );
 };
 

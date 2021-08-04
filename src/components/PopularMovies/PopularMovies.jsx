@@ -9,7 +9,12 @@ import useGenres from '../../hooks/useGenres';
 import usePagination from '../../hooks/usePagination';
 import FullPageLoader from '../FullPageLoader/FullPageLoader';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import {PopularContainer,MoviesContainer,SectionTitle, Image} from './PopularStyles';
+import {
+  PopularContainer,
+  MoviesContainer,
+  SectionTitle,
+  Image,
+} from './PopularStyles';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import { SwiperSlide } from 'swiper/react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
@@ -34,9 +39,9 @@ const PopularMovies = () => {
 
   return (
     <PopularContainer className="container" ref={scrollTop}>
-      <SectionTitle>Popular Movies </SectionTitle>
+      <h2 className="section-title">Popular Movies </h2>
       <MoviesSwiper>
-      {popularMovie &&
+        {popularMovie &&
           popularMovie.map((movie) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-container">

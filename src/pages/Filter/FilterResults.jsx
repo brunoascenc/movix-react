@@ -9,8 +9,14 @@ import {
   fetchFilterRequest,
 } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
-import {FilterContainer,SectionTitle, Pagination, Button} from './FilterPageStyles'
-import MovieBanner from '../../components/MovieBanner/MovieBanner'
+import {
+  FilterContainer,
+  SectionTitle,
+  Pagination,
+  Button,
+} from './FilterPageStyles';
+import MovieBanner from '../../components/MovieBanner/MovieBanner';
+import { CustomButton } from '../../components/CustomButton/CustomButton';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -29,7 +35,6 @@ const SearchResults = (props) => {
     }, 700);
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
-
   return (
     <>
       {!genreId ? (
@@ -37,10 +42,10 @@ const SearchResults = (props) => {
       ) : loading ? (
         <FullPageLoader />
       ) : (
-       <>
-          <MovieBanner movieInfo={filterResults}/>
+        <>
+          <MovieBanner movieInfo={filterResults} />
           <FilterContainer className="container" ref={scrollTop}>
-            <SectionTitle>You searched for</SectionTitle>
+            <h2 className="section-title">You searched for</h2>
             <MoviesCard movies={filterResults} genreName={genreName} />
             <Pagination>
               <Button onClick={prevPage}>
@@ -50,8 +55,8 @@ const SearchResults = (props) => {
                 <i className="fas fa-chevron-right"></i>
               </Button>
             </Pagination>
-         </FilterContainer>
-       </>
+          </FilterContainer>
+        </>
       )}
     </>
   );
