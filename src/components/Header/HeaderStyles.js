@@ -80,7 +80,11 @@ export const NavLink = styled(Link)`
   border-radius: 16px;
   color: white;
   background: transparent;
-  margin-left: ${(props) => (props.login ? '-15px' : '10px')};
-  margin-right: ${(props) => (props.login ? '15px' : '0')};
+  margin-left: 15px;
+  margin-right: 0px;
   border: solid 1px rgb(239, 229, 229, 0.3);
+`;
+
+export const LoginLink = styled(NavLink)`
+  margin-left: -15px;
 `;

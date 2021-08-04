@@ -21,6 +21,7 @@ import {
   FilteOptions,
   Form,
   NavLink,
+  LoginLink,
 } from './HeaderStyles';
 
 const Header = ({
@@ -71,10 +72,10 @@ const Header = ({
               </Link>
             </div>
           ) : (
-            <NavLink to="/login" onClick={closeMobileMenu} login>
+            <LoginLink to="/login" onClick={closeMobileMenu}>
               {/* <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '} */}
               Login
-            </NavLink>
+            </LoginLink>
           )}
         </Form>
         {/* 
