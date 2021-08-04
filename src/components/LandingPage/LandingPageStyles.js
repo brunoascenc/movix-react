@@ -23,7 +23,7 @@ export const HorizontalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgb(7, 5, 8, 0.7) 30%, transparent 60%);
+  background: linear-gradient(to right, rgb(7, 5, 8, 0.6) 15%, transparent 55%);
   z-index: 1;
 `;
 
@@ -39,25 +39,6 @@ export const LandingText = styled.div`
 
 export const LinkLanding = styled(Link)`
   z-index: 2;
-`;
-
-export const Button = styled.button`
-  padding: 8px 16px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  border-radius: 16px;
-  color: ${(props) => (props.primary ? 'white' : 'black')};
-  border: none;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-left: ${(props) => (props.secondary ? '12px' : '2px')};
-  letter-spacing: 1px;
-  cursor: pointer;
-  background-image: ${(props) =>
-    props.primary
-      ? 'linear-gradient(to bottom right,rgb(160, 63, 240),rgba(84, 29, 139, 0.788))'
-      : null};
 `;
 
 export const LandingMovieTitle = styled.h1`

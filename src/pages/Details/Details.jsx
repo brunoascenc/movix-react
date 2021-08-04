@@ -16,7 +16,6 @@ import {
   MovieBanner,
   HorizontalOverlay,
   SimilarContainer,
-  SectionTitle,
   ReviewsContainer,
   ReviewsSection,
 } from './DetailsPageStyles';
@@ -100,7 +99,7 @@ const Details = (props) => {
             ''
           ) : (
             <SimilarContainer className="container">
-              <SectionTitle>Similar Movies</SectionTitle>
+              <h2 className="section-title">Similar Movies</h2>
             </SimilarContainer>
           )}
 
@@ -113,7 +112,7 @@ const Details = (props) => {
               ''
             ) : (
               <>
-                <SectionTitle>Reviews</SectionTitle>
+                <h2 className="section-title">Reviews</h2>
               </>
             )}
             <ReviewsContainer>

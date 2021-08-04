@@ -1,9 +1,9 @@
 import React from 'react';
+import { CustomButton } from '../CustomButton/CustomButton';
 import {
   MovieImage,
   BannerContent,
   MovieTitle,
-  Button,
   HorizontalOverlay,
   BannerContainer,
 } from './MovieBannerStyles';
@@ -26,8 +26,8 @@ function MovieBanner({ movieInfo }) {
             <p>{firstMovie.overview}</p>
 
             <div>
-              <Button primary>Details</Button>
-              <Button secondary>Watchlist</Button>
+              <CustomButton primary>Details</CustomButton>
+              <CustomButton secondary>Watchlist</CustomButton>
             </div>
           </BannerContent>
         </MovieImage>

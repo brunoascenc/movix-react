@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
 import {
   LandingPageContainer,
-  Button,
   LandingMovieTitle,
   LandingText,
   LandingInfo,
@@ -16,6 +15,7 @@ import {
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
+import { CustomButton } from '../CustomButton/CustomButton';
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const LandingPage = () => {
@@ -66,8 +66,8 @@ const LandingPage = () => {
                     </LandingInfo>
 
                     <div>
-                      <Button primary>Details</Button>
-                      <Button secondary>Watchlist</Button>
+                      <CustomButton primary>Details</CustomButton>
+                      <CustomButton secondary>Watchlist</CustomButton>
                     </div>
                   </LandingText>
                 </LinkLanding>
