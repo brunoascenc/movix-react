@@ -17,6 +17,10 @@ export const WatchlistContainer = styled.div`
     background: rgb(36, 26, 41);
     border-radius: 12px;
   }
+  img {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Image = styled.img`

@@ -8,6 +8,11 @@ export const FavoriteContainer = styled.div`
   display: flex;
   overflow-x: scroll;
 
+  img {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
+
   &::-webkit-scrollbar {
     height: 6px;
     border-radius: 12px;

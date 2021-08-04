@@ -12,12 +12,7 @@ import useGenres from '../../hooks/useGenres';
 import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import Empty from '../EmptyList/Empty';
-import {
-  WatchlistContainer,
-  SectionTitle,
-  Image,
-  WatchlistSection,
-} from './WatchlistStyles';
+import { WatchlistContainer, WatchlistSection } from './WatchlistStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -43,7 +38,7 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
               <>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
                   <div className="list-card" key={movie.id}>
-                    <Image
+                    <img
                       className="movie-poster"
                       src={IMAGE_URL + movie.poster_path}
                       data-movie-id={movie.id}
