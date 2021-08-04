@@ -5,23 +5,24 @@ export const UpcomingContainer = styled.div`
   margin-top: -100px;
   position: relative;
 
-  .left-arrow,
+  /* .left-arrow,
   .right-arrow {
     cursor: pointer;
     font-size: 18px;
     color: #e0d2d1;
   }
+
   .left-arrow {
     position: absolute;
-    top: 165px;
+    top: 50%;
     left: 15px;
   }
 
   .right-arrow {
     position: absolute;
-    top: 165px;
+    top: 50%;
     right: 21px;
-  }
+  } */
 `;
 
 export const UpcomingCard = styled.div`

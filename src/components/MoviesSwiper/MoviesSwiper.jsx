@@ -1,21 +1,26 @@
 import React from 'react';
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
-import { Swiper } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
+import { Link } from 'react-router-dom';
 
 //Swiper css
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 
-//Swiper
-SwiperCore.use([Navigation, Autoplay]);
+import { SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 
-const MoviesSwiper = ({ children }) => {
+const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
+
+//Swiper
+SwiperCore.use([Navigation]);
+
+const MoviesSwiper = ({ movieData, next, prev }) => {
   return (
     <>
       <Swiper
         spaceBetween={15}
         slidesPerView={7}
-        navigation={{ nextEl: '.right-arrow', prevEl: '.left-arrow' }}
+        navigation={{ nextEl: next, prevEl: prev }}
         // breakpoints={{
         //   100: {
         //     slidesPerView: 1,
@@ -39,7 +44,23 @@ const MoviesSwiper = ({ children }) => {
         //   },
         // }}
       >
-        {children}
+        {movieData &&
+          movieData.map((movie) => {
+            return (
+              <SwiperSlide key={movie.id} className="swiper-container">
+                <Link key={movie.id} to={`/details/${movie.id}`}>
+                  <div key={movie.id}>
+                    <img
+                      className="movie-poster"
+                      src={IMAGE_URL + movie.poster_path}
+                      data-movie-id={movie.id}
+                      alt={movie.title}
+                    />
+                  </div>
+                </Link>
+              </SwiperSlide>
+            );
+          })}
       </Swiper>
     </>
   );

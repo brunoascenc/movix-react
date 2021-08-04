@@ -39,6 +39,32 @@ const GlobalStyle = createGlobalStyle`
   .section-title{
     margin-bottom: 15px;
   }
+
+  .movie-poster{
+    width: 175px;
+    height: 260px;
+    border-radius: 12px;
+    border: solid 1px rgb(44, 44, 51, 0.4);
+  }
+/* 
+  .left-arrow,
+  .right-arrow {
+    cursor: pointer;
+    font-size: 18px;
+    color: #e0d2d1;
+  }
+
+  .left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+  }
+
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 21px;
+  } */
 `;
 
 export default GlobalStyle;
