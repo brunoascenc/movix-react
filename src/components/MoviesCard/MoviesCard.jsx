@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Image, MovieCard, MovieCardContainer } from './MoviesCardStyles';
+import { MovieCard, MovieCardContainer } from './MoviesCardStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -13,7 +13,7 @@ const MoviesCard = ({ movies, genreName }) => {
             <MovieCard key={movie.id}>
               <Link to={`/details/${movie.id}`}>
                 {/* <div className="img-container"> */}
-                <Image
+                <img
                   className="movie-poster"
                   src={IMAGE_URL + movie.poster_path}
                   alt={IMAGE_URL}
