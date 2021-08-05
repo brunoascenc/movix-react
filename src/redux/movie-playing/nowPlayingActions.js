@@ -33,7 +33,7 @@ export const fetchNowPlaying = () => {
       )
       .then((res) => {
         const nowPlaying = res.data;
-        console.log(nowPlaying)
+
         dispatch(fecthNowPlayingSuccess(nowPlaying));
       })
       .catch((err) => {
