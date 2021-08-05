@@ -8,17 +8,15 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  color: ${(props) => (props.primary ? 'white' : 'black')};
+  color: ${(props) => (props.primary ? '#e1dce6' : '#575559')};
   border: none;
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 10px;
   margin-left: ${(props) => (props.secondary ? '12px' : '2px')};
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  background-image: ${(props) =>
-    props.primary
-      ? 'linear-gradient(to bottom right,rgb(160, 63, 240),rgba(84, 29, 139, 0.788))'
-      : null};
+  font-family: 'Roboto Condensed', sans-serif;
+  background: ${(props) => (props.primary ? '#8d28e0' : '#e7e4eb')};
 `;
 
 export const CustomButton = ({ children, ...props }) => {
