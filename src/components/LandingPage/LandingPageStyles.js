@@ -33,18 +33,19 @@ export const LinkLanding = styled(Link)`
 
 export const LandingMovieTitle = styled.h1`
   font-family: 'Archivo Black', sans-serif;
-  font-size: 45px;
+  font-size: 50px;
   letter-spacing: -1px;
   line-height: 45px;
-  color: #edeff2;
+  color: #ede7e6;
 `;
 
 export const LandingInfo = styled.div`
   display: flex;
-  margin-top: 15px;
-  margin-left: 3px;
+  margin-top: 12px;
+  font-size: 13px;
+  margin-left: 5px;
   align-items: center;
-  color: #ced1d6;
+  color: #858281;
   .movie-genres {
     margin-right: 5px;
   }
@@ -55,8 +56,9 @@ export const LandingInfo = styled.div`
     margin-left: 5px;
 
     i {
-      margin-top: -5px;
-      margin-right: 5px;
+      margin-top: -2px;
+      margin-right: 3px;
+      font-size: 11px;
     }
   }
 `;
