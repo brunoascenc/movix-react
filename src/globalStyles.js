@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
- @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto');
+ /* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto'); */
  /* @import 'node_modules/react-modal-video/scss/modal-video.scss'; */
  
  * {
@@ -46,25 +46,13 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 12px;
     border: solid 1px rgb(44, 44, 51, 0.4);
   }
-/* 
-  .left-arrow,
-  .right-arrow {
-    cursor: pointer;
-    font-size: 18px;
-    color: #e0d2d1;
-  }
-
-  .left-arrow {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-  }
-
-  .right-arrow {
-    position: absolute;
-    top: 50%;
-    right: 21px;
-  } */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #efe6e3 !important;
+   }
 `;
 
 export default GlobalStyle;
