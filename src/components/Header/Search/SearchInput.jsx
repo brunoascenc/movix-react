@@ -18,7 +18,7 @@ const SearchInput = () => {
         onKeyPress={handleKeyPress}
         type="text"
         id="searchInput"
-        placeholder="Search movie"
+        placeholder="Movie name..."
         onChange={(e) => setMovieName(e.target.value)}
       />
       <Link to={`/search=${movieName}`}>

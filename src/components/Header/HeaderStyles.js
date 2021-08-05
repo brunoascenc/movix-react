@@ -22,7 +22,7 @@ export const SearchContainer = styled.div`
 
   h1 {
     font-family: 'Archivo Black', sans-serif;
-    color: #f5faf6;
+    color: #f2eeed;
     letter-spacing: 1px;
     margin-top: -3px;
   }
@@ -43,7 +43,7 @@ export const Input = styled.input`
   background: rgb(195, 191, 199, 0.2);
   transition: 0.1s ease;
   ::placeholder {
-    color: #efe6e3;
+    color: #e0d9d7;
   }
   &:hover,
   :focus {

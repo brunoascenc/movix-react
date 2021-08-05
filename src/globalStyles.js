@@ -19,12 +19,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: 'Noto Sans JP', sans-serif; */
     background: #121212;
     background: rgb(10, 10, 14);
     background: rgb(7, 5, 8);
     color: #f2e9e9;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
   }
 
   .container{
@@ -38,6 +39,11 @@ const GlobalStyle = createGlobalStyle`
 
   .section-title{
     margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  p{
+    font-family: 'Roboto', sans-serif;
   }
 
   .movie-poster{
