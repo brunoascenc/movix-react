@@ -18,6 +18,7 @@ export const MovieImage = styled.img`
   top: -150px;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
+  image-rendering: -webkit-optimize-contrast;
 `;
 
 export const MovieInfo = styled.div`

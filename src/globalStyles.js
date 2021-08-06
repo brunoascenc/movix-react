@@ -39,8 +39,11 @@ const GlobalStyle = createGlobalStyle`
 
   .section-title{
     margin-bottom: 15px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    color: #e9f0eb;
+    z-index: -1;
   }
+
 
   p{
     font-family: 'Roboto', sans-serif;
@@ -50,8 +53,14 @@ const GlobalStyle = createGlobalStyle`
     width: 175px;
     height: 260px;
     border-radius: 12px;
-    border: solid 1px rgb(44, 44, 51, 0.4);
+    border: solid 1px rgb(44, 44, 51, 0.3);
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.3s ease;
   }
+  
+
+
+  
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
