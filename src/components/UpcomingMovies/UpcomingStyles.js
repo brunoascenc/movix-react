@@ -29,10 +29,11 @@ export const UpcomingCard = styled.div`
   /* display: flex; */
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
+  width: 175px;
   height: 260px;
   border-radius: 12px;
-  border: solid 1px rgb(44, 44, 51, 0.4);
+  border: solid 1px rgb(44, 44, 51, 0.3);
 `;
 
 export const MovieInfo = styled.span``;

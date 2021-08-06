@@ -8,6 +8,7 @@ import 'swiper/components/navigation/navigation.scss';
 
 import { SwiperSlide } from 'swiper/react';
 import { Swiper } from 'swiper/react';
+import MoviePoster from '../MoviePoster/MoviePoster';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -49,14 +50,11 @@ const MoviesSwiper = ({ movieData, next, prev }) => {
             return (
               <SwiperSlide key={movie.id} className="swiper-container">
                 <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <div key={movie.id}>
-                    <img
-                      className="movie-poster"
-                      src={IMAGE_URL + movie.poster_path}
-                      data-movie-id={movie.id}
-                      alt={movie.title}
-                    />
-                  </div>
+                  <MoviePoster
+                    url={IMAGE_URL + movie.poster_path}
+                    title={movie.title}
+                    movieId={movie.id}
+                  />
                 </Link>
               </SwiperSlide>
             );
