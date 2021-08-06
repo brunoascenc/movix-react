@@ -16,12 +16,14 @@ export const BannerContainer = styled.div`
 
 export const BannerContent = styled.div`
   z-index: 2;
-  width: 600px;
+  width: 750px;
   p {
     margin-left: 2px;
     margin-top: 15px;
     line-height: 23px;
-    color: #a1a6ad;
+    color: #b8bfbb;
+    font-size: 15px;
+    color: rgb(217, 204, 204, 0.8);
   }
 
   div {
@@ -31,8 +33,8 @@ export const BannerContent = styled.div`
 
 export const MovieTitle = styled.h1`
   font-family: 'Archivo Black', sans-serif;
-  font-size: 45px;
+  font-size: 49px;
   letter-spacing: -1px;
   line-height: 45px;
-  color: #f0f5f1;
+  color: #e9f0eb;
 `;

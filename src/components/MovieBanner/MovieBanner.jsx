@@ -10,6 +10,7 @@ import {
 
 function MovieBanner({ movieInfo }) {
   let firstMovie = movieInfo && movieInfo[0];
+  console.log(firstMovie);
 
   return (
     <BannerContainer>
@@ -24,7 +25,6 @@ function MovieBanner({ movieInfo }) {
           <BannerContent className="container">
             <MovieTitle>{firstMovie.title}</MovieTitle>
             <p>{firstMovie.overview}</p>
-
             <div>
               <CustomButton primary>Details</CustomButton>
               <CustomButton secondary>Watchlist</CustomButton>

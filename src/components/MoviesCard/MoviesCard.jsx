@@ -11,7 +11,7 @@ const MoviesCard = ({ movies }) => {
       {movies &&
         movies.map((movie) => {
           return (
-            <>
+            <div key={movie.id}>
               <Link to={`/details/${movie.id}`} key={movie.id}>
                 <MoviePoster
                   url={IMAGE_URL + movie.poster_path}
@@ -19,7 +19,7 @@ const MoviesCard = ({ movies }) => {
                   movieId={movie.id}
                 />
               </Link>
-            </>
+            </div>
           );
         })}
     </MovieCardContainer>
