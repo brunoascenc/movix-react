@@ -26,7 +26,7 @@ const GenreSelect = ({ closeMenu }) => {
   return (
     <>
       <Select name="genres" id="select-genre" onChange={handleGenre}>
-        <option value=""> Selecione </option>
+        <option value=""> Select </option>
         {genreName &&
           genreName.map((genre) => {
             return (
@@ -38,7 +38,7 @@ const GenreSelect = ({ closeMenu }) => {
       </Select>
 
       <Select name="popular" id="filter-movie" onChange={handleOption}>
-        <option value=""> Selecione </option>
+        <option value=""> Select </option>
         <option value="popularity.desc" defaultValue>
           Popularity
         </option>

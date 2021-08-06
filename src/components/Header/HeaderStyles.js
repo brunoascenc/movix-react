@@ -45,8 +45,8 @@ export const Input = styled.input`
   ::placeholder {
     color: #e0d9d7;
   }
-  &:hover,
-  :focus {
+
+  &:focus {
     border: solid 1px rgb(195, 191, 199, 0.7);
   }
 `;
