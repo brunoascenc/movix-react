@@ -73,7 +73,7 @@ const LandingPage = () => {
                 </LinkLanding>
                 <HorizontalOverlay
                   overlay={
-                    'linear-gradient(to right, rgb(7, 5, 8, 0.6) 15%, transparent 55%)'
+                    'linear-gradient(to right, rgb(7, 5, 8, 0.5) 15%, transparent 55%)'
                   }
                 ></HorizontalOverlay>
               </SwiperSlide>
