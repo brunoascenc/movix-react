@@ -62,9 +62,10 @@ const ImageHoverContent = styled.div`
 
   p {
     color: #f2ebeb;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     margin-bottom: 2px;
+    font-smooth: auto;
   }
 `;
 
