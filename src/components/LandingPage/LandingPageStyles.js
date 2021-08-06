@@ -36,7 +36,8 @@ export const LandingMovieTitle = styled.h1`
   font-size: 50px;
   letter-spacing: -1px;
   line-height: 45px;
-  color: #ede7e6;
+  /* color: #ede7e6; */
+  color: #e9f0eb;
 `;
 
 export const LandingInfo = styled.div`

@@ -24,12 +24,12 @@ const LandingPage = () => {
   const nowPlaying = nowPlayingMovies.results;
   const dispatch = useDispatch();
 
-  let bestRating = [];
+  // let bestRating = [];
 
-  nowPlaying &&
-    nowPlaying.map((movies) => {
-      return movies.vote_average >= 8.0 ? bestRating.push(movies) : null;
-    });
+  // nowPlaying &&
+  //   nowPlaying.map((movies) => {
+  //     return movies.vote_average >= 8.0 ? bestRating.push(movies) : null;
+  //   });
 
   useEffect(() => {
     dispatch(fetchNowPlaying());
@@ -42,8 +42,8 @@ const LandingPage = () => {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
       >
-        {bestRating &&
-          bestRating.map((movie) => {
+        {nowPlaying &&
+          nowPlaying.map((movie) => {
             return (
               <SwiperSlide
                 key={movie.id}
