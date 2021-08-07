@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { ImPlay3 } from 'react-icons/im';
 import ModalVideo from 'react-modal-video';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovieTrailer } from '../../redux/movie-trailer/movieTrailerActions';
-import { BsPlay } from 'react-icons/bs';
 import { Modal, PlayButton } from './MovieTrailerStyles';
 
 const MovieTrailer = ({ movieId }) => {
@@ -17,6 +17,7 @@ const MovieTrailer = ({ movieId }) => {
   }
 
   const trailer = officialTrailers[0];
+  console.log(trailer);
 
   const dispatch = useDispatch();
 
@@ -40,7 +41,7 @@ const MovieTrailer = ({ movieId }) => {
             />
           </Modal>
           <PlayButton onClick={() => setOpen(true)}>
-            <BsPlay />
+            <ImPlay3 />
           </PlayButton>
         </>
       )}
