@@ -4,7 +4,7 @@ const imageSize = 'https://image.tmdb.org/t/p/original';
 
 export const MovieBanner = styled.div`
   height: 70vh;
-  background-image: linear-gradient(rgba(7, 5, 8, 0.3), rgb(7, 5, 8)),
+  background-image: linear-gradient(rgba(7, 5, 8, 0.5), rgb(7, 5, 8)),
     url(${(props) => imageSize + props.backdrop});
   background-position: top;
   background-size: cover;
@@ -16,7 +16,7 @@ export const ReviewsSection = styled.div`
 `;
 
 export const ReviewsContainer = styled.div`
-  border: solid 1px rgb(44, 44, 51, 0.4);
+  border: solid 1px rgb(44, 44, 51, 0.1);
   padding: 1rem 2rem;
   margin-top: 1rem;
   margin-bottom: 150px;
@@ -25,7 +25,8 @@ export const ReviewsContainer = styled.div`
   scrollbar-color: rgb(160, 63, 240) rgba(26, 23, 31, 0.363);
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
+  border-radius: 9px;
+  background: #0a080d;
 
   h1 {
     margin-bottom: 1rem;
@@ -36,7 +37,8 @@ export const ReviewsContainer = styled.div`
   }
   p {
     margin-bottom: 1.2rem;
-    color: grey;
+    color: #999a9e;
+    line-height: 23px;
   }
   a {
     @include btnStyle();
@@ -51,17 +53,17 @@ export const ReviewsContainer = styled.div`
   }
 
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-track {
-    background: rgba(26, 23, 31, 0.952);
+    /* background: rgba(26, 23, 31, 0.952); */
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgb(160, 63, 240);
-    border-radius: 12px;
+    background: rgb(36, 26, 41);
+    border-radius: 9px;
   }
 `;

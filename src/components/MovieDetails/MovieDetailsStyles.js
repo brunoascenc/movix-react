@@ -3,6 +3,7 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const DetailsContainer = styled.div`
   display: flex;
+  margin-bottom: 50px;
   /* justify-content: space-between; */
 `;
 
@@ -17,9 +18,9 @@ export const MovieImage = styled.img`
   position: absolute;
   top: -120px;
   border-radius: 12px;
-  border: solid 1px rgb(44, 44, 51, 0.4);
+  border: solid 1px rgb(44, 44, 51, 0.2);
   image-rendering: -webkit-optimize-contrast;
-  opacity: 90%;
+  opacity: 70%;
 `;
 
 export const MovieInfo = styled.div`
@@ -40,6 +41,7 @@ export const MovieInfo = styled.div`
 
   li {
     color: #999a9e;
+    line-height: 22px;
   }
 
   span {

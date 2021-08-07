@@ -16,6 +16,7 @@ import {
   SimilarContainer,
   ReviewsContainer,
   ReviewsSection,
+  Video,
 } from './DetailsPageStyles';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
