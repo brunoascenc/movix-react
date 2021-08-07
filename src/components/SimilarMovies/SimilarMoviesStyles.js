@@ -7,4 +7,6 @@ export const Similar = styled.div`
 export const SimilarContainer = styled.div`
   /* position: absolute */
   position: relative;
+  margin-bottom: 50px;
+  display: ${(props) => (props.similarLength === 0 ? 'none' : 'block')};
 `;

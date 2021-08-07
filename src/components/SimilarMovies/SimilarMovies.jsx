@@ -30,7 +30,10 @@ const SimilarMovies = ({ movieId }) => {
   }
 
   return (
-    <SimilarContainer className="container">
+    <SimilarContainer
+      className="container"
+      similarLength={similarResults.length}
+    >
       <h2 className="section-title">Similar Movies</h2>
       <MoviesSwiper
         movieData={similarResults}

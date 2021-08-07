@@ -25,6 +25,7 @@ export const MovieImage = styled.img`
 
 export const MovieInfo = styled.div`
   width: 60%;
+
   h1 {
     font-family: 'Archivo Black', sans-serif;
     margin-bottom: 5px;
@@ -32,7 +33,7 @@ export const MovieInfo = styled.div`
   }
 
   p {
-    line-height: 19px;
+    line-height: 22px;
     width: 85%;
     color: grey;
     margin-bottom: 15px;
