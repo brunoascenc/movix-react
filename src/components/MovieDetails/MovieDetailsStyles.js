@@ -3,7 +3,7 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const DetailsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 `;
 
 export const ImageContainer = styled.div`
@@ -15,17 +15,19 @@ export const ImageContainer = styled.div`
 export const MovieImage = styled.img`
   width: 350px;
   position: absolute;
-  top: -150px;
+  top: -120px;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
   image-rendering: -webkit-optimize-contrast;
+  opacity: 90%;
 `;
 
 export const MovieInfo = styled.div`
-  width: 70%;
+  width: 60%;
   h1 {
     font-family: 'Archivo Black', sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    color: #e4e5eb;
   }
 
   p {
@@ -33,25 +35,29 @@ export const MovieInfo = styled.div`
     width: 85%;
     color: grey;
     margin-bottom: 15px;
+    color: #999a9e;
   }
 
   li {
-    color: grey;
+    color: #999a9e;
   }
 
   span {
-    color: white;
+    color: #e4e5eb;
   }
 `;
 
 export const ButtonsContainer = styled.div`
   display: flex;
+  margin-top: 10px;
 `;
 
 export const ButtonStyle = styled(CustomButton)`
   align-items: center;
+  width: unset;
 
   .list-icons {
     margin-right: 5px;
+    font-size: 13px;
   }
 `;

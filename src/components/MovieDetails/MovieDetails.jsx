@@ -8,6 +8,7 @@ import {
   ButtonStyle,
   ButtonsContainer,
 } from './MovieDetailsStyles';
+
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const MovieDetails = ({
@@ -34,13 +35,13 @@ const MovieDetails = ({
         </div>
 
         <div className="detail-info">
-          <h1>Movie Details</h1>
+          <h1>Details</h1>
           <ul>
             <li>
               <span className="contrast">Title:</span> {movieDetail.title}
             </li>
             <li>
-              <span className="contrast">Release Date:</span>
+              <span className="contrast">Release Date: </span>
               {movieDetail.release_date}
             </li>
             <li>
@@ -62,7 +63,8 @@ const MovieDetails = ({
             <BsHeart className="list-icons" /> Favorite
           </ButtonStyle>
           <ButtonStyle onClick={addToWatchlist} secondary>
-            <BsListTask className="list-icons" /> Watchlist
+            <BsListTask className="list-icons" />
+            Watchlist
           </ButtonStyle>
         </ButtonsContainer>
       </MovieInfo>
