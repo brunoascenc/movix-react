@@ -95,12 +95,7 @@ const Details = (props) => {
           </div>
           <SimilarMovies movieId={movieId} />
 
-          <ReviewsSection className="container">
-            <h2 className="section-title">Reviews</h2>
-            <ReviewsContainer className="container">
-              <MovieReviews movieId={movieId} />
-            </ReviewsContainer>
-          </ReviewsSection>
+          <MovieReviews movieId={movieId} />
         </>
       )}
     </>
