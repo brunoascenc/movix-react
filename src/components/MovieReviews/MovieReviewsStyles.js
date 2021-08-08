@@ -5,7 +5,7 @@ export const ReviewsContainer = styled.div`
   padding: 1rem 2rem;
   margin-top: 1rem;
   margin-bottom: 150px;
-  height: ${(props) => (props.reviewsLength < 3 ? '250px' : '500px')};
+  height: ${(props) => (props.reviewsLength >= 3 ? '500px' : '350px')};
   overflow-y: scroll;
   scrollbar-color: rgb(160, 63, 240) rgba(26, 23, 31, 0.363);
   display: flex;
