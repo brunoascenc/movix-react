@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUpcomingMovies } from '../../redux/upcoming-movies/upcomingActions';
-import useGenres from '../../hooks/useGenres';
-import { Link } from 'react-router-dom';
+// import useGenres from '../../hooks/useGenres';
+// import { Link } from 'react-router-dom';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
-import { UpcomingContainer, UpcomingCard, MovieInfo } from './UpcomingStyles';
+import { UpcomingContainer } from './UpcomingStyles';
 import { SliderNav } from '../SliderNav/SliderNav';
 
-const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
+// const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const UpcomingMovies = () => {
-  const [genreName] = useGenres();
+  // const [genreName] = useGenres();
   const upcoming = useSelector((state) => state.upcomingMovies.results);
   const upcomingList = upcoming.results;
   const dispatch = useDispatch();

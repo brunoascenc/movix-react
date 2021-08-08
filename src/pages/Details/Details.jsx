@@ -13,10 +13,10 @@ import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 import {
   MovieBanner,
-  SimilarContainer,
-  ReviewsContainer,
-  ReviewsSection,
-  Video,
+  // SimilarContainer,
+  // ReviewsContainer,
+  // ReviewsSection,
+  // Video,
 } from './DetailsPageStyles';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
@@ -25,11 +25,11 @@ const Details = (props) => {
   const movieDetail = useSelector((state) => state.movieDetail.results);
   const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
-  const similar = useSelector((state) => state.similarMovies.results);
-  const reviews = useSelector((state) => state.movieReview.results);
-  const movieReviews = reviews.results;
+  // const similar = useSelector((state) => state.similarMovies.results);
+  // const reviews = useSelector((state) => state.movieReview.results);
+  // const movieReviews = reviews.results;
   const alert = useAlert();
-  const similarMovies = similar.results;
+  // const similarMovies = similar.results;
   const dispatch = useDispatch();
 
   useEffect(() => {

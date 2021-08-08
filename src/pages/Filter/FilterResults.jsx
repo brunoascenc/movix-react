@@ -11,12 +11,12 @@ import {
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
 import {
   FilterContainer,
-  SectionTitle,
+  // SectionTitle,
   Pagination,
   Button,
 } from './FilterPageStyles';
 import MovieBanner from '../../components/MovieBanner/MovieBanner';
-import { CustomButton } from '../../components/CustomButton/CustomButton';
+// import { CustomButton } from '../../components/CustomButton/CustomButton';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();

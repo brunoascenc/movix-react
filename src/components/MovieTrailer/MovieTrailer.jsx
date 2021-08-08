@@ -10,15 +10,11 @@ const MovieTrailer = ({ movieId }) => {
   const movieTrailer = useSelector((state) => state.movieTrailer.results);
   let officialTrailers = [];
 
-  {
-    movieTrailer.map((trailer) => {
-      return trailer.type === 'Trailer' ? officialTrailers.push(trailer) : null;
-    });
-  }
+  movieTrailer.map((trailer) => {
+    return trailer.type === 'Trailer' ? officialTrailers.push(trailer) : null;
+  });
 
   const trailer = officialTrailers[0];
-  console.log(trailer);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -20,7 +20,7 @@ import {
   SearchContainer,
   FilteOptions,
   Form,
-  NavLink,
+  // NavLink,
   LoginLink,
 } from './HeaderStyles';
 
