@@ -30,8 +30,8 @@ export const Button = styled.button`
   color: #ffffff;
   border: none;
   margin: 10px;
-  .lol {
-    color: white;
-    font-size: 25px;
+  .pagination-btn {
+    color: #dbd0d0;
+    font-size: 35px;
   }
 `;

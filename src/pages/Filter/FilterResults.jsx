@@ -18,7 +18,7 @@ import {
   Prev,
 } from './FilterPageStyles';
 import MovieBanner from '../../components/MovieBanner/MovieBanner';
-import { MdKeyboardArrowRiht, MdKeyboardArrowLeft } from 'react-icons/md';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 // import { CustomButton } from '../../components/CustomButton/CustomButton';
 
 const SearchResults = (props) => {
@@ -53,11 +53,11 @@ const SearchResults = (props) => {
             <MoviesCard movies={filterResults} genreName={genreName} />
             <Pagination>
               <Button onClick={prevPage}>
-                <MdKeyboardArrowLeft className="lol" />
+                <MdKeyboardArrowLeft className="pagination-btn" />
               </Button>
               <p>Page {numberOfPages + ' of ' + filter.total_pages}</p>
               <Button onClick={nextPage}>
-                <MdKeyboardArrowRiht className="lol" />
+                <MdKeyboardArrowRight className="pagination-btn" />
               </Button>
             </Pagination>
             <Pagination pages={filter} />
