@@ -39,7 +39,11 @@ const PopularMovies = () => {
         next={'.next-popular'}
         prev={'.prev-popular'}
       ></MoviesSwiper>
-      <SliderNav next={'next-popular'} prev={'prev-popular'} />
+      <SliderNav
+        moviesLength={popularMovie}
+        next={'next-popular'}
+        prev={'prev-popular'}
+      />
     </PopularContainer>
   );
 };

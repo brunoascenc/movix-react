@@ -40,7 +40,11 @@ const SimilarMovies = ({ movieId }) => {
         next={'.next-similar'}
         prev={'.prev-similar'}
       ></MoviesSwiper>
-      <SliderNav next={'next-similar'} prev={'prev-similar'} />
+      <SliderNav
+        moviesLength={similarResults}
+        next={'next-similar'}
+        prev={'prev-similar'}
+      />
     </SimilarContainer>
   );
 };
