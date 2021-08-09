@@ -4,7 +4,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import styled from 'styled-components';
 
 const LeftArrow = styled(MdKeyboardArrowLeft)`
-  display: ${(props) => (props.moviesLength <= 7 ? 'none' : 'block')};
+  display: ${(props) => (props.movieslength <= 7 ? 'none' : 'block')};
   cursor: pointer;
   font-size: 18px;
   color: #e0d2d19d;
@@ -14,7 +14,7 @@ const LeftArrow = styled(MdKeyboardArrowLeft)`
 `;
 
 const RightArrow = styled(MdKeyboardArrowRight)`
-  display: ${(props) => (props.moviesLength <= 7 ? 'none' : 'block')};
+  display: ${(props) => (props.movieslength <= 7 ? 'none' : 'block')};
   cursor: pointer;
   font-size: 18px;
   color: #e0d2d19d;
@@ -23,15 +23,15 @@ const RightArrow = styled(MdKeyboardArrowRight)`
   right: 21px;
 `;
 
-export const SliderNav = ({ prev, next, moviesLength }) => {
+export const SliderNav = ({ prev, next, movieslength }) => {
   return (
     <>
       <LeftArrow
-        moviesLength={moviesLength && moviesLength.length}
+        movieslength={movieslength && movieslength.length}
         className={prev}
       />
       <RightArrow
-        moviesLength={moviesLength && moviesLength.length}
+        movieslength={movieslength && movieslength.length}
         className={next}
       />
     </>

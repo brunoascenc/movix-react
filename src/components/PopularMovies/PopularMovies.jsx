@@ -40,7 +40,7 @@ const PopularMovies = () => {
         prev={'.prev-popular'}
       ></MoviesSwiper>
       <SliderNav
-        moviesLength={popularMovie}
+        movieslength={popularMovie}
         next={'next-popular'}
         prev={'prev-popular'}
       />

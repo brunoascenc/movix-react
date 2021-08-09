@@ -36,7 +36,7 @@ const UpcomingMovies = () => {
         prev={'.prev-similar'}
       ></MoviesSwiper>
       <SliderNav
-        moviesLength={upcomingMovies}
+        movieslength={upcomingMovies}
         next={'next-similar'}
         prev={'prev-similar'}
       />
