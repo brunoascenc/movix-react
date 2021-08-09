@@ -4,7 +4,7 @@ import { GrPrevious, GrNext } from 'react-icons/gr';
 export const FilterContainer = styled.div`
   /* margin-top: -30px; */
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   flex-direction: column;
 `;
 
