@@ -14,13 +14,17 @@ import {
   // SectionTitle,
   Pagination,
   Button,
+  Next,
+  Prev,
 } from './FilterPageStyles';
 import MovieBanner from '../../components/MovieBanner/MovieBanner';
+import { MdKeyboardArrowRiht, MdKeyboardArrowLeft } from 'react-icons/md';
 // import { CustomButton } from '../../components/CustomButton/CustomButton';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
-  const [pageNumber, nextPage, prevPage, scrollTop] = usePagination();
+  const [pageNumber, nextPage, prevPage, scrollTop, numberOfPages] =
+    usePagination();
   const genreId = props.match.params.pathname;
   const optionFilter = props.match.params.pathname2;
   const filter = useSelector((state) => state.filterResults.results);
@@ -49,12 +53,14 @@ const SearchResults = (props) => {
             <MoviesCard movies={filterResults} genreName={genreName} />
             <Pagination>
               <Button onClick={prevPage}>
-                <i className="fas fa-chevron-left"></i>
+                <MdKeyboardArrowLeft className="lol" />
               </Button>
+              <p>Page {numberOfPages + ' of ' + filter.total_pages}</p>
               <Button onClick={nextPage}>
-                <i className="fas fa-chevron-right"></i>
+                <MdKeyboardArrowRiht className="lol" />
               </Button>
             </Pagination>
+            <Pagination pages={filter} />
           </FilterContainer>
         </>
       )}
