@@ -3,14 +3,17 @@ import PopularMovies from '../../components/PopularMovies/PopularMovies';
 import UpcomingMovies from '../../components/UpcomingMovies/UpcomingMovies';
 import LandingPage from '../../components/LandingPage/LandingPage';
 import '../../App.css';
+import styled from 'styled-components';
+
+const HomeContainer = styled.div``;
 
 const Home = () => {
   return (
-    <div className="home">
+    <HomeContainer>
       <LandingPage />
       <UpcomingMovies />
       <PopularMovies />
-    </div>
+    </HomeContainer>
   );
 };
 
