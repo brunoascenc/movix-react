@@ -10,8 +10,6 @@ import {
 
 function MovieBanner({ movieInfo }) {
   let firstMovie = movieInfo && movieInfo[0];
-  console.log(firstMovie);
-
   return (
     <BannerContainer>
       {firstMovie ? (
