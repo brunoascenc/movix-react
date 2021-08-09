@@ -21,6 +21,9 @@ import {
   Form,
   // NavLink,
   LoginLink,
+  UserLinks,
+  UserIcon,
+  LogoutLink,
 } from './HeaderStyles';
 
 const Header = ({
@@ -62,14 +65,17 @@ const Header = ({
           </FilteOptions>
 
           {userId.sessionId ? (
-            <div className="user-links">
+            <UserLinks>
               <Link to="/user" onClick={closeMobileMenu}>
-                <AiOutlineUser className="user-icon" /> {username}
+                {/* <AiOutlineUser className="user-icon" />{' '} */}
+                <UserIcon>
+                  <span>{username && username.charAt(0)}</span>
+                </UserIcon>
               </Link>
               <Link className="logout" to="/" onClick={handleSignOut}>
-                <AiOutlineLogout className="logout-icon" /> Logout
+                <LogoutLink>Logout</LogoutLink>
               </Link>
-            </div>
+            </UserLinks>
           ) : (
             <LoginLink to="/login" onClick={closeMobileMenu}>
               {/* <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '} */}

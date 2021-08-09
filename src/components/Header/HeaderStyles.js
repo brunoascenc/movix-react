@@ -114,3 +114,40 @@ export const LoginLink = styled(NavLink)`
   background: #8d28e0;
   color: #e1dce6;
 `;
+
+export const UserLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22px;
+`;
+
+export const UserIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #e1dce6;
+  text-transform: uppercase;
+  background: #8d28e0;
+  width: 33px;
+  height: 33px;
+  font-size: 20px;
+  border: solid 1px rgb(195, 191, 199, 0);
+  transition: 0.1s ease;
+
+  &:hover {
+    border: solid 1px rgb(195, 191, 199, 0.4);
+  }
+`;
+
+export const LogoutLink = styled.div`
+  color: #b6bbc2;
+  font-size: 13px;
+  margin-top: 5px;
+  transition: 0.1s ease;
+
+  &:hover {
+    color: #e1dce6;
+  }
+`;
