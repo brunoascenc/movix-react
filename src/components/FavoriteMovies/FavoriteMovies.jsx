@@ -36,7 +36,7 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
           favorites &&
           favorites.map((movie) => {
             return (
-              <>
+              <div key={movie.id}>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
                   <ListCard key={movie.id}>
                     <img
@@ -54,7 +54,7 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
               >
                 <TiDeleteOutline />
               </button> */}
-              </>
+              </div>
             );
           })
         )}

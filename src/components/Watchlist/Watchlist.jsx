@@ -35,9 +35,9 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
           watchlist &&
           watchlist.map((movie) => {
             return (
-              <>
-                <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <div className="list-card" key={movie.id}>
+              <div key={movie.id}>
+                <Link to={`/details/${movie.id}`}>
+                  <div className="list-card">
                     <img
                       className="movie-poster"
                       src={IMAGE_URL + movie.poster_path}
@@ -55,7 +55,7 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
                 >
                   <TiDeleteOutline />
                 </button> */}
-              </>
+              </div>
             );
           })
         )}
