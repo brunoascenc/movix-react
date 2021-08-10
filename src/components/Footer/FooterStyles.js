@@ -28,7 +28,7 @@ export const FooterContent = styled.div`
 
 export const Text = styled.p`
   font-size: ${(props) => (props.copy ? '12px' : '14px')};
-  margin-top: 7px;
+  margin-top: 6px;
   margin-bottom: ${(props) => (props.copy ? '-7px' : '0')};
   color: ${(props) => (props.copy ? '#8f8f96' : '#91919c')};
   width: 300px;
