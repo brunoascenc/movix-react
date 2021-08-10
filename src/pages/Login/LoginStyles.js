@@ -27,7 +27,7 @@ export const LoginContainer = styled.div`
 
 export const Button = styled(CustomButton)`
   padding: 12px 16px;
-  width: 300px;
+  width: 90%;
   font-size: 18px;
   margin-top: 15px;
 `;
