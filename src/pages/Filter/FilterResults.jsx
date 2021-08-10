@@ -14,8 +14,6 @@ import {
   // SectionTitle,
   Pagination,
   Button,
-  Next,
-  Prev,
 } from './FilterPageStyles';
 import MovieBanner from '../../components/MovieBanner/MovieBanner';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';

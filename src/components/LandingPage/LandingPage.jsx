@@ -24,13 +24,6 @@ const LandingPage = () => {
   const nowPlaying = nowPlayingMovies.results;
   const dispatch = useDispatch();
 
-  // let bestRating = [];
-
-  // nowPlaying &&
-  //   nowPlaying.map((movies) => {
-  //     return movies.vote_average >= 8.0 ? bestRating.push(movies) : null;
-  //   });
-
   useEffect(() => {
     dispatch(fetchNowPlaying());
   }, [dispatch]);

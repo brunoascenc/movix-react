@@ -105,7 +105,6 @@ export const NavLink = styled(Link)`
   margin-right: 0px;
   font-size: 14px;
   letter-spacing: 0.5px;
-  /* border: solid 1px rgb(239, 229, 229, 0.3); */
   font-family: 'Roboto Condensed', sans-serif;
 `;
 

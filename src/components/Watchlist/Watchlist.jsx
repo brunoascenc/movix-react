@@ -1,23 +1,17 @@
 import React, { useEffect } from 'react';
-// import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { TiDeleteOutline } from 'react-icons/ti';
 import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
 import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
-// import { SwiperSlide } from 'swiper/react';
-// import useGenres from '../../hooks/useGenres';
-// import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
-// import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import Empty from '../EmptyList/Empty';
 import { WatchlistContainer, WatchlistSection } from './WatchlistStyles';
+import MoviePoster from '../MoviePoster/MoviePoster';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const Watchlist = ({ userId, fetchWatchlistMovies }) => {
-  // const [genreName] = useGenres();
   const watchlist = useSelector((state) => state.userWatchlist.results);
 
   useEffect(() => {
@@ -28,7 +22,6 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
     <WatchlistSection>
       <h2 className="section-title">Your watchlist </h2>
       <WatchlistContainer>
-        {/* <MoviesSwiper> */}
         {watchlist.length === 0 ? (
           <Empty />
         ) : (
@@ -38,14 +31,13 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
               <div key={movie.id}>
                 <Link to={`/details/${movie.id}`}>
                   <div className="list-card">
-                    <img
-                      className="movie-poster"
-                      src={IMAGE_URL + movie.poster_path}
+                    <MoviePoster
+                      url={IMAGE_URL + movie.poster_path}
+                      title={movie.title}
+                      movieId={movie.id}
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
-                    {/* <span className="movie-title">{movie.title}</span>
-                    <span className="movie-genres">{genreName(movie)}</span> */}
                   </div>
                 </Link>
                 {/* <button
@@ -59,13 +51,6 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
             );
           })
         )}
-        {/* </MoviesSwiper>
-      <MdKeyboardArrowLeft
-        className={watchlist.length > 5 ? 'left-arrow' : 'hide-nav'}
-      />
-      <MdKeyboardArrowRight
-        className={watchlist.length > 5 ? 'right-arrow' : 'hide-nav'}
-      /> */}
       </WatchlistContainer>
     </WatchlistSection>
   );

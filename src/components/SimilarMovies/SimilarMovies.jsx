@@ -1,18 +1,11 @@
 import React, { useEffect } from 'react';
-// import { SwiperSlide } from 'swiper/react';
-// import useGenres from '../../hooks/useGenres';
-// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSimilarMovies } from '../../redux/similar-movies/similarMoviesActions';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
-// import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { SimilarContainer } from './SimilarMoviesStyles';
 import { SliderNav } from '../SliderNav/SliderNav';
 
-// const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
-
 const SimilarMovies = ({ movieId }) => {
-  // const [genreName] = useGenres();
   const similar = useSelector((state) => state.similarMovies.results);
   const similarMovies = similar.results;
   const dispatch = useDispatch();

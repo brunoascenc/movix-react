@@ -1,23 +1,17 @@
 import React, { useEffect } from 'react';
-// import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { TiDeleteOutline } from 'react-icons/ti';
 import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
 import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
-// import { SwiperSlide } from 'swiper/react';
-// import useGenres from '../../hooks/useGenres';
-// import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
-// import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import Empty from '../EmptyList/Empty';
 import { FavoriteContainer, ListCard, FavoriteSection } from './FavoriteStyles';
+import MoviePoster from '../MoviePoster/MoviePoster';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
-  // const [genreName] = useGenres();
   const favorites = useSelector((state) => state.userFavorites.results);
 
   useEffect(() => {
@@ -28,8 +22,6 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
     <FavoriteSection>
       <h2 className="section-title">Favorite Movies</h2>
       <FavoriteContainer>
-        {/* <h1>Your favorite movies </h1> */}
-        {/* <MoviesSwiper> */}
         {favorites.length === 0 ? (
           <Empty />
         ) : (
@@ -39,14 +31,13 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
               <div key={movie.id}>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
                   <ListCard key={movie.id}>
-                    <img
-                      className="movie-poster"
-                      src={IMAGE_URL + movie.poster_path}
+                    <MoviePoster
+                      url={IMAGE_URL + movie.poster_path}
+                      title={movie.title}
+                      movieId={movie.id}
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
-                    {/* <span className="movie-title">{movie.title}</span>
-                  <span className="movie-genres">{genreName(movie)}</span> */}
                   </ListCard>
                 </Link>
                 {/* <button
@@ -58,13 +49,6 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
             );
           })
         )}
-        {/* </MoviesSwiper>
-      <MdKeyboardArrowLeft
-        className={favorites.length > 5 ? 'left-arrow' : 'hide-nav'}
-      />
-      <MdKeyboardArrowRight
-        className={favorites.length > 5 ? 'right-arrow' : 'hide-nav'}
-      /> */}
       </FavoriteContainer>
     </FavoriteSection>
   );

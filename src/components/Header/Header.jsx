@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Filters from './Filters/Filters';
-import { AiOutlineUser, AiOutlineLogout } from 'react-icons/ai';
 import SearchInput from './Search/SearchInput';
 import { Link } from 'react-router-dom';
 import '../../App.css';
@@ -19,7 +18,6 @@ import {
   SearchContainer,
   FilteOptions,
   Form,
-  // NavLink,
   LoginLink,
   UserLinks,
   UserIcon,
@@ -67,7 +65,6 @@ const Header = ({
           {userId.sessionId ? (
             <UserLinks>
               <Link to="/user" onClick={closeMobileMenu}>
-                {/* <AiOutlineUser className="user-icon" />{' '} */}
                 <UserIcon>
                   <span>{username && username.charAt(0)}</span>
                 </UserIcon>
@@ -78,7 +75,6 @@ const Header = ({
             </UserLinks>
           ) : (
             <LoginLink to="/login" onClick={closeMobileMenu}>
-              {/* <AiOutlineUser className="user-icon" onClick={closeMobileMenu} />{' '} */}
               Login
             </LoginLink>
           )}

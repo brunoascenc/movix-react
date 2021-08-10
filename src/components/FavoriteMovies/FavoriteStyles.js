@@ -24,12 +24,4 @@ export const FavoriteContainer = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  height: 260px;
-  border-radius: 12px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  border: solid 1px rgb(44, 44, 51, 0.4);
-`;
-
 export const ListCard = styled.div``;

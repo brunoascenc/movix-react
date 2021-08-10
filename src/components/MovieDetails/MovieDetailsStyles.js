@@ -20,7 +20,7 @@ export const MovieImage = styled.img`
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.2);
   image-rendering: -webkit-optimize-contrast;
-  opacity: 70%;
+  opacity: 95%;
 `;
 
 export const MovieInfo = styled.div`

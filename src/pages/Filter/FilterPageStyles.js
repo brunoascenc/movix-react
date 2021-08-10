@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { GrPrevious, GrNext } from 'react-icons/gr';
 
 export const FilterContainer = styled.div`
   /* margin-top: -30px; */

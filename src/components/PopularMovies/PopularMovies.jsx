@@ -4,21 +4,11 @@ import {
   fetchPopularMovies,
   fetchPopularRequest,
 } from '../../redux/popular-movies/popularMoviesAction';
-// import { Link } from 'react-router-dom';
-// import useGenres from '../../hooks/useGenres';
-// import usePagination from '../../hooks/usePagination';
-// import FullPageLoader from '../FullPageLoader/FullPageLoader';
-// import MoviesCard from '../MoviesCard/MoviesCard';
 import { PopularContainer } from './PopularStyles';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
-// import { SwiperSlide } from 'swiper/react';
-// import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { SliderNav } from '../SliderNav/SliderNav';
 
-// const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
-
 const PopularMovies = () => {
-  // const [genreName] = useGenres();
   const popularMovies = useSelector((state) => state.popularMovie.results);
 
   const popularMovie = popularMovies.results;
