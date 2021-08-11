@@ -46,8 +46,7 @@ export const LandingInfo = styled.div`
   font-size: 13px;
   margin-left: 5px;
   align-items: center;
-  color: #b8bfbb;
-  color: rgb(217, 204, 204, 0.8);
+  color: #8f8f96;
   .movie-genres {
     margin-right: 5px;
   }

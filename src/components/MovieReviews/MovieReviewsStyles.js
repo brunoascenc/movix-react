@@ -22,7 +22,7 @@ export const ReviewsContainer = styled.div`
   }
   p {
     margin-bottom: 1.2rem;
-    color: #999a9e;
+    color: #91919c;
     line-height: 23px;
   }
   a {

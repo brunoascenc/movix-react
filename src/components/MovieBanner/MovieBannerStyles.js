@@ -21,9 +21,8 @@ export const BannerContent = styled.div`
     margin-left: 2px;
     margin-top: 15px;
     line-height: 23px;
-    color: #b8bfbb;
     font-size: 15px;
-    color: rgb(217, 204, 204, 0.8);
+    color: #91919c;
   }
 
   div {

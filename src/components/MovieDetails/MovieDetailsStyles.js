@@ -37,16 +37,16 @@ export const MovieInfo = styled.div`
     width: 85%;
     color: grey;
     margin-bottom: 15px;
-    color: #999a9e;
+    color: #91919c;
   }
 
   li {
-    color: #999a9e;
+    color: #91919c;
     line-height: 22px;
   }
 
   span {
-    color: #e4e5eb;
+    color: #b0b4b8;
   }
 `;
 
