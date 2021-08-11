@@ -58,7 +58,7 @@ const Header = ({
         </SearchContainer>
         <Form className={click ? 'nav-active' : null} data-scroll-header>
           <FilteOptions>
-            <span>Order By:</span>
+            <span>Filter by:</span>
             <Filters closeMenu={closeMobileMenu} />
           </FilteOptions>
 
