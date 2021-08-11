@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   display: flex;
   height: 250px;
-  background: #0d0d12;
-  background: rgb(11, 9, 13);
   justify-content: space-evenly;
   align-items: center;
   background: rgb(11, 9, 13);
