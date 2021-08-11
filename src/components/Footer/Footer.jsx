@@ -7,6 +7,7 @@ import {
   Text,
   TMDBSocials,
   SocialsLinks,
+  Copy,
 } from './FooterStyles';
 import '../../App.css';
 
@@ -16,18 +17,23 @@ const Footer = () => {
       <FooterContent>
         <h3>About Movix</h3>
         <Text>
-          Search and discover new movies and releases with movix! The data were
-          taken from the TMDB api.
+          Movix is ​​a website to discover and search your favorite movies. On
+          our website you can save your favorite movies in a list or add them to
+          the watchlist.
         </Text>
-        <Text copy>
-          <span>Movix</span> © 2021
-        </Text>
-        <Text copy>
-          Created by <a href="https://brunoascencao.web.app/">Bruno Ascenção</a>
-        </Text>
+        <Copy>
+          <span>Movix © 2021</span>
+          <span>
+            Created by{' '}
+            <a href="https://brunoascencao.web.app/">Bruno Ascenção</a>
+          </span>
+        </Copy>
       </FooterContent>
       <TMDBSocials>
-        <TMDBLogo src={Logo} alt="logo" />
+        <a href="https://www.themoviedb.org/">
+          <TMDBLogo src={Logo} alt="logo" />
+        </a>
+        <Text>All data and images provided by the TMDB api.</Text>
         <SocialsLinks>
           <a href="https://twitter.com/themoviedb">
             <i className="fab fa-twitter"></i>
