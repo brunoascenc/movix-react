@@ -6,13 +6,23 @@ import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistAc
 import { createStructuredSelector } from 'reselect';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import Empty from '../EmptyList/Empty';
-import { WatchlistContainer, WatchlistSection } from './WatchlistStyles';
+import {
+  WatchlistContainer,
+  WatchlistSection,
+  Button,
+  WatchlistHeader,
+  Filter,
+  Select,
+} from './WatchlistStyles';
 import MoviePoster from '../MoviePoster/MoviePoster';
+import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
 const Watchlist = ({ userId, fetchWatchlistMovies }) => {
   const watchlist = useSelector((state) => state.userWatchlist.results);
+  const moviesWatchlist = watchlist.results;
 
   useEffect(() => {
     fetchWatchlistMovies(userId.sessionId);
@@ -20,17 +30,27 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
 
   return (
     <WatchlistSection>
-      <h2 className="section-title">Your watchlist </h2>
+      <WatchlistHeader>
+        <h2 className="section-title">My Watchlist</h2>
+        <Filter>
+          <h4>Sort by: </h4>
+          <Select>
+            <option value=""> Ascending </option>
+            <option value=""> Descending </option>
+          </Select>
+        </Filter>
+      </WatchlistHeader>
+
       <WatchlistContainer>
-        {watchlist.length === 0 ? (
+        {moviesWatchlist && moviesWatchlist.length === 0 ? (
           <Empty />
         ) : (
-          watchlist &&
-          watchlist.map((movie) => {
+          moviesWatchlist &&
+          moviesWatchlist.map((movie) => {
             return (
-              <div key={movie.id}>
+              <div className="poster-container" key={movie.id}>
                 <Link to={`/details/${movie.id}`}>
-                  <div className="list-card">
+                  <div className="poster-card">
                     <MoviePoster
                       url={IMAGE_URL + movie.poster_path}
                       title={movie.title}
@@ -40,18 +60,19 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
                     />
                   </div>
                 </Link>
-                {/* <button
+                <Button
                   onClick={() =>
                     removeFromWatchlist(userId.sessionId, movie.id)
                   }
                 >
-                  <TiDeleteOutline />
-                </button> */}
+                  Remove <AiOutlineDelete className="delete-icon" />
+                </Button>
               </div>
             );
           })
         )}
       </WatchlistContainer>
+      <span>Total: {watchlist.total_results}</span>
     </WatchlistSection>
   );
 };
