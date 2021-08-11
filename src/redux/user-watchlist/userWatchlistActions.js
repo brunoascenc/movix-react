@@ -28,10 +28,11 @@ export const fetchWatchlistMovies = (id) => {
     dispatch(fetchWatchlistRequest());
     axios
       .get(
-        `https://api.themoviedb.org/3/account/{account_id}/watchlist/movies?api_key=${API_KEY}&language=en-US&session_id=${id}&language=en-US&sort_by=created_at.asc&page=1`
+        `https://api.themoviedb.org/3/account/{account_id}/watchlist/movies?api_key=${API_KEY}&language=en-US&session_id=${id}&language=en-US&sort_by=created_at.desc&page=1`
       )
       .then((res) => {
         const watchlistMovies = res.data;
+        console.log(watchlistMovies);
         dispatch(fecthWatchlistSuccess(watchlistMovies.results));
       })
       .catch((err) => {
