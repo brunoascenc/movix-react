@@ -31,6 +31,7 @@ export const fetchUserDetails = (id) => {
       )
       .then((res) => {
         const userDetails = res.data;
+
         dispatch(fecthUserSuccess(userDetails));
       })
       .catch((err) => {

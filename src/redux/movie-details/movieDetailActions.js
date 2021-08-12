@@ -28,7 +28,9 @@ export const fetchMovieDetail = (movieId) => {
   return (dispatch) => {
     dispatch(fetchDetailsRequest());
     axios
-      .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
+      .get(
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+      )
       .then((res) => {
         const detail = res.data;
         dispatch(fecthDetailsSuccess(detail));
