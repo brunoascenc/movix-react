@@ -25,12 +25,9 @@ const Details = (props) => {
   const movieDetail = useSelector((state) => state.movieDetail.results);
   const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
-  // const similar = useSelector((state) => state.similarMovies.results);
-  // const reviews = useSelector((state) => state.movieReview.results);
-  // const movieReviews = reviews.results;
   const alert = useAlert();
-  // const similarMovies = similar.results;
   const dispatch = useDispatch();
+
   console.log(movieDetail);
 
   useEffect(() => {

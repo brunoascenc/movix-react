@@ -1,0 +1,7 @@
+const MovieCastTypes = {
+  FETCH_CASTS_START: 'FETCH_CASTS_START',
+  FETCH_CASTS_SUCCESS: 'FETCH_CASTS_SUCCESS',
+  FETCH_CASTS_FAILURE: 'FETCH_CASTS_FAILURE',
+};
+
+export default MovieCastTypes;
