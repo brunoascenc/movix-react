@@ -73,13 +73,15 @@ export const ButtonsContainer = styled.div`
     background: transparent;
     border-radius: 0;
     border: none;
-    margin-left: 15px;
+    margin-left: 2px;
     color: #dadbe0;
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
 
     .trailer-icon {
       font-size: 25px;
-      margin-right: 5px;
+      margin-right: 2px;
     }
   }
 `;
