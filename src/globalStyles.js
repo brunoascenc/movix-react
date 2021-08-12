@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
     image-rendering: -webkit-optimize-contrast;
     transition: 0.3s ease;
   }
-  
+
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,

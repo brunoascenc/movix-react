@@ -1,13 +1,12 @@
 import React from 'react';
 import SwiperCore, { Navigation } from 'swiper';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 //Swiper css
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 
-import { SwiperSlide } from 'swiper/react';
-import { Swiper } from 'swiper/react';
 import MoviePoster from '../MoviePoster/MoviePoster';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -22,11 +21,12 @@ const MoviesSwiper = ({ movieData, next, prev }) => {
         spaceBetween={15}
         slidesPerView={7}
         navigation={{ nextEl: next, prevEl: prev }}
+        className="swiper-container"
       >
         {movieData &&
           movieData.map((movie) => {
             return (
-              <SwiperSlide key={movie.id} className="swiper-container">
+              <SwiperSlide key={movie.id}>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
                   <MoviePoster
                     url={IMAGE_URL + movie.poster_path}
