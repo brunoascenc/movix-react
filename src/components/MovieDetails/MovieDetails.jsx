@@ -7,7 +7,10 @@ import {
   MovieInfo,
   ButtonStyle,
   ButtonsContainer,
+  MovieTitle,
+  MovieActions,
 } from './MovieDetailsStyles';
+import { BsPlayFill } from 'react-icons/bs';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -17,6 +20,12 @@ const MovieDetails = ({
   addToWatchlist,
   addToFavorite,
 }) => {
+  const timeConvert = (num) => {
+    const hours = Math.floor(num / 60);
+    const minutes = num % 60;
+    return `${hours}h ${minutes}m`;
+  };
+
   return (
     <DetailsContainer>
       <ImageContainer>
@@ -26,47 +35,47 @@ const MovieDetails = ({
         />
       </ImageContainer>
       <MovieInfo>
-        {/* <h1>{movieDetail.title}</h1> */}
+        <MovieTitle>
+          <h1>{movieDetail.title}</h1>
+          <div>
+            <span className="release-date">
+              {movieDetail.release_date} (US)
+            </span>
+            <ul>
+              <li>{genres}</li>
+              <li>{timeConvert(movieDetail.runtime)}</li>
+            </ul>
+          </div>
+        </MovieTitle>
+        <MovieActions>
+          <div>
+            <span className="vote">{movieDetail.vote_average}</span>
+            <p>Vote Average</p>
+          </div>
+          <ButtonsContainer>
+            <ButtonStyle onClick={addToFavorite} primary>
+              <BsHeart className="list-icons" /> Favorite
+            </ButtonStyle>
+            <ButtonStyle onClick={addToWatchlist} secondary>
+              <BsListTask className="list-icons" />
+              Watchlist
+            </ButtonStyle>
+
+            <ButtonStyle className="trailer-btn">
+              <BsPlayFill className="trailer-icon" />
+              Play Trailer
+            </ButtonStyle>
+          </ButtonsContainer>
+        </MovieActions>
+        <div className="tagline">
+          <span>{movieDetail.tagline}</span>
+        </div>
         <div className="overview">
-          <h1>Movie overview</h1>
+          <h2>Overview</h2>
           <article>
             <p>{movieDetail.overview}</p>
           </article>
         </div>
-
-        <div className="detail-info">
-          <h1>Details</h1>
-          <ul>
-            <li>
-              <span className="contrast">Title:</span> {movieDetail.title}
-            </li>
-            <li>
-              <span className="contrast">Release Date: </span>
-              {movieDetail.release_date}
-            </li>
-            <li>
-              <span className="contrast">Genre:</span> {genres}
-            </li>
-
-            <li>
-              <span className="contrast">Duration:</span> {movieDetail.runtime}{' '}
-              min
-            </li>
-            <li>
-              <span className="contrast">Rating:</span>{' '}
-              {movieDetail.vote_average}
-            </li>
-          </ul>
-        </div>
-        <ButtonsContainer>
-          <ButtonStyle onClick={addToFavorite} primary>
-            <BsHeart className="list-icons" /> Favorite
-          </ButtonStyle>
-          <ButtonStyle onClick={addToWatchlist} secondary>
-            <BsListTask className="list-icons" />
-            Watchlist
-          </ButtonStyle>
-        </ButtonsContainer>
       </MovieInfo>
     </DetailsContainer>
   );

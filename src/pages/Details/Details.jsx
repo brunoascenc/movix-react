@@ -31,6 +31,7 @@ const Details = (props) => {
   const alert = useAlert();
   // const similarMovies = similar.results;
   const dispatch = useDispatch();
+  console.log(movieDetail);
 
   useEffect(() => {
     dispatch(fetchDetailsRequest());
