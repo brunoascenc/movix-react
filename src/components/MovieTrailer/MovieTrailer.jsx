@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ImPlay3 } from 'react-icons/im';
+import { BsPlayFill } from 'react-icons/bs';
 import ModalVideo from 'react-modal-video';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovieTrailer } from '../../redux/movie-trailer/movieTrailerActions';
@@ -37,7 +37,7 @@ const MovieTrailer = ({ movieId }) => {
             />
           </Modal>
           <PlayButton onClick={() => setOpen(true)}>
-            <ImPlay3 />
+            <BsPlayFill />
           </PlayButton>
         </>
       )}
