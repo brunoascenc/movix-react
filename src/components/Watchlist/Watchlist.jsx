@@ -65,7 +65,7 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
                     removeFromWatchlist(userId.sessionId, movie.id)
                   }
                 >
-                  Remove <AiOutlineDelete className="delete-icon" />
+                  <AiOutlineDelete className="delete-icon" />
                 </Button>
               </div>
             );

@@ -19,7 +19,7 @@ export const Button = styled.button`
   color: #5c5a5e;
   font-size: 11px;
   height: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   background: none;
   border: none;
   align-self: center;
@@ -28,6 +28,8 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   margin-top: -10px;
+  margin-left: -15px;
+  justify-self: center;
 
   &:hover {
     color: #e9f0eb;
@@ -38,9 +40,8 @@ export const Button = styled.button`
   }
 
   .delete-icon {
-    font-size: 13px;
-    color: #5c5a5e;
-    margin-left: 2px;
+    font-size: 18px;
+    color: #291e2e;
   }
 `;
 
@@ -50,6 +51,12 @@ export const WatchlistContainer = styled.div`
 
   .poster-card {
     margin-bottom: 15px;
+  }
+
+  .poster-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &::-webkit-scrollbar {

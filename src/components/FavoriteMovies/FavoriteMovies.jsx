@@ -48,7 +48,7 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
           favoriteMovies &&
           favoriteMovies.map((movie) => {
             return (
-              <div key={movie.id}>
+              <div className="poster-container" key={movie.id}>
                 <Link key={movie.id} to={`/details/${movie.id}`}>
                   <ListCard key={movie.id}>
                     <div className="poster-card">
@@ -65,7 +65,7 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
                 <Button
                   onClick={() => removeFromFavorite(userId.sessionId, movie.id)}
                 >
-                  Remove <AiOutlineDelete className="delete-icon" />
+                  <AiOutlineDelete className="delete-icon" />
                 </Button>
               </div>
             );
