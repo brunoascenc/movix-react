@@ -100,6 +100,7 @@ export const ButtonStyle = styled(CustomButton)`
 export const MovieTitle = styled.div`
   h1 {
     font-family: 'Archivo Black', sans-serif;
+    line-height: 37px;
   }
 
   div {
@@ -138,7 +139,11 @@ export const MovieActions = styled.div`
     display: flex;
     align-items: center;
     .vote {
-      padding: 16px 16px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       border: solid 2px rgb(141, 40, 224, 0.7);
       margin-right: 20px;
@@ -154,9 +159,7 @@ export const MovieActions = styled.div`
     }
 
     p {
-      margin-left: -12px;
-      margin-right: 10px;
-      margin-top: 20px;
+      margin: 0 10px -5px -12px;
       color: #dadbe0;
       width: 55px;
       font-size: 13px;

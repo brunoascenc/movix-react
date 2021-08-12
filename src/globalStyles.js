@@ -57,9 +57,6 @@ const GlobalStyle = createGlobalStyle`
     transition: 0.3s ease;
   }
   
-
-
-  
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
