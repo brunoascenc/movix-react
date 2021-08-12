@@ -32,7 +32,6 @@ export const LinkLanding = styled(Link)`
 `;
 
 export const LandingMovieTitle = styled.h1`
-  font-family: 'Archivo Black', sans-serif;
   font-size: 50px;
   letter-spacing: -1px;
   line-height: 49px;
