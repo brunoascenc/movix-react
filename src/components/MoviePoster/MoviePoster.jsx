@@ -3,21 +3,21 @@ import styled from 'styled-components';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
-  width: 175px;
-  height: 260px;
+  width: 196px;
+  height: 295px;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.3);
   image-rendering: -webkit-optimize-contrast;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
 `;
 
 const ImageHover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 175px;
+  width: 196px;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
-  height: 260px;
+  height: 295px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
