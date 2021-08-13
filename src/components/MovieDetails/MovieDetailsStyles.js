@@ -167,3 +167,25 @@ export const MovieActions = styled.div`
     }
   }
 `;
+
+export const MovieCast = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 40px;
+  margin-top: 25px;
+  div {
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      color: #e4e5eb;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    .character {
+      color: #91919c;
+      font-size: 13px;
+    }
+  }
+`;

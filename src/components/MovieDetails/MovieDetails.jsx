@@ -9,6 +9,7 @@ import {
   ButtonsContainer,
   MovieTitle,
   MovieActions,
+  MovieCast,
 } from './MovieDetailsStyles';
 import { BsPlayFill } from 'react-icons/bs';
 
@@ -19,6 +20,7 @@ const MovieDetails = ({
   genres,
   addToWatchlist,
   addToFavorite,
+  movieCast,
 }) => {
   const timeConvert = (num) => {
     const hours = Math.floor(num / 60);
@@ -26,6 +28,7 @@ const MovieDetails = ({
     return `${hours}h ${minutes}m`;
   };
 
+  console.log(movieCast && movieCast);
   return (
     <DetailsContainer>
       <ImageContainer>
@@ -76,6 +79,17 @@ const MovieDetails = ({
             <p>{movieDetail.overview}</p>
           </article>
         </div>
+        <MovieCast>
+          {movieCast &&
+            movieCast.cast.slice(0, 6).map((cast) => {
+              return (
+                <div key={cast.id}>
+                  <span className="name">{cast.name}</span>
+                  <span className="character">{cast.character}</span>
+                </div>
+              );
+            })}
+        </MovieCast>
       </MovieInfo>
     </DetailsContainer>
   );

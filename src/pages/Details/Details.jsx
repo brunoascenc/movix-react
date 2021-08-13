@@ -25,10 +25,9 @@ const Details = (props) => {
   const movieDetail = useSelector((state) => state.movieDetail.results);
   const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
+  const movieCast = movieDetail.credits;
   const alert = useAlert();
   const dispatch = useDispatch();
-
-  console.log(movieDetail);
 
   useEffect(() => {
     dispatch(fetchDetailsRequest());
@@ -62,6 +61,7 @@ const Details = (props) => {
               <MovieDetails
                 movieDetail={movieDetail}
                 genres={genreOptions}
+                movieCast={movieCast}
                 addToFavorite={
                   //check if theres no session id
                   !userId
