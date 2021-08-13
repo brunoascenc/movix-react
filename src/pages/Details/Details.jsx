@@ -11,24 +11,25 @@ import {
 } from '../../redux/movie-details/movieDetailActions';
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
-import {
-  MovieBanner,
-  // SimilarContainer,
-  // ReviewsContainer,
-  // ReviewsSection,
-  // Video,
-} from './DetailsPageStyles';
+import { MovieBanner } from './DetailsPageStyles';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
 const Details = (props) => {
   const movieId = props.match.params.id;
   const movieDetail = useSelector((state) => state.movieDetail.results);
+  const movieReviews = movieDetail.reviews;
+  const movieTrailer = movieDetail.videos;
+  const similarMovies = movieDetail.recommendations;
+  const movieDate = movieDetail.release_dates;
   const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
   const movieCast = movieDetail.credits;
   const alert = useAlert();
   const dispatch = useDispatch();
+  const dates = movieDate && movieDate.results;
 
+  // console.log(d && d.filter((xd) => xd.iso_3166_1 === 'US'));
+  // console.log(d);
   useEffect(() => {
     dispatch(fetchDetailsRequest());
     setTimeout(() => {
@@ -50,7 +51,9 @@ const Details = (props) => {
         <>
           <MovieBanner backdrop={movieDetail.backdrop_path}>
             <div>
-              <MovieTrailer movieId={props.match.params.id} />
+              <MovieTrailer
+                movieTrailer={movieTrailer && movieTrailer.results}
+              />
             </div>
           </MovieBanner>
 
@@ -62,6 +65,7 @@ const Details = (props) => {
                 movieDetail={movieDetail}
                 genres={genreOptions}
                 movieCast={movieCast}
+                dates={dates}
                 addToFavorite={
                   //check if theres no session id
                   !userId
@@ -91,9 +95,11 @@ const Details = (props) => {
               />
             )}
           </div>
-          <SimilarMovies movieId={movieId} />
+          <SimilarMovies
+            similarMovies={similarMovies && similarMovies.results}
+          />
 
-          <MovieReviews movieId={movieId} />
+          <MovieReviews movieReviews={movieReviews && movieReviews.results} />
         </>
       )}
     </>

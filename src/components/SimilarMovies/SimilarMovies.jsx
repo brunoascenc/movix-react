@@ -1,19 +1,9 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchSimilarMovies } from '../../redux/similar-movies/similarMoviesActions';
+import React from 'react';
 import MoviesSwiper from '../MoviesSwiper/MoviesSwiper';
 import { SimilarContainer } from './SimilarMoviesStyles';
 import { SliderNav } from '../SliderNav/SliderNav';
 
-const SimilarMovies = ({ movieId }) => {
-  const similar = useSelector((state) => state.similarMovies.results);
-  const similarMovies = similar.results;
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchSimilarMovies(movieId));
-  }, [movieId, dispatch]);
-
+const SimilarMovies = ({ similarMovies }) => {
   //loop do hide broken images
   let similarResults = [];
   for (let i in similarMovies) {

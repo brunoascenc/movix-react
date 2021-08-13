@@ -44,12 +44,13 @@ export const MovieInfo = styled.div`
   h1 {
     font-family: 'Archivo Black', sans-serif;
     margin-bottom: 5px;
+    margin-left: -1px;
     color: #e4e5eb;
   }
 
   p {
     line-height: 22px;
-    width: 85%;
+    width: 95%;
     color: grey;
     margin-bottom: 15px;
     color: #91919c;
@@ -106,12 +107,26 @@ export const MovieTitle = styled.div`
   div {
     display: flex;
     align-items: center;
-    margin-top: -4px;
 
     .release-date {
       margin-right: 30px;
       color: #b2aab5;
-      font-size: 14px;
+      display: flex;
+      align-items: center;
+
+      .certification {
+        display: ${(props) => (props.certification === '' ? 'none' : 'block')};
+        border: solid 1px rgb(145, 145, 156, 0.8);
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 10px;
+        margin-right: 7px;
+      }
+
+      .movie-date {
+        font-size: 13px;
+        margin-top: 2px;
+      }
     }
   }
 

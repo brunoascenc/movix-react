@@ -1,17 +1,7 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchMovieReviews } from '../../redux/movie-reviews/movieReviewsActions';
+import React from 'react';
 import { ReviewsContainer, ReviewsSection } from './MovieReviewsStyles';
 
-const MovieReviews = ({ movieId }) => {
-  const reviews = useSelector((state) => state.movieReview.results);
-  const movieReviews = reviews.results;
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchMovieReviews(movieId));
-  }, [movieId, dispatch]);
-
+const MovieReviews = ({ movieReviews }) => {
   return (
     <ReviewsSection
       className="container"

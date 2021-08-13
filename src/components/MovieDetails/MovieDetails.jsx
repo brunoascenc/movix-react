@@ -21,6 +21,7 @@ const MovieDetails = ({
   addToWatchlist,
   addToFavorite,
   movieCast,
+  dates,
 }) => {
   const timeConvert = (num) => {
     const hours = Math.floor(num / 60);
@@ -28,7 +29,10 @@ const MovieDetails = ({
     return `${hours}h ${minutes}m`;
   };
 
-  console.log(movieCast && movieCast);
+  const releaseDate =
+    dates && dates.filter((dates) => dates.iso_3166_1 === 'US');
+  const movieDate = releaseDate && releaseDate[0].release_dates[0];
+
   return (
     <DetailsContainer>
       <ImageContainer>
@@ -38,12 +42,18 @@ const MovieDetails = ({
         />
       </ImageContainer>
       <MovieInfo>
-        <MovieTitle>
+        <MovieTitle certification={movieDate && movieDate.certification}>
           <h1>{movieDetail.title}</h1>
           <div>
-            <span className="release-date">
-              {movieDetail.release_date} (US)
-            </span>
+            <div className="release-date">
+              {/* {dates && dates.filter((dates) => dates.iso_3166_1 === 'US' )} */}
+              <span className="certification">
+                {movieDate && movieDate.certification}
+              </span>
+              <span className="movie-date">
+                {movieDetail.release_date} (US)
+              </span>
+            </div>
             <ul>
               <li>{genres}</li>
               <li>{timeConvert(movieDetail.runtime)}</li>
