@@ -15,7 +15,6 @@ import userWatchlist from './user-watchlist/userWatchlistReducer';
 import sessionId from './user-session/userSessionReducer';
 import userToken from './user-token/userTokenReducer';
 import genreReducer from './movie-genres/genreReducer';
-import movieCastReducer from './movie-cast/movieCastReducer';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
@@ -40,7 +39,6 @@ const rootReducer = combineReducers({
   user: user,
   userFavorites: userFavorites,
   userWatchlist: userWatchlist,
-  movieCast: movieCastReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
