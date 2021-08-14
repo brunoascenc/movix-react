@@ -8,7 +8,7 @@ const Image = styled.img`
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.3);
   image-rendering: -webkit-optimize-contrast;
-  transition: 0.2s ease;
+  /* transition: 0.2s ease; */
 `;
 
 const ImageHover = styled.div`
@@ -17,25 +17,26 @@ const ImageHover = styled.div`
   left: 0;
   width: 196px;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
-  height: 295px;
+  height: 296px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   opacity: 0;
-  transition: 0.2s ease;
+  /* transition: 0.2s ease; */
 `;
 
 const ImageContainer = styled.div`
   position: relative;
-  transition: 0.2s ease;
   margin-top: 3px;
+  transition: 0.2s ease;
 
   &:hover {
     margin-top: -1px;
 
     ${ImageHover} {
       opacity: 1;
+      transition: 0.2s ease-in-out;
     }
   }
 `;
