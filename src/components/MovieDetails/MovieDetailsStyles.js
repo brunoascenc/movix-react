@@ -36,6 +36,7 @@ export const MovieImage = styled.img`
   border: solid 1px rgb(44, 44, 51, 0.2);
   image-rendering: -webkit-optimize-contrast;
   opacity: 95%;
+  height: 540px;
 `;
 
 export const MovieInfo = styled.div`
@@ -186,7 +187,7 @@ export const MovieActions = styled.div`
 export const MovieCast = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 40px;
+  grid-gap: 30px;
   margin-top: 25px;
   div {
     display: flex;
