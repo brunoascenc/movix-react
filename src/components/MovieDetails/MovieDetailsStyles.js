@@ -147,8 +147,8 @@ export const MovieTitle = styled.div`
 export const MovieActions = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin-top: 23px;
+  margin-bottom: 23px;
 
   div {
     display: flex;
