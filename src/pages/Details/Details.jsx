@@ -50,11 +50,11 @@ const Details = (props) => {
       ) : (
         <>
           <MovieBanner backdrop={movieDetail.backdrop_path}>
-            <div>
+            {/* <div>
               <MovieTrailer
                 movieTrailer={movieTrailer && movieTrailer.results}
               />
-            </div>
+            </div> */}
           </MovieBanner>
 
           <div className="about-movie container">
@@ -66,6 +66,7 @@ const Details = (props) => {
                 genres={genreOptions}
                 movieCast={movieCast}
                 dates={dates}
+                movieTrailer={movieTrailer}
                 addToFavorite={
                   //check if theres no session id
                   !userId
