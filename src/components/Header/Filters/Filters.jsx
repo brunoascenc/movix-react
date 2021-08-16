@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGenres } from '../../../redux/movie-genres/genreActions';
 import { Select, NavLink } from '../HeaderStyles';
+import { useLocation } from 'react-router-dom';
 
 const GenreSelect = ({ closeMenu }) => {
   const genreList = useSelector((state) => state.genreList.results);
   const genreName = genreList.genres;
+  const location = useLocation();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +28,12 @@ const GenreSelect = ({ closeMenu }) => {
 
   return (
     <>
-      <Select name="genres" id="select-genre" onChange={handleGenre}>
+      <Select
+        name="genres"
+        id="select-genre"
+        onChange={handleGenre}
+        pageRoute={location.pathname}
+      >
         <option value=""> Select </option>
         {genreName &&
           genreName.map((genre) => {
@@ -37,7 +45,12 @@ const GenreSelect = ({ closeMenu }) => {
           })}
       </Select>
 
-      <Select name="popular" id="filter-movie" onChange={handleOption}>
+      <Select
+        name="popular"
+        id="filter-movie"
+        onChange={handleOption}
+        pageRoute={location.pathname}
+      >
         <option value=""> Select </option>
         <option value="popularity.desc" defaultValue>
           Popularity
