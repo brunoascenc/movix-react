@@ -30,7 +30,9 @@ const MovieTrailer = ({ movieTrailer }) => {
             />
           </Modal>
           <PlayButton onClick={() => setOpen(true)}>
-            <BsPlayFill />
+            {/* <BsPlayFill /> */}
+            <BsPlayFill className="trailer-icon" />
+            Play Trailer
           </PlayButton>
         </>
       )}

@@ -4,15 +4,26 @@ export const Modal = styled.div`
   position: relative;
 `;
 
-export const PlayButton = styled.div`
+export const PlayButton = styled.button`
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 25px;
-  opacity: 0.8;
-  color: #e9e4eb;
+  display: flex;
+  align-items: center;
+  padding: 7px 16px;
+  width: unset;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  margin-left: 2px;
+  color: #dadbe0;
+  font-size: 15px;
+  letter-spacing: 0;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+
+  .trailer-icon {
+    font-size: 25px;
+    margin-right: 2px;
+  }
 
   &:hover {
     opacity: 1;

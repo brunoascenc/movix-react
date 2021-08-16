@@ -1,5 +1,6 @@
 import React from 'react';
-import { BsHeart, BsListTask } from 'react-icons/bs';
+import { BsHeart, BsListTask, BsPlayFill } from 'react-icons/bs';
+import MovieTrailer from '../MovieTrailer/MovieTrailer';
 import {
   DetailsContainer,
   MovieImage,
@@ -11,7 +12,7 @@ import {
   MovieActions,
   MovieCast,
 } from './MovieDetailsStyles';
-import { BsPlayFill } from 'react-icons/bs';
+// import { BsPlayFill } from 'react-icons/bs';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -22,6 +23,7 @@ const MovieDetails = ({
   addToFavorite,
   movieCast,
   dates,
+  movieTrailer,
 }) => {
   const timeConvert = (num) => {
     const hours = Math.floor(num / 60);
@@ -74,10 +76,7 @@ const MovieDetails = ({
               Watchlist
             </ButtonStyle>
 
-            <ButtonStyle className="trailer-btn">
-              <BsPlayFill className="trailer-icon" />
-              Play Trailer
-            </ButtonStyle>
+            <MovieTrailer movieTrailer={movieTrailer && movieTrailer.results} />
           </ButtonsContainer>
         </MovieActions>
         <div className="tagline">

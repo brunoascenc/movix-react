@@ -3,7 +3,7 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const DetailsContainer = styled.div`
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   /* justify-content: space-between; */
 
   .overview {
@@ -69,9 +69,10 @@ export const MovieInfo = styled.div`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  /* margin-top: 10px; */
+  align-items: center;
+  margin-top: -2px;
 
-  .trailer-btn {
+  /* .trailer-btn {
     background: transparent;
     border-radius: 0;
     border: none;
@@ -81,18 +82,17 @@ export const ButtonsContainer = styled.div`
     letter-spacing: 0;
     font-family: 'Roboto', sans-serif;
 
-    .trailer-icon {
+  .trailer-icon {
       font-size: 25px;
       margin-right: 2px;
     }
-  }
+  } */
 `;
 
 export const ButtonStyle = styled(CustomButton)`
   align-items: center;
   padding: 7px 16px;
   width: unset;
-
   .list-icons {
     margin-right: 5px;
     font-size: 13px;
