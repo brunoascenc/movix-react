@@ -14,18 +14,31 @@ import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { Stripe, UserHeader, UserInfo } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
+import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
+import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
 
-const User = ({ userId, userDetails, signOutSuccess }) => {
+const User = ({
+  userId,
+  userDetails,
+  signOutSuccess,
+  fetchWatchlistMovies,
+  fetchFavoriteMovies,
+}) => {
   const loading = useSelector((state) => state.user.loading);
   const dispatch = useDispatch();
   const user = userDetails.details;
   const username = user.username;
-  console.log(userDetails);
+  const watchlist = useSelector((state) => state.userWatchlist.results);
+  const favorites = useSelector((state) => state.userFavorites.results);
+  const favoriteMovies = favorites.results;
+  const moviesWatchlist = watchlist.results;
 
   useEffect(() => {
     dispatch(fetchUserRequest());
     setTimeout(() => {
       dispatch(fetchUserDetails(userId.sessionId));
+      fetchWatchlistMovies(userId.sessionId);
+      fetchFavoriteMovies(userId.sessionId);
     }, 700);
   }, [userId.sessionId, dispatch]);
 
@@ -42,12 +55,12 @@ const User = ({ userId, userDetails, signOutSuccess }) => {
           <p>{user.name === '' ? user.username : user.name}</p>
           <div className="info-details">
             <div className="list-info">
-              <span>10</span>
+              <span>{favorites.total_results}</span>
               <p>Favorite Movies</p>
             </div>
             <span className="separator"> </span>
             <div className="list-info">
-              <span>6</span>
+              <span>{watchlist.total_results}</span>
               <p>Watchlist Total</p>
             </div>
             <span className="separator"> </span>
@@ -62,8 +75,8 @@ const User = ({ userId, userDetails, signOutSuccess }) => {
           <FullPageLoader />
         ) : (
           <>
-            <FavoriteMovies />
-            <Watchlist />{' '}
+            <FavoriteMovies userId={userId} favoriteMovies={favoriteMovies} />
+            <Watchlist userId={userId} moviesWatchlist={moviesWatchlist} />
           </>
         )}
       </div>
@@ -79,6 +92,8 @@ const mapStateToProps = createStructuredSelector({
 const mapDipatchToProps = (dispatch) => ({
   fetchUserDetails: (id) => dispatch(fetchUserDetails(id)),
   signOutSuccess: () => dispatch(signOutSuccess()),
+  fetchWatchlistMovies: (id) => dispatch(fetchWatchlistMovies(id)),
+  fetchFavoriteMovies: (id) => dispatch(fetchFavoriteMovies(id)),
 });
 
 export default connect(mapStateToProps, mapDipatchToProps)(User);
