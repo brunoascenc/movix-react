@@ -119,7 +119,7 @@ export const UserLinks = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 22px;
+  /* margin-top: 22px; */
 `;
 
 export const UserIcon = styled.div`

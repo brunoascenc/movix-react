@@ -69,9 +69,9 @@ const Header = ({
                   <span>{username && username.charAt(0)}</span>
                 </UserIcon>
               </Link>
-              <Link className="logout" to="/" onClick={handleSignOut}>
+              {/* <Link className="logout" to="/" onClick={handleSignOut}>
                 <LogoutLink>Logout</LogoutLink>
-              </Link>
+              </Link> */}
             </UserLinks>
           ) : (
             <LoginLink to="/login" onClick={closeMobileMenu}>
