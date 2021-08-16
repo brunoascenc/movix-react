@@ -66,7 +66,7 @@ export const Select = styled.select`
   -moz-appearance: none;
   background: transparent;
   border-radius: 16px;
-  padding: 7px 12px;
+  padding: 7px 22px 7px 10px;
   border: solid 1px rgb(195, 191, 199, 0.1);
   background: rgb(195, 191, 199, 0.2);
   background-image: url("data:image/svg+xml;utf8,<svg fill='rgba(240, 238, 233)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
@@ -76,6 +76,7 @@ export const Select = styled.select`
   color: #efe6e3;
   transition: 0.1s ease;
   margin-left: 8px;
+  font-size: 13px;
 
   option:not(:first-of-type) {
     color: black;
