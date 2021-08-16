@@ -34,9 +34,10 @@ export const LinkLanding = styled(Link)`
 export const LandingMovieTitle = styled.h1`
   font-size: 50px;
   letter-spacing: -1px;
-  line-height: 49px;
+  line-height: 42px;
   /* color: #ede7e6; */
   color: #e9f0eb;
+  font-family: 'Archivo Black', sans-serif;
 `;
 
 export const LandingInfo = styled.div`
