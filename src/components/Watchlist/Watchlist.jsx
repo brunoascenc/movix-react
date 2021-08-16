@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
-import { createStructuredSelector } from 'reselect';
-import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import Empty from '../EmptyList/Empty';
 import {
   WatchlistContainer,
@@ -20,14 +15,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const Watchlist = ({ userId, fetchWatchlistMovies }) => {
-  const watchlist = useSelector((state) => state.userWatchlist.results);
-  const moviesWatchlist = watchlist.results;
-
-  useEffect(() => {
-    fetchWatchlistMovies(userId.sessionId);
-  }, [userId.sessionId, fetchWatchlistMovies]);
-
+const Watchlist = ({ userId, moviesWatchlist }) => {
   return (
     <WatchlistSection>
       <WatchlistHeader>
@@ -72,17 +60,8 @@ const Watchlist = ({ userId, fetchWatchlistMovies }) => {
           })
         )}
       </WatchlistContainer>
-      <span>Total: {watchlist.total_results}</span>
     </WatchlistSection>
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  userId: selectSessionId,
-});
-
-const mapDipatchToProps = (dispatch) => ({
-  fetchWatchlistMovies: (id) => dispatch(fetchWatchlistMovies(id)),
-});
-
-export default connect(mapStateToProps, mapDipatchToProps)(Watchlist);
+export default Watchlist;

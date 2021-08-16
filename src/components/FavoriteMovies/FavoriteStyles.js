@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FavoriteSection = styled.div`
-  margin-top: 150px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   span {

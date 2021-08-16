@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
-import { createStructuredSelector } from 'reselect';
-import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import Empty from '../EmptyList/Empty';
 import {
   FavoriteContainer,
@@ -21,14 +16,7 @@ import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
-  const favorites = useSelector((state) => state.userFavorites.results);
-  const favoriteMovies = favorites.results;
-
-  useEffect(() => {
-    fetchFavoriteMovies(userId.sessionId);
-  }, [userId.sessionId, fetchFavoriteMovies]);
-
+const FavoriteMovies = ({ favoriteMovies, userId }) => {
   return (
     <FavoriteSection>
       <FavoriteHeader>
@@ -72,17 +60,8 @@ const FavoriteMovies = ({ userId, fetchFavoriteMovies }) => {
           })
         )}
       </FavoriteContainer>
-      <span>Total: {favorites.total_results}</span>
     </FavoriteSection>
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  userId: selectSessionId,
-});
-
-const mapDipatchToProps = (dispatch) => ({
-  fetchFavoriteMovies: (id) => dispatch(fetchFavoriteMovies(id)),
-});
-
-export default connect(mapStateToProps, mapDipatchToProps)(FavoriteMovies);
+export default FavoriteMovies;
