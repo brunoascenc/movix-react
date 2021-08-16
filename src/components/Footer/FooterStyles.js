@@ -16,7 +16,7 @@ export const TMDBLogo = styled.img`
 export const FooterContent = styled.div`
   h3 {
     font-size: 14px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
   }
   a {
