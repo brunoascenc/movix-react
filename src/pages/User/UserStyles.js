@@ -9,7 +9,7 @@ export const UserHeader = styled.div`
   /* margin-top: 100px; */
   padding-left: 3%;
   overflow: hidden;
-
+  background: linear-gradient(to right, #110e14, rgb(7, 5, 8));
   .user-icon {
     text-transform: uppercase;
     background: #8d28e0;
@@ -56,7 +56,7 @@ export const UserInfo = styled.div`
     .separator {
       width: 1px;
       height: 40px;
-      background: #e1dce6;
+      background: #271e2e;
     }
     .list-info {
       display: flex;
@@ -69,9 +69,9 @@ export const UserInfo = styled.div`
         height: 60px;
         font-size: 22px;
         background: transparent;
-        border: solid 3px #3a3a40;
+        border: solid 3px #a960e6;
         border-radius: 50%;
-        color: #dadae3;
+        color: #e1dce6;
       }
       p {
         width: 50px;
@@ -80,12 +80,18 @@ export const UserInfo = styled.div`
         font-weight: 100;
         margin-top: 15px;
         color: #91919c;
+        color: #e1dce6;
       }
     }
 
     a {
+      background: #e7e4eb;
+      padding: 6px 16px;
+      border-radius: 16px;
       margin-left: -20px;
       color: #e1dce6;
+      color: #575559;
+      font-family: 'Roboto Condensed', sans-serif;
     }
   }
 `;
