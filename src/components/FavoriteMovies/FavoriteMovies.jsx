@@ -37,24 +37,26 @@ const FavoriteMovies = ({ favoriteMovies, userId }) => {
           favoriteMovies.map((movie) => {
             return (
               <div className="poster-container" key={movie.id}>
-                <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <ListCard key={movie.id}>
-                    <div className="poster-card">
-                      <MoviePoster
-                        url={IMAGE_URL + movie.poster_path}
-                        title={movie.title}
-                        movieId={movie.id}
-                        data-movie-id={movie.id}
-                        alt={movie.title}
-                      />
-                    </div>
-                  </ListCard>
-                </Link>
-                <Button
-                  onClick={() => removeFromFavorite(userId.sessionId, movie.id)}
-                >
-                  <AiOutlineDelete className="delete-icon" />
-                </Button>
+                {/* <ListCard key={movie.id}> */}
+                <div className="poster-card">
+                  <Link key={movie.id} to={`/details/${movie.id}`}>
+                    <MoviePoster
+                      url={IMAGE_URL + movie.poster_path}
+                      title={movie.title}
+                      movieId={movie.id}
+                      data-movie-id={movie.id}
+                      alt={movie.title}
+                    />
+                  </Link>
+                  <Button
+                    onClick={() =>
+                      removeFromFavorite(userId.sessionId, movie.id)
+                    }
+                  >
+                    <AiOutlineDelete className="delete-icon" />
+                  </Button>
+                </div>
+                {/* </ListCard> */}
               </div>
             );
           })

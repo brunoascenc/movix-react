@@ -37,8 +37,8 @@ const Watchlist = ({ userId, moviesWatchlist }) => {
           moviesWatchlist.map((movie) => {
             return (
               <div className="poster-container" key={movie.id}>
-                <Link to={`/details/${movie.id}`}>
-                  <div className="poster-card">
+                <div className="poster-card">
+                  <Link to={`/details/${movie.id}`}>
                     <MoviePoster
                       url={IMAGE_URL + movie.poster_path}
                       title={movie.title}
@@ -46,15 +46,15 @@ const Watchlist = ({ userId, moviesWatchlist }) => {
                       data-movie-id={movie.id}
                       alt={movie.title}
                     />
-                  </div>
-                </Link>
-                <Button
-                  onClick={() =>
-                    removeFromWatchlist(userId.sessionId, movie.id)
-                  }
-                >
-                  <AiOutlineDelete className="delete-icon" />
-                </Button>
+                  </Link>
+                  <Button
+                    onClick={() =>
+                      removeFromWatchlist(userId.sessionId, movie.id)
+                    }
+                  >
+                    <AiOutlineDelete className="delete-icon" />
+                  </Button>
+                </div>
               </div>
             );
           })

@@ -16,51 +16,46 @@ export const WatchlistSection = styled.div`
 `;
 
 export const Button = styled.button`
-  color: #5c5a5e;
-  font-size: 11px;
-  height: 20px;
   margin-bottom: 25px;
-  background: none;
+  background: transparent;
   border: none;
-  align-self: center;
   cursor: pointer;
-  transition: 0.1s ease;
-  display: flex;
-  align-items: center;
-  margin-top: -10px;
-  margin-left: -15px;
-  justify-self: center;
-
-  &:hover {
-    color: #e9f0eb;
-
-    .delete-icon {
-      color: #e9f0eb;
-    }
-  }
+  position: absolute;
+  left: 6px;
+  top: 10px;
 
   .delete-icon {
-    font-size: 18px;
-    color: #291e2e;
+    font-size: 35px;
+    color: #e1dce6;
+    background: #8d28e0;
+    padding: 8px;
+    border-radius: 6px;
+    &:hover {
+      background: #731fb8;
+      color: #ece9f0;
+    }
   }
 `;
 
 export const WatchlistContainer = styled.div`
   display: flex;
   overflow-x: scroll;
+  padding-bottom: 20px;
 
   .poster-card {
     margin-bottom: 15px;
+    position: relative;
   }
 
   .poster-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* position: relative; */
   }
 
   &::-webkit-scrollbar {
-    height: 4px;
+    height: 6px;
     border-radius: 12px;
   }
 
