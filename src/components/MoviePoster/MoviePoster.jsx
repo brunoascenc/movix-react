@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
-  width: 196px;
-  height: 295px;
+  width: 175px;
+  height: 260px;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.3);
   image-rendering: -webkit-optimize-contrast;
@@ -15,9 +15,9 @@ const ImageHover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 196px;
+  width: 175px;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
-  height: 296px;
+  height: 265px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
