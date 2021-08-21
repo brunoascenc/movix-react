@@ -38,6 +38,7 @@ export const LandingMovieTitle = styled.h1`
   /* color: #ede7e6; */
   color: #e9f0eb;
   font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 7px;
 `;
 
 export const LandingInfo = styled.div`

@@ -50,13 +50,13 @@ const LandingPage = () => {
                 <LinkLanding to={`/details/${movie.id}`}>
                   <LandingText className="container">
                     <LandingMovieTitle>{movie.title}</LandingMovieTitle>
-                    <LandingInfo>
+                    {/* <LandingInfo>
                       <p className="movie-genres">{genreName(movie)}</p>
                       <div className="movie-rating">
                         <i className="far fa-star"></i>
                         <p>{movie.vote_average}</p>
                       </div>
-                    </LandingInfo>
+                    </LandingInfo> */}
 
                     <div>
                       <CustomButton primary>Details</CustomButton>
