@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsPlayFill } from 'react-icons/bs';
+import { BsPlay } from 'react-icons/bs';
 import ModalVideo from 'react-modal-video';
 import { Modal, PlayButton } from './MovieTrailerStyles';
 
@@ -31,7 +31,7 @@ const MovieTrailer = ({ movieTrailer }) => {
           </Modal>
           <PlayButton onClick={() => setOpen(true)}>
             {/* <BsPlayFill /> */}
-            <BsPlayFill className="trailer-icon" />
+            <BsPlay className="trailer-icon" />
             Play Trailer
           </PlayButton>
         </>

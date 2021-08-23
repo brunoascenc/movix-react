@@ -14,7 +14,7 @@ export const PlayButton = styled.button`
   border-radius: 0;
   border: none;
   margin-left: 2px;
-  color: #dadbe0;
+  color: unset;
   font-size: 15px;
   letter-spacing: 0;
   font-family: 'Roboto', sans-serif;
@@ -23,9 +23,5 @@ export const PlayButton = styled.button`
   .trailer-icon {
     font-size: 25px;
     margin-right: 2px;
-  }
-
-  &:hover {
-    opacity: 1;
   }
 `;

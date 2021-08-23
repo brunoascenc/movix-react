@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGenres } from '../../../redux/movie-genres/genreActions';
-import { Select, NavLink } from '../HeaderStyles';
+import { Select, SearchLink } from '../HeaderStyles';
 import { useLocation } from 'react-router-dom';
 
 const GenreSelect = ({ closeMenu }) => {
@@ -61,13 +61,13 @@ const GenreSelect = ({ closeMenu }) => {
         <option value="primary_release_date.desc">Release Date</option>
       </Select>
 
-      <NavLink
+      <SearchLink
         onClick={closeMenu}
         className="filter-btn"
         to={`/filter=${selectGenre}&${selectOption}`}
       >
         Search
-      </NavLink>
+      </SearchLink>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import { BsHeart, BsListTask, BsPlayFill } from 'react-icons/bs';
+import { BsBookmark } from 'react-icons/bs';
+import { AiOutlineStar } from 'react-icons/ai';
 import MovieTrailer from '../MovieTrailer/MovieTrailer';
 import {
   DetailsContainer,
@@ -12,7 +13,6 @@ import {
   MovieActions,
   MovieCast,
 } from './MovieDetailsStyles';
-// import { BsPlayFill } from 'react-icons/bs';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -69,10 +69,10 @@ const MovieDetails = ({
           </div>
           <ButtonsContainer>
             <ButtonStyle onClick={addToFavorite} primary>
-              <BsHeart className="list-icons" /> Favorite
+              <AiOutlineStar className="list-icons" /> Favorite
             </ButtonStyle>
             <ButtonStyle onClick={addToWatchlist} secondary>
-              <BsListTask className="list-icons" />
+              <BsBookmark className="list-icons" />
               Watchlist
             </ButtonStyle>
 

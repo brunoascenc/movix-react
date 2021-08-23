@@ -57,12 +57,12 @@ export const MovieInfo = styled.div`
   }
 
   li {
-    color: #91919c;
+    color: ${(props) => props.theme.textColor};
     line-height: 22px;
   }
 
   span {
-    color: #b0b4b8;
+    color: ${(props) => props.theme.textColor};
   }
 `;
 
@@ -70,32 +70,17 @@ export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: -2px;
-
-  /* .trailer-btn {
-    background: transparent;
-    border-radius: 0;
-    border: none;
-    margin-left: 2px;
-    color: #dadbe0;
-    font-size: 15px;
-    letter-spacing: 0;
-    font-family: 'Roboto', sans-serif;
-
-  .trailer-icon {
-      font-size: 25px;
-      margin-right: 2px;
-    }
-  } */
 `;
 
 export const ButtonStyle = styled(CustomButton)`
   align-items: center;
-  padding: 7px 16px;
+  padding: 8px 16px;
   margin-right: 7px;
   width: unset;
   .list-icons {
     margin-right: 5px;
-    font-size: 13px;
+    font-size: 22px;
+    margin-top: -2px;
   }
 `;
 
@@ -111,7 +96,7 @@ export const MovieTitle = styled.div`
 
     .release-date {
       margin-right: 30px;
-      color: #b2aab5;
+      color: ${(props) => props.theme.textColor};
       display: flex;
       align-items: center;
 
@@ -136,7 +121,7 @@ export const MovieTitle = styled.div`
     display: flex;
     align-items: center;
     li {
-      color: #b2aab5;
+      color: ${(props) => props.theme.textColor};
       font-size: 14px;
       &:first-child {
         margin-right: 30px;
@@ -154,6 +139,7 @@ export const MovieActions = styled.div`
   div {
     display: flex;
     align-items: center;
+    margin-right: 10px;
     .vote {
       width: 60px;
       height: 60px;
@@ -166,7 +152,7 @@ export const MovieActions = styled.div`
       font-size: 18px;
       font-weight: bold;
       background: rgb(11, 9, 13);
-      color: #e4e5eb;
+      color: unset;
       transition: 0.1s ease;
 
       &:hover {
@@ -176,7 +162,7 @@ export const MovieActions = styled.div`
 
     p {
       margin: 0 10px -5px -12px;
-      color: #dadbe0;
+      color: unset;
       width: 55px;
       font-size: 13px;
       line-height: 15px;

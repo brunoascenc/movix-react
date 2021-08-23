@@ -32,7 +32,6 @@ export const Button = styled.button`
     border-radius: 6px;
     &:hover {
       background: #731fb8;
-      color: #ece9f0;
     }
   }
 `;

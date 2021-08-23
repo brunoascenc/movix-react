@@ -71,14 +71,12 @@ export const SocialsLinks = styled.div`
     padding: 15px;
     border-radius: 50%;
     align-items: center;
-    border: solid 1px rgb(195, 191, 199, 0);
     transition: 0.2s ease;
     font-size: 13px;
-    /* background: #8d28e0; */
     background: #0d253f;
 
     &:hover {
-      border: solid 1px rgb(195, 191, 199, 0.4);
+      background: #071524;
     }
   }
 `;
