@@ -1,25 +1,24 @@
 import React from 'react';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Empty from '../EmptyList/Empty';
+import MoviePoster from '../MoviePoster/MoviePoster';
 import {
-  WatchlistContainer,
-  WatchlistSection,
+  ListContainer,
+  ListSection,
   Button,
-  WatchlistHeader,
+  ListHeader,
   Filter,
   Select,
-} from './WatchlistStyles';
-import MoviePoster from '../MoviePoster/MoviePoster';
-import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
-import { AiOutlineDelete } from 'react-icons/ai';
+} from './UserListsStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const Watchlist = ({ userId, moviesWatchlist }) => {
+const UserLists = ({ movies, onClick, userId, title }) => {
   return (
-    <WatchlistSection>
-      <WatchlistHeader>
-        <h2 className="section-title">My Watchlist</h2>
+    <ListSection>
+      <ListHeader>
+        <h2 className="section-title">{title}</h2>
         <Filter>
           <h4>Sort by: </h4>
           <Select>
@@ -27,14 +26,14 @@ const Watchlist = ({ userId, moviesWatchlist }) => {
             <option value=""> Descending </option>
           </Select>
         </Filter>
-      </WatchlistHeader>
+      </ListHeader>
 
-      <WatchlistContainer>
-        {moviesWatchlist && moviesWatchlist.length === 0 ? (
+      <ListContainer>
+        {movies && movies.length === 0 ? (
           <Empty />
         ) : (
-          moviesWatchlist &&
-          moviesWatchlist.map((movie) => {
+          movies &&
+          movies.map((movie) => {
             return (
               <div className="poster-container" key={movie.id}>
                 <div className="poster-card">
@@ -47,11 +46,7 @@ const Watchlist = ({ userId, moviesWatchlist }) => {
                       alt={movie.title}
                     />
                   </Link>
-                  <Button
-                    onClick={() =>
-                      removeFromWatchlist(userId.sessionId, movie.id)
-                    }
-                  >
+                  <Button onClick={() => onClick(userId.sessionId, movie.id)}>
                     <AiOutlineDelete className="delete-icon" />
                   </Button>
                 </div>
@@ -59,9 +54,9 @@ const Watchlist = ({ userId, moviesWatchlist }) => {
             );
           })
         )}
-      </WatchlistContainer>
-    </WatchlistSection>
+      </ListContainer>
+    </ListSection>
   );
 };
 
-export default Watchlist;
+export default UserLists;

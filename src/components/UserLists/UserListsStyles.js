@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { CustomButton } from '../CustomButton/CustomButton';
 
-export const WatchlistSection = styled.div`
+export const ListSection = styled.div`
   margin-top: 80px;
   display: flex;
   flex-direction: column;
@@ -36,7 +35,7 @@ export const Button = styled.button`
   }
 `;
 
-export const WatchlistContainer = styled.div`
+export const ListContainer = styled.div`
   display: flex;
   overflow-x: scroll;
   padding-bottom: 20px;
@@ -76,13 +75,7 @@ export const Image = styled.img`
   border: solid 1px rgb(44, 44, 51, 0.4);
 `;
 
-export const ListCard = styled.div``;
-
-export const SectionTitle = styled.h2`
-  margin-bottom: 15px;
-`;
-
-export const WatchlistHeader = styled.div`
+export const ListHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
