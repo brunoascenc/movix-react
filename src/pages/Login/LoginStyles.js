@@ -30,6 +30,7 @@ export const Button = styled(CustomButton)`
   width: 90%;
   font-size: 18px;
   margin-top: 15px;
+  border-radius: 30px;
 `;
 
 export const LoginLink = styled.div`

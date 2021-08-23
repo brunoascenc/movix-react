@@ -10,7 +10,7 @@ const Login = ({ fetchTokenAuth }) => {
     <LoginContainer>
       <HorizontalOverlay
         overlay={
-          'linear-gradient(to right, rgb(11, 9, 13, 0.9) 30%, transparent)'
+          'linear-gradient(to right, rgb(11, 9, 13, 0.8) 15%, transparent)'
         }
       ></HorizontalOverlay>
       <video autoPlay loop muted>
