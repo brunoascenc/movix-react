@@ -19,8 +19,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    /* font-family: 'Noto Sans JP', sans-serif; */
-    /* background: #121212; */
     background: rgb(7, 5, 8);
     color: #f2e9e9;
     overflow-x: hidden;
@@ -38,9 +36,9 @@ const GlobalStyle = createGlobalStyle`
 
   .section-title{
     margin-bottom: 15px;
-    letter-spacing: 1px;
-    color: #e9f0eb;
-    z-index: -1;
+    /* letter-spacing: 1px; */
+    /* color: #f2eeed; */
+    /* z-index: -1; */
   }
 
 

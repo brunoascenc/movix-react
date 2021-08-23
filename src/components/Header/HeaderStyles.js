@@ -109,7 +109,7 @@ export const NavLink = styled(Link)`
   padding: 7px 16px;
   border-radius: 16px;
   color: #575559;
-  background: #e7e4eb;
+  background: ${(props) => props.theme.whiteBg};
   margin-left: 15px;
   margin-right: 0px;
   font-size: 14px;
@@ -119,8 +119,8 @@ export const NavLink = styled(Link)`
 
 export const LoginLink = styled(NavLink)`
   margin-left: -15px;
-  background: #8d28e0;
-  color: #e1dce6;
+  background: ${(props) => props.theme.mainPurple};
+  color: #f2eeed;
 `;
 
 export const UserLinks = styled.div`
@@ -128,6 +128,7 @@ export const UserLinks = styled.div`
   flex-direction: column;
   align-items: center;
   /* margin-top: 22px; */
+  margin-left: -10px;
 `;
 
 export const UserIcon = styled.div`
@@ -135,9 +136,9 @@ export const UserIcon = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: #e1dce6;
+  color: #f2eeed;
   text-transform: uppercase;
-  background: #8d28e0;
+  background: ${(props) => props.theme.mainPurple};
   width: 33px;
   height: 33px;
   font-size: 20px;

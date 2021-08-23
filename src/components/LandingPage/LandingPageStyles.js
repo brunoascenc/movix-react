@@ -36,7 +36,7 @@ export const LandingMovieTitle = styled.h1`
   letter-spacing: -1px;
   line-height: 42px;
   /* color: #ede7e6; */
-  color: #e9f0eb;
+  color: #e4e5eb;
   font-family: 'Archivo Black', sans-serif;
   margin-bottom: 7px;
 `;

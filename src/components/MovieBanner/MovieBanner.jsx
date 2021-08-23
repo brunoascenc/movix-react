@@ -15,7 +15,7 @@ function MovieBanner({ movieInfo }) {
       {firstMovie ? (
         <MovieImage
           style={{
-            backgroundImage: `linear-gradient(rgba(7, 5, 8, 0.4),rgb(7, 5, 8)), url(${
+            backgroundImage: `linear-gradient(rgba(11, 9, 13, 0.4),rgb(11, 9, 13)), url(${
               'https://image.tmdb.org/t/p/original' + firstMovie.backdrop_path
             })`,
           }}
@@ -32,7 +32,7 @@ function MovieBanner({ movieInfo }) {
       ) : null}
       <HorizontalOverlay
         overlay={
-          'linear-gradient(to right, rgb(7, 5, 8, 0.7) 30%, transparent 65%)'
+          'linear-gradient(to right, rgb(11, 9, 13, 0.7) 30%, transparent 65%)'
         }
       ></HorizontalOverlay>
     </BannerContainer>

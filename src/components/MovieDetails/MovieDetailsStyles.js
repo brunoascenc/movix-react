@@ -52,9 +52,8 @@ export const MovieInfo = styled.div`
   p {
     line-height: 22px;
     width: 95%;
-    color: grey;
     margin-bottom: 15px;
-    color: #91919c;
+    color: ${(props) => props.theme.textColor};
   }
 
   li {
@@ -92,6 +91,7 @@ export const ButtonsContainer = styled.div`
 export const ButtonStyle = styled(CustomButton)`
   align-items: center;
   padding: 7px 16px;
+  margin-right: 7px;
   width: unset;
   .list-icons {
     margin-right: 5px;
@@ -194,7 +194,7 @@ export const MovieCast = styled.div`
     flex-direction: column;
 
     .name {
-      color: #e4e5eb;
+      color: unset;
       font-size: 16px;
       margin-bottom: 2px;
     }

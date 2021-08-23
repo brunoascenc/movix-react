@@ -18,11 +18,10 @@ export const ReviewsContainer = styled.div`
   }
   h3 {
     margin-bottom: 0.5rem;
-    color: rgb(238, 225, 248);
   }
   p {
     margin-bottom: 1.2rem;
-    color: #91919c;
+    color: ${(props) => props.theme.textColor};
     line-height: 23px;
   }
   a {

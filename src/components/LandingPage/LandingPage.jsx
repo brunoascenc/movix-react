@@ -42,7 +42,7 @@ const LandingPage = () => {
                 key={movie.id}
                 className="swiper-card"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(7, 5, 8, 0.4),rgb(7, 5, 8)), url(${
+                  backgroundImage: `linear-gradient(rgba(7, 5, 8, 0.2) ,rgb(7, 5, 8)), url(${
                     'https://image.tmdb.org/t/p/original' + movie.backdrop_path
                   })`,
                 }}
@@ -50,14 +50,6 @@ const LandingPage = () => {
                 <LinkLanding to={`/details/${movie.id}`}>
                   <LandingText className="container">
                     <LandingMovieTitle>{movie.title}</LandingMovieTitle>
-                    {/* <LandingInfo>
-                      <p className="movie-genres">{genreName(movie)}</p>
-                      <div className="movie-rating">
-                        <i className="far fa-star"></i>
-                        <p>{movie.vote_average}</p>
-                      </div>
-                    </LandingInfo> */}
-
                     <div>
                       <CustomButton primary>Details</CustomButton>
                       <CustomButton secondary>Watchlist</CustomButton>

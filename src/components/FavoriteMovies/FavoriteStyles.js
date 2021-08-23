@@ -87,7 +87,7 @@ export const Filter = styled.div`
 `;
 
 export const Select = styled.select`
-  background: rgb(15, 12, 18);
+  background: #1e1a24;
   border-radius: 16px;
   padding: 6px 9px;
   border: solid 1px rgb(51, 43, 54, 0.2);

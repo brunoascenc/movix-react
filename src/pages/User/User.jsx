@@ -11,7 +11,7 @@ import { selectSessionId } from '../../redux/user-session/userSessionSelector';
 import Watchlist from '../../components/Watchlist/Watchlist';
 import FavoriteMovies from '../../components/FavoriteMovies/FavoriteMovies';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
-import { Stripe, UserHeader, UserInfo } from './UserStyles';
+import { UserIconBg, UserHeader, UserInfo } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
 import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
@@ -49,7 +49,7 @@ const User = ({
   return (
     <div className="user-page">
       <UserHeader>
-        <Stripe />
+        <UserIconBg />
         <span className="user-icon">{username && username.charAt(0)}</span>
         <UserInfo>
           <p>{user.name === '' ? user.username : user.name}</p>

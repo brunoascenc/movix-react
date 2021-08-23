@@ -12,7 +12,7 @@ export const UserHeader = styled.div`
   background: linear-gradient(to right, #110e14, rgb(7, 5, 8));
   .user-icon {
     text-transform: uppercase;
-    background: #8d28e0;
+    background: ${(props) => props.theme.mainPurple};
     width: 150px;
     height: 150px;
     display: flex;
@@ -20,13 +20,13 @@ export const UserHeader = styled.div`
     justify-content: center;
     font-size: 75px;
     border-radius: 50%;
-    color: #e1dce6;
+    color: #f2eeed;
     z-index: 1;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
   }
 `;
 
-export const Stripe = styled.div`
+export const UserIconBg = styled.div`
   position: absolute;
   left: -670px;
   top: 0;
@@ -34,6 +34,7 @@ export const Stripe = styled.div`
   width: 1000px;
   height: 600px;
   transform: rotate(45deg);
+  z-index: 1;
 `;
 
 export const UserInfo = styled.div`
@@ -41,7 +42,6 @@ export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
   p {
-    color: #e1dce6;
     font-size: 35px;
     margin-bottom: 15px;
     font-weight: bold;
@@ -71,7 +71,6 @@ export const UserInfo = styled.div`
         background: transparent;
         border: solid 3px #a960e6;
         border-radius: 50%;
-        color: #e1dce6;
       }
       p {
         width: 50px;
@@ -79,17 +78,15 @@ export const UserInfo = styled.div`
         font-size: 18px;
         font-weight: 100;
         margin-top: 15px;
-        color: #91919c;
-        color: #e1dce6;
       }
     }
 
     a {
       background: #e7e4eb;
+      font-size: 15px;
       padding: 6px 16px;
       border-radius: 16px;
       margin-left: -20px;
-      color: #e1dce6;
       color: #575559;
       font-family: 'Roboto Condensed', sans-serif;
     }

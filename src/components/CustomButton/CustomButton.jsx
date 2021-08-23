@@ -8,7 +8,7 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  color: ${(props) => (props.primary ? '#e1dce6' : '#575559')};
+  color: ${(props) => (props.primary ? '#f2eeed' : '#575559')};
   border: none;
   font-size: 16px;
   margin-top: 10px;
