@@ -9,7 +9,7 @@ const LeftArrow = styled(MdKeyboardArrowLeft)`
   font-size: 18px;
   color: #e0d2d19d;
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 15px;
 `;
 
@@ -19,7 +19,7 @@ const RightArrow = styled(MdKeyboardArrowRight)`
   font-size: 18px;
   color: #e0d2d19d;
   position: absolute;
-  top: 50%;
+  top: 53%;
   right: 21px;
 `;
 

@@ -11,7 +11,7 @@ export const LandingPageContainer = styled.div`
     display: flex;
     align-items: center;
     background-size: cover;
-    background-position: top;
+    background-position: center top;
     position: relative;
     width: 100%;
   }
