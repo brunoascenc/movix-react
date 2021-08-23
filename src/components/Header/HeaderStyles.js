@@ -105,7 +105,7 @@ export const Form = styled.form`
   align-items: center;
 `;
 
-export const NavLink = styled(Link)`
+export const SearchLink = styled(Link)`
   padding: 7px 16px;
   border-radius: 16px;
   color: #575559;
@@ -115,9 +115,13 @@ export const NavLink = styled(Link)`
   font-size: 14px;
   letter-spacing: 0.5px;
   font-family: 'Roboto Condensed', sans-serif;
+  transition: 0.1s ease;
+  &:hover {
+    background: #c5c1c9;
+  }
 `;
 
-export const LoginLink = styled(NavLink)`
+export const LoginLink = styled(SearchLink)`
   margin-left: -15px;
   background: ${(props) => props.theme.mainPurple};
   color: #f2eeed;
@@ -127,7 +131,6 @@ export const UserLinks = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 22px; */
   margin-left: -10px;
 `;
 
@@ -142,11 +145,10 @@ export const UserIcon = styled.div`
   width: 33px;
   height: 33px;
   font-size: 20px;
-  border: solid 1px rgb(195, 191, 199, 0);
-  transition: 0.1s ease;
+  transition: 0.1s ease-in;
 
   &:hover {
-    border: solid 1px rgb(195, 191, 199, 0.4);
+    background: #731fb8;
   }
 `;
 

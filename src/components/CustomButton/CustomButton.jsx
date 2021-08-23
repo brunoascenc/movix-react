@@ -17,6 +17,11 @@ const Button = styled.button`
   cursor: pointer;
   font-family: 'Roboto Condensed', sans-serif;
   background: ${(props) => (props.primary ? '#8d28e0' : '#e7e4eb')};
+  transition: 0.1s ease;
+
+  &:hover {
+    background: ${(props) => (props.primary ? '#731fb8' : '#c5c1c9')};
+  }
 `;
 
 export const CustomButton = ({ children, ...props }) => {
