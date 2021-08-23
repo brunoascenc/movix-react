@@ -8,14 +8,15 @@ import {
 } from '../../redux/user-details/userDetailsAction';
 import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
 import { selectSessionId } from '../../redux/user-session/userSessionSelector';
-import Watchlist from '../../components/Watchlist/Watchlist';
-import FavoriteMovies from '../../components/FavoriteMovies/FavoriteMovies';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { UserIconBg, UserHeader, UserInfo } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
 import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
 import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
+import UserLists from '../../components/UserLists/UserLists';
+import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
+import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
 
 const User = ({
   userId,
@@ -40,7 +41,7 @@ const User = ({
       fetchWatchlistMovies(userId.sessionId);
       fetchFavoriteMovies(userId.sessionId);
     }, 700);
-  }, [userId.sessionId, dispatch]);
+  }, [userId.sessionId, dispatch, fetchWatchlistMovies, fetchFavoriteMovies]);
 
   const handleSignOut = () => {
     signOutSuccess();
@@ -75,8 +76,18 @@ const User = ({
           <FullPageLoader />
         ) : (
           <>
-            <FavoriteMovies userId={userId} favoriteMovies={favoriteMovies} />
-            <Watchlist userId={userId} moviesWatchlist={moviesWatchlist} />
+            <UserLists
+              userId={userId}
+              movies={favoriteMovies}
+              onClick={removeFromFavorite}
+              title={'My Favorite Movies'}
+            />
+            <UserLists
+              userId={userId}
+              movies={moviesWatchlist}
+              onClick={removeFromWatchlist}
+              title={'My Watchlist'}
+            />
           </>
         )}
       </div>
