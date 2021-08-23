@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import MovieDetails from '../../components/MovieDetails/MovieDetails';
 import MovieReviews from '../../components/MovieReviews/MovieReviews';
-import MovieTrailer from '../../components/MovieTrailer/MovieTrailer';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
@@ -49,13 +48,7 @@ const Details = (props) => {
         <FullPageLoader />
       ) : (
         <>
-          <MovieBanner backdrop={movieDetail.backdrop_path}>
-            {/* <div>
-              <MovieTrailer
-                movieTrailer={movieTrailer && movieTrailer.results}
-              />
-            </div> */}
-          </MovieBanner>
+          <MovieBanner backdrop={movieDetail.backdrop_path}></MovieBanner>
 
           <div className="about-movie container">
             {loading ? (
