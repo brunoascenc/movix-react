@@ -28,7 +28,7 @@ export const FooterContent = styled.div`
 export const Text = styled.p`
   font-size: 14px;
   margin-top: 6px;
-  color: #91919c;
+  color: ${(props) => props.theme.textColor};
   width: 300px;
   line-height: 21px;
 `;
@@ -38,7 +38,8 @@ export const Copy = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  color: #8f8f96;
+  color: ${(props) => props.theme.textColor};
+  opacity: 0.8;
   span {
     margin-bottom: 4px;
   }
