@@ -24,19 +24,19 @@ export const DetailsContainer = styled.div`
 
 export const ImageContainer = styled.div`
   height: 450px;
-  width: 30%;
+  width: ${(props) => (props.overviewLength >= 600 ? '32%' : '30%')};
   position: relative;
 `;
 
 export const MovieImage = styled.img`
-  width: 350px;
+  width: ${(props) => (props.overviewLength >= 600 ? '380px' : '350px')};
   position: absolute;
   top: -50px;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.2);
   image-rendering: -webkit-optimize-contrast;
   opacity: 95%;
-  height: 540px;
+  height: ${(props) => (props.overviewLength >= 600 ? '580px' : '540px')};
 `;
 
 export const MovieInfo = styled.div`

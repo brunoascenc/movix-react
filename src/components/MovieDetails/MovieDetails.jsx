@@ -37,10 +37,13 @@ const MovieDetails = ({
 
   return (
     <DetailsContainer>
-      <ImageContainer>
+      <ImageContainer
+        overviewLength={movieDetail.overview && movieDetail.overview.length}
+      >
         <MovieImage
           src={movieDetail.poster_path && IMAGE_URL + movieDetail.poster_path}
           alt={movieDetail.title}
+          overviewLength={movieDetail.overview && movieDetail.overview.length}
         />
       </ImageContainer>
       <MovieInfo>
