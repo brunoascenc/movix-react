@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const LandingPageContainer = styled.div`
   height: 75vh;
-  margin-bottom: 100px;
-  /* position: relative; */
 
   .swiper-card {
     height: 75vh;
