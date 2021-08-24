@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import ModalVideo from 'react-modal-video';
 import { Modal, PlayButton } from './MovieTrailerStyles';
+import 'react-modal-video/scss/modal-video.scss';
 
 const MovieTrailer = ({ movieTrailer }) => {
   const [isOpen, setOpen] = useState(false);

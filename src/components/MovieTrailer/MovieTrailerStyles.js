@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const Modal = styled.div`
-  position: relative;
+  .modal-video-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const PlayButton = styled.button`

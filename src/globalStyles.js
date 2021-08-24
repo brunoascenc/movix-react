@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
- /* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto'); */
- /* @import 'node_modules/react-modal-video/scss/modal-video.scss'; */
- 
  * {
    margin: 0;
    padding: 0;
