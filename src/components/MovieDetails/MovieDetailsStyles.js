@@ -3,7 +3,7 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const DetailsContainer = styled.div`
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   /* justify-content: space-between; */
 
   .overview {
@@ -96,6 +96,7 @@ export const MovieTitle = styled.div`
 
     .release-date {
       margin-right: 30px;
+      margin-top: -4px;
       color: ${(props) => props.theme.textColor};
       display: flex;
       align-items: center;

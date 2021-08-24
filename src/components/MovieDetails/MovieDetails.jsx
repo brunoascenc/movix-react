@@ -31,9 +31,8 @@ const MovieDetails = ({
     return `${hours}h ${minutes}m`;
   };
 
-  const releaseDate =
+  const releaseInfo =
     dates && dates.filter((dates) => dates.iso_3166_1 === 'US');
-  const movieDate = releaseDate && releaseDate[0].release_dates[0];
 
   return (
     <DetailsContainer>
@@ -47,16 +46,23 @@ const MovieDetails = ({
         />
       </ImageContainer>
       <MovieInfo>
-        <MovieTitle certification={movieDate && movieDate.certification}>
+        <MovieTitle
+          certification={
+            releaseInfo && releaseInfo[0]
+              ? releaseInfo[0].release_dates[0].certification
+              : ''
+          }
+        >
           <h1>{movieDetail.title}</h1>
           <div>
             <div className="release-date">
-              {/* {dates && dates.filter((dates) => dates.iso_3166_1 === 'US' )} */}
               <span className="certification">
-                {movieDate && movieDate.certification}
+                {releaseInfo && releaseInfo[0]
+                  ? releaseInfo[0].release_dates[0].certification
+                  : ''}
               </span>
               <span className="movie-date">
-                {movieDetail.release_date} (US)
+                {movieDetail && movieDetail.release_date + ' (US)'}
               </span>
             </div>
             <ul>

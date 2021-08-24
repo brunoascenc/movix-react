@@ -11,7 +11,7 @@ import {
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { MovieBanner } from './DetailsPageStyles';
-import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
+import MoviesCarousel from '../../components/MoviesCarousel/MoviesCarousel';
 
 const Details = (props) => {
   const movieId = props.match.params.id;
@@ -87,8 +87,12 @@ const Details = (props) => {
               />
             )}
           </div>
-          <SimilarMovies
-            similarMovies={similarMovies && similarMovies.results}
+          <MoviesCarousel
+            movieData={similarMovies && similarMovies.results}
+            sectionTitle={'Similar Movies'}
+            nextMovie={'.next-similar'}
+            prevMovie={'.prev-similar'}
+            carouselName={'similar'}
           />
 
           <MovieReviews movieReviews={movieReviews && movieReviews.results} />
