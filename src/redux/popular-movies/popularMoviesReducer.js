@@ -2,7 +2,7 @@ import PopularActionTypes from './popularMoviesTypes';
 
 const initialState = {
   loading: false,
-  results: [],
+  data: [],
   error: '',
 };
 
@@ -17,7 +17,7 @@ const getPopularMovies = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        results: action.payload,
+        data: action.payload,
       };
     case PopularActionTypes.FETCH_POPULAR_FAILURE:
       return {

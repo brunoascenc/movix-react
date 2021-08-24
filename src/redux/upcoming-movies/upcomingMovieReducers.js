@@ -2,7 +2,7 @@ import UpcomingActionTypes from './upcomingTypes';
 
 const initialState = {
   loading: false,
-  results: [],
+  data: [],
   error: '',
 };
 
@@ -17,7 +17,7 @@ const getUpcomingMovies = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        results: action.payload,
+        data: action.payload,
       };
     case UpcomingActionTypes.FETCH_UPCOMING_FAILURE:
       return {

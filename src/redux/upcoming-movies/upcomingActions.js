@@ -25,7 +25,7 @@ export const fetchUpcomingFailure = (error) => {
 
 export const fetchUpcomingMovies = () => {
   return (dispatch) => {
-    dispatch(fetchUpcomingRequest);
+    dispatch(fetchUpcomingRequest());
     axios
       .get(
         `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&region=US`

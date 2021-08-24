@@ -21,7 +21,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  popularMovie: movieReducer,
+  popularMovies: movieReducer,
   upcomingMovies: upcomingMovieReducer,
   movieDetail: movieDetail,
   searchResults: searchMoviesReducer,
