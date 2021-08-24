@@ -33,6 +33,7 @@ export const fetchPopularMovies = (pageNumber) => {
       )
       .then((res) => {
         const popularMovies = res.data;
+
         dispatch(fecthPopularSuccess(popularMovies));
       })
       .catch((err) => {

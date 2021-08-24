@@ -27,8 +27,6 @@ const Details = (props) => {
   const dispatch = useDispatch();
   const dates = movieDate && movieDate.results;
 
-  // console.log(d && d.filter((xd) => xd.iso_3166_1 === 'US'));
-  // console.log(d);
   useEffect(() => {
     dispatch(fetchDetailsRequest());
     setTimeout(() => {

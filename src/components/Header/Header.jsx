@@ -21,7 +21,7 @@ import {
   LoginLink,
   UserLinks,
   UserIcon,
-  LogoutLink,
+  // LogoutLink,
 } from './HeaderStyles';
 
 const Header = ({
