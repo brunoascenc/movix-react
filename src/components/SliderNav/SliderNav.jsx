@@ -23,16 +23,16 @@ const RightArrow = styled(MdKeyboardArrowRight)`
   right: 21px;
 `;
 
-export const SliderNav = ({ prev, next, movieslength }) => {
+export const SliderNav = ({ carouselName, movieslength }) => {
   return (
     <>
       <LeftArrow
         movieslength={movieslength && movieslength.length}
-        className={prev}
+        className={'prev-' + carouselName}
       />
       <RightArrow
         movieslength={movieslength && movieslength.length}
-        className={next}
+        className={'next-' + carouselName}
       />
     </>
   );
