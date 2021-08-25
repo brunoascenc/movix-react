@@ -4,40 +4,31 @@ import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
-import {
-  fetchMovieDetail,
-  fetchDetailsRequest,
-} from '../../redux/movie-details/movieDetailActions';
+import { fetchMovieDetail } from '../../redux/movie-details/movieDetailActions';
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { MovieBanner } from './DetailsPageStyles';
 import MoviesCarousel from '../../components/MoviesCarousel/MoviesCarousel';
 
 const Details = (props) => {
+  //list buttons alert
+  const alert = useAlert();
   const movieId = props.match.params.id;
+  //redux data
+  const dispatch = useDispatch();
   const movieDetail = useSelector((state) => state.movieDetail.results);
-  const movieReviews = movieDetail.reviews;
-  const movieTrailer = movieDetail.videos;
-  const similarMovies = movieDetail.recommendations;
   const movieDate = movieDetail.release_dates;
   const userId = useSelector((state) => state.sessionId.sessionId);
   const loading = useSelector((state) => state.movieDetail.loading);
-  const movieCast = movieDetail.credits;
-  const alert = useAlert();
-  const dispatch = useDispatch();
   const dates = movieDate && movieDate.results;
 
   useEffect(() => {
-    dispatch(fetchDetailsRequest());
-    setTimeout(() => {
-      dispatch(fetchMovieDetail(movieId));
-    }, 700);
+    dispatch(fetchMovieDetail(movieId));
   }, [movieId, dispatch]);
 
-  const genres = movieDetail.genres;
-  let genreOptions;
-  if (genres) {
-    genreOptions = genres.map((genre) => genre.name).join(', ');
+  let genresList;
+  if (movieDetail.genres) {
+    genresList = movieDetail.genres.map((genre) => genre.name).join(', ');
   }
 
   return (
@@ -54,12 +45,11 @@ const Details = (props) => {
             ) : (
               <MovieDetails
                 movieDetail={movieDetail}
-                genres={genreOptions}
-                movieCast={movieCast}
+                genres={genresList}
+                movieCast={movieDetail.credits}
                 dates={dates}
-                movieTrailer={movieTrailer}
+                movieTrailer={movieDetail.videos}
                 addToFavorite={
-                  //check if theres no session id
                   !userId
                     ? () => {
                         alert.show('You must login first...');
@@ -72,7 +62,6 @@ const Details = (props) => {
                         )
                 }
                 addToWatchlist={
-                  //check if theres no session id
                   !userId
                     ? () => {
                         alert.show('You must login first...');
@@ -87,15 +76,20 @@ const Details = (props) => {
               />
             )}
           </div>
+          {/* similar movies */}
           <MoviesCarousel
-            movieData={similarMovies && similarMovies.results}
+            movieData={
+              movieDetail.recommendations && movieDetail.recommendations.results
+            }
             sectionTitle={'Similar Movies'}
             nextMovie={'.next-similar'}
             prevMovie={'.prev-similar'}
             carouselName={'similar'}
           />
-
-          <MovieReviews movieReviews={movieReviews && movieReviews.results} />
+          {/* movie reviews */}
+          <MovieReviews
+            movieReviews={movieDetail.reviews && movieDetail.reviews.results}
+          />
         </>
       )}
     </>
