@@ -22,13 +22,12 @@ export const fetchFavoritesFailure = (error) => {
     payload: error,
   };
 };
-
-export const fetchFavoriteMovies = (id) => {
+export const fetchFavoriteMovies = (id, order) => {
   return (dispatch) => {
     dispatch(fetchFavoritesRequest());
     axios
       .get(
-        `https://api.themoviedb.org/3/account/{account_id}/favorite/movies?api_key=${API_KEY}&language=en-US&session_id=${id}&language=en-US&sort_by=created_at.desc&page=1`
+        `https://api.themoviedb.org/3/account/{account_id}/favorite/movies?api_key=${API_KEY}&language=en-US&session_id=${id}&language=en-US&sort_by=created_at.${order}&page=1`
       )
       .then((res) => {
         const favoriteMovies = res.data;

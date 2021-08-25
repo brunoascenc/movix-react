@@ -5,11 +5,8 @@ import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { UserIconBg, UserHeader, UserInfo } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
-import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
-import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
-import UserLists from '../../components/UserLists/UserLists';
-import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
-import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
+import FavoriteList from '../../components/FavoriteList/FavoriteList';
+import Watchlist from '../../components/Watchlist/Watchlist';
 
 const User = () => {
   const loading = useSelector((state) => state.user.loading);
@@ -18,13 +15,9 @@ const User = () => {
   const favoritesTotal = useSelector((state) => state.userFavorites.results);
   const user = useSelector((state) => state.user.details);
   const userId = useSelector((state) => state.sessionId);
-  const favoriteMovies = favoritesTotal.results;
-  const moviesWatchlist = watchlistTotal.results;
 
   useEffect(() => {
     dispatch(fetchUserDetails(userId.sessionId));
-    dispatch(fetchWatchlistMovies(userId.sessionId));
-    dispatch(fetchFavoriteMovies(userId.sessionId));
   }, [userId.sessionId, dispatch]);
 
   const handleSignOut = () => {
@@ -62,18 +55,8 @@ const User = () => {
           <FullPageLoader />
         ) : (
           <>
-            <UserLists
-              userId={userId}
-              movies={favoriteMovies}
-              onClick={removeFromFavorite}
-              title={'My Favorite Movies'}
-            />
-            <UserLists
-              userId={userId}
-              movies={moviesWatchlist}
-              onClick={removeFromWatchlist}
-              title={'My Watchlist'}
-            />
+            <FavoriteList userId={userId} />
+            <Watchlist userId={userId} />
           </>
         )}
       </div>
