@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import NothingFound from '../../components/Error/NothingFound';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchSearchResults,
-  fetchSearchRequest,
-} from '../../redux/movies-search/searchMovieActions';
+import { fetchSearchResults } from '../../redux/movies-search/searchMovieActions';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import MovieBanner from '../../components/MovieBanner/MovieBanner';
 import { SearchContainer } from './SearchPageStyles';
@@ -21,10 +18,7 @@ const SearchResults = (props) => {
   const searchQuery = props.match.params.pathname;
 
   useEffect(() => {
-    dispatch(fetchSearchRequest());
-    setTimeout(() => {
-      dispatch(fetchSearchResults(searchQuery));
-    }, 700);
+    dispatch(fetchSearchResults(searchQuery));
   }, [searchQuery, dispatch]);
 
   //loop to hide broken images

@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchUserDetails,
-  fetchUserRequest,
-} from '../../redux/user-details/userDetailsAction';
+import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { UserIconBg, UserHeader, UserInfo } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
@@ -25,12 +22,9 @@ const User = () => {
   const moviesWatchlist = watchlistTotal.results;
 
   useEffect(() => {
-    dispatch(fetchUserRequest());
-    setTimeout(() => {
-      dispatch(fetchUserDetails(userId.sessionId));
-      dispatch(fetchWatchlistMovies(userId.sessionId));
-      dispatch(fetchFavoriteMovies(userId.sessionId));
-    }, 700);
+    dispatch(fetchUserDetails(userId.sessionId));
+    dispatch(fetchWatchlistMovies(userId.sessionId));
+    dispatch(fetchFavoriteMovies(userId.sessionId));
   }, [userId.sessionId, dispatch]);
 
   const handleSignOut = () => {

@@ -125,6 +125,9 @@ export const LoginLink = styled(SearchLink)`
   margin-left: -15px;
   background: ${(props) => props.theme.mainPurple};
   color: #f2eeed;
+  &:hover {
+    background: #731fb8;
+  }
 `;
 
 export const UserLinks = styled.div`

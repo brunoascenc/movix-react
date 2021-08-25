@@ -4,20 +4,11 @@ import NothingFound from '../../components/Error/NothingFound';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchFilterResults,
-  fetchFilterRequest,
-} from '../../redux/movies-filter/filterMoviesAction';
+import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../../components/MoviesCard/MoviesCard';
-import {
-  FilterContainer,
-  // SectionTitle,
-  Pagination,
-  Button,
-} from './FilterPageStyles';
+import { FilterContainer, Pagination, Button } from './FilterPageStyles';
 import MovieBanner from '../../components/MovieBanner/MovieBanner';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
-// import { CustomButton } from '../../components/CustomButton/CustomButton';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -31,10 +22,7 @@ const SearchResults = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchFilterRequest());
-    setTimeout(() => {
-      dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
-    }, 700);
+    dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (
