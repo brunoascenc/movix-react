@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Filters from './Filters/Filters';
 import SearchInput from './Search/SearchInput';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import {
-  fetchSessionId,
-  signOutSuccess,
-} from '../../redux/user-session/userSessionActions';
+import { fetchSessionId } from '../../redux/user-session/userSessionActions';
 import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
-import { selectToken } from '../../redux/user-token/userTokenSelector';
-import { selectSessionId } from '../../redux/user-session/userSessionSelector';
-import { selectUserDetails } from '../../redux/user-details/userDetailsSelector';
 import {
   HeaderComponent,
   SearchContainer,
@@ -21,31 +14,24 @@ import {
   LoginLink,
   UserLinks,
   UserIcon,
-  // LogoutLink,
 } from './HeaderStyles';
 
-const Header = ({
-  userToken,
-  sessionId,
-  userId,
-  fetchUserDetails,
-  signOutSuccess,
-  userDetails,
-}) => {
+const Header = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const username = userDetails.details.username;
+  const user = useSelector((state) => state.user.details);
+  const userId = useSelector((state) => state.sessionId);
+  const userToken = useSelector((state) => state.auth);
+  const username = user.username;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    sessionId(userToken.token);
-    fetchUserDetails(userId.sessionId);
-  }, [fetchUserDetails, sessionId, userId.sessionId, userToken.token]);
-
-  const handleSignOut = () => {
-    closeMobileMenu();
-    signOutSuccess();
-  };
+    dispatch(fetchSessionId(userToken.token));
+    if (userId.sessionId) {
+      dispatch(fetchUserDetails(userId.sessionId));
+    }
+  }, [userId.sessionId, userToken.token, dispatch]);
 
   return (
     <>
@@ -93,16 +79,4 @@ const Header = ({
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  userToken: selectToken,
-  userId: selectSessionId,
-  userDetails: selectUserDetails,
-});
-
-const mapDipatchToProps = (dispatch) => ({
-  sessionId: (token) => dispatch(fetchSessionId(token)),
-  fetchUserDetails: (id) => dispatch(fetchUserDetails(id)),
-  signOutSuccess: () => dispatch(signOutSuccess()),
-});
-
-export default connect(mapStateToProps, mapDipatchToProps)(Header);
+export default Header;

@@ -1,11 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchTokenAuth } from '../../redux/user-token/userTokenActions';
 import { LoginContainer, Button, LoginLink } from './LoginStyles';
 import BgVideo from '../../images/spider.mp4';
 import { HorizontalOverlay } from '../../components/HorizontalOverlay/HorizontalOverlay';
 
-const Login = ({ fetchTokenAuth }) => {
+const Login = () => {
+  const dispatch = useDispatch();
+
   return (
     <LoginContainer>
       <HorizontalOverlay
@@ -19,7 +21,7 @@ const Login = ({ fetchTokenAuth }) => {
       <LoginLink>
         <h1>Login to your account</h1>
         <p>Please login to your account so we can save your favorite movies</p>
-        <Button onClick={fetchTokenAuth} primary>
+        <Button onClick={() => dispatch(fetchTokenAuth())} primary>
           Login
         </Button>
       </LoginLink>
@@ -27,8 +29,4 @@ const Login = ({ fetchTokenAuth }) => {
   );
 };
 
-const mapDipatchToProps = (dispatch) => ({
-  fetchTokenAuth: () => dispatch(fetchTokenAuth()),
-});
-
-export default connect(null, mapDipatchToProps)(Login);
+export default Login;
