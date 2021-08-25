@@ -24,7 +24,7 @@ export const fetchUserFailure = (error) => {
 
 export const fetchUserDetails = (id) => {
   return (dispatch) => {
-    dispatch(fetchUserRequest);
+    dispatch(fetchUserRequest());
     axios
       .get(
         `https://api.themoviedb.org/3/account?api_key=${API_KEY}&session_id=${id}`
