@@ -14,16 +14,16 @@ import {
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const UserLists = ({ movies, onClick, userId, title }) => {
+const UserLists = ({ movies, onClick, userId, title, handleChange }) => {
   return (
     <ListSection>
       <ListHeader>
         <h2 className="section-title">{title}</h2>
         <Filter>
           <h4>Sort by: </h4>
-          <Select>
-            <option value=""> Ascending </option>
-            <option value=""> Descending </option>
+          <Select onChange={(e) => handleChange(e.target.value)}>
+            <option value="desc"> Descending </option>
+            <option value="asc"> Ascending </option>
           </Select>
         </Filter>
       </ListHeader>
