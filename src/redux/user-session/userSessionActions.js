@@ -37,7 +37,7 @@ export const signOutFailure = (error) => ({
 
 export const fetchSessionId = (token) => {
   return (dispatch) => {
-    dispatch(fetchSessionRequest);
+    dispatch(fetchSessionRequest());
     const url = new URL(window.location);
     const approved = url.searchParams.get('approved');
     if (approved) {
