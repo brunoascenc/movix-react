@@ -34,7 +34,7 @@ const LandingPage = () => {
       >
         {nowPlaying &&
           nowPlaying
-            .filter((movie) => movie.vote_count > 1000)
+            .filter((movie) => movie.vote_count > 1500)
             .map((movie) => {
               return (
                 <SwiperSlide

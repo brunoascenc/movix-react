@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import FilterActionTypes from './filterMovieTypes';
 
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;

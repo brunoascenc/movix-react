@@ -8,7 +8,7 @@ const usePagination = () => {
   function nextPage() {
     setPageNumber(pageNumber + 1);
     setNumberOfPages(numberOfPages + 1);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }
 
   function prevPage() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { MovieCardContainer } from './MoviesCardStyles';
 import MoviePoster from '../MoviePoster/MoviePoster';
 
@@ -12,13 +12,13 @@ const MoviesCard = ({ movies }) => {
         movies.map((movie) => {
           return (
             <div key={movie.id}>
-              <Link to={`/details/${movie.id}`} key={movie.id}>
+              <NavLink to={`/details/${movie.id}`} key={movie.id}>
                 <MoviePoster
                   url={IMAGE_URL + movie.poster_path}
                   title={movie.title}
                   movieId={movie.id}
                 />
-              </Link>
+              </NavLink>
             </div>
           );
         })}

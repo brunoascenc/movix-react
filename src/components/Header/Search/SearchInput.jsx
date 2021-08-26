@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { Input, SearchButton, InputContainer } from '../HeaderStyles';
 import { useLocation } from 'react-router-dom';
 
 const SearchInput = () => {
   const [movieName, setMovieName] = useState('');
   const location = useLocation();
-
   const history = useHistory();
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
@@ -24,11 +23,11 @@ const SearchInput = () => {
         onChange={(e) => setMovieName(e.target.value)}
         pageRoute={location.pathname}
       />
-      <Link to={`/search=${movieName}`}>
+      <NavLink to={`/search=${movieName}`}>
         <SearchButton id="search" type="submit">
           <i className="fas fa-search"></i>
         </SearchButton>
-      </Link>
+      </NavLink>
     </InputContainer>
   );
 };
