@@ -35,7 +35,7 @@ const SearchResults = (props) => {
         <>
           <FilterContainer className="container">
             <h2 className="section-title">You searched for</h2>
-            {data === undefined || click === false ? (
+            {!data || !click ? (
               <>
                 <MoviesCard movies={data} />
                 <button onClick={loadMore}>Load More</button>
