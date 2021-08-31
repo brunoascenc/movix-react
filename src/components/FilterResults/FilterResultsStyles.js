@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { CustomButton } from '../CustomButton/CustomButton';
 
 export const FilterContainer = styled.div`
   /* margin-top: -30px; */
   display: flex;
   margin-bottom: 50px;
   flex-direction: column;
+  overflow-y: hidden;
 `;
 
 export const SectionTitle = styled.h2`
@@ -23,14 +25,12 @@ export const Pagination = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(CustomButton)`
   cursor: pointer;
-  background: transparent;
-  color: #ffffff;
   border: none;
-  margin: 10px;
-  .pagination-btn {
-    color: #dbd0d0;
-    font-size: 35px;
-  }
+  width: 100%;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 11px;
 `;

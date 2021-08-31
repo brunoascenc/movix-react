@@ -37,8 +37,7 @@ export const fetchFilterResults = (
       )
       .then((res) => {
         const filterResults = res.data;
-        setData((prevpop) => [...prevpop, ...filterResults.results]);
-        // console.log(filterResults.results);
+        setData((prev) => [...prev, ...filterResults.results]);
         dispatch(fecthFilterSuccess(filterResults));
       })
       .catch((err) => {
