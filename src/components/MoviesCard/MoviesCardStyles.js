@@ -10,8 +10,17 @@ import styled from 'styled-components';
 // `;
 
 export const MovieCardContainer = styled.div`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   gap: 57px;
+  width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   width: 100%;
+  grid-gap: 40px;
+  grid-row-gap: 50px;
+  img {
+    width: 230px;
+    height: 100%;
+  }
 `;

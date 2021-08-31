@@ -16,8 +16,10 @@ const ImageHover = styled.div`
   top: 0;
   left: 0;
   width: 175px;
+  width: 99%;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
   height: 265px;
+  height: 100%;
   border-radius: 12px;
   display: flex;
   flex-direction: column;

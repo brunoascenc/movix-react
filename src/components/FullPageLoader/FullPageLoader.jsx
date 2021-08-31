@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Loader from '../../images/loader.svg';
 
 const LoaderWrapper = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
 `;
 const FullPageLoader = () => {
   return (
