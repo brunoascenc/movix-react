@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { CustomButton } from '../CustomButton/CustomButton';
 
 export const FilterContainer = styled.div`
   /* margin-top: -30px; */
@@ -25,12 +24,15 @@ export const Pagination = styled.div`
   }
 `;
 
-export const Button = styled(CustomButton)`
+export const Button = styled.button`
   cursor: pointer;
   border: none;
-  width: 100%;
-  width: 250px;
   margin: 0 auto;
-  margin-top: 50px;
-  padding: 11px;
+  margin-top: 3px;
+  background: none;
+  .pagination-btn {
+    color: #ffffff;
+    margin: 15px;
+    font-size: 18px;
+  }
 `;

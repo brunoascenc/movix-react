@@ -23,12 +23,7 @@ export const fetchFilterFailure = (error) => {
   };
 };
 
-export const fetchFilterResults = (
-  genreId,
-  optionFilter,
-  pageNumber,
-  setData
-) => {
+export const fetchFilterResults = (genreId, optionFilter, pageNumber) => {
   return (dispatch) => {
     dispatch(fetchFilterRequest());
     axios
@@ -37,7 +32,6 @@ export const fetchFilterResults = (
       )
       .then((res) => {
         const filterResults = res.data;
-        setData((prev) => [...prev, ...filterResults.results]);
         dispatch(fecthFilterSuccess(filterResults));
       })
       .catch((err) => {

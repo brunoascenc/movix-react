@@ -1,67 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import useGenres from '../../hooks/useGenres';
 import NothingFound from '../Error/NothingFound';
-import { useDispatch, useSelector } from 'react-redux';
+import FullPageLoader from '../FullPageLoader/FullPageLoader';
+import usePagination from '../../hooks/usePagination';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import { FilterContainer, Button } from './FilterResultsStyles';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import FullPageLoader from '../FullPageLoader/FullPageLoader';
+import { FilterContainer, Pagination, Button } from './FilterResultsStyles';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 const SearchResults = (props) => {
+  const [genreName] = useGenres();
+  const [pageNumber, nextPage, prevPage, scrollTop, numberOfPages] =
+    usePagination();
   const genreId = props.match.params.pathname;
   const optionFilter = props.match.params.pathname2;
-  const [click, setClick] = useState(false);
+  const filter = useSelector((state) => state.filterResults.results);
+  const loading = useSelector((state) => state.filterResults.loading);
+  const filterResults = filter.results;
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
-  const [data, setData] = useState([]);
-  const tese = useSelector((state) => state.filterResults.results);
-
-  // console.log(tese.results);
 
   useEffect(() => {
-    dispatch(fetchFilterResults(genreId, optionFilter, page, setData));
-  }, [page, genreId, optionFilter, dispatch]);
-
-  const startScroll = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
-
-  const loadMore = () => {
-    startScroll();
-    setClick(!click);
-  };
+    dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
+  }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (
     <>
       {!genreId ? (
         <NothingFound />
+      ) : loading ? (
+        <FullPageLoader />
       ) : (
         <>
-          <FilterContainer className="container">
+          <FilterContainer className="container" ref={scrollTop}>
             <h2 className="section-title">You searched for</h2>
-            {!data || !click ? (
-              <>
-                <MoviesCard movies={tese.results} />
-                <Button onClick={loadMore} primary>
-                  Load More
-                </Button>
-              </>
-            ) : (
-              <InfiniteScroll
-                dataLength={data.length}
-                next={startScroll}
-                hasMore={true}
-                endMessage={<h4>end</h4>}
-                loader={<FullPageLoader />}
-              >
-                <MoviesCard movies={data} />
-              </InfiniteScroll>
-            )}
+            <MoviesCard movies={filterResults} genreName={genreName} />
+
+            <Pagination>
+              <Button onClick={prevPage}>
+                <MdKeyboardArrowLeft className="pagination-btn" />
+              </Button>
+              <p>Page {numberOfPages + ' of ' + filter.total_pages}</p>
+              <Button onClick={nextPage}>
+                <MdKeyboardArrowRight className="pagination-btn" />
+              </Button>
+            </Pagination>
+            <Pagination pages={filter} />
           </FilterContainer>
         </>
       )}
     </>
   );
 };
-
 export default SearchResults;
