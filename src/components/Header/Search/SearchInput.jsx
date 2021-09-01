@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Input, SearchButton, InputContainer } from '../HeaderStyles';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const SearchInput = () => {
   const [movieName, setMovieName] = useState('');
@@ -23,11 +24,20 @@ const SearchInput = () => {
         onChange={(e) => setMovieName(e.target.value)}
         pageRoute={location.pathname}
       />
-      <NavLink to={`/search=${movieName}`}>
-        <SearchButton id="search" type="submit">
-          <i className="fas fa-search"></i>
-        </SearchButton>
-      </NavLink>
+      <Link
+        to="search-results"
+        offset={-35}
+        duration={500}
+        smooth={true}
+        className="scroll-link"
+        // onKeyPress={handleKeyPress}
+      >
+        <NavLink to={`/search=${movieName}`}>
+          <SearchButton id="search" type="submit">
+            <i className="fas fa-search"></i>
+          </SearchButton>
+        </NavLink>
+      </Link>
     </InputContainer>
   );
 };

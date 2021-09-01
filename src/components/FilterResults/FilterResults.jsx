@@ -6,8 +6,9 @@ import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import { FilterContainer, Pagination, Button } from './FilterResultsStyles';
+import { FilterContainer, Pagination } from './FilterResultsStyles';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
+import { Link } from 'react-scroll';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -25,31 +26,43 @@ const SearchResults = (props) => {
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (
-    <>
+    <FilterContainer id="filter-results" className="container" ref={scrollTop}>
       {!genreId ? (
         <NothingFound />
       ) : loading ? (
         <FullPageLoader />
       ) : (
         <>
-          <FilterContainer className="container" ref={scrollTop}>
-            <h2 className="section-title">You searched for</h2>
-            <MoviesCard movies={filterResults} genreName={genreName} />
+          <h2 className="section-title">You searched for</h2>
+          <MoviesCard movies={filterResults} genreName={genreName} />
 
-            <Pagination>
-              <Button onClick={prevPage}>
-                <MdKeyboardArrowLeft className="pagination-btn" />
-              </Button>
-              <p>Page {numberOfPages + ' of ' + filter.total_pages}</p>
-              <Button onClick={nextPage}>
-                <MdKeyboardArrowRight className="pagination-btn" />
-              </Button>
-            </Pagination>
-            <Pagination pages={filter} />
-          </FilterContainer>
+          <Pagination>
+            <Link
+              to="filter-results"
+              onClick={nextPage}
+              offset={-35}
+              duration={800}
+              smooth={true}
+              className="scroll-link"
+            >
+              <MdKeyboardArrowLeft className="pagination-btn" />
+            </Link>
+            <p>Page {numberOfPages + ' of ' + filter.total_pages}</p>
+            <Link
+              to="filter-results"
+              onClick={nextPage}
+              offset={-35}
+              duration={800}
+              smooth={true}
+              className="scroll-link"
+            >
+              <MdKeyboardArrowRight className="pagination-btn" />
+            </Link>
+          </Pagination>
+          <Pagination pages={filter} />
         </>
       )}
-    </>
+    </FilterContainer>
   );
 };
 export default SearchResults;

@@ -29,22 +29,20 @@ const SearchResults = (props) => {
   }
 
   return (
-    <>
+    <SearchContainer id="search-results" className="container">
       {searchQuery === undefined ? (
         <NothingFound />
       ) : loading ? (
         <FullPageLoader />
       ) : (
         <>
-          <SearchContainer className="container">
-            <h2 className="section-title">You searched for {searchQuery}</h2>
-            <div>
-              <MoviesCard movies={searchedMovie} genreName={genreName} />
-            </div>
-          </SearchContainer>
+          <h2 className="section-title">You searched for {searchQuery}</h2>
+          <div>
+            <MoviesCard movies={searchedMovie} genreName={genreName} />
+          </div>
         </>
       )}
-    </>
+    </SearchContainer>
   );
 };
 

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchGenres } from '../../../redux/movie-genres/genreActions';
 import { Select, SearchLink } from '../HeaderStyles';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const GenreSelect = ({ closeMenu }) => {
   const genreList = useSelector((state) => state.genreList.results);
@@ -60,14 +61,21 @@ const GenreSelect = ({ closeMenu }) => {
         <option value="vote_average.desc">Top Rated</option>
         <option value="primary_release_date.desc">Release Date</option>
       </Select>
-
-      <SearchLink
-        onClick={closeMenu}
-        className="filter-btn"
-        to={`/filter=${selectGenre}&${selectOption}`}
+      <Link
+        to="filter-results"
+        offset={-35}
+        duration={500}
+        smooth={true}
+        className="scroll-link"
       >
-        Search
-      </SearchLink>
+        <SearchLink
+          onClick={closeMenu}
+          className="filter-btn"
+          to={`/filter=${selectGenre}&${selectOption}`}
+        >
+          Search
+        </SearchLink>
+      </Link>
     </>
   );
 };

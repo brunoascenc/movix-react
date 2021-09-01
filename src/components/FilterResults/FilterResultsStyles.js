@@ -18,21 +18,17 @@ export const Pagination = styled.div`
   margin-top: 75px;
   display: flex;
   align-items: center;
+  .scroll-link {
+    cursor: pointer;
+    margin-top: 3px;
+    .pagination-btn {
+      color: #ffffff;
+      margin: 15px;
+      font-size: 18px;
+    }
+  }
   p {
     font-size: 11px;
     color: #756c6c;
-  }
-`;
-
-export const Button = styled.button`
-  cursor: pointer;
-  border: none;
-  margin: 0 auto;
-  margin-top: 3px;
-  background: none;
-  .pagination-btn {
-    color: #ffffff;
-    margin: 15px;
-    font-size: 18px;
   }
 `;
