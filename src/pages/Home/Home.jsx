@@ -15,10 +15,12 @@ const Home = () => {
       <LandingPage />
       <Switch>
         <Route exact path="/" component={LandingMovies} />
+
         <Route
           path="/filter=:pathname?&:pathname2?"
           component={FilterResults}
         />
+
         <Route path="/search=:pathname?" component={SearchResults} />
       </Switch>
     </HomeContainer>

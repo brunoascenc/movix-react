@@ -26,7 +26,7 @@ const SearchResults = (props) => {
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (
-    <FilterContainer id="filter-results" className="container" ref={scrollTop}>
+    <FilterContainer id="component" className="container" ref={scrollTop}>
       {!genreId ? (
         <NothingFound />
       ) : loading ? (
@@ -39,7 +39,7 @@ const SearchResults = (props) => {
           <Pagination>
             <Link
               to="filter-results"
-              onClick={nextPage}
+              onClick={prevPage}
               offset={-35}
               duration={800}
               smooth={true}

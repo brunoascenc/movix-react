@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchGenres } from '../../../redux/movie-genres/genreActions';
 import { Select, SearchLink } from '../HeaderStyles';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import { scroller } from 'react-scroll';
 
 const GenreSelect = ({ closeMenu }) => {
   const genreList = useSelector((state) => state.genreList.results);
@@ -25,6 +25,15 @@ const GenreSelect = ({ closeMenu }) => {
 
   const handleOption = (e) => {
     setSelectOption(e.target.value);
+  };
+
+  const scrollToComponent = () => {
+    scroller.scrollTo('component', {
+      duration: 600,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -35,
+    });
   };
 
   return (
@@ -61,21 +70,14 @@ const GenreSelect = ({ closeMenu }) => {
         <option value="vote_average.desc">Top Rated</option>
         <option value="primary_release_date.desc">Release Date</option>
       </Select>
-      <Link
-        to="filter-results"
-        offset={-35}
-        duration={500}
-        smooth={true}
-        className="scroll-link"
+
+      <SearchLink
+        onClick={scrollToComponent}
+        className="filter-btn"
+        to={`/filter=${selectGenre}&${selectOption}`}
       >
-        <SearchLink
-          onClick={closeMenu}
-          className="filter-btn"
-          to={`/filter=${selectGenre}&${selectOption}`}
-        >
-          Search
-        </SearchLink>
-      </Link>
+        Search
+      </SearchLink>
     </>
   );
 };
