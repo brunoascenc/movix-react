@@ -32,6 +32,16 @@ export const InputContainer = styled.div`
   position: relative;
 `;
 
+export const SearchButton = styled.button`
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #efe6e3;
+`;
+
 export const Input = styled.input`
   color: #efe6e3;
   background: transparent;
@@ -51,18 +61,8 @@ export const Input = styled.input`
   }
 
   &:focus {
-    border: solid 1px rgb(195, 191, 199, 0.7);
+    border: solid 1px rgb(195, 191, 199, 0.5);
   }
-`;
-
-export const SearchButton = styled.button`
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  color: #efe6e3;
 `;
 
 export const Select = styled.select`
@@ -86,7 +86,7 @@ export const Select = styled.select`
   margin-left: 8px;
   font-size: 13px;
 
-  option:not(:first-of-type) {
+  option {
     color: black;
   }
 
