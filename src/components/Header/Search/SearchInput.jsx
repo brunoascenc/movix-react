@@ -10,9 +10,8 @@ const SearchInput = () => {
   const history = useHistory();
 
   const scrollToComponent = () => {
-    scroller.scrollTo('component', {
-      duration: 600,
-      delay: 0,
+    scroller.scrollTo('movies-component', {
+      duration: 800,
       smooth: 'easeInOutQuart',
       offset: -35,
     });

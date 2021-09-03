@@ -29,7 +29,7 @@ const SearchResults = (props) => {
   }
 
   return (
-    <SearchContainer id="component" className="container">
+    <SearchContainer id="movies-component" className="container">
       {searchQuery === undefined ? (
         <NothingFound />
       ) : loading ? (
