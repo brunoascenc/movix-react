@@ -15,20 +15,22 @@ export const SectionTitle = styled.h2`
 
 export const Pagination = styled.div`
   align-self: center;
-  margin-top: 75px;
+  margin-top: 77px;
   display: flex;
   align-items: center;
-  .scroll-link {
-    cursor: pointer;
-    margin-top: 3px;
-    .pagination-btn {
-      color: #ffffff;
-      margin: 15px;
-      font-size: 18px;
-    }
-  }
+
   p {
     font-size: 11px;
     color: #756c6c;
+    margin-bottom: 5px;
   }
+`;
+
+export const Button = styled.button`
+  background: none;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  margin: 20px;
+  font-size: 25px;
 `;

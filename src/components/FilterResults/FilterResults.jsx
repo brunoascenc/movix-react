@@ -6,9 +6,8 @@ import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import { FilterContainer, Pagination } from './FilterResultsStyles';
+import { FilterContainer, Pagination, Button } from './FilterResultsStyles';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
-import { Link } from 'react-scroll';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
@@ -26,7 +25,11 @@ const SearchResults = (props) => {
   }, [pageNumber, genreId, optionFilter, dispatch]);
 
   return (
-    <FilterContainer id="component" className="container" ref={scrollTop}>
+    <FilterContainer
+      id="movies-component"
+      className="container"
+      ref={scrollTop}
+    >
       {!genreId ? (
         <NothingFound />
       ) : loading ? (
@@ -37,27 +40,13 @@ const SearchResults = (props) => {
           <MoviesCard movies={filterResults} genreName={genreName} />
 
           <Pagination>
-            <Link
-              to="filter-results"
-              onClick={prevPage}
-              offset={-35}
-              duration={800}
-              smooth={true}
-              className="scroll-link"
-            >
+            <Button onClick={prevPage}>
               <MdKeyboardArrowLeft className="pagination-btn" />
-            </Link>
+            </Button>
             <p>Page {numberOfPages + ' of ' + filter.total_pages}</p>
-            <Link
-              to="filter-results"
-              onClick={nextPage}
-              offset={-35}
-              duration={800}
-              smooth={true}
-              className="scroll-link"
-            >
+            <Button onClick={nextPage}>
               <MdKeyboardArrowRight className="pagination-btn" />
-            </Link>
+            </Button>
           </Pagination>
           <Pagination pages={filter} />
         </>
