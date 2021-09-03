@@ -43,6 +43,7 @@ export const ListContainer = styled.div`
   .poster-card {
     margin-bottom: 15px;
     position: relative;
+    margin-right: 20px;
   }
 
   .poster-container {
@@ -70,7 +71,6 @@ export const ListContainer = styled.div`
 export const Image = styled.img`
   height: 260px;
   border-radius: 12px;
-  margin-right: 20px;
   margin-bottom: 20px;
   border: solid 1px rgb(44, 44, 51, 0.4);
 `;

@@ -17,6 +17,7 @@ const MoviesCard = ({ movies }) => {
                   url={IMAGE_URL + movie.poster_path}
                   title={movie.title}
                   movieId={movie.id}
+                  resultsCard
                 />
               </NavLink>
             </div>

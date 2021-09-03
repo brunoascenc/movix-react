@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
-  width: 175px;
-  height: 260px;
+  width: ${(props) => (props.resultsCard ? '230px' : '175px')};
+  height: ${(props) => (props.resultsCard ? '350px' : '260px')};
   border-radius: 12px;
-  border: solid 1px rgb(44, 44, 51, 0.3);
+  border: solid 1px rgb(44, 44, 51, 0.2);
   image-rendering: -webkit-optimize-contrast;
   /* transition: 0.2s ease; */
 `;
@@ -15,10 +15,10 @@ const ImageHover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 175px;
-  width: 99%;
+  /* width: 175px; */
+  width: 100%;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
-  height: 265px;
+  /* height: 265px; */
   height: 100%;
   border-radius: 12px;
   display: flex;
@@ -30,11 +30,16 @@ const ImageHover = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  margin-top: 3px;
+  margin-top: 7px;
   transition: 0.2s ease;
+  width: ${(props) => (props.resultsCard ? '230px' : '175px')};
+  height: ${(props) => (props.resultsCard ? '350px' : '260px')};
+  background: rgb(44, 44, 51, 0.2);
+  border-radius: 12px;
 
   &:hover {
-    margin-top: -1px;
+    margin-top: 1px;
+    /* z-index: 100; */
 
     ${ImageHover} {
       opacity: 1;
@@ -44,7 +49,8 @@ const ImageContainer = styled.div`
 `;
 
 const ImageHoverContent = styled.div`
-  margin-top: 180px;
+  /* margin-top: 180px; */
+  margin-top: ${(props) => (props.resultsCard ? '230px' : '180px')};
   margin-left: 10px;
 
   button {
@@ -69,15 +75,16 @@ const ImageHoverContent = styled.div`
     letter-spacing: 0.5px;
     margin-bottom: 2px;
     font-smooth: auto;
+    width: ${(props) => (props.resultsCard ? '95%' : 'unset')};
   }
 `;
 
-const MoviePoster = ({ url, movieId, title }) => {
+const MoviePoster = ({ url, movieId, title, ...props }) => {
   return (
-    <ImageContainer key={movieId}>
-      <Image src={url} data-movie-id={movieId} alt={title} />
+    <ImageContainer key={movieId} {...props}>
+      <Image src={url} data-movie-id={movieId} alt={title} {...props} />
       <ImageHover>
-        <ImageHoverContent>
+        <ImageHoverContent {...props}>
           <p>{title}</p>
           <button>
             Details <CgArrowLongRight className="details-arrow" />

@@ -19,8 +19,8 @@ export const MovieCardContainer = styled.div`
   width: 100%;
   grid-gap: 40px;
   grid-row-gap: 50px;
-  img {
+  /* img {
     width: 230px;
-    height: 100%;
-  }
+    height: 350px;
+  } */
 `;
