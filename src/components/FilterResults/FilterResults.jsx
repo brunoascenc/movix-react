@@ -23,7 +23,7 @@ const SearchResults = (props) => {
 
   useEffect(() => {
     dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
-  }, [pageNumber, genreId, optionFilter, dispatch]);
+  }, [pageNumber, genreId, optionFilter, dispatch, setPageNumber]);
 
   return (
     <FilterContainer
