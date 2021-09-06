@@ -29,7 +29,7 @@ const usePagination = () => {
     }
   }
 
-  return [pageNumber, nextPage, prevPage, scrollTop, numberOfPages];
+  return [pageNumber, nextPage, prevPage, scrollTop, setPageNumber];
 };
 
 export default usePagination;
