@@ -25,7 +25,6 @@ const MoviesCarousel = ({
     <CarouselContainer
       className="container"
       moviesLength={movieData && movieData.length}
-      id="movies-component"
     >
       <h2 className="section-title">{sectionTitle}</h2>
       <Swiper

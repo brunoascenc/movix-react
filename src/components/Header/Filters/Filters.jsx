@@ -28,11 +28,13 @@ const GenreSelect = ({ closeMenu }) => {
   };
 
   const scrollToComponent = () => {
-    scroller.scrollTo('movies-component', {
-      duration: 800,
-      smooth: 'easeInOutQuart',
-      offset: -35,
-    });
+    setTimeout(function () {
+      scroller.scrollTo('movies-component', {
+        duration: 800,
+        smooth: 'easeInOutQuart',
+        offset: -35,
+      });
+    }, 10);
   };
 
   return (
