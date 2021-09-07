@@ -9,6 +9,7 @@ const usePagination = () => {
       duration: 800,
       smooth: 'easeInOutQuart',
       offset: -35,
+      delay: 10,
     });
   };
 

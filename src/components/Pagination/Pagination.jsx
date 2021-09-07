@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 import styled from 'styled-components';
-// import usePagination from '../../hooks/usePagination';
+import { Link } from 'react-scroll';
 
 const PaginationContainer = styled.div`
   align-self: center;
@@ -59,13 +59,22 @@ const Pagination = ({
         <MdKeyboardArrowLeft className="pagination-btn" />
       </Button>
       {getPaginationGroup().map((page, index) => (
-        <NumberButton
+        <Link
+          to="movies-component"
+          delay={10}
+          smooth={true}
+          offset={-35}
+          duration={800}
           key={index}
-          onClick={() => setPageNumber(page)}
-          active={pageNumber === page ? true : false}
         >
-          <span>{page >= pages ? '' : page}</span>
-        </NumberButton>
+          <NumberButton
+            key={index}
+            onClick={() => setPageNumber(page)}
+            active={pageNumber === page ? true : false}
+          >
+            <span>{page >= pages ? '' : page}</span>
+          </NumberButton>
+        </Link>
       ))}
       <Button onClick={nextPage}>
         <MdKeyboardArrowRight className="pagination-btn" />
