@@ -24,12 +24,12 @@ export const fetchSearchFailure = (error) => {
   };
 };
 
-export const fetchSearchResults = (searchQuery) => {
+export const fetchSearchResults = (searchQuery, pageNumber) => {
   return (dispatch) => {
     dispatch(fetchSearchRequest());
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}&page=${pageNumber}`
       )
       .then((res) => {
         const searchResults = res.data;

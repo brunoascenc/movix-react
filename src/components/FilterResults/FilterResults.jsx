@@ -26,7 +26,7 @@ const SearchResults = (props) => {
 
   useEffect(() => {
     setPageNumber(1);
-  }, [optionFilter, genreId]);
+  }, [optionFilter, genreId, setPageNumber]);
 
   return (
     <FilterContainer id="movies-component" className="container">

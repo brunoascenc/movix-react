@@ -4,7 +4,6 @@ import { fetchGenres } from '../../../redux/movie-genres/genreActions';
 import { Select, SearchLink } from '../HeaderStyles';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
-import usePagination from '../../../hooks/usePagination';
 
 const GenreSelect = ({ closeMenu }) => {
   const genreList = useSelector((state) => state.genreList.results);

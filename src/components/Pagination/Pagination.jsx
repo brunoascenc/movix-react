@@ -64,7 +64,7 @@ const Pagination = ({
           onClick={() => setPageNumber(page)}
           active={pageNumber === page ? true : false}
         >
-          <span>{page > pages ? <p></p> : page}</span>
+          <span>{page >= pages ? '' : page}</span>
         </NumberButton>
       ))}
       <Button onClick={nextPage}>
