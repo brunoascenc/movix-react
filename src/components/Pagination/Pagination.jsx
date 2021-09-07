@@ -28,6 +28,9 @@ const NumberButton = styled.button`
   p {
     display: none;
   }
+  .none {
+    display: none;
+  }
 `;
 
 const Button = styled.button`
@@ -47,7 +50,7 @@ const Pagination = ({
   prevPage,
   setPageNumber,
 }) => {
-  let pageLimit = 5;
+  let pageLimit = pages < 5 ? pages : 5;
   const getPaginationGroup = () => {
     let start = Math.floor((pageNumber - 1) / pageLimit) * pageLimit;
     return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
@@ -72,7 +75,7 @@ const Pagination = ({
             onClick={() => setPageNumber(page)}
             active={pageNumber === page ? true : false}
           >
-            <span>{page >= pages ? '' : page}</span>
+            <span>{page > pages ? '' : page}</span>
           </NumberButton>
         </Link>
       ))}
