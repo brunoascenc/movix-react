@@ -11,8 +11,7 @@ import Pagination from '../Pagination/Pagination';
 
 const SearchResults = (props) => {
   const [genreName] = useGenres();
-  const [pageNumber, nextPage, prevPage, scrollTop, setPageNumber] =
-    usePagination();
+  const [pageNumber, nextPage, prevPage, setPageNumber] = usePagination();
   const genreId = props.match.params.pathname;
   const optionFilter = props.match.params.pathname2;
   const filter = useSelector((state) => state.filterResults.results);
@@ -25,12 +24,12 @@ const SearchResults = (props) => {
     dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
   }, [pageNumber, genreId, optionFilter, dispatch, setPageNumber]);
 
+  useEffect(() => {
+    setPageNumber(1);
+  }, [optionFilter, genreId]);
+
   return (
-    <FilterContainer
-      id="movies-component"
-      className="container"
-      ref={scrollTop}
-    >
+    <FilterContainer id="movies-component" className="container">
       {!genreId ? (
         <NothingFound />
       ) : loading ? (

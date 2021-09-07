@@ -1,10 +1,8 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { scroller } from 'react-scroll';
 
 const usePagination = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const [numberOfPages, setNumberOfPages] = useState(1);
-  const scrollTop = useRef();
 
   const scrollToComponent = () => {
     scroller.scrollTo('movies-component', {
@@ -14,22 +12,20 @@ const usePagination = () => {
     });
   };
 
-  function nextPage() {
+  const nextPage = () => {
     setPageNumber(pageNumber + 1);
-    setNumberOfPages(numberOfPages + 1);
     scrollToComponent();
     // window.scrollTo(0, 0);
-  }
+  };
 
-  function prevPage() {
+  const prevPage = () => {
     if (pageNumber > 1) {
       setPageNumber(pageNumber - 1);
-      setNumberOfPages(numberOfPages - 1);
       scrollToComponent();
     }
-  }
+  };
 
-  return [pageNumber, nextPage, prevPage, scrollTop, setPageNumber];
+  return [pageNumber, nextPage, prevPage, setPageNumber];
 };
 
 export default usePagination;
