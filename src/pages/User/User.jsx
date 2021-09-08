@@ -51,14 +51,10 @@ const User = () => {
         </UserInfo>
       </UserHeader>
       <div className="container user-content">
-        {loading ? (
-          <FullPageLoader />
-        ) : (
-          <>
-            <FavoriteList userId={userId} />
-            <Watchlist userId={userId} />
-          </>
-        )}
+        <>
+          <FavoriteList userId={userId} />
+          <Watchlist userId={userId} />
+        </>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import NothingFound from '../Error/NothingFound';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchSearchResults } from '../../redux/movies-search/searchMovieActions';
-import FullPageLoader from '../FullPageLoader/FullPageLoader';
+import {
+  fetchSearchRequest,
+  fetchSearchResults,
+} from '../../redux/movies-search/searchMovieActions';
 import { SearchContainer } from './SearchResultsStyles';
 import useGenres from '../../hooks/useGenres';
 import MoviesCard from '../MoviesCard/MoviesCard';
@@ -17,11 +19,15 @@ const SearchResults = (props) => {
   const loading = useSelector((state) => state.searchResults.loading);
   const search = searchResults.results;
   const dispatch = useDispatch();
+  console.log(loading);
 
   const searchQuery = props.match.params.pathname;
 
   useEffect(() => {
-    dispatch(fetchSearchResults(searchQuery, pageNumber));
+    dispatch(fetchSearchRequest());
+    setTimeout(() => {
+      dispatch(fetchSearchResults(searchQuery, pageNumber));
+    }, 800);
   }, [searchQuery, dispatch, pageNumber, setPageNumber]);
 
   useEffect(() => {
@@ -40,13 +46,15 @@ const SearchResults = (props) => {
     <SearchContainer id="movies-component" className="container">
       {searchQuery === undefined ? (
         <NothingFound />
-      ) : loading ? (
-        <FullPageLoader />
       ) : (
         <>
           <h2 className="section-title">You searched for {searchQuery}</h2>
-          {/* <div> */}
-          <MoviesCard movies={searchedMovie} genreName={genreName} />
+
+          <MoviesCard
+            movies={searchedMovie}
+            genreName={genreName}
+            loading={loading}
+          />
           {searchResults.total_results > 20 ? (
             <Pagination
               pages={pages}

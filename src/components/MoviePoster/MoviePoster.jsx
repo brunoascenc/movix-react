@@ -8,7 +8,6 @@ const Image = styled.img`
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.2);
   image-rendering: -webkit-optimize-contrast;
-  /* transition: 0.2s ease; */
 `;
 
 const ImageHover = styled.div`
@@ -49,7 +48,6 @@ const ImageContainer = styled.div`
 `;
 
 const ImageHoverContent = styled.div`
-  /* margin-top: 180px; */
   margin-top: ${(props) => (props.resultsCard ? '230px' : '180px')};
   margin-left: 10px;
 
@@ -79,19 +77,21 @@ const ImageHoverContent = styled.div`
   }
 `;
 
-const MoviePoster = ({ url, movieId, title, ...props }) => {
+const MoviePoster = ({ url, movieId, title, loading, ...props }) => {
   return (
-    <ImageContainer key={movieId} {...props}>
-      <Image src={url} data-movie-id={movieId} alt={title} {...props} />
-      <ImageHover>
-        <ImageHoverContent {...props}>
-          <p>{title}</p>
-          <button>
-            Details <CgArrowLongRight className="details-arrow" />
-          </button>
-        </ImageHoverContent>
-      </ImageHover>
-    </ImageContainer>
+    <>
+      <ImageContainer key={movieId} {...props}>
+        <Image src={url} data-movie-id={movieId} alt={title} {...props} />
+        <ImageHover>
+          <ImageHoverContent {...props}>
+            <p>{title}</p>
+            <button>
+              Details <CgArrowLongRight className="details-arrow" />
+            </button>
+          </ImageHoverContent>
+        </ImageHover>
+      </ImageContainer>
+    </>
   );
 };
 

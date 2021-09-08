@@ -63,7 +63,7 @@ const Pagination = ({
       {getPaginationGroup().map((page, index) => (
         <Link
           to="movies-component"
-          delay={10}
+          // delay={10}
           smooth={true}
           offset={-35}
           duration={800}

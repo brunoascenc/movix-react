@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import useGenres from '../../hooks/useGenres';
 import NothingFound from '../Error/NothingFound';
-import FullPageLoader from '../FullPageLoader/FullPageLoader';
 import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchFilterResults } from '../../redux/movies-filter/filterMoviesAction';
+import {
+  fetchFilterRequest,
+  fetchFilterResults,
+} from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import { FilterContainer } from './FilterResultsStyles';
 import Pagination from '../Pagination/Pagination';
@@ -21,7 +23,11 @@ const SearchResults = (props) => {
   const pages = filter.total_pages;
 
   useEffect(() => {
-    dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
+    // dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
+    dispatch(fetchFilterRequest());
+    setTimeout(() => {
+      dispatch(fetchFilterResults(genreId, optionFilter, pageNumber));
+    }, 800);
   }, [pageNumber, genreId, optionFilter, dispatch, setPageNumber]);
 
   useEffect(() => {
@@ -32,12 +38,14 @@ const SearchResults = (props) => {
     <FilterContainer id="movies-component" className="container">
       {!genreId ? (
         <NothingFound />
-      ) : loading ? (
-        <FullPageLoader />
       ) : (
         <>
           <h2 className="section-title">You searched for</h2>
-          <MoviesCard movies={filterResults} genreName={genreName} />
+          <MoviesCard
+            movies={filterResults}
+            genreName={genreName}
+            loading={loading}
+          />
           <Pagination
             pages={pages}
             pageNumber={pageNumber}

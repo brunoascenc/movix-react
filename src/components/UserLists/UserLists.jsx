@@ -3,6 +3,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Empty from '../EmptyList/Empty';
 import MoviePoster from '../MoviePoster/MoviePoster';
+import MoviesSkeleton from '../MoviesSkeleton/MoviesSkeleton';
 import {
   ListContainer,
   ListSection,
@@ -14,7 +15,14 @@ import {
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
-const UserLists = ({ movies, onClick, userId, title, handleChange }) => {
+const UserLists = ({
+  movies,
+  onClick,
+  userId,
+  title,
+  handleChange,
+  loading,
+}) => {
   return (
     <ListSection>
       <ListHeader>
@@ -31,6 +39,12 @@ const UserLists = ({ movies, onClick, userId, title, handleChange }) => {
       <ListContainer>
         {movies && movies.length === 0 ? (
           <Empty />
+        ) : loading ? (
+          Array(7)
+            .fill()
+            .map((item, index) => {
+              return <MoviesSkeleton key={index} userList />;
+            })
         ) : (
           movies &&
           movies.map((movie) => {
