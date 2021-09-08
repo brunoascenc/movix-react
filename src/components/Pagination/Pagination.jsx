@@ -21,15 +21,11 @@ const NumberButton = styled.button`
   padding: 4px 8px;
   border-radius: 4px;
   transition: 0.1s ease;
+  display: ${(props) => (props.maxPages ? 'none' : 'unset')};
+  pointer-events: ${(props) => (props.maxPages ? 'none' : 'unset')};
 
   &:hover {
     color: #f2eeed;
-  }
-  p {
-    display: none;
-  }
-  .none {
-    display: none;
   }
 `;
 
@@ -37,10 +33,13 @@ const Button = styled.button`
   background: none;
   cursor: pointer;
   border: none;
-  color: #f2eeed;
+  color: ${(props) =>
+    props.lastPage || props.firstPage ? '#251f2b' : '#f2eeed'};
   margin: 20px;
   font-size: 40px;
   margin-top: 30px;
+  pointer-events: ${(props) =>
+    props.lastPage || props.firstPage ? 'none' : 'unset'};
 `;
 
 const Pagination = ({
@@ -58,7 +57,7 @@ const Pagination = ({
 
   return (
     <PaginationContainer>
-      <Button onClick={prevPage}>
+      <Button onClick={prevPage} firstPage={pageNumber === 1 ? true : false}>
         <MdKeyboardArrowLeft className="pagination-btn" />
       </Button>
       {getPaginationGroup().map((page, index) => (
@@ -74,12 +73,13 @@ const Pagination = ({
             key={index}
             onClick={() => setPageNumber(page)}
             active={pageNumber === page ? true : false}
+            maxPages={page <= pages ? false : true}
           >
-            <span>{page > pages ? '' : page}</span>
+            <span>{page}</span>
           </NumberButton>
         </Link>
       ))}
-      <Button onClick={nextPage}>
+      <Button onClick={nextPage} lastPage={pageNumber === pages ? true : false}>
         <MdKeyboardArrowRight className="pagination-btn" />
       </Button>
     </PaginationContainer>
