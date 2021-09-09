@@ -23,12 +23,12 @@ export const fetchWatchlistFailure = (error) => {
   };
 };
 
-export const fetchWatchlistMovies = (id, order) => {
+export const fetchWatchlistMovies = (id, order, currentPage) => {
   return (dispatch) => {
     dispatch(fetchWatchlistRequest());
     axios
       .get(
-        `https://api.themoviedb.org/3/account/{account_id}/watchlist/movies?api_key=${API_KEY}&language=en-US&session_id=${id}&language=en-US&sort_by=created_at.${order}&page=1`
+        `https://api.themoviedb.org/3/account/{account_id}/watchlist/movies?api_key=${API_KEY}&language=en-US&session_id=${id}&language=en-US&sort_by=created_at.${order}&page=${currentPage}`
       )
       .then((res) => {
         const watchlistMovies = res.data;

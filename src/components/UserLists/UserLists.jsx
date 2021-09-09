@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Empty from '../EmptyList/Empty';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import MoviesSkeleton from '../MoviesSkeleton/MoviesSkeleton';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 import {
   ListContainer,
   ListSection,
@@ -11,6 +12,8 @@ import {
   ListHeader,
   Filter,
   Select,
+  Pagination,
+  PaginationButton,
 } from './UserListsStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -22,6 +25,10 @@ const UserLists = ({
   title,
   handleChange,
   loading,
+  totalResults,
+  setCurrentPage,
+  currentPage,
+  totalPages,
 }) => {
   return (
     <ListSection>
@@ -75,6 +82,24 @@ const UserLists = ({
           })
         )}
       </ListContainer>
+      {totalResults > 20 ? (
+        <Pagination>
+          <PaginationButton
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+            firstPage={currentPage === 1 ? true : false}
+          >
+            <MdKeyboardArrowLeft className="prev-arrow" /> Prev
+          </PaginationButton>
+          <PaginationButton
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+            lastPage={currentPage === totalPages ? true : false}
+          >
+            Next <MdKeyboardArrowRight className="next-arrow" />
+          </PaginationButton>
+        </Pagination>
+      ) : (
+        ''
+      )}
     </ListSection>
   );
 };

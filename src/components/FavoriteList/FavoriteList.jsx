@@ -12,13 +12,20 @@ const FavoriteList = ({ userId }) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.userFavorites.results.results);
   const favoritesLoading = useSelector((state) => state.userFavorites.loading);
+  const totalResults = useSelector(
+    (state) => state.userFavorites.results.total_results
+  );
+  const totalPages = useSelector(
+    (state) => state.userFavorites.results.total_pages
+  );
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     dispatch(fetchFavoritesRequest());
     setTimeout(() => {
-      dispatch(fetchFavoriteMovies(userId.sessionId, order));
+      dispatch(fetchFavoriteMovies(userId.sessionId, order, currentPage));
     }, 600);
-  }, [userId.sessionId, dispatch, order]);
+  }, [userId.sessionId, dispatch, order, currentPage]);
 
   return (
     <UserLists
@@ -28,6 +35,10 @@ const FavoriteList = ({ userId }) => {
       title={'My Favorite Movies'}
       handleChange={setOrder}
       loading={favoritesLoading}
+      totalResults={totalResults}
+      setCurrentPage={setCurrentPage}
+      currentPage={currentPage}
+      totalPages={totalPages}
     />
   );
 };

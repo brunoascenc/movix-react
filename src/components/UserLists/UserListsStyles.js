@@ -44,6 +44,7 @@ export const ListContainer = styled.div`
     margin-bottom: 15px;
     position: relative;
     margin-right: 20px;
+    height: 260px;
   }
 
   .poster-container {
@@ -107,4 +108,40 @@ export const Select = styled.select`
   color: #efe6e3;
   transition: 0.1s ease;
   font-size: 12px;
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+`;
+
+export const PaginationButton = styled.button`
+  pointer-events: ${(props) =>
+    props.lastPage || props.firstPage ? 'none' : 'unset'};
+  opacity: ${(props) => (props.lastPage || props.firstPage ? '0' : '1')};
+  border: none;
+  cursor: pointer;
+  background: #8d28e0;
+  border-radius: 6px;
+  padding: 6px;
+  transition: 0.1s ease;
+  font-size: 14px;
+  color: #e1dce6;
+  width: 60px;
+  &:hover {
+    background: #731fb8;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .next-arrow,
+  .prev-arrow {
+    font-size: 17px;
+    margin-top: 2px;
+  }
+  .next-arrow {
+    margin-left: 3px;
+  }
 `;
