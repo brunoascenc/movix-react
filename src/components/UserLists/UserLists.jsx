@@ -40,10 +40,16 @@ const UserLists = ({
         {movies && movies.length === 0 ? (
           <Empty />
         ) : loading ? (
-          Array(7)
+          Array(20)
             .fill()
             .map((item, index) => {
-              return <MoviesSkeleton key={index} userList />;
+              return (
+                <div className="poster-container" key={index}>
+                  <div className="poster-card">
+                    <MoviesSkeleton userList />
+                  </div>
+                </div>
+              );
             })
         ) : (
           movies &&

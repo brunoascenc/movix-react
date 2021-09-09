@@ -14,6 +14,7 @@ const Gradient = keyframes`
 `;
 
 const Skeleton = styled.div`
+  pointer-events: none;
   width: ${(props) => (props.resultsCard ? '230px' : '175px')};
   height: ${(props) => (props.resultsCard ? '350px' : '260px')};
   background: rgb(44, 44, 51, 0.2);
@@ -23,7 +24,8 @@ const Skeleton = styled.div`
   border: solid 1px rgb(44, 44, 51, 0.2);
   background-size: 400% 400%;
   margin-top: 7px;
-  margin-right: ${(props) => (props.userList ? '19px' : 'unset')};
+  /* margin-right: ${(props) => (props.userList ? '15px' : 'unset')}; */
+  /* margin-bottom: 22px; */
 `;
 
 const MoviesSkeleton = ({ ...props }) => {
