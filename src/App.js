@@ -18,10 +18,9 @@ import GlobalStyle from './globalStyles';
 
 //alert config
 const options = {
-  position: positions.TOP_CENTER,
-  timeout: 3000,
-  offset: '30px',
-  transition: transitions.SCALE,
+  position: positions.MIDDLE_RIGHT,
+  timeout: 1700,
+  transition: transitions.FADE,
 };
 
 function App({ userId }) {

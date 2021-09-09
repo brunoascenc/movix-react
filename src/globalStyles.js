@@ -38,6 +38,14 @@ const GlobalStyle = createGlobalStyle`
     /* z-index: -1; */
   }
 
+  .alert-box {
+    background: #8d28e0;
+    padding: 12px;
+    color: rgb(233, 221, 221);
+    border-radius: 25px 0 0 25px;
+    margin-top: -250px;
+  }
+
 
   p{
     font-family: 'Roboto', sans-serif;
