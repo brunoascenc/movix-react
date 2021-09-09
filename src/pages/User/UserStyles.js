@@ -41,10 +41,17 @@ export const UserInfo = styled.div`
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-  p {
+  .username {
     font-size: 35px;
     margin-bottom: 15px;
     font-weight: bold;
+  }
+
+  .username-skeleton {
+    width: 400px;
+    height: 42px;
+    background: transparent;
+    margin-bottom: 15px;
   }
 
   .info-details {

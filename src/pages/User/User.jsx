@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
-import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { UserIconBg, UserHeader, UserInfo } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
@@ -16,10 +14,6 @@ const User = () => {
   const user = useSelector((state) => state.user.details);
   const userId = useSelector((state) => state.sessionId);
 
-  useEffect(() => {
-    dispatch(fetchUserDetails(userId.sessionId));
-  }, [userId.sessionId, dispatch]);
-
   const handleSignOut = () => {
     dispatch(signOutSuccess());
   };
@@ -32,7 +26,16 @@ const User = () => {
           {user.username && user.username.charAt(0)}
         </span>
         <UserInfo>
-          <p>{user.name === '' ? user.username : user.name}</p>
+          {loading ? (
+            <span className="username-skeleton"></span>
+          ) : (
+            <span className="username">
+              {user.name === '' ? user.username : user.name}
+            </span>
+          )}
+          {/* <p>
+            {user.name === '' ? user.username : user.name}
+          </p> */}
           <div className="info-details">
             <div className="list-info">
               <span>{favoritesTotal.total_results}</span>

@@ -5,7 +5,10 @@ import SearchInput from './Search/SearchInput';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import { fetchSessionId } from '../../redux/user-session/userSessionActions';
-import { fetchUserDetails } from '../../redux/user-details/userDetailsAction';
+import {
+  fetchUserDetails,
+  fetchUserRequest,
+} from '../../redux/user-details/userDetailsAction';
 import {
   HeaderComponent,
   SearchContainer,
@@ -28,8 +31,12 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(fetchSessionId(userToken.token));
+    dispatch(fetchUserRequest(userToken.token));
     if (userId.sessionId) {
-      dispatch(fetchUserDetails(userId.sessionId));
+      // dispatch(fetchUserDetails(userId.sessionId));
+      setTimeout(() => {
+        dispatch(fetchUserDetails(userId.sessionId));
+      }, 600);
     }
   }, [userId.sessionId, userToken.token, dispatch]);
 
