@@ -15,17 +15,18 @@ const NumberButton = styled.button`
     props.active === true ? props.theme.mainPurple : 'unset'};
   border: none;
   cursor: pointer;
-  color: ${(props) =>
-    props.active === true ? '#f2eeed' : props.theme.textColor};
-  margin: 15px;
+  color: #cfc6c4;
+  margin: 10px;
   padding: 4px 8px;
   border-radius: 4px;
-  transition: 0.1s ease;
+  transition: 0.2s ease;
   display: ${(props) => (props.maxPages ? 'none' : 'unset')};
   pointer-events: ${(props) => (props.maxPages ? 'none' : 'unset')};
+  font-size: 16px;
+  border: solid 1px transparent;
 
   &:hover {
-    color: #f2eeed;
+    border: solid 1px #252529;
   }
 `;
 
@@ -34,12 +35,32 @@ const Button = styled.button`
   cursor: pointer;
   border: none;
   color: ${(props) =>
-    props.lastPage || props.firstPage ? '#251f2b' : '#f2eeed'};
+    props.lastPage || props.firstPage ? '#251f2b' : '#cfc6c4'};
   margin: 20px;
-  font-size: 40px;
-  margin-top: 30px;
+  font-size: 15px;
   pointer-events: ${(props) =>
     props.lastPage || props.firstPage ? 'none' : 'unset'};
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  border: solid 1px transparent;
+  transition: 0.2s ease;
+
+  &:hover {
+    border: solid 1px #252529;
+  }
+
+  .next-icon {
+    font-size: 19px;
+    margin-top: 2px;
+    margin-left: 3px;
+  }
+  .prev-icon {
+    font-size: 19px;
+    margin-top: 1px;
+    margin-right: 3px;
+  }
 `;
 
 const Pagination = ({
@@ -58,7 +79,7 @@ const Pagination = ({
   return (
     <PaginationContainer>
       <Button onClick={prevPage} firstPage={pageNumber === 1 ? true : false}>
-        <MdKeyboardArrowLeft className="pagination-btn" />
+        <MdKeyboardArrowLeft className="prev-icon" /> Previous
       </Button>
       {getPaginationGroup().map((page, index) => (
         <Link
@@ -80,7 +101,7 @@ const Pagination = ({
         </Link>
       ))}
       <Button onClick={nextPage} lastPage={pageNumber === pages ? true : false}>
-        <MdKeyboardArrowRight className="pagination-btn" />
+        Next <MdKeyboardArrowRight className="next-icon" />
       </Button>
     </PaginationContainer>
   );
