@@ -6,7 +6,7 @@ const Image = styled.img`
   width: ${(props) => (props.resultsCard ? '230px' : '175px')};
   height: ${(props) => (props.resultsCard ? '350px' : '260px')};
   border-radius: 12px;
-  border: solid 1px rgb(44, 44, 51, 0.2);
+  border: solid 1px rgb(44, 44, 51, 0.4);
   image-rendering: -webkit-optimize-contrast;
 `;
 
@@ -17,6 +17,11 @@ const ImageHover = styled.div`
   /* width: 175px; */
   width: 100%;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
+  background-image: linear-gradient(
+    to top,
+    rgb(7, 5, 8, 0.8) 40%,
+    rgb(7, 5, 8, 0.3)
+  );
   /* height: 265px; */
   height: 100%;
   border-radius: 12px;
@@ -48,7 +53,7 @@ const ImageContainer = styled.div`
 `;
 
 const ImageHoverContent = styled.div`
-  margin-top: ${(props) => (props.resultsCard ? '230px' : '180px')};
+  margin-top: ${(props) => (props.resultsCard ? '260px' : '180px')};
   margin-left: 10px;
 
   button {
@@ -58,7 +63,7 @@ const ImageHoverContent = styled.div`
     display: flex;
     align-items: center;
     color: #f5eded;
-    font-size: 17px;
+    font-size: ${(props) => (props.resultsCard ? '19px' : '17px')};
     letter-spacing: 0.5px;
     font-family: 'Roboto Condensed', sans-serif;
     .details-arrow {
@@ -69,7 +74,9 @@ const ImageHoverContent = styled.div`
 
   p {
     color: #f2ebeb;
+    color: #e8dfdf;
     font-size: 12px;
+    font-size: ${(props) => (props.resultsCard ? '14px' : '12px')};
     letter-spacing: 0.5px;
     margin-bottom: 2px;
     font-smooth: auto;

@@ -33,7 +33,7 @@ export const MovieImage = styled.img`
   position: absolute;
   top: -50px;
   border-radius: 12px;
-  border: solid 1px rgb(44, 44, 51, 0.2);
+  border: solid 1px rgb(44, 44, 51, 0.5);
   image-rendering: -webkit-optimize-contrast;
   opacity: 95%;
   height: ${(props) => (props.overviewLength >= 600 ? '580px' : '540px')};
