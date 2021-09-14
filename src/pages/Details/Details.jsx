@@ -9,11 +9,12 @@ import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { MovieBanner } from './DetailsPageStyles';
 import MoviesCarousel from '../../components/MoviesCarousel/MoviesCarousel';
+import { useParams } from 'react-router';
 
-const Details = (props) => {
+const Details = () => {
   //list buttons alert
   const alert = useAlert();
-  const movieId = props.match.params.id;
+  const { movieId } = useParams();
   //redux data
   const dispatch = useDispatch();
   const movieDetail = useSelector((state) => state.movieDetail.results);

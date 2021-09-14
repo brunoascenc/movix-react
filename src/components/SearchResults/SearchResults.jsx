@@ -10,8 +10,9 @@ import useGenres from '../../hooks/useGenres';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import Pagination from '../Pagination/Pagination';
 import usePagination from '../../hooks/usePagination';
+import { useParams } from 'react-router';
 
-const SearchResults = (props) => {
+const SearchResults = () => {
   const [genreName] = useGenres();
   const searchResults = useSelector((state) => state.searchResults.results);
   const pages = searchResults.total_pages;
@@ -21,7 +22,7 @@ const SearchResults = (props) => {
   const dispatch = useDispatch();
   console.log(loading);
 
-  const searchQuery = props.match.params.pathname;
+  const { searchQuery } = useParams();
 
   useEffect(() => {
     dispatch(fetchSearchRequest());

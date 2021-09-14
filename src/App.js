@@ -33,7 +33,7 @@ function App({ userId }) {
         <div className="App">
           <Header />
           <Switch location={location}>
-            <Route path="/details/:id" component={Details} />
+            <Route path="/details/:movieId" component={Details} />
             <Route path="/user" component={User} />
             <Route
               exact

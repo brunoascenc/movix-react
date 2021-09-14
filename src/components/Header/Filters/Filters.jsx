@@ -75,7 +75,7 @@ const GenreSelect = ({ closeMenu }) => {
       <SearchLink
         onClick={scrollToComponent}
         className="filter-btn"
-        to={`/filter=${selectGenre}&${selectOption}`}
+        to={`/filter/${selectGenre}/${selectOption}`}
       >
         Search
       </SearchLink>

@@ -16,12 +16,9 @@ const Home = () => {
       <Switch>
         <Route exact path="/" component={LandingMovies} />
 
-        <Route
-          path="/filter=:pathname?&:pathname2?"
-          component={FilterResults}
-        />
+        <Route path="/filter/:genreId?/:orderBy?" component={FilterResults} />
 
-        <Route path="/search=:pathname?" component={SearchResults} />
+        <Route path="/search=:searchQuery?" component={SearchResults} />
       </Switch>
     </HomeContainer>
   );
