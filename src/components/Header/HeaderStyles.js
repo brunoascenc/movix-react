@@ -61,7 +61,7 @@ export const Input = styled.input`
   }
 
   &:focus {
-    border: solid 1px rgb(195, 191, 199, 0.5);
+    border: solid 1px rgb(195, 191, 199, 0.4);
   }
 `;
 
@@ -82,7 +82,7 @@ export const Select = styled.select`
   background-position-x: 100%;
   background-position-y: 51%;
   color: #efe6e3;
-  transition: 0.1s ease;
+  transition: 0.2s ease;
   margin-left: 8px;
   font-size: 13px;
 
@@ -92,7 +92,7 @@ export const Select = styled.select`
 
   &:hover,
   :focus {
-    border: solid 1px rgb(195, 191, 199, 0.8);
+    border: solid 1px rgb(195, 191, 199, 0.4);
   }
 `;
 
