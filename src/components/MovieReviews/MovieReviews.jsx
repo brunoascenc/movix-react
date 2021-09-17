@@ -13,9 +13,8 @@ const MovieReviews = ({ movieReviews }) => {
           movieReviews.map((review) => {
             return (
               <div key={review.id}>
-                <h3>By: {review.author}</h3>
+                <span>By: {review.author}</span>
                 <p>{review.content}</p>
-                {/* <a href={review.url}>official review</a> */}
               </div>
             );
           })}
