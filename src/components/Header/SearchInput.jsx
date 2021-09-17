@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { Input, SearchButton, InputContainer } from '../HeaderStyles';
+import { Input, SearchButton, InputContainer } from './HeaderStyles';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 

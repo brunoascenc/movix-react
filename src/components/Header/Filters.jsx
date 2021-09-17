@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchGenres } from '../../../redux/movie-genres/genreActions';
-import { Select, SearchLink } from '../HeaderStyles';
+import { fetchGenres } from '../../redux/movie-genres/genreActions';
+import { Select, SearchLink } from './HeaderStyles';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 

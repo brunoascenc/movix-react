@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Filters from './Filters/Filters';
-import SearchInput from './Search/SearchInput';
+import Filters from './Filters';
+import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import { fetchSessionId } from '../../redux/user-session/userSessionActions';
