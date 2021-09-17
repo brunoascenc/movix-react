@@ -4,7 +4,10 @@ import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
-import { fetchMovieDetail } from '../../redux/movie-details/movieDetailActions';
+import {
+  fetchDetailsRequest,
+  fetchMovieDetail,
+} from '../../redux/movie-details/movieDetailActions';
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { MovieBanner } from './DetailsPageStyles';
@@ -24,7 +27,10 @@ const Details = () => {
   const dates = movieDate && movieDate.results;
 
   useEffect(() => {
-    dispatch(fetchMovieDetail(movieId));
+    dispatch(fetchDetailsRequest());
+    setTimeout(() => {
+      dispatch(fetchMovieDetail(movieId));
+    }, 500);
   }, [movieId, dispatch]);
 
   let genresList;
@@ -35,11 +41,12 @@ const Details = () => {
   return (
     <>
       {loading ? (
-        <FullPageLoader />
+        <>
+          <FullPageLoader />
+        </>
       ) : (
         <>
           <MovieBanner backdrop={movieDetail.backdrop_path}></MovieBanner>
-
           <div className="about-movie container">
             {loading ? (
               <FullPageLoader />

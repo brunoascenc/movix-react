@@ -33,9 +33,6 @@ const GlobalStyle = createGlobalStyle`
 
   .section-title{
     margin-bottom: 15px;
-    /* letter-spacing: 1px; */
-    /* color: #f2eeed; */
-    /* z-index: -1; */
   }
 
   .alert-box {
