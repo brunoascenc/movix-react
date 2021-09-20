@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const HeaderComponent = styled.header`
   position: absolute;
-  /* top: 0; */
   left: 0;
   right: 0;
   max-width: 1920px;

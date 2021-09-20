@@ -8,6 +8,7 @@ import {
   LandingMovieTitle,
   LandingText,
   LinkLanding,
+  Slide,
 } from './LandingPageStyles';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -46,6 +47,9 @@ const LandingPage = () => {
                       movie.backdrop_path
                     })`,
                   }}
+                  bgImage={
+                    'https://image.tmdb.org/t/p/original' + movie.backdrop_path
+                  }
                 >
                   <LinkLanding
                     to={`/details/${movie.id}`}

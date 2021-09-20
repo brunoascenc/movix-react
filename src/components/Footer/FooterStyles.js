@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
-  height: 250px;
+  /* height: 250px; */
+  min-height: 250px;
   background: rgb(11, 9, 13);
   flex-wrap: wrap;
+  margin-top: auto;
 `;
 
 export const FooterItems = styled.div`

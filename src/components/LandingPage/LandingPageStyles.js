@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const LandingPageContainer = styled.div`
-  height: 75vh;
+  height: 70vh;
 
   .swiper-card {
     height: 75vh;
     display: flex;
     align-items: center;
     background-size: cover;
-    background-position: center top;
     position: relative;
     width: 100%;
 
@@ -22,7 +21,6 @@ export const LandingPageContainer = styled.div`
 `;
 
 export const LandingText = styled.div`
-  color: white;
   width: 750px;
   margin-top: 100px;
 
@@ -40,7 +38,7 @@ export const LandingMovieTitle = styled.h1`
   font-size: 45px;
   letter-spacing: -1px;
   line-height: 52px;
-  color: #e7e4eb;
+  color: #ffffff;
   font-family: 'Archivo Black', sans-serif;
   font-weight: 900;
   margin-bottom: 7px;

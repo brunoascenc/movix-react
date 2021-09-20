@@ -17,11 +17,13 @@ const GlobalStyle = createGlobalStyle`
 
   body{
     background: rgb(7, 5, 8);
+    height:100vh; margin:0; 
     color: #f2e9e9;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+
 
   .container{
     padding-left: 3%;

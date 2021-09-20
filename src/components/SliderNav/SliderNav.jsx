@@ -7,36 +7,21 @@ const LeftArrow = styled(MdKeyboardArrowLeft)`
   display: ${(props) => (props.movieslength <= 7 ? 'none' : 'block')};
   cursor: pointer;
   font-size: 18px;
-  color: #e0d2d19d;
+  font-size: 30px;
+  color: #ffffff;
   position: absolute;
   top: 53%;
-  left: 10px;
-
-  @media (min-width: 1920px) {
-    left: 15px;
-  }
+  left: 11px;
 `;
 
 const RightArrow = styled(MdKeyboardArrowRight)`
   display: ${(props) => (props.movieslength <= 7 ? 'none' : 'block')};
   cursor: pointer;
-  font-size: 18px;
-  color: #e0d2d19d;
+  font-size: 30px;
+  color: #ffffff;
   position: absolute;
   top: 53%;
   right: 11px;
-
-  @media (min-width: 1520px) {
-    right: 40px;
-  }
-
-  @media (min-width: 1680px) {
-    right: 60px;
-  }
-
-  @media (min-width: 1920px) {
-    right: 85px;
-  }
 `;
 
 export const SliderNav = ({ carouselName, movieslength }) => {

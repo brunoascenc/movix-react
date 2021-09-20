@@ -52,13 +52,14 @@ const MoviesCarousel = ({
               .filter((movie) => movie.poster_path)
               .map((movie) => {
                 return (
-                  <SwiperSlide key={movie.id} className="xd">
+                  <SwiperSlide key={movie.id}>
                     <Link key={movie.id} to={`/details/${movie.id}`}>
                       <MoviePoster
                         url={IMAGE_URL + movie.poster_path}
                         title={movie.title}
                         movieId={movie.id}
                         loading={loading}
+                        carouselImage
                       />
                     </Link>
                   </SwiperSlide>
