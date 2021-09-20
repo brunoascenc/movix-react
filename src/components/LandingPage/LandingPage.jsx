@@ -47,8 +47,11 @@ const LandingPage = () => {
                     })`,
                   }}
                 >
-                  <LinkLanding to={`/details/${movie.id}`}>
-                    <LandingText className="container">
+                  <LinkLanding
+                    to={`/details/${movie.id}`}
+                    className="container"
+                  >
+                    <LandingText>
                       <LandingMovieTitle>{movie.title}</LandingMovieTitle>
                       <div>
                         <CustomButton primary>Details</CustomButton>

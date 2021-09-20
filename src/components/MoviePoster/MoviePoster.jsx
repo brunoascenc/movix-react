@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
-  width: ${(props) => (props.resultsCard ? '230px' : '175px')};
+  width: ${(props) => (props.resultsCard ? '230px' : '175px ')};
   height: ${(props) => (props.resultsCard ? '350px' : '260px')};
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
@@ -14,7 +14,6 @@ const ImageHover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 175px; */
   width: 100%;
   background-image: linear-gradient(to top, rgb(7, 5, 8, 0.8) 30%, transparent);
   background-image: linear-gradient(
@@ -22,7 +21,6 @@ const ImageHover = styled.div`
     rgb(7, 5, 8, 0.8) 40%,
     rgb(7, 5, 8, 0.3)
   );
-  /* height: 265px; */
   height: 100%;
   border-radius: 12px;
   display: flex;
@@ -73,7 +71,6 @@ const ImageHoverContent = styled.div`
   }
 
   p {
-    color: #f2ebeb;
     color: #e8dfdf;
     font-size: 12px;
     font-size: ${(props) => (props.resultsCard ? '14px' : '12px')};

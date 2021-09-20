@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     color: #f2e9e9;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   .container{

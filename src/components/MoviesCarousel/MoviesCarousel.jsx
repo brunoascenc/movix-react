@@ -30,6 +30,7 @@ const MoviesCarousel = ({
       moviesLength={movieData && movieData.length}
     >
       <h2 className="section-title">{sectionTitle}</h2>
+
       <Swiper
         spaceBetween={15}
         slidesPerView={7}
@@ -51,7 +52,7 @@ const MoviesCarousel = ({
               .filter((movie) => movie.poster_path)
               .map((movie) => {
                 return (
-                  <SwiperSlide key={movie.id}>
+                  <SwiperSlide key={movie.id} className="xd">
                     <Link key={movie.id} to={`/details/${movie.id}`}>
                       <MoviePoster
                         url={IMAGE_URL + movie.poster_path}

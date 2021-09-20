@@ -10,7 +10,11 @@ const LeftArrow = styled(MdKeyboardArrowLeft)`
   color: #e0d2d19d;
   position: absolute;
   top: 53%;
-  left: 15px;
+  left: 10px;
+
+  @media (min-width: 1920px) {
+    left: 15px;
+  }
 `;
 
 const RightArrow = styled(MdKeyboardArrowRight)`
@@ -20,7 +24,19 @@ const RightArrow = styled(MdKeyboardArrowRight)`
   color: #e0d2d19d;
   position: absolute;
   top: 53%;
-  right: 21px;
+  right: 11px;
+
+  @media (min-width: 1520px) {
+    right: 40px;
+  }
+
+  @media (min-width: 1680px) {
+    right: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    right: 85px;
+  }
 `;
 
 export const SliderNav = ({ carouselName, movieslength }) => {

@@ -17,7 +17,6 @@ const Skeleton = styled.div`
   pointer-events: none;
   width: ${(props) => (props.resultsCard ? '230px' : '175px')};
   height: ${(props) => (props.resultsCard ? '350px' : '260px')};
-  background: rgb(44, 44, 51, 0.2);
   background: linear-gradient(268deg, #131114, #0b090d);
   animation: ${Gradient} 1.5s ease infinite;
   border-radius: 12px;

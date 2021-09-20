@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   display: flex;
+  justify-content: center;
   height: 250px;
-  justify-content: space-evenly;
-  align-items: center;
   background: rgb(11, 9, 13);
   flex-wrap: wrap;
+`;
+
+export const FooterItems = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1920px;
+  width: 100%;
 `;
 
 export const TMDBLogo = styled.img`
@@ -14,6 +21,9 @@ export const TMDBLogo = styled.img`
 `;
 
 export const FooterContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   h3 {
     font-size: 14px;
     letter-spacing: 2px;

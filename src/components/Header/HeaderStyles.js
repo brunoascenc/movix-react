@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 
 export const HeaderComponent = styled.header`
   position: absolute;
-  top: 0;
+  /* top: 0; */
+  left: 0;
+  right: 0;
+  max-width: 1920px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 10vh;
   z-index: 10;
+  margin: auto;
 `;
 
 export const mobileMenu = styled.div`

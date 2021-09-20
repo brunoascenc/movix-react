@@ -12,14 +12,20 @@ export const LandingPageContainer = styled.div`
     background-position: center top;
     position: relative;
     width: 100%;
+
+    .container {
+      max-width: 1920px;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 `;
 
 export const LandingText = styled.div`
   color: white;
   width: 750px;
-  margin-left: 5%;
   margin-top: 100px;
+
   div {
     display: flex;
     margin-top: -7px;
