@@ -10,6 +10,7 @@ import MoviesSkeleton from '../MoviesSkeleton/MoviesSkeleton';
 //Swiper css
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
+import { SliderBreakpoints } from './BreakPoints';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 
@@ -36,6 +37,7 @@ const MoviesCarousel = ({
         slidesPerView={7}
         navigation={{ nextEl: nextMovie, prevEl: prevMovie }}
         className="swiper-container"
+        breakpoints={SliderBreakpoints}
       >
         {loading
           ? Array(20)
