@@ -1,4 +1,7 @@
 export const SliderBreakpoints = {
+  120: {
+    slidesPerView: 2,
+  },
   320: {
     slidesPerView: 3,
   },
