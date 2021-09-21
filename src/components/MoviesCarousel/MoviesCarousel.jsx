@@ -45,7 +45,7 @@ const MoviesCarousel = ({
               .map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <MoviesSkeleton />
+                    <MoviesSkeleton carouselImage />
                   </SwiperSlide>
                 );
               })
@@ -67,23 +67,6 @@ const MoviesCarousel = ({
                   </SwiperSlide>
                 );
               })}
-        {/* {movieData &&
-        movieData
-          .filter((movie) => movie.poster_path)
-          .map((movie) => {
-            return (
-              <SwiperSlide key={movie.id}>
-                <Link key={movie.id} to={`/details/${movie.id}`}>
-                  <MoviePoster
-                    url={IMAGE_URL + movie.poster_path}
-                    title={movie.title}
-                    movieId={movie.id}
-                    loading={loading}
-                  />
-                </Link>
-              </SwiperSlide>
-            );
-          })} */}
       </Swiper>
       <SliderNav
         movieslength={movieData}

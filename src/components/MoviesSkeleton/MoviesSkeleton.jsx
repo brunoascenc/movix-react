@@ -25,6 +25,95 @@ const Skeleton = styled.div`
   margin-top: 7px;
   /* margin-right: ${(props) => (props.userList ? '15px' : 'unset')}; */
   /* margin-bottom: 22px; */
+  @media (min-width: 320px) {
+    height: ${(props) => (props.carouselImage ? '145px' : 'unset')};
+    width: ${(props) => (props.carouselImage ? '100%' : 'unset')};
+  }
+
+  @media (min-width: 355px) {
+    height: ${(props) => (props.carouselImage ? '160px' : 'unset')};
+  }
+
+  @media (min-width: 400px) {
+    height: ${(props) => (props.carouselImage ? '170px' : 'unset')};
+  }
+
+  @media (min-width: 425px) {
+    height: ${(props) => (props.carouselImage ? '183px' : 'unset')};
+  }
+
+  @media (min-width: 465px) {
+    height: ${(props) => (props.carouselImage ? '200px' : 'unset')};
+  }
+
+  @media (min-width: 485px) {
+    height: ${(props) => (props.carouselImage ? '215px' : 'unset')};
+  }
+
+  @media (min-width: 510px) {
+    height: ${(props) => (props.carouselImage ? '225px' : 'unset')};
+  }
+
+  @media (min-width: 560px) {
+    height: ${(props) => (props.carouselImage ? '250px' : 'unset')};
+  }
+
+  @media (min-width: 610px) {
+    height: ${(props) => (props.carouselImage ? '200px' : 'unset')};
+  }
+
+  @media (min-width: 680px) {
+    height: ${(props) => (props.carouselImage ? '225px' : 'unset')};
+  }
+
+  @media (min-width: 720px) {
+    height: ${(props) => (props.carouselImage ? '250px' : 'unset')};
+  }
+
+  @media (min-width: 825px) {
+    height: ${(props) => (props.carouselImage ? '220px' : 'unset')};
+  }
+
+  @media (min-width: 920px) {
+    height: ${(props) => (props.carouselImage ? '250px' : 'unset')};
+  }
+
+  @media (min-width: 980px) {
+    height: ${(props) => (props.carouselImage ? '268px' : 'unset')};
+  }
+
+  @media (min-width: 1100px) {
+    height: ${(props) => (props.carouselImage ? '275px' : 'unset')};
+  }
+
+  @media (min-width: 1150px) {
+    height: ${(props) => (props.carouselImage ? '260px' : 'unset')};
+  }
+
+  @media (min-width: 1250px) {
+    height: ${(props) => (props.carouselImage ? '240px' : 'unset')};
+  }
+
+  @media (min-width: 1350px) {
+    height: ${(props) => (props.carouselImage ? '260px' : 'unset')};
+  }
+
+  @media (min-width: 1500px) {
+    height: ${(props) => (props.carouselImage ? '300px' : 'unset')};
+  }
+
+  @media (min-width: 1680px) {
+    height: ${(props) => (props.carouselImage ? '320px' : 'unset')};
+  }
+
+  @media (min-width: 1780px) {
+    height: ${(props) => (props.carouselImage ? '355px' : 'unset')};
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const MoviesSkeleton = ({ ...props }) => {
