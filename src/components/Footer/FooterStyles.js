@@ -3,11 +3,15 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
-  /* height: 250px; */
+  height: 250px;
   min-height: 250px;
   background: rgb(11, 9, 13);
   flex-wrap: wrap;
   margin-top: auto;
+  /* display: none; */
+  @media (max-width: 535px) {
+    height: 400px;
+  }
 `;
 
 export const FooterItems = styled.div`
@@ -16,6 +20,10 @@ export const FooterItems = styled.div`
   align-items: center;
   max-width: 1920px;
   width: 100%;
+
+  @media (max-width: 535px) {
+    flex-direction: column;
+  }
 `;
 
 export const TMDBLogo = styled.img`
@@ -26,6 +34,9 @@ export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: 535px) {
+    align-items: center;
+  }
   h3 {
     font-size: 14px;
     letter-spacing: 2px;
@@ -43,6 +54,15 @@ export const Text = styled.p`
   color: ${(props) => props.theme.textColor};
   width: 300px;
   line-height: 21px;
+  @media (max-width: 660px) {
+    font-size: 14px;
+    width: 80%;
+  }
+
+  @media (max-width: 535px) {
+    width: 300px;
+    text-align: center;
+  }
 `;
 
 export const Copy = styled.div`
@@ -52,6 +72,9 @@ export const Copy = styled.div`
   margin-top: 20px;
   color: ${(props) => props.theme.textColor};
   opacity: 0.8;
+  @media (max-width: 535px) {
+    align-items: center;
+  }
   span {
     margin-bottom: 4px;
   }
@@ -61,12 +84,23 @@ export const TMDBSocials = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 535px) {
+    margin-bottom: -15px;
+  }
+  img {
+    @media (max-width: 550px) {
+      width: 100px;
+    }
+  }
 
   ${Text} {
     text-align: center;
     margin-top: 7px;
     margin-bottom: 3px;
     width: 220px;
+    @media (max-width: 550px) {
+      font-size: 13px;
+    }
   }
 `;
 
