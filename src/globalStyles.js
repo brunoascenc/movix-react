@@ -36,6 +36,15 @@ const GlobalStyle = createGlobalStyle`
 
   .section-title{
     margin-bottom: 15px;
+    @media (max-width: 610px) {
+       font-size: 18px;
+       margin-bottom: 7px;
+    }
+
+    @media (max-width: 375px) {
+       font-size: 16px;
+       margin-bottom: 3px;
+    }
   }
 
   .alert-box {
