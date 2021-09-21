@@ -4,12 +4,13 @@ import { Input, SearchButton, InputContainer } from './HeaderStyles';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 
-const SearchInput = () => {
+const SearchInput = ({ closeMenu }) => {
   const [movieName, setMovieName] = useState('');
   const location = useLocation();
   const history = useHistory();
 
   const scrollToComponent = () => {
+    closeMenu();
     setTimeout(function () {
       scroller.scrollTo('movies-component', {
         duration: 800,

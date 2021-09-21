@@ -15,7 +15,7 @@ export const CarouselTitle = styled.h2`
   position: absolute;
   top: -40px;
   z-index: 1;
-  @media (max-width: 850px) {
+  @media (max-width: 885px) {
     font-size: 18px;
     top: -26px;
   }

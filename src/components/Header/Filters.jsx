@@ -28,6 +28,7 @@ const GenreSelect = ({ closeMenu }) => {
   };
 
   const scrollToComponent = () => {
+    closeMenu();
     setTimeout(function () {
       scroller.scrollTo('movies-component', {
         duration: 800,

@@ -13,26 +13,19 @@ export const HeaderComponent = styled.header`
   height: 10vh;
   z-index: 10;
   margin: auto;
+  /* display: none; */
 `;
 
 export const mobileMenu = styled.div`
   /* display: none; */
 `;
 
-export const SearchContainer = styled.div`
-  display: flex;
-  align-items: center;
-
-  h1 {
-    font-family: 'Archivo Black', sans-serif;
-    color: #f2eeed;
-    letter-spacing: 1px;
-    margin-top: -3px;
-  }
-`;
-
 export const InputContainer = styled.div`
   position: relative;
+
+  @media (max-width: 885px) {
+    width: 100%;
+  }
 `;
 
 export const SearchButton = styled.button`
@@ -43,6 +36,9 @@ export const SearchButton = styled.button`
   top: 8px;
   right: 12px;
   color: #efe6e3;
+  @media (max-width: 885px) {
+    right: -5px;
+  }
 `;
 
 export const Input = styled.input`
@@ -53,7 +49,6 @@ export const Input = styled.input`
   margin-left: 20px;
   width: 250px;
   border: solid 1px rgb(195, 191, 199, 0.1);
-  /* background: rgb(195, 191, 199, 0.2); */
   background: ${(props) =>
     props.pageRoute === '/user'
       ? 'rgb(195, 191, 199, 0.1)'
@@ -65,6 +60,36 @@ export const Input = styled.input`
 
   &:focus {
     border: solid 1px rgb(195, 191, 199, 0.4);
+  }
+
+  @media (max-width: 970px) {
+    width: 200px;
+  }
+
+  @media (max-width: 885px) {
+    width: 100%;
+  }
+`;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 885px) {
+    width: 85%;
+  }
+
+  h1 {
+    font-family: 'Archivo Black', sans-serif;
+    color: #f2eeed;
+    letter-spacing: 1px;
+    margin-top: -3px;
+  }
+
+  ${InputContainer} {
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 `;
 
@@ -89,6 +114,11 @@ export const Select = styled.select`
   margin-left: 8px;
   font-size: 13px;
 
+  @media (max-width: 885px) {
+    margin-left: 0;
+    margin: 5px;
+  }
+
   option {
     color: black;
   }
@@ -97,15 +127,86 @@ export const Select = styled.select`
   :focus {
     border: solid 1px rgb(195, 191, 199, 0.4);
   }
+
+  @media (max-width: 885px) {
+    width: 100%;
+  }
 `;
 
 export const FilteOptions = styled.div`
   margin-right: 25px;
+  @media (max-width: 885px) {
+    display: flex;
+    margin-right: 0;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   align-items: center;
+  position: relative;
+
+  @media (max-width: 885px) {
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: ${(props) => (props.active ? '0' : '-100%')};
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(11, 9, 13);
+    transition: 0.2s ease-in-out;
+  }
+
+  @media (max-width: 725px) {
+    width: 70%;
+  }
+
+  @media (max-width: 545px) {
+    width: 80%;
+  }
+
+  @media (max-width: 460px) {
+    width: 100%;
+  }
+
+  .search {
+    display: none;
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60%;
+      margin-bottom: 15px;
+    }
+    input {
+      width: 100%;
+    }
+  }
+
+  ${Input},${SearchButton} {
+    display: none;
+
+    @media (max-width: 600px) {
+      display: block;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 5px;
+    }
+  }
+
+  ${SearchButton} {
+    @media (max-width: 600px) {
+      right: -22%;
+    }
+  }
 `;
 
 export const SearchLink = styled(Link)`
@@ -121,6 +222,17 @@ export const SearchLink = styled(Link)`
   transition: 0.1s ease;
   &:hover {
     background: #c5c1c9;
+
+    @media (max-width: 885px) {
+      background: ${(props) => props.theme.whiteBg};
+    }
+  }
+  @media (max-width: 885px) {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
   }
 `;
 
@@ -131,6 +243,12 @@ export const LoginLink = styled(SearchLink)`
   &:hover {
     background: #731fb8;
   }
+
+  @media (max-width: 885px) {
+    width: 100px;
+    margin-left: 0;
+    margin-top: 25px;
+  }
 `;
 
 export const UserLinks = styled.div`
@@ -138,6 +256,27 @@ export const UserLinks = styled.div`
   flex-direction: column;
   align-items: center;
   margin-left: -10px;
+  @media (max-width: 885px) {
+    margin-left: 0;
+  }
+  .profile-link {
+    p {
+      display: none;
+    }
+    @media (max-width: 885px) {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: 35px;
+
+      p {
+        display: block;
+        color: #ffffff;
+        margin-left: 10px;
+      }
+    }
+  }
 `;
 
 export const UserIcon = styled.div`
@@ -166,5 +305,36 @@ export const LogoutLink = styled.div`
 
   &:hover {
     color: #e1dce6;
+  }
+`;
+
+export const MobileMenu = styled.div`
+  cursor: pointer;
+  display: none;
+  @media (max-width: 885px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  .burger {
+    color: #f2eeed;
+    font-size: 25px;
+  }
+`;
+
+export const CloseMenu = styled.div`
+  display: none;
+
+  @media (max-width: 885px) {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    .close {
+      font-size: 25px;
+    }
   }
 `;

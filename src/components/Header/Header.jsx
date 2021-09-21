@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Filters from './Filters';
 import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
-import '../../App.css';
+import { VscMenu, VscClose } from 'react-icons/vsc';
 import { fetchSessionId } from '../../redux/user-session/userSessionActions';
 import {
   fetchUserDetails,
@@ -17,6 +17,8 @@ import {
   LoginLink,
   UserLinks,
   UserIcon,
+  MobileMenu,
+  CloseMenu,
 } from './HeaderStyles';
 
 const Header = () => {
@@ -49,7 +51,14 @@ const Header = () => {
           </Link>
           <SearchInput />
         </SearchContainer>
-        <Form className={click ? 'nav-active' : null} data-scroll-header>
+        <Form data-scroll-header active={click ? true : false}>
+          <CloseMenu onClick={handleClick}>
+            <VscClose className="close" />
+          </CloseMenu>
+          <div className="search">
+            <span>Search:</span>
+            <SearchInput closeMenu={closeMobileMenu} />
+          </div>
           <FilteOptions>
             <span>Filter by:</span>
             <Filters closeMenu={closeMobileMenu} />
@@ -57,14 +66,16 @@ const Header = () => {
 
           {userId.sessionId ? (
             <UserLinks>
-              <Link to="/user" onClick={closeMobileMenu}>
+              <Link
+                className="profile-link"
+                to="/user"
+                onClick={closeMobileMenu}
+              >
                 <UserIcon>
                   <span>{username && username.charAt(0)}</span>
                 </UserIcon>
+                <p>Meu perfil</p>
               </Link>
-              {/* <Link className="logout" to="/" onClick={handleSignOut}>
-                <LogoutLink>Logout</LogoutLink>
-              </Link> */}
             </UserLinks>
           ) : (
             <LoginLink to="/login" onClick={closeMobileMenu}>
@@ -72,15 +83,10 @@ const Header = () => {
             </LoginLink>
           )}
         </Form>
-        {/* 
-        <mobileMenu
-          className={click ? 'close-nav' : 'burger nav'}
-          onClick={handleClick}
-        >
-          <div className="line1"></div>
-          <div className="line2"></div>
-          <div className="line3"></div>
-        </mobileMenu> */}
+
+        <MobileMenu onClick={handleClick}>
+          <VscMenu className="burger" />
+        </MobileMenu>
       </HeaderComponent>
     </>
   );
