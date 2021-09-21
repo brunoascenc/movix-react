@@ -43,14 +43,11 @@ const LandingPage = () => {
                   key={movie.id}
                   className="swiper-card"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(7, 5, 8, 0.2) ,rgb(7, 5, 8)), url(${
+                    backgroundImage: ` url(${
                       'https://image.tmdb.org/t/p/original' +
                       movie.backdrop_path
                     })`,
                   }}
-                  bgImage={
-                    'https://image.tmdb.org/t/p/original' + movie.backdrop_path
-                  }
                 >
                   <LinkLanding
                     to={`/details/${movie.id}`}
@@ -66,7 +63,7 @@ const LandingPage = () => {
                   </LinkLanding>
                   <HorizontalOverlay
                     overlay={
-                      'linear-gradient(to right, rgb(7, 5, 8, 0.5) 15%, transparent 55%)'
+                      'linear-gradient(to right, rgb(7, 5, 8, 0.6) 15%, transparent 55%)'
                     }
                   ></HorizontalOverlay>
                 </SwiperSlide>

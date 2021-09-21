@@ -4,6 +4,7 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const LandingPageContainer = styled.div`
   height: 75vh;
+  /* margin-bottom: -15px; */
 
   @media (max-width: 885px) {
     height: 60vh;
@@ -28,6 +29,19 @@ export const LandingPageContainer = styled.div`
     background-size: cover;
     position: relative;
     width: 100%;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      /* display: block; */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(7, 5, 8, 0.2), rgb(7, 5, 8));
+    }
 
     @media (max-width: 885px) {
       height: 60vh;
@@ -59,7 +73,11 @@ export const LandingText = styled.div`
   margin-top: 100px;
 
   @media (max-width: 415px) {
-    width: 80%;
+    width: 85%;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 60px;
   }
 
   div {
