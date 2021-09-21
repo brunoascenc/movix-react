@@ -9,3 +9,19 @@ export const CarouselContainer = styled.div`
   min-height: 100%;
   display: ${(props) => (props.moviesLength === 0 ? 'none' : 'block')};
 `;
+
+export const CarouselTitle = styled.h2`
+  margin-bottom: 15px;
+  position: absolute;
+  top: -40px;
+  z-index: 1;
+  @media (max-width: 850px) {
+    font-size: 18px;
+    top: -26px;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 16px;
+    top: -17px;
+  }
+`;

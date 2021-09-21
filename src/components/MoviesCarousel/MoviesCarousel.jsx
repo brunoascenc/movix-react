@@ -1,6 +1,6 @@
 import React from 'react';
 import { SliderNav } from '../SliderNav/SliderNav';
-import { CarouselContainer } from './MoviesCarouselStyles';
+import { CarouselContainer, CarouselTitle } from './MoviesCarouselStyles';
 import SwiperCore, { Navigation } from 'swiper';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,7 +30,7 @@ const MoviesCarousel = ({
       className="container"
       moviesLength={movieData && movieData.length}
     >
-      <h2 className="section-title">{sectionTitle}</h2>
+      <CarouselTitle>{sectionTitle}</CarouselTitle>
 
       <Swiper
         spaceBetween={15}
