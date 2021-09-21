@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
-  /* width: ${(props) => (props.resultsCard ? '230px' : '175px ')};
-  height: ${(props) => (props.resultsCard ? '350px' : '260px')}; */
   width: ${(props) =>
     props.resultsCard ? '230px' : props.carouselImage ? '100%' : '175px'};
   height: ${(props) =>
@@ -31,23 +29,20 @@ const ImageHover = styled.div`
   flex-direction: column;
   justify-content: center;
   opacity: 0;
-  /* transition: 0.2s ease; */
+
+  @media (max-width: 1025px) {
+    display: none;
+  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   margin-top: 7px;
   transition: 0.2s ease;
-  /* width: ${(props) => (props.resultsCard ? '230px' : '175px')};
-  height: ${(props) => (props.resultsCard ? '350px' : '260px')}; */
-  /* width: ${(props) => (props.resultsCard ? '230px' : '175px ')};
-  height: ${(props) => (props.resultsCard ? '350px' : '260px')}; */
-  /* background: rgb(44, 44, 51, 0.2); */
   border-radius: 12px;
 
   &:hover {
     margin-top: 1px;
-    /* z-index: 100; */
 
     ${ImageHover} {
       opacity: 1;
