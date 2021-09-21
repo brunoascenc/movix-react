@@ -9,6 +9,7 @@ import {
   LandingText,
   LinkLanding,
   Slide,
+  Buttons,
 } from './LandingPageStyles';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -58,8 +59,8 @@ const LandingPage = () => {
                     <LandingText>
                       <LandingMovieTitle>{movie.title}</LandingMovieTitle>
                       <div>
-                        <CustomButton primary>Details</CustomButton>
-                        <CustomButton secondary>Watchlist</CustomButton>
+                        <Buttons primary>Details</Buttons>
+                        <Buttons secondary>Watchlist</Buttons>
                       </div>
                     </LandingText>
                   </LinkLanding>
