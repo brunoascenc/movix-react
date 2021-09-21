@@ -64,7 +64,7 @@ export const ListContainer = styled.div`
     border-radius: 12px;
   }
   img {
-    margin-right: 15px;
+    /* margin-right: 10px; */
     /* margin-bottom: 20px; */
   }
 `;
