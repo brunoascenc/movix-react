@@ -10,7 +10,8 @@ const LeftArrow = styled(MdKeyboardArrowLeft)`
   font-size: 30px;
   color: #ffffff;
   position: absolute;
-  top: 53%;
+  top: 50%;
+  transform: translateY(-50%);
   left: 11px;
 
   @media (max-width: 1250px) {
@@ -36,7 +37,8 @@ const RightArrow = styled(MdKeyboardArrowRight)`
   font-size: 30px;
   color: #ffffff;
   position: absolute;
-  top: 53%;
+  top: 50%;
+  transform: translateY(-50%);
   right: 11px;
   @media (max-width: 1250px) {
     right: 0;
