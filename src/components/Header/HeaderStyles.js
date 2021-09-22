@@ -84,6 +84,10 @@ export const SearchContainer = styled.div`
     color: #f2eeed;
     letter-spacing: 1px;
     margin-top: -3px;
+
+    @media (max-width: 585px) {
+      font-size: 25px;
+    }
   }
 
   ${InputContainer} {
