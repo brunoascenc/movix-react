@@ -363,9 +363,7 @@ export const CloseMenu = styled.div`
 `;
 
 export const MenuBackdrop = styled.div`
-  display: none;
   @media (max-width: 885px) {
-    display: block;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -378,6 +376,7 @@ export const MenuBackdrop = styled.div`
 
 export const SideMenuLogo = styled.div`
   display: none;
+
   @media (max-width: 885px) {
     display: flex;
     flex-direction: column;

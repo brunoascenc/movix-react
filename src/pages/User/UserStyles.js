@@ -81,10 +81,8 @@ export const UserInfo = styled.div`
       }
       p {
         width: 50px;
-        margin-left: 15px;
-        font-size: 18px;
-        font-weight: 100;
-        margin-top: 15px;
+        margin-left: 10px;
+        font-size: 15px;
       }
     }
 
