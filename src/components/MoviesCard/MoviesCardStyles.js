@@ -19,12 +19,10 @@ export const MovieCardContainer = styled.div`
   @media (max-width: 861px) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 30px;
-    grid-row-gap: 40px;
+    grid-row-gap: 20px;
   }
 
   @media (max-width: 542px) {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-gap: 30px;
-    grid-row-gap: 40px;
   }
 `;

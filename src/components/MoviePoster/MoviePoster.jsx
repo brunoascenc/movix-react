@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
-  /* width: ${(props) =>
-    props.resultsCard ? '230px' : props.carouselImage ? '100%' : '175px'};
+  width: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '100%' : '175px'};
   height: ${(props) =>
-    props.resultsCard ? '350px' : props.carouselImage ? '100%' : '260px'}; */
-  width: 100%;
+    props.resultsCard ? '100%' : props.carouselImage ? '100%' : '260px'};
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
   image-rendering: -webkit-optimize-contrast;
