@@ -63,6 +63,10 @@ export const Text = styled.p`
     width: 300px;
     text-align: center;
   }
+
+  @media (max-width: 345px) {
+    width: 90%;
+  }
 `;
 
 export const Copy = styled.div`

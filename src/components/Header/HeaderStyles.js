@@ -169,10 +169,6 @@ export const Form = styled.form`
   }
 
   @media (max-width: 545px) {
-    width: 80%;
-  }
-
-  @media (max-width: 460px) {
     width: 100%;
   }
 
@@ -204,7 +200,7 @@ export const Form = styled.form`
 
   ${SearchButton} {
     @media (max-width: 600px) {
-      right: -22%;
+      right: -23%;
     }
   }
 `;
@@ -329,6 +325,7 @@ export const CloseMenu = styled.div`
   display: none;
 
   @media (max-width: 885px) {
+    cursor: pointer;
     display: block;
     position: absolute;
     top: 15px;

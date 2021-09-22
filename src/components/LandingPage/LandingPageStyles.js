@@ -18,10 +18,6 @@ export const LandingPageContainer = styled.div`
     height: 45vh;
   }
 
-  @media (max-width: 380px) {
-    height: 40vh;
-  }
-
   .swiper-card {
     height: 75vh;
     display: flex;
@@ -56,10 +52,6 @@ export const LandingPageContainer = styled.div`
       height: 45vh;
     }
 
-    @media (max-width: 380px) {
-      height: 40vh;
-    }
-
     .container {
       max-width: 1920px;
       width: 100%;
@@ -72,12 +64,15 @@ export const LandingText = styled.div`
   width: 750px;
   margin-top: 100px;
 
-  @media (max-width: 415px) {
+  @media (max-width: 845px) {
     width: 85%;
   }
 
   @media (max-width: 600px) {
     margin-bottom: 60px;
+  }
+  @media (max-width: 485px) {
+    width: 100%;
   }
 
   div {
@@ -99,17 +94,24 @@ export const LandingMovieTitle = styled.h1`
   font-weight: 900;
   margin-bottom: 7px;
 
-  @media (max-width: 650px) {
+  @media (max-width: 845px) {
     font-size: 40px;
-    line-height: 32px;
+    line-height: 40px;
   }
 
-  @media (max-width: 525px) {
-    font-size: 35px;
+  @media (max-width: 760px) {
+    font-size: 32px;
+    line-height: 35px;
   }
 
-  @media (max-width: 415px) {
-    font-size: 30px;
+  @media (max-width: 485px) {
+    font-size: 27px;
+    line-height: 30px;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 24px;
+    line-height: 24px;
   }
 `;
 
