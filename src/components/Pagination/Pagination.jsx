@@ -29,6 +29,14 @@ const NumberButton = styled.button`
   &:hover {
     border: solid 1px #252529;
   }
+
+  @media (max-width: 530px) {
+    margin: 5px;
+  }
+
+  @media (max-width: 395px) {
+    display: none;
+  }
 `;
 
 const Button = styled.button`
@@ -47,6 +55,14 @@ const Button = styled.button`
   border-radius: 6px;
   border: solid 1px transparent;
   transition: 0.2s ease;
+
+  @media (max-width: 530px) {
+    margin: 5px;
+  }
+
+  @media (max-width: 395px) {
+    margin: 10px;
+  }
 
   &:hover {
     border: solid 1px #252529;
