@@ -4,8 +4,8 @@ import { CgArrowLongRight } from 'react-icons/cg';
 
 const Image = styled.img`
   /* width: ${(props) =>
-    props.resultsCard ? '230px' : props.carouselImage ? '100%' : '175px'}; */
-  /* height: ${(props) =>
+    props.resultsCard ? '230px' : props.carouselImage ? '100%' : '175px'};
+  height: ${(props) =>
     props.resultsCard ? '350px' : props.carouselImage ? '100%' : '260px'}; */
   width: 100%;
   border-radius: 12px;
@@ -53,7 +53,7 @@ const ImageContainer = styled.div`
 `;
 
 const ImageHoverContent = styled.div`
-  margin-top: ${(props) => (props.resultsCard ? '260px' : '180px')};
+  margin-top: ${(props) => (props.resultsCard ? '230px' : '180px')};
   margin-left: 10px;
 
   button {
