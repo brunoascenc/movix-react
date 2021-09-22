@@ -19,6 +19,7 @@ import {
   UserIcon,
   MobileMenu,
   CloseMenu,
+  MenuBackdrop,
 } from './HeaderStyles';
 
 const Header = () => {
@@ -35,7 +36,6 @@ const Header = () => {
     dispatch(fetchSessionId(userToken.token));
     dispatch(fetchUserRequest(userToken.token));
     if (userId.sessionId) {
-      // dispatch(fetchUserDetails(userId.sessionId));
       setTimeout(() => {
         dispatch(fetchUserDetails(userId.sessionId));
       }, 600);
@@ -51,38 +51,46 @@ const Header = () => {
           </Link>
           <SearchInput />
         </SearchContainer>
-        <Form data-scroll-header active={click ? true : false}>
-          <CloseMenu onClick={handleClick}>
-            <VscClose className="close" />
-          </CloseMenu>
-          <div className="search">
-            <span>Search:</span>
-            <SearchInput closeMenu={closeMobileMenu} />
-          </div>
-          <FilteOptions>
-            <span>Filter by:</span>
-            <Filters closeMenu={closeMobileMenu} />
-          </FilteOptions>
+        <MenuBackdrop active={click ? true : false} onClick={handleClick}>
+          <Form
+            data-scroll-header
+            active={click ? true : false}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <CloseMenu onClick={handleClick}>
+              <VscClose className="close" />
+            </CloseMenu>
+            <div className="search">
+              <span>Search:</span>
+              <SearchInput closeMenu={closeMobileMenu} />
+            </div>
+            <FilteOptions>
+              <span>Filter by:</span>
+              <Filters closeMenu={closeMobileMenu} />
+            </FilteOptions>
 
-          {userId.sessionId ? (
-            <UserLinks>
-              <Link
-                className="profile-link"
-                to="/user"
-                onClick={closeMobileMenu}
-              >
-                <UserIcon>
-                  <span>{username && username.charAt(0)}</span>
-                </UserIcon>
-                <p>Meu perfil</p>
-              </Link>
-            </UserLinks>
-          ) : (
-            <LoginLink to="/login" onClick={closeMobileMenu}>
-              Login
-            </LoginLink>
-          )}
-        </Form>
+            {userId.sessionId ? (
+              <UserLinks>
+                <Link
+                  className="profile-link"
+                  to="/user"
+                  onClick={closeMobileMenu}
+                >
+                  <UserIcon>
+                    <span>{username && username.charAt(0)}</span>
+                  </UserIcon>
+                  <p>My profile</p>
+                </Link>
+              </UserLinks>
+            ) : (
+              <LoginLink to="/login" onClick={closeMobileMenu}>
+                Login
+              </LoginLink>
+            )}
+          </Form>
+        </MenuBackdrop>
 
         <MobileMenu onClick={handleClick}>
           <VscMenu className="burger" />

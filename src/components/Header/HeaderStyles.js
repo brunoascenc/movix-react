@@ -130,6 +130,11 @@ export const Select = styled.select`
 
   @media (max-width: 885px) {
     width: 100%;
+    background: rgb(195, 191, 199, 0.1);
+    background-image: url("data:image/svg+xml;utf8,<svg fill='rgba(240, 238, 233)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 51%;
   }
 `;
 
@@ -142,6 +147,10 @@ export const FilteOptions = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 380px) {
+    width: 75%;
   }
 `;
 
@@ -182,14 +191,19 @@ export const Form = styled.form`
       width: 60%;
       margin-bottom: 15px;
     }
+
+    @media (max-width: 380px) {
+      width: 75%;
+    }
+
     input {
       width: 100%;
+      background: rgb(195, 191, 199, 0.1);
     }
   }
 
-  ${Input},${SearchButton} {
+  ${Input} {
     display: none;
-
     @media (max-width: 600px) {
       display: block;
       width: 60%;
@@ -200,7 +214,8 @@ export const Form = styled.form`
 
   ${SearchButton} {
     @media (max-width: 600px) {
-      right: -23%;
+      right: 10px;
+      top: 13px;
     }
   }
 `;
@@ -333,5 +348,19 @@ export const CloseMenu = styled.div`
     .close {
       font-size: 25px;
     }
+  }
+`;
+
+export const MenuBackdrop = styled.div`
+  display: none;
+  @media (max-width: 885px) {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: ${(props) => (props.active ? '0' : '-100%')};
+    z-index: 1;
+    background: rgb(11, 9, 13, 0.8);
   }
 `;
