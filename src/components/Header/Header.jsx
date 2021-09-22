@@ -20,6 +20,7 @@ import {
   MobileMenu,
   CloseMenu,
   MenuBackdrop,
+  SideMenuLogo,
 } from './HeaderStyles';
 
 const Header = () => {
@@ -62,6 +63,11 @@ const Header = () => {
             <CloseMenu onClick={handleClick}>
               <VscClose className="close" />
             </CloseMenu>
+            <SideMenuLogo>
+              <h1>Movix</h1>
+              <span>Discover new movies</span>
+            </SideMenuLogo>
+
             <div className="search">
               <span>Search:</span>
               <SearchInput closeMenu={closeMobileMenu} />

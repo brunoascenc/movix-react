@@ -171,6 +171,17 @@ export const Form = styled.form`
     justify-content: center;
     background: rgb(11, 9, 13);
     transition: 0.2s ease-in-out;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 600px;
+      background: linear-gradient(to top, #17141a, rgb(11, 9, 13));
+      z-index: -1;
+      position: absolute;
+      bottom: -380px;
+    }
   }
 
   @media (max-width: 725px) {
@@ -283,7 +294,7 @@ export const UserLinks = styled.div`
 
       p {
         display: block;
-        color: #ffffff;
+        color: #f2eeed;
         margin-left: 10px;
       }
     }
@@ -362,5 +373,34 @@ export const MenuBackdrop = styled.div`
     right: ${(props) => (props.active ? '0' : '-100%')};
     z-index: 1;
     background: rgb(11, 9, 13, 0.8);
+  }
+`;
+
+export const SideMenuLogo = styled.div`
+  display: none;
+  @media (max-width: 885px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 23px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 600px) {
+    top: 15%;
+  }
+
+  h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    color: #f2eeed;
+  }
+
+  span {
+    color: ${(props) => props.theme.textColor};
+    font-size: 14px;
   }
 `;
