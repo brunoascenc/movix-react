@@ -6,6 +6,9 @@ export const FilterContainer = styled.div`
   margin-bottom: 50px;
   flex-direction: column;
   overflow-y: hidden;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const SectionTitle = styled.h2`

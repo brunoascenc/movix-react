@@ -6,6 +6,9 @@ export const SearchContainer = styled.div`
   display: flex;
   margin-bottom: 50px;
   flex-direction: column;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const SectionTitle = styled.h2`

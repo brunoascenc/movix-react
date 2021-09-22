@@ -10,7 +10,6 @@ const SearchInput = ({ closeMenu }) => {
   const history = useHistory();
 
   const scrollToComponent = () => {
-    closeMenu();
     setTimeout(function () {
       scroller.scrollTo('movies-component', {
         duration: 800,

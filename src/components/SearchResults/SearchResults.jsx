@@ -20,7 +20,6 @@ const SearchResults = () => {
   const loading = useSelector((state) => state.searchResults.loading);
   const search = searchResults.results;
   const dispatch = useDispatch();
-  console.log(loading);
 
   const { searchQuery } = useParams();
 

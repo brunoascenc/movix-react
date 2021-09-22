@@ -5,7 +5,8 @@ import { Link } from 'react-scroll';
 
 const PaginationContainer = styled.div`
   align-self: center;
-  margin-top: 77px;
+  padding-top: 70px;
+  padding-bottom: 100px;
   display: flex;
   align-items: center;
 `;
