@@ -76,7 +76,7 @@ export const SearchContainer = styled.div`
   align-items: center;
 
   @media (max-width: 885px) {
-    width: 85%;
+    width: 60%;
   }
 
   h1 {
