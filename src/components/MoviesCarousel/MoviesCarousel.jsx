@@ -34,7 +34,7 @@ const MoviesCarousel = ({
 
       <Swiper
         spaceBetween={15}
-        slidesPerView={7}
+        slidesPerView
         navigation={{ nextEl: nextMovie, prevEl: prevMovie }}
         className="swiper-container"
         breakpoints={SliderBreakpoints}

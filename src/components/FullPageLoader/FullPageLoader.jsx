@@ -4,11 +4,12 @@ import Loader from '../../images/loader.svg';
 
 const LoaderWrapper = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
 const FullPageLoader = () => {
   return (
     <LoaderWrapper>

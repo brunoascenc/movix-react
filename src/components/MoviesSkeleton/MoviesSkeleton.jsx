@@ -15,7 +15,8 @@ const Gradient = keyframes`
 
 const Skeleton = styled.div`
   pointer-events: none;
-  width: ${(props) => (props.resultsCard ? '230px' : '175px')};
+  width: ${(props) =>
+    props.resultsCard ? '230px' : props.carouselImage ? '100%' : '175px'};
   height: ${(props) => (props.resultsCard ? '350px' : '260px')};
   background: linear-gradient(268deg, #131114, #0b090d);
   animation: ${Gradient} 1.5s ease infinite;

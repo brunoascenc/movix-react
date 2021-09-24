@@ -6,10 +6,47 @@ const Image = styled.img`
   width: ${(props) =>
     props.resultsCard ? '100%' : props.carouselImage ? '100%' : '175px'};
   height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '100%' : '260px'};
+    props.resultsCard ? '100%' : props.carouselImage ? '260px' : '260px'};
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
   image-rendering: -webkit-optimize-contrast;
+  background: #0b090d;
+  object-fit: cover;
+
+  @media (max-width: 925px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '230px' : '260px'};
+  }
+
+  @media (max-width: 670px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '200px' : '260px'};
+  }
+
+  @media (max-width: 560px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '180px' : '260px'};
+  }
+
+  @media (max-width: 525px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '220px' : '260px'};
+  }
+
+  @media (max-width: 435px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '190px' : '260px'};
+  }
+
+  @media (max-width: 380px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '165px' : '260px'};
+  }
+
+  @media (max-width: 335px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '150px' : '260px'};
+  }
 `;
 
 const ImageHover = styled.div`
@@ -40,6 +77,47 @@ const ImageContainer = styled.div`
   margin-top: 7px;
   transition: 0.2s ease;
   border-radius: 12px;
+
+  /* width: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '100%' : '175px'};
+  height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '260px' : '260px'};
+  overflow: hidden; */
+
+  /* @media (max-width: 925px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '230px' : '260px'};
+  }
+
+  @media (max-width: 670px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '200px' : '260px'};
+  }
+
+  @media (max-width: 560px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '180px' : '260px'};
+  }
+
+  @media (max-width: 525px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '220px' : '260px'};
+  }
+
+  @media (max-width: 435px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '190px' : '260px'};
+  }
+
+  @media (max-width: 380px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '165px' : '260px'};
+  }
+
+  @media (max-width: 335px) {
+    height: ${(props) =>
+    props.resultsCard ? '100%' : props.carouselImage ? '150px' : '260px'};
+  } */
 
   &:hover {
     margin-top: 1px;
@@ -87,7 +165,14 @@ const MoviePoster = ({ url, movieId, title, loading, ...props }) => {
   return (
     <>
       <ImageContainer key={movieId} {...props}>
-        <Image src={url} data-movie-id={movieId} alt={title} {...props} />
+        <Image
+          src={url}
+          data-movie-id={movieId}
+          alt={title}
+          {...props}
+          width="800"
+          height="1200"
+        />
         <ImageHover>
           <ImageHoverContent {...props}>
             <p>{title}</p>

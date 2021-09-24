@@ -18,7 +18,7 @@ export const FooterItems = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 1920px;
+  max-width: 1350px;
   width: 100%;
 
   @media (max-width: 535px) {

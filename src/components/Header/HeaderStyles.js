@@ -5,7 +5,7 @@ export const HeaderComponent = styled.header`
   position: absolute;
   left: 0;
   right: 0;
-  max-width: 1920px;
+  max-width: 1400px;
   width: 100%;
   display: flex;
   align-items: center;
