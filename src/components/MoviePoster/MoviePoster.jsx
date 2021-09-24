@@ -78,47 +78,6 @@ const ImageContainer = styled.div`
   transition: 0.2s ease;
   border-radius: 12px;
 
-  /* width: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '100%' : '175px'};
-  height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '260px' : '260px'};
-  overflow: hidden; */
-
-  /* @media (max-width: 925px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '230px' : '260px'};
-  }
-
-  @media (max-width: 670px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '200px' : '260px'};
-  }
-
-  @media (max-width: 560px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '180px' : '260px'};
-  }
-
-  @media (max-width: 525px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '220px' : '260px'};
-  }
-
-  @media (max-width: 435px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '190px' : '260px'};
-  }
-
-  @media (max-width: 380px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '165px' : '260px'};
-  }
-
-  @media (max-width: 335px) {
-    height: ${(props) =>
-    props.resultsCard ? '100%' : props.carouselImage ? '150px' : '260px'};
-  } */
-
   &:hover {
     margin-top: 1px;
 
@@ -156,12 +115,11 @@ const ImageHoverContent = styled.div`
     letter-spacing: 0.5px;
     margin-bottom: 2px;
     font-smooth: auto;
-    width: 95%;
     padding-right: 3%;
   }
 `;
 
-const MoviePoster = ({ url, movieId, title, loading, ...props }) => {
+const MoviePoster = ({ url, movieId, title, ...props }) => {
   return (
     <>
       <ImageContainer key={movieId} {...props}>

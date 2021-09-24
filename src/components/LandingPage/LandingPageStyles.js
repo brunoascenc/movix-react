@@ -6,16 +6,20 @@ export const LandingPageContainer = styled.div`
   height: 75vh;
   /* margin-bottom: -15px; */
 
+  @media (max-width: 1024px) {
+    height: 600px;
+  }
+
   @media (max-width: 885px) {
-    height: 60vh;
+    height: 450px;
   }
 
-  @media (max-width: 600px) {
-    height: 50vh;
+  @media (max-width: 575px) {
+    height: 400px;
   }
 
-  @media (max-width: 500px) {
-    height: 45vh;
+  @media (max-width: 515px) {
+    height: 335px;
   }
 
   .swiper-card {
@@ -39,17 +43,21 @@ export const LandingPageContainer = styled.div`
       background: linear-gradient(rgba(7, 5, 8, 0.2), rgb(7, 5, 8));
     }
 
-    @media (max-width: 885px) {
-      height: 60vh;
-    }
-
-    @media (max-width: 600px) {
-      height: 50vh;
+    @media (max-width: 1024px) {
+      height: 600px;
       background-position: center;
     }
 
-    @media (max-width: 500px) {
-      height: 45vh;
+    @media (max-width: 885px) {
+      height: 450px;
+    }
+
+    @media (max-width: 575px) {
+      height: 400px;
+    }
+
+    @media (max-width: 515px) {
+      height: 335px;
     }
 
     .container {

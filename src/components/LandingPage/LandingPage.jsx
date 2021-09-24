@@ -14,7 +14,7 @@ import {
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import { CustomButton } from '../CustomButton/CustomButton';
+// import { CustomButton } from '../CustomButton/CustomButton';
 import { HorizontalOverlay } from '../HorizontalOverlay/HorizontalOverlay';
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 

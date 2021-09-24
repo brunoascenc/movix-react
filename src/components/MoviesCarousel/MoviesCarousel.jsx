@@ -60,7 +60,6 @@ const MoviesCarousel = ({
                         url={IMAGE_URL + movie.poster_path}
                         title={movie.title}
                         movieId={movie.id}
-                        loading={loading}
                         carouselImage
                       />
                     </Link>
