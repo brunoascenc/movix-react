@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
-import {
-  fetchFavoriteMovies,
-  fetchFavoritesRequest,
-} from '../../redux/user-favorites/userFavoritesActions';
+import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
 import UserLists from '../UserLists/UserLists';
 
 const FavoriteList = ({ userId }) => {
@@ -21,10 +18,7 @@ const FavoriteList = ({ userId }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchFavoritesRequest());
-    setTimeout(() => {
-      dispatch(fetchFavoriteMovies(userId.sessionId, order, currentPage));
-    }, 600);
+    dispatch(fetchFavoriteMovies(userId.sessionId, order, currentPage));
   }, [userId.sessionId, dispatch, order, currentPage]);
 
   return (

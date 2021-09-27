@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const Gradient = keyframes`
-  0%{
+   0%{
     background-position:0% 50%
   }
   50%{
@@ -10,7 +10,8 @@ const Gradient = keyframes`
   }
   100%{
     background-position:0% 50%
-    }
+    } 
+
 `;
 
 const Skeleton = styled.div`
@@ -18,8 +19,8 @@ const Skeleton = styled.div`
   width: ${(props) =>
     props.resultsCard ? '230px' : props.carouselImage ? '100%' : '175px'};
   height: ${(props) => (props.resultsCard ? '350px' : '260px')};
-  background: linear-gradient(268deg, #131114, #0b090d);
-  animation: ${Gradient} 1.5s ease infinite;
+  background: linear-gradient(268deg, #110f12, #0b090d);
+  animation: ${Gradient} 1.5s linear infinite;
   border-radius: 12px;
   border: solid 1px rgb(44, 44, 51, 0.4);
   background-size: 400% 400%;

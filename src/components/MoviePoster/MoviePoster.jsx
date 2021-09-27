@@ -102,9 +102,11 @@ const ImageContainer = styled.div`
   margin-top: 7px;
   transition: 0.2s ease;
   border-radius: 12px;
+  top: 0;
 
   &:hover {
-    margin-top: 1px;
+    /* margin-top: 1px; */
+    top: -7px;
 
     ${ImageHover} {
       opacity: 1;

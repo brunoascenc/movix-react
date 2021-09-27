@@ -27,7 +27,7 @@ const SearchResults = () => {
     dispatch(fetchFilterRequest());
     setTimeout(() => {
       dispatch(fetchFilterResults(genreId, orderBy, pageNumber));
-    }, 800);
+    }, 600);
   }, [pageNumber, genreId, orderBy, dispatch, setPageNumber]);
 
   useEffect(() => {

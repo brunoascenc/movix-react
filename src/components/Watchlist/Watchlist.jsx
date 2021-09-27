@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchWatchlistMovies,
-  fetchWatchlistRequest,
-} from '../../redux/user-watchlist/userWatchlistActions';
+import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
 import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import UserLists from '../UserLists/UserLists';
 
@@ -21,10 +18,7 @@ const Watchlist = ({ userId }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchWatchlistRequest());
-    setTimeout(() => {
-      dispatch(fetchWatchlistMovies(userId.sessionId, order, currentPage));
-    }, 600);
+    dispatch(fetchWatchlistMovies(userId.sessionId, order, currentPage));
   }, [userId.sessionId, dispatch, order, currentPage]);
 
   return (
