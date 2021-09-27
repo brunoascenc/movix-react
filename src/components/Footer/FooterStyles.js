@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
   flex-wrap: wrap;
   margin-top: auto;
   /* display: none; */
-  @media (max-width: 535px) {
+  @media (max-width: 575px) {
     height: 400px;
   }
 `;
@@ -21,7 +21,7 @@ export const FooterItems = styled.div`
   max-width: 1350px;
   width: 100%;
 
-  @media (max-width: 535px) {
+  @media (max-width: 575px) {
     flex-direction: column;
   }
 `;
@@ -34,7 +34,7 @@ export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media (max-width: 535px) {
+  @media (max-width: 575px) {
     align-items: center;
   }
   h3 {
@@ -54,18 +54,22 @@ export const Text = styled.p`
   color: ${(props) => props.theme.textColor};
   width: 300px;
   line-height: 21px;
-  @media (max-width: 660px) {
+  @media (max-width: 635px) {
     font-size: 14px;
-    width: 80%;
+    width: 85%;
   }
 
-  @media (max-width: 535px) {
-    width: 300px;
+  @media (max-width: 575px) {
+    width: 330px;
     text-align: center;
   }
 
   @media (max-width: 345px) {
     width: 90%;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
   }
 `;
 
@@ -76,7 +80,7 @@ export const Copy = styled.div`
   margin-top: 20px;
   color: ${(props) => props.theme.textColor};
   opacity: 0.8;
-  @media (max-width: 535px) {
+  @media (max-width: 575px) {
     align-items: center;
   }
   span {
