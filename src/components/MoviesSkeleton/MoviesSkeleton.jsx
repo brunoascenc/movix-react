@@ -25,46 +25,58 @@ const Skeleton = styled.div`
   background-size: 400% 400%;
   margin-top: 7px;
 
-  @media (min-width: 320px) {
-    height: ${(props) =>
-      props.resultsCard ? '235px' : props.carouselImage ? '145px' : '260px'};
+  @media (min-width: 120px) {
     width: ${(props) =>
       props.resultsCard ? '100%' : props.carouselImage ? '100%' : '175px'};
+    height: ${(props) =>
+      props.resultsCard ? '285px' : props.carouselImage ? '205px' : '260px'};
+  }
+
+  @media (min-width: 271px) {
+    width: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '100%' : '175px'};
+    height: ${(props) =>
+      props.resultsCard ? '205px' : props.carouselImage ? '205px' : '260px'};
+  }
+
+  @media (min-width: 320px) {
+    height: ${(props) =>
+      props.resultsCard ? '235px' : props.carouselImage ? '150px' : '260px'};
   }
 
   @media (min-width: 355px) {
     height: ${(props) =>
-      props.resultsCard ? '250px' : props.carouselImage ? '160px' : '260px'};
+      props.resultsCard ? '250px' : props.carouselImage ? '165px' : '260px'};
   }
 
   @media (min-width: 400px) {
     height: ${(props) =>
-      props.resultsCard ? '275px' : props.carouselImage ? '170px' : '260px'};
+      props.resultsCard ? '275px' : props.carouselImage ? '195px' : '260px'};
   }
 
   @media (min-width: 415px) {
     height: ${(props) =>
-      props.resultsCard ? '190px' : props.carouselImage ? '170px' : '260px'};
+      props.resultsCard ? '190px' : props.carouselImage ? '195px' : '260px'};
   }
 
   @media (min-width: 425px) {
     height: ${(props) =>
-      props.resultsCard ? '200px' : props.carouselImage ? '183px' : '260px'};
+      props.resultsCard ? '200px' : props.carouselImage ? '200px' : '260px'};
   }
 
   @media (min-width: 447px) {
     height: ${(props) =>
-      props.resultsCard ? '210px' : props.carouselImage ? '183px' : '260px'};
+      props.resultsCard ? '210px' : props.carouselImage ? '220px' : '260px'};
   }
 
   @media (min-width: 465px) {
     height: ${(props) =>
-      props.resultsCard ? '200px' : props.carouselImage ? '200px' : '260px'};
+      props.resultsCard ? '200px' : props.carouselImage ? '220px' : '260px'};
   }
 
   @media (min-width: 485px) {
     height: ${(props) =>
-      props.resultsCard ? '215px' : props.carouselImage ? '215px' : '260px'};
+      props.resultsCard ? '215px' : props.carouselImage ? '225px' : '260px'};
   }
 
   @media (min-width: 510px) {
@@ -72,9 +84,14 @@ const Skeleton = styled.div`
       props.resultsCard ? '235px' : props.carouselImage ? '225px' : '260px'};
   }
 
+  @media (min-width: 525px) {
+    height: ${(props) =>
+      props.resultsCard ? '235px' : props.carouselImage ? '185px' : '260px'};
+  }
+
   @media (min-width: 560px) {
     height: ${(props) =>
-      props.resultsCard ? '250px' : props.carouselImage ? '250px' : '260px'};
+      props.resultsCard ? '250px' : props.carouselImage ? '190px' : '260px'};
   }
 
   @media (min-width: 610px) {
@@ -84,7 +101,7 @@ const Skeleton = styled.div`
 
   @media (min-width: 645px) {
     height: ${(props) =>
-      props.resultsCard ? '290px' : props.carouselImage ? '200px' : '260px'};
+      props.resultsCard ? '290px' : props.carouselImage ? '215px' : '260px'};
   }
 
   @media (min-width: 680px) {
@@ -104,7 +121,7 @@ const Skeleton = styled.div`
 
   @media (min-width: 735px) {
     height: ${(props) =>
-      props.resultsCard ? '255px' : props.carouselImage ? '250px' : 'unset'};
+      props.resultsCard ? '255px' : props.carouselImage ? '255px' : 'unset'};
   }
 
   @media (min-width: 825px) {
@@ -114,7 +131,7 @@ const Skeleton = styled.div`
 
   @media (min-width: 860px) {
     height: ${(props) =>
-      props.resultsCard ? '290px' : props.carouselImage ? '220px' : '260px'};
+      props.resultsCard ? '290px' : props.carouselImage ? '230px' : '260px'};
   }
 
   @media (min-width: 920px) {
@@ -149,28 +166,19 @@ const Skeleton = styled.div`
 
   @media (min-width: 1250px) {
     height: ${(props) =>
-      props.resultsCard ? '325px' : props.carouselImage ? '240px' : '260px'};
+      props.resultsCard ? '325px' : props.carouselImage ? '275px' : '260px'};
+  }
+
+  @media (min-width: 1295px) {
+    height: ${(props) =>
+      props.resultsCard ? '325px' : props.carouselImage ? '256px' : '260px'};
   }
 
   @media (min-width: 1350px) {
     height: ${(props) =>
-      props.resultsCard ? '340px' : props.carouselImage ? '260px' : '260px'};
+      props.resultsCard ? '340px' : props.carouselImage ? '265px' : '260px'};
   }
 
-  @media (min-width: 1500px) {
-    height: ${(props) =>
-      props.resultsCard ? '342px' : props.carouselImage ? '300px' : '260px'};
-  }
-
-  @media (min-width: 1680px) {
-    height: ${(props) =>
-      props.resultsCard ? '342px' : props.carouselImage ? '320px' : '260px'};
-  }
-
-  @media (min-width: 1780px) {
-    height: ${(props) =>
-      props.resultsCard ? '342px' : props.carouselImage ? '355px' : '260px'};
-  }
   div {
     width: 100%;
     height: 100%;

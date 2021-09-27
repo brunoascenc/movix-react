@@ -1,5 +1,10 @@
 export const SliderBreakpoints = {
   120: {
+    slidesPerView: 2,
+    spaceBetween: 5,
+  },
+
+  320: {
     slidesPerView: 3,
     spaceBetween: 5,
   },
@@ -10,10 +15,6 @@ export const SliderBreakpoints = {
   525: {
     slidesPerView: 4,
   },
-  // 610: {
-  //   slidesPerView: 4,
-  //   spaceBetween: 15,
-  // },
   825: {
     slidesPerView: 5,
   },

@@ -13,7 +13,27 @@ const Image = styled.img`
   background: #0b090d;
   object-fit: cover;
 
+  @media (max-width: 1280px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '275px' : '260px'};
+  }
+
   @media (max-width: 925px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '230px' : '260px'};
+  }
+
+  @media (max-width: 825px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '265px' : '260px'};
+  }
+
+  @media (max-width: 768px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '250px' : '260px'};
+  }
+
+  @media (max-width: 725px) {
     height: ${(props) =>
       props.resultsCard ? '100%' : props.carouselImage ? '230px' : '260px'};
   }
@@ -46,6 +66,11 @@ const Image = styled.img`
   @media (max-width: 335px) {
     height: ${(props) =>
       props.resultsCard ? '100%' : props.carouselImage ? '150px' : '260px'};
+  }
+
+  @media (max-width: 317px) {
+    height: ${(props) =>
+      props.resultsCard ? '100%' : props.carouselImage ? '205px' : '260px'};
   }
 `;
 
