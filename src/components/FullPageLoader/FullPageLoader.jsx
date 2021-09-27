@@ -12,9 +12,9 @@ const LoaderWrapper = styled.div`
 
 const FullPageLoader = () => {
   return (
-    <LoaderWrapper>
+    <>
       <img src={Loader} alt="loader" />
-    </LoaderWrapper>
+    </>
   );
 };
 
