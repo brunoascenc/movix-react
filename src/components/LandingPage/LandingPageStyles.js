@@ -4,7 +4,10 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const LandingPageContainer = styled.div`
   height: 75vh;
-  /* margin-bottom: -15px; */
+
+  .swiper {
+    height: 100%;
+  }
 
   @media (max-width: 1024px) {
     height: 600px;
@@ -23,7 +26,7 @@ export const LandingPageContainer = styled.div`
   }
 
   .swiper-card {
-    height: 75vh;
+    height: 100%;
     display: flex;
     align-items: center;
     background-size: cover;
@@ -33,7 +36,6 @@ export const LandingPageContainer = styled.div`
     &::after {
       content: ' ';
       position: absolute;
-      /* display: block; */
       top: 0;
       left: 0;
       right: 0;
@@ -43,7 +45,7 @@ export const LandingPageContainer = styled.div`
       background: linear-gradient(rgba(7, 5, 8, 0.2), rgb(7, 5, 8));
     }
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
       height: 600px;
       background-position: center;
     }
@@ -58,7 +60,7 @@ export const LandingPageContainer = styled.div`
 
     @media (max-width: 515px) {
       height: 335px;
-    }
+    } */
 
     .container {
       max-width: 1400px;

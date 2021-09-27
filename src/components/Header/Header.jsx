@@ -50,7 +50,7 @@ const Header = () => {
           <Link to="/">
             <h1>Movix</h1>
           </Link>
-          <SearchInput />
+          <SearchInput closeMenu={closeMobileMenu} />
         </SearchContainer>
         <MenuBackdrop active={click ? true : false} onClick={handleClick}>
           <Form

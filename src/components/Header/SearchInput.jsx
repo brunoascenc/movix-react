@@ -10,6 +10,7 @@ const SearchInput = ({ closeMenu }) => {
   const history = useHistory();
 
   const scrollToComponent = () => {
+    closeMenu();
     setTimeout(function () {
       scroller.scrollTo('movies-component', {
         duration: 800,
@@ -21,6 +22,7 @@ const SearchInput = ({ closeMenu }) => {
 
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
+      closeMenu();
       scrollToComponent();
       history.push(`/search=${movieName}`);
     }

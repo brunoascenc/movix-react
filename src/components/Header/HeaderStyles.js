@@ -380,6 +380,7 @@ export const MenuBackdrop = styled.div`
 
 export const SideMenuLogo = styled.div`
   display: none;
+  border-bottom: solid 1px rgb(195, 191, 199, 0.6);
 
   @media (max-width: 885px) {
     display: flex;

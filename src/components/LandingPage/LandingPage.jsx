@@ -31,6 +31,7 @@ const LandingPage = () => {
     <LandingPageContainer>
       <Swiper
         slidesPerView={1}
+        className="swiper"
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
       >
