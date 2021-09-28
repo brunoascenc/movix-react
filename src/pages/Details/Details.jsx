@@ -10,7 +10,7 @@ import {
 } from '../../redux/movie-details/movieDetailActions';
 import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
 import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
-import { MovieBanner } from './DetailsPageStyles';
+import { MovieBanner, DetailsSection } from './DetailsPageStyles';
 import MoviesCarousel from '../../components/MoviesCarousel/MoviesCarousel';
 import { useParams } from 'react-router';
 
@@ -40,50 +40,51 @@ const Details = () => {
 
   return (
     <>
+      <MovieBanner backdrop={movieDetail.backdrop_path} />
       {loading ? (
         <>
           <FullPageLoader />
         </>
       ) : (
-        <>
-          <MovieBanner backdrop={movieDetail.backdrop_path}></MovieBanner>
-          <div className="about-movie container">
-            {loading ? (
-              <FullPageLoader />
-            ) : (
-              <MovieDetails
-                movieDetail={movieDetail}
-                genres={genresList}
-                movieCast={movieDetail.credits}
-                dates={dates}
-                movieTrailer={movieDetail.videos}
-                addToFavorite={
-                  !userId
-                    ? () => {
-                        alert.show('You must login first...');
-                      }
-                    : () =>
-                        addToFavorite(
-                          userId,
-                          movieId,
-                          alert.show('Movie added to the list!')
-                        )
-                }
-                addToWatchlist={
-                  !userId
-                    ? () => {
-                        alert.show('You must login first...');
-                      }
-                    : () =>
-                        addToWatchlist(
-                          userId,
-                          movieId,
-                          alert.show('Movie added to the list!')
-                        )
-                }
-              />
-            )}
-          </div>
+        <DetailsSection>
+          {/* <MovieBanner backdrop={movieDetail.backdrop_path} /> */}
+
+          {loading ? (
+            <FullPageLoader />
+          ) : (
+            <MovieDetails
+              movieDetail={movieDetail}
+              genres={genresList}
+              movieCast={movieDetail.credits}
+              dates={dates}
+              movieTrailer={movieDetail.videos}
+              addToFavorite={
+                !userId
+                  ? () => {
+                      alert.show('You must login first...');
+                    }
+                  : () =>
+                      addToFavorite(
+                        userId,
+                        movieId,
+                        alert.show('Movie added to the list!')
+                      )
+              }
+              addToWatchlist={
+                !userId
+                  ? () => {
+                      alert.show('You must login first...');
+                    }
+                  : () =>
+                      addToWatchlist(
+                        userId,
+                        movieId,
+                        alert.show('Movie added to the list!')
+                      )
+              }
+            />
+          )}
+
           {/* similar movies */}
           <MoviesCarousel
             movieData={
@@ -98,7 +99,7 @@ const Details = () => {
           <MovieReviews
             movieReviews={movieDetail.reviews && movieDetail.reviews.results}
           />
-        </>
+        </DetailsSection>
       )}
     </>
   );

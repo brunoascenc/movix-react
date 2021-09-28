@@ -13,6 +13,7 @@ export const HeaderComponent = styled.header`
   height: 10vh;
   z-index: 10;
   margin: auto;
+  padding: 3% 3%;
   /* display: none; */
 `;
 

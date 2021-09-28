@@ -61,12 +61,6 @@ export const LandingPageContainer = styled.div`
     @media (max-width: 515px) {
       height: 335px;
     } */
-
-    .container {
-      max-width: 1400px;
-      width: 100%;
-      margin: 0 auto;
-    }
   }
 `;
 
@@ -92,7 +86,11 @@ export const LandingText = styled.div`
 `;
 
 export const LinkLanding = styled(Link)`
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
   z-index: 2;
+  padding: 0 3% 0 3%;
 `;
 
 export const LandingMovieTitle = styled.h1`

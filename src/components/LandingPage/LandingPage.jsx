@@ -50,10 +50,7 @@ const LandingPage = () => {
                     })`,
                   }}
                 >
-                  <LinkLanding
-                    to={`/details/${movie.id}`}
-                    className="container"
-                  >
+                  <LinkLanding to={`/details/${movie.id}`}>
                     <LandingText>
                       <LandingMovieTitle>{movie.title}</LandingMovieTitle>
                       <div>

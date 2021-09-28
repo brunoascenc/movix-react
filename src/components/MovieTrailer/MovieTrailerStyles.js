@@ -25,8 +25,21 @@ export const PlayButton = styled.button`
   font-family: 'Roboto', sans-serif;
   margin-top: 10px;
 
+  @media (max-width: 515px) {
+    padding: 0 5px;
+  }
+
+  @media (max-width: 348px) {
+    font-size: 12px;
+    padding: 0;
+  }
+
   .trailer-icon {
     font-size: 25px;
     margin-right: 2px;
+    @media (max-width: 348px) {
+      font-size: 20px;
+      margin-left: 5px;
+    }
   }
 `;

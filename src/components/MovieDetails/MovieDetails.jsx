@@ -72,7 +72,7 @@ const MovieDetails = ({
           </div>
         </MovieTitle>
         <MovieActions>
-          <div>
+          <div className="vote-average">
             <span className="vote">{movieDetail.vote_average}</span>
             <p>Vote Average</p>
           </div>

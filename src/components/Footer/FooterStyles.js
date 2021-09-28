@@ -8,6 +8,7 @@ export const FooterContainer = styled.footer`
   background: rgb(11, 9, 13);
   flex-wrap: wrap;
   margin-top: auto;
+  padding: 3% 3%;
   /* display: none; */
   @media (max-width: 575px) {
     height: 400px;

@@ -13,6 +13,18 @@ export const ReviewsContainer = styled.div`
   border-radius: 9px;
   background: rgb(11, 9, 13);
 
+  @media (max-width: 750px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 575px) {
+    height: ${(props) => (props.reviewsLength >= 3 ? '385px' : '300px')};
+  }
+
+  @media (max-width: 435px) {
+    padding: 6px;
+  }
+
   h1 {
     margin-bottom: 1rem;
   }
@@ -24,6 +36,14 @@ export const ReviewsContainer = styled.div`
     margin-bottom: 1.2rem;
     color: ${(props) => props.theme.textColor};
     line-height: 23px;
+    @media (max-width: 750px) {
+      text-align: center;
+    }
+
+    @media (max-width: 575px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
   a {
     @include btnStyle();
@@ -35,6 +55,11 @@ export const ReviewsContainer = styled.div`
   div {
     margin-top: 0rem;
     padding: 2rem 0;
+    @media (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &::-webkit-scrollbar {
@@ -54,6 +79,9 @@ export const ReviewsContainer = styled.div`
 `;
 
 export const ReviewsSection = styled.div`
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
   display: ${(props) => (props.reviewsLength === 0 ? 'none' : 'block')};
   margin-top: 100px;
 `;

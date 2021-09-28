@@ -25,10 +25,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  .container{
+  /* .container{
     padding-left: 3%;
     padding-right: 3%;
-  }
+  } */
 
   ul{
     list-style: none;

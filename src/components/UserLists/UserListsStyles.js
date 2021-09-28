@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const ListSection = styled.div`
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3% 0 3%;
   margin-top: 80px;
   display: flex;
   flex-direction: column;

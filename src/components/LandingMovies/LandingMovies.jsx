@@ -3,6 +3,14 @@ import { fetchPopularMovies } from '../../redux/popular-movies/popularMoviesActi
 import { fetchUpcomingMovies } from '../../redux/upcoming-movies/upcomingActions';
 import { useSelector, useDispatch } from 'react-redux';
 import MoviesCarousel from '../MoviesCarousel/MoviesCarousel';
+import styled from 'styled-components';
+
+const TrendingMoviesContainer = styled.section`
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 3% 0 3%;
+  margin: 0 auto;
+`;
 
 const LandingMovies = () => {
   const popular = useSelector((state) => state.popularMovies.data.results);
@@ -18,7 +26,7 @@ const LandingMovies = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <TrendingMoviesContainer>
       <MoviesCarousel
         movieData={upcoming}
         sectionTitle={'Coming soon'}
@@ -35,7 +43,7 @@ const LandingMovies = () => {
         carouselName={'popular'}
         loading={popularLoading}
       />
-    </>
+    </TrendingMoviesContainer>
   );
 };
 
