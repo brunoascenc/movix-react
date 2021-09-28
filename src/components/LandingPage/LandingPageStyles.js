@@ -25,11 +25,24 @@ export const LandingPageContainer = styled.div`
     height: 335px;
   }
 
+  @media (max-width: 415px) {
+    height: 300px;
+  }
+
+  @media (max-width: 350px) {
+    height: 285px;
+  }
+
+  @media (max-width: 319px) {
+    height: 240px;
+  }
+
   .swiper-card {
     height: 100%;
     display: flex;
     align-items: center;
     background-size: cover;
+    background-position: center;
     position: relative;
     width: 100%;
 
@@ -119,6 +132,11 @@ export const LandingMovieTitle = styled.h1`
 
   @media (max-width: 380px) {
     font-size: 24px;
+    line-height: 26px;
+  }
+
+  @media (max-width: 319px) {
+    font-size: 20px;
     line-height: 24px;
   }
 `;
