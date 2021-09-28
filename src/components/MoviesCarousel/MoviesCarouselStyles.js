@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CarouselContainer = styled.section`
   position: relative;
   margin: 0 auto;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   /* max-width: 1400px;
   width: 100%; */
   /* padding: 0 3% 0 3%; */
