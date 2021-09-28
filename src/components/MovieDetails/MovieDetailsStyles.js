@@ -3,7 +3,7 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export const DetailsContainer = styled.div`
   display: flex;
-  margin-bottom: 160px;
+  margin-bottom: 120px;
 
   @media (max-width: 1050px) {
     flex-direction: column;
@@ -39,8 +39,6 @@ export const ImageContainer = styled.div`
   position: relative;
   width: ${(props) => (props.overviewLength >= 600 ? '380px' : '350px')};
   height: ${(props) => (props.overviewLength >= 600 ? '580px' : '540px')};
-  margin: 0 auto;
-  /* background: red; */
 
   @media (max-width: 1050px) {
     width: 100%;
