@@ -92,7 +92,7 @@ export const SearchContainer = styled.div`
   }
 
   ${InputContainer} {
-    @media (max-width: 600px) {
+    @media (max-width: 885px) {
       display: none;
     }
   }
@@ -200,7 +200,7 @@ export const Form = styled.form`
   .search {
     display: none;
 
-    @media (max-width: 600px) {
+    @media (max-width: 885px) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -220,7 +220,7 @@ export const Form = styled.form`
 
   ${Input} {
     display: none;
-    @media (max-width: 600px) {
+    @media (max-width: 885px) {
       display: block;
       width: 60%;
       margin: 0 auto;
@@ -229,7 +229,7 @@ export const Form = styled.form`
   }
 
   ${SearchButton} {
-    @media (max-width: 600px) {
+    @media (max-width: 885px) {
       right: 10px;
       top: 13px;
     }
@@ -392,10 +392,6 @@ export const SideMenuLogo = styled.div`
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  @media (max-width: 600px) {
-    top: 15%;
   }
 
   h1 {
