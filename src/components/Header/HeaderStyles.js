@@ -10,10 +10,10 @@ export const HeaderComponent = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
+  height: 35px;
   z-index: 10;
   margin: auto;
-  padding: 3% 3%;
+  padding: 38px 3% 0 3%;
   /* display: none; */
 `;
 
@@ -381,7 +381,6 @@ export const MenuBackdrop = styled.div`
 
 export const SideMenuLogo = styled.div`
   display: none;
-  border-bottom: solid 1px rgb(195, 191, 199, 0.6);
 
   @media (max-width: 885px) {
     display: flex;
@@ -389,7 +388,7 @@ export const SideMenuLogo = styled.div`
     align-items: center;
     font-size: 23px;
     position: absolute;
-    top: 20%;
+    top: 13%;
     left: 50%;
     transform: translate(-50%, -50%);
   }

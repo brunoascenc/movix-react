@@ -50,7 +50,7 @@ const Details = () => {
           {/* <MovieBanner backdrop={movieDetail.backdrop_path} /> */}
 
           {loading ? (
-            <FullPageLoader />
+            <FullPageLoader loading={loading} />
           ) : (
             <MovieDetails
               movieDetail={movieDetail}

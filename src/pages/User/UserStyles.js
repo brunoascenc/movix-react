@@ -4,19 +4,13 @@ export const UserSection = styled.section``;
 
 export const UserHeader = styled.div`
   position: relative;
-  height: 380px;
+  height: 400px;
   background: rgb(11, 9, 13);
   display: flex;
   align-items: center;
   padding: 0 3% 0 3%;
   overflow: hidden;
   background: linear-gradient(to right, #110e14, rgb(7, 5, 8));
-
-  @media (max-width: 725px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 export const UserIconBg = styled.div`
@@ -29,7 +23,7 @@ export const UserIconBg = styled.div`
   transform: rotate(45deg);
   z-index: 1;
 
-  @media (max-width: 725px) {
+  @media (max-width: 768px) {
     transform: rotate(0);
     background: linear-gradient(to bottom, #8d28e0, #701bb5);
     left: 0;
@@ -43,7 +37,7 @@ export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 725px) {
+  @media (max-width: 768px) {
     align-items: center;
     margin-left: 0;
     width: 100%;
@@ -75,7 +69,7 @@ export const UserIcon = styled.span`
   z-index: 1;
   box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 725px) {
+  @media (max-width: 768px) {
     width: 120px;
     height: 120px;
     font-size: 70px;
@@ -88,7 +82,7 @@ export const Username = styled.p`
   margin-bottom: 15px;
   font-weight: bold;
 
-  @media (max-width: 725px) {
+  @media (max-width: 768px) {
     font-size: 30px;
   }
 
@@ -195,4 +189,21 @@ export const InfoContent = styled.div`
   }
 `;
 
-export const ListContainer = styled.div``;
+export const ListContainer = styled.div`
+  height: 100vh;
+  margin-bottom: 150px;
+`;
+
+export const UserHeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3% 0 3%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;

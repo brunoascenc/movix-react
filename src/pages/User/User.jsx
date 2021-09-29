@@ -10,6 +10,7 @@ import {
   ListInfo,
   ListContainer,
   UserSection,
+  UserHeaderContainer,
 } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
@@ -31,30 +32,34 @@ const User = () => {
   return (
     <UserSection>
       <UserHeader>
-        <UserIconBg />
-        <UserIcon>{user.username && user.username.charAt(0)}</UserIcon>
-        <UserInfo>
-          {loading ? (
-            <span className="username-skeleton"></span>
-          ) : (
-            <Username>{user.name === '' ? user.username : user.name}</Username>
-          )}
-          <InfoContent>
-            <div>
-              <ListInfo>
-                <span>{favoritesTotal.total_results}</span>
-                <p>Favorite Movies</p>
-              </ListInfo>
-              <ListInfo>
-                <span>{watchlistTotal.total_results}</span>
-                <p>Watchlist Total</p>
-              </ListInfo>
-            </div>
-            <Link to="/" onClick={handleSignOut}>
-              Logout
-            </Link>
-          </InfoContent>
-        </UserInfo>
+        <UserHeaderContainer>
+          <UserIconBg />
+          <UserIcon>{user.username && user.username.charAt(0)}</UserIcon>
+          <UserInfo>
+            {loading ? (
+              <span className="username-skeleton"></span>
+            ) : (
+              <Username>
+                {user.name === '' ? user.username : user.name}
+              </Username>
+            )}
+            <InfoContent>
+              <div>
+                <ListInfo>
+                  <span>{favoritesTotal.total_results}</span>
+                  <p>Favorite Movies</p>
+                </ListInfo>
+                <ListInfo>
+                  <span>{watchlistTotal.total_results}</span>
+                  <p>Watchlist Total</p>
+                </ListInfo>
+              </div>
+              <Link to="/" onClick={handleSignOut}>
+                Logout
+              </Link>
+            </InfoContent>
+          </UserInfo>
+        </UserHeaderContainer>
       </UserHeader>
       <ListContainer>
         <FavoriteList userId={userId} />

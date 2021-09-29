@@ -5,7 +5,7 @@ import {
   fetchSearchRequest,
   fetchSearchResults,
 } from '../../redux/movies-search/searchMovieActions';
-import { SearchContainer } from './SearchResultsStyles';
+import { SearchContainer, SectionTitle } from './SearchResultsStyles';
 import useGenres from '../../hooks/useGenres';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import Pagination from '../Pagination/Pagination';
@@ -43,12 +43,12 @@ const SearchResults = () => {
   }
 
   return (
-    <SearchContainer id="movies-component" className="container">
-      {searchQuery === undefined ? (
-        <NothingFound />
+    <SearchContainer id="movies-component">
+      {searchQuery === undefined || (search && search.length === 0) ? (
+        <NothingFound message={'Search not found'} />
       ) : (
         <>
-          <h2 className="section-title">You searched for {searchQuery}</h2>
+          <SectionTitle>You searched for {searchQuery}</SectionTitle>
 
           <MoviesCard
             movies={searchedMovie}

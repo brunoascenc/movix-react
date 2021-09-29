@@ -9,6 +9,7 @@ export const MovieCardContainer = styled.div`
   max-width: 1350px;
   width: 100%;
   margin: 0 auto;
+  z-index: 1;
 
   @media (max-width: 1234px) {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

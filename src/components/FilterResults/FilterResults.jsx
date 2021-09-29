@@ -8,7 +8,7 @@ import {
   fetchFilterResults,
 } from '../../redux/movies-filter/filterMoviesAction';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import { FilterContainer } from './FilterResultsStyles';
+import { FilterContainer, SectionTitle } from './FilterResultsStyles';
 import Pagination from '../Pagination/Pagination';
 import { useParams } from 'react-router';
 
@@ -35,12 +35,12 @@ const SearchResults = () => {
   }, [orderBy, genreId, setPageNumber]);
 
   return (
-    <FilterContainer id="movies-component" className="container">
+    <FilterContainer id="movies-component">
       {!genreId ? (
-        <NothingFound />
+        <NothingFound message={'Please select a genre'} />
       ) : (
         <>
-          <h2 className="section-title">You searched for</h2>
+          <SectionTitle>You searched for</SectionTitle>
           <MoviesCard
             movies={filterResults}
             genreName={genreName}

@@ -1,20 +1,14 @@
 import styled from 'styled-components';
 
-export const FilterContainer = styled.div`
-  /* margin-top: -30px; */
+export const FilterContainer = styled.section`
   display: flex;
   margin-bottom: 50px;
   flex-direction: column;
-  overflow-y: hidden;
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 0 3% 0 3%;
-`;
-
-export const SectionTitle = styled.h2`
-  margin-bottom: 15px;
-  /* z-index: 2; */
+  position: relative;
 `;
 
 export const Pagination = styled.div`
@@ -37,4 +31,20 @@ export const Button = styled.button`
   color: #ffffff;
   margin: 20px;
   font-size: 25px;
+`;
+
+export const SectionTitle = styled.h2`
+  margin-bottom: 15px;
+  position: absolute;
+  top: -40px;
+  z-index: 1000;
+  @media (max-width: 885px) {
+    font-size: 18px;
+    top: -26px;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 16px;
+    top: -17px;
+  }
 `;

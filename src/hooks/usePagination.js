@@ -8,7 +8,7 @@ const usePagination = () => {
     scroller.scrollTo('movies-component', {
       duration: 800,
       smooth: 'easeInOutQuart',
-      offset: -35,
+      offset: -60,
       delay: 10,
     });
   };

@@ -15,7 +15,7 @@ const SearchInput = ({ closeMenu }) => {
       scroller.scrollTo('movies-component', {
         duration: 800,
         smooth: 'easeInOutQuart',
-        offset: -35,
+        offset: -60,
       });
     }, 10);
   };

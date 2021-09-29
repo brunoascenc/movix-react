@@ -7,7 +7,7 @@ export const FooterContainer = styled.footer`
   min-height: 250px;
   background: rgb(11, 9, 13);
   flex-wrap: wrap;
-  margin-top: auto;
+  margin-top: 100px;
   padding: 3% 3%;
   /* display: none; */
   @media (max-width: 575px) {

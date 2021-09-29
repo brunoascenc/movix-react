@@ -3,8 +3,12 @@ import styled from 'styled-components';
 export const CarouselContainer = styled.section`
   position: relative;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
   display: ${(props) => (props.moviesLength === 0 ? 'none' : 'block')};
+
+  @media (max-width: 680px) {
+    margin-bottom: 65px;
+  }
 `;
 
 export const CarouselTitle = styled.h2`
