@@ -180,6 +180,11 @@ export const MovieTitle = styled.div`
   h1 {
     font-family: 'Archivo Black', sans-serif;
     line-height: 37px;
+
+    @media (max-width: 1050px) {
+      line-height: 26px;
+      margin-bottom: 10px;
+    }
   }
   div {
     display: flex;
@@ -223,6 +228,10 @@ export const MovieTitle = styled.div`
     display: flex;
     align-items: center;
 
+    @media (max-width: 395px) {
+      flex-direction: column;
+    }
+
     li {
       color: ${(props) => props.theme.textColor};
       font-size: 14px;
@@ -235,12 +244,16 @@ export const MovieTitle = styled.div`
           margin-right: 25px;
           list-style: none;
         }
+
+        @media (max-width: 395px) {
+          margin-right: 0;
+        }
         @media (max-width: 285px) {
           margin-right: 10px;
         }
       }
 
-      @media (max-width: 285px) {
+      @media (max-width: 395px) {
         list-style: none;
       }
     }

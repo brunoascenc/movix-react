@@ -18,13 +18,17 @@ const Login = () => {
       <video autoPlay loop muted>
         <source src={BgVideo} type="video/mp4" />
       </video>
-      <LoginLink>
-        <h1>Login to your account</h1>
-        <p>Please login to your account so we can save your favorite movies</p>
-        <Button onClick={() => dispatch(fetchTokenAuth())} primary>
-          Login
-        </Button>
-      </LoginLink>
+      <div className="login-link">
+        <LoginLink>
+          <h1>Login to your account</h1>
+          <p>
+            Please login to your account so we can save your favorite movies
+          </p>
+          <Button onClick={() => dispatch(fetchTokenAuth())} primary>
+            Login
+          </Button>
+        </LoginLink>
+      </div>
     </LoginContainer>
   );
 };

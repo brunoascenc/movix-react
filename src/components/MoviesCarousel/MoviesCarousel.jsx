@@ -26,10 +26,7 @@ const MoviesCarousel = ({
   loading,
 }) => {
   return (
-    <CarouselContainer
-      className="container"
-      moviesLength={movieData && movieData.length}
-    >
+    <CarouselContainer moviesLength={movieData && movieData.length}>
       <CarouselTitle>{sectionTitle}</CarouselTitle>
 
       <Swiper

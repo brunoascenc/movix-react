@@ -23,6 +23,21 @@ export const LoginContainer = styled.div`
     transform: translate(-50%, -50%);
     z-index: -1;
   }
+
+  .login-link {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 3% 0 3%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 880px) {
+      align-items: center;
+    }
+  }
+
+  margin-bottom: -100px;
 `;
 
 export const Button = styled(CustomButton)`
