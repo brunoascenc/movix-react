@@ -11,12 +11,13 @@ const Login = () => {
   return (
     <LoginContainer>
       <HorizontalOverlay
+        className="horizontal-overlay"
         overlay={
           'linear-gradient(to right, rgb(11, 9, 13, 0.8) 15%, transparent)'
         }
       ></HorizontalOverlay>
       <video autoPlay loop muted>
-        <source src={BgVideo} type="video/mp4" />
+        <source className="video-src" src={BgVideo} type="video/mp4" />
       </video>
       <div className="login-link">
         <LoginLink>

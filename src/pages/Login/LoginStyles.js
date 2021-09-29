@@ -13,6 +13,21 @@ export const LoginContainer = styled.div`
     rgb(11, 9, 13, 0.3),
     rgb(11, 9, 13) 95%
   );
+  @media (max-width: 585px) {
+    background: linear-gradient(to bottom, rgb(11, 9, 13, 0.6), rgb(11, 9, 13));
+    .horizontal-overlay {
+      display: none;
+    }
+  }
+
+  @media (max-width: 725px) {
+    height: 75vh;
+  }
+
+  @media (max-width: 525px) {
+    height: 60vh;
+  }
+
   video {
     position: absolute;
     width: 100%;
@@ -22,6 +37,10 @@ export const LoginContainer = styled.div`
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
+
+    .video-src {
+      margin-top: 1000px;
+    }
   }
 
   .login-link {
@@ -32,7 +51,7 @@ export const LoginContainer = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media (max-width: 880px) {
+    @media (max-width: 585px) {
       align-items: center;
     }
   }
@@ -55,6 +74,14 @@ export const LoginLink = styled.div`
   align-items: center;
   width: 300px;
 
+  @media (max-width: 475px) {
+    margin-left: -15px;
+  }
+
+  @media (max-width: 350px) {
+    width: 100%;
+  }
+
   p {
     color: #afb5bd;
     margin-top: 15px;
@@ -65,5 +92,9 @@ export const LoginLink = styled.div`
 
   h1 {
     font-size: 28px;
+    text-align: center;
+    @media (max-width: 350px) {
+      font-size: 22px;
+    }
   }
 `;
