@@ -15,6 +15,10 @@ export const ListSection = styled.div`
     color: #8f8f96;
     margin-right: 12px;
     margin-top: 10px;
+
+    @media (max-width: 425px) {
+      font-size: 8px;
+    }
   }
 `;
 
@@ -84,6 +88,11 @@ export const ListHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  h2 {
+    @media (max-width: 420px) {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const Filter = styled.div`
@@ -94,6 +103,9 @@ export const Filter = styled.div`
     font-weight: 100;
     margin-right: 5px;
     color: #e9f0eb;
+    @media (max-width: 425px) {
+      display: none;
+    }
   }
 
   span {

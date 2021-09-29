@@ -1,6 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { UserIconBg, UserHeader, UserInfo } from './UserStyles';
+import {
+  UserIconBg,
+  UserHeader,
+  UserInfo,
+  UserIcon,
+  Username,
+  InfoContent,
+  ListInfo,
+  ListContainer,
+  UserSection,
+} from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
 import FavoriteList from '../../components/FavoriteList/FavoriteList';
@@ -19,47 +29,38 @@ const User = () => {
   };
 
   return (
-    <div className="user-page">
+    <UserSection>
       <UserHeader>
         <UserIconBg />
-        <span className="user-icon">
-          {user.username && user.username.charAt(0)}
-        </span>
+        <UserIcon>{user.username && user.username.charAt(0)}</UserIcon>
         <UserInfo>
           {loading ? (
             <span className="username-skeleton"></span>
           ) : (
-            <span className="username">
-              {user.name === '' ? user.username : user.name}
-            </span>
+            <Username>{user.name === '' ? user.username : user.name}</Username>
           )}
-          {/* <p>
-            {user.name === '' ? user.username : user.name}
-          </p> */}
-          <div className="info-details">
-            <div className="list-info">
-              <span>{favoritesTotal.total_results}</span>
-              <p>Favorite Movies</p>
+          <InfoContent>
+            <div>
+              <ListInfo>
+                <span>{favoritesTotal.total_results}</span>
+                <p>Favorite Movies</p>
+              </ListInfo>
+              <ListInfo>
+                <span>{watchlistTotal.total_results}</span>
+                <p>Watchlist Total</p>
+              </ListInfo>
             </div>
-            <span className="separator"> </span>
-            <div className="list-info">
-              <span>{watchlistTotal.total_results}</span>
-              <p>Watchlist Total</p>
-            </div>
-            <span className="separator"> </span>
             <Link to="/" onClick={handleSignOut}>
               Logout
             </Link>
-          </div>
+          </InfoContent>
         </UserInfo>
       </UserHeader>
-      <div className="container user-content">
-        <>
-          <FavoriteList userId={userId} />
-          <Watchlist userId={userId} />
-        </>
-      </div>
-    </div>
+      <ListContainer>
+        <FavoriteList userId={userId} />
+        <Watchlist userId={userId} />
+      </ListContainer>
+    </UserSection>
   );
 };
 
