@@ -42,7 +42,6 @@ export const LandingPageContainer = styled.div`
     display: flex;
     align-items: center;
     background-size: cover;
-    background-position: center;
     position: relative;
     width: 100%;
 
@@ -58,22 +57,9 @@ export const LandingPageContainer = styled.div`
       background: linear-gradient(rgba(7, 5, 8, 0.2), rgb(7, 5, 8));
     }
 
-    /* @media (max-width: 1024px) {
-      height: 600px;
+    @media (max-width: 1024px) {
       background-position: center;
     }
-
-    @media (max-width: 885px) {
-      height: 450px;
-    }
-
-    @media (max-width: 575px) {
-      height: 400px;
-    }
-
-    @media (max-width: 515px) {
-      height: 335px;
-    } */
   }
 `;
 
