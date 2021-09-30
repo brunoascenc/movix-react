@@ -190,7 +190,7 @@ export const InfoContent = styled.div`
 `;
 
 export const ListContainer = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   margin-bottom: 150px;
 `;
 

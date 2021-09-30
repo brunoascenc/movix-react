@@ -17,7 +17,6 @@ const LandingMovies = () => {
   const upcoming = useSelector((state) => state.upcomingMovies.data.results);
   const upcomingLoading = useSelector((state) => state.upcomingMovies.loading);
   const popularLoading = useSelector((state) => state.popularMovies.loading);
-  // console.log(upcomingLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {

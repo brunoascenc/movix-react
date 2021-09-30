@@ -13,6 +13,8 @@ import {
   Select,
   Pagination,
   PaginationButton,
+  EmptyList,
+  PosterCard,
 } from './UserListsStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -43,43 +45,43 @@ const UserLists = ({
       </ListHeader>
 
       <ListContainer>
-        {movies && movies.length === 0
-          ? console.log('e')
-          : loading
-          ? Array(20)
-              .fill()
-              .map((item, index) => {
-                return (
-                  <div className="poster-container" key={index}>
-                    <div className="poster-card">
-                      <MoviesSkeleton userList />
-                    </div>
-                  </div>
-                );
-              })
-          : movies &&
-            movies.map((movie) => {
+        {movies && movies.length === 0 ? (
+          <EmptyList>
+            <p>Add movies to your list</p>
+          </EmptyList>
+        ) : loading ? (
+          Array(20)
+            .fill()
+            .map((item, index) => {
               return (
-                <div className="poster-container" key={movie.id}>
-                  <div className="poster-card">
-                    <Link to={`/details/${movie.id}`}>
-                      <MoviePoster
-                        url={IMAGE_URL + movie.poster_path}
-                        title={movie.title}
-                        movieId={movie.id}
-                        data-movie-id={movie.id}
-                        alt={movie.title}
-                      />
-                    </Link>
-                    <Button onClick={() => onClick(userId.sessionId, movie.id)}>
-                      <AiOutlineDelete className="delete-icon" />
-                    </Button>
-                  </div>
-                </div>
+                <PosterCard key={index}>
+                  <MoviesSkeleton userList />
+                </PosterCard>
               );
-            })}
+            })
+        ) : (
+          movies &&
+          movies.map((movie) => {
+            return (
+              <PosterCard key={movie.id}>
+                <Link to={`/details/${movie.id}`}>
+                  <MoviePoster
+                    url={IMAGE_URL + movie.poster_path}
+                    title={movie.title}
+                    movieId={movie.id}
+                    data-movie-id={movie.id}
+                    alt={movie.title}
+                  />
+                </Link>
+                <Button onClick={() => onClick(userId.sessionId, movie.id)}>
+                  <AiOutlineDelete className="delete-icon" />
+                </Button>
+              </PosterCard>
+            );
+          })
+        )}
       </ListContainer>
-      {totalResults > 20 ? (
+      {totalResults ? (
         <Pagination>
           <PaginationButton
             onClick={() => setCurrentPage((prev) => prev - 1)}

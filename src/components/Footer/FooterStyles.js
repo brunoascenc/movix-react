@@ -4,12 +4,10 @@ export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   height: 250px;
-  min-height: 250px;
   background: rgb(11, 9, 13);
   flex-wrap: wrap;
   margin-top: 100px;
-  padding: 3% 3%;
-  /* display: none; */
+  padding: 0 3% 0 3%;
   @media (max-width: 575px) {
     height: 400px;
   }

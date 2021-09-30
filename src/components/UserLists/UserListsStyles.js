@@ -48,20 +48,6 @@ export const ListContainer = styled.div`
   overflow-x: scroll;
   padding-bottom: 20px;
 
-  .poster-card {
-    margin-bottom: 15px;
-    position: relative;
-    margin-right: 20px;
-    height: 260px;
-  }
-
-  .poster-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* position: relative; */
-  }
-
   &::-webkit-scrollbar {
     height: 6px;
     border-radius: 12px;
@@ -71,10 +57,13 @@ export const ListContainer = styled.div`
     background: rgb(36, 26, 41);
     border-radius: 12px;
   }
-  img {
-    /* margin-right: 10px; */
-    /* margin-bottom: 20px; */
-  }
+`;
+
+export const PosterCard = styled.div`
+  margin-bottom: 15px;
+  position: relative;
+  margin-right: 20px;
+  height: 260px;
 `;
 
 export const Image = styled.img`
@@ -160,4 +149,12 @@ export const PaginationButton = styled.button`
   .next-arrow {
     margin-left: 3px;
   }
+`;
+
+export const EmptyList = styled.div`
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
