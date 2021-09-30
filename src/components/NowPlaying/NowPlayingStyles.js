@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { CustomButton } from '../CustomButton/CustomButton';
 
-export const LandingPageContainer = styled.div`
+export const NowPlayingContainer = styled.div`
   height: 75vh;
 
   .swiper {
@@ -63,7 +63,7 @@ export const LandingPageContainer = styled.div`
   }
 `;
 
-export const LandingText = styled.div`
+export const NowPlayingActions = styled.div`
   width: 750px;
   margin-top: 100px;
 
@@ -84,7 +84,9 @@ export const LandingText = styled.div`
   }
 `;
 
-export const LinkLanding = styled(Link)`
+export const DetailsLink = styled(Link)``;
+
+export const NowPlayingActionsContainer = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -92,7 +94,7 @@ export const LinkLanding = styled(Link)`
   padding: 0 3% 0 3%;
 `;
 
-export const LandingMovieTitle = styled.h1`
+export const PlayingMovieTitle = styled.h1`
   font-size: 45px;
   letter-spacing: -1px;
   line-height: 52px;

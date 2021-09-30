@@ -29,7 +29,7 @@ const ErrorMessage = styled.p`
   }
 `;
 
-const NothingFound = ({ message }) => {
+const ErrorComponent = ({ message }) => {
   return (
     <Error>
       <ErrorMessage>
@@ -39,4 +39,4 @@ const NothingFound = ({ message }) => {
   );
 };
 
-export default NothingFound;
+export default ErrorComponent;

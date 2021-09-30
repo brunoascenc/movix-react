@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromFavorite } from '../../redux/user-favorites/favoritesUtils';
 import { fetchFavoriteMovies } from '../../redux/user-favorites/userFavoritesActions';
-import UserLists from '../UserLists/UserLists';
+import UserLists from './UserLists';
 
 const FavoriteList = ({ userId }) => {
   const [order, setOrder] = useState('desc');

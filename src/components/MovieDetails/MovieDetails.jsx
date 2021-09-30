@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsBookmark } from 'react-icons/bs';
 import { AiOutlineStar } from 'react-icons/ai';
-import MovieTrailer from '../MovieTrailer/MovieTrailer';
+import MovieTrailer from './MovieTrailer';
 import {
   DetailsContainer,
   MovieImage,

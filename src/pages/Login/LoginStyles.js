@@ -20,8 +20,8 @@ export const LoginContainer = styled.div`
     }
   }
 
-  @media (max-width: 725px) {
-    height: 75vh;
+  @media (max-width: 1050px) {
+    height: 85vh;
   }
 
   @media (max-width: 525px) {

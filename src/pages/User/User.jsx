@@ -14,8 +14,8 @@ import {
 } from './UserStyles';
 import { signOutSuccess } from '../../redux/user-session/userSessionActions';
 import { Link } from 'react-router-dom';
-import FavoriteList from '../../components/FavoriteList/FavoriteList';
-import Watchlist from '../../components/Watchlist/Watchlist';
+import FavoriteList from '../../components/UserLists/FavoriteList';
+import Watchlist from '../../components/UserLists/Watchlist';
 
 const User = () => {
   const loading = useSelector((state) => state.user.loading);

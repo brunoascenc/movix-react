@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useGenres from '../../hooks/useGenres';
-import NothingFound from '../Error/NothingFound';
+import ErrorComponent from '../Error/Error';
 import usePagination from '../../hooks/usePagination';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -37,7 +37,7 @@ const SearchResults = () => {
   return (
     <FilterContainer id="movies-component">
       {!genreId ? (
-        <NothingFound message={'Please select a genre'} />
+        <ErrorComponent message={'Please select a genre'} />
       ) : (
         <>
           <SectionTitle>You searched for</SectionTitle>

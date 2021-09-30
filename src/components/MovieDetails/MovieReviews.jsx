@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReviewsContainer, ReviewsSection } from './MovieReviewsStyles';
+import { ReviewsContainer, ReviewsSection } from './MovieDetailsStyles';
 
 const MovieReviews = ({ movieReviews }) => {
   return (

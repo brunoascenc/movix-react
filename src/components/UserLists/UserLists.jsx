@@ -1,7 +1,6 @@
 import React from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import Empty from '../EmptyList/Empty';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import MoviesSkeleton from '../MoviesSkeleton/MoviesSkeleton';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
@@ -44,43 +43,41 @@ const UserLists = ({
       </ListHeader>
 
       <ListContainer>
-        {movies && movies.length === 0 ? (
-          <Empty />
-        ) : loading ? (
-          Array(20)
-            .fill()
-            .map((item, index) => {
+        {movies && movies.length === 0
+          ? console.log('e')
+          : loading
+          ? Array(20)
+              .fill()
+              .map((item, index) => {
+                return (
+                  <div className="poster-container" key={index}>
+                    <div className="poster-card">
+                      <MoviesSkeleton userList />
+                    </div>
+                  </div>
+                );
+              })
+          : movies &&
+            movies.map((movie) => {
               return (
-                <div className="poster-container" key={index}>
+                <div className="poster-container" key={movie.id}>
                   <div className="poster-card">
-                    <MoviesSkeleton userList />
+                    <Link to={`/details/${movie.id}`}>
+                      <MoviePoster
+                        url={IMAGE_URL + movie.poster_path}
+                        title={movie.title}
+                        movieId={movie.id}
+                        data-movie-id={movie.id}
+                        alt={movie.title}
+                      />
+                    </Link>
+                    <Button onClick={() => onClick(userId.sessionId, movie.id)}>
+                      <AiOutlineDelete className="delete-icon" />
+                    </Button>
                   </div>
                 </div>
               );
-            })
-        ) : (
-          movies &&
-          movies.map((movie) => {
-            return (
-              <div className="poster-container" key={movie.id}>
-                <div className="poster-card">
-                  <Link to={`/details/${movie.id}`}>
-                    <MoviePoster
-                      url={IMAGE_URL + movie.poster_path}
-                      title={movie.title}
-                      movieId={movie.id}
-                      data-movie-id={movie.id}
-                      alt={movie.title}
-                    />
-                  </Link>
-                  <Button onClick={() => onClick(userId.sessionId, movie.id)}>
-                    <AiOutlineDelete className="delete-icon" />
-                  </Button>
-                </div>
-              </div>
-            );
-          })
-        )}
+            })}
       </ListContainer>
       {totalResults > 20 ? (
         <Pagination>

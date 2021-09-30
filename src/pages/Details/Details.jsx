@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import MovieDetails from '../../components/MovieDetails/MovieDetails';
-import MovieReviews from '../../components/MovieReviews/MovieReviews';
+import MovieReviews from '../../components/MovieDetails/MovieReviews';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';

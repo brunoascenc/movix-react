@@ -1,18 +1,16 @@
 import React from 'react';
-import LandingPage from '../../components/LandingPage/LandingPage';
-import '../../App.css';
+import NowPlayingSlider from '../../components/NowPlaying/NowPlayingMovies';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import FilterResults from '../../components/FilterResults/FilterResults';
 import SearchResults from '../../components/SearchResults/SearchResults';
-import LandingMovies from '../../components/LandingMovies/LandingMovies';
-
+import LandingMovies from '../../components/TrendingMovies/TrendingMovies';
 const HomeContainer = styled.div``;
 
 const Home = () => {
   return (
     <HomeContainer>
-      <LandingPage />
+      <NowPlayingSlider />
       <Switch>
         <Route exact path="/" component={LandingMovies} />
 

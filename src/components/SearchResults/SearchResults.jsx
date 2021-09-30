@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import NothingFound from '../Error/NothingFound';
+import ErrorComponent from '../Error/Error';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchSearchRequest,
@@ -45,7 +45,7 @@ const SearchResults = () => {
   return (
     <SearchContainer id="movies-component">
       {searchQuery === undefined || (search && search.length === 0) ? (
-        <NothingFound message={'Search not found'} />
+        <ErrorComponent message={'Search not found'} />
       ) : (
         <>
           <SectionTitle>You searched for {searchQuery}</SectionTitle>

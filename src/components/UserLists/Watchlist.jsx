@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWatchlistMovies } from '../../redux/user-watchlist/userWatchlistActions';
 import { removeFromWatchlist } from '../../redux/user-watchlist/watchlistUtils';
-import UserLists from '../UserLists/UserLists';
+import UserLists from './UserLists';
 
 const Watchlist = ({ userId }) => {
   const [order, setOrder] = useState('desc');

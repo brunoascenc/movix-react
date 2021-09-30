@@ -23,7 +23,6 @@ const MoviesCard = ({ movies, loading }) => {
                     title={movie.title}
                     movieId={movie.id}
                     resultsCard
-                    // loading={loading}
                   />
                 </NavLink>
               </div>

@@ -4,31 +4,45 @@ import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
 import {
-  LandingPageContainer,
-  LandingMovieTitle,
-  LandingText,
-  LinkLanding,
-  Slide,
+  NowPlayingContainer,
+  PlayingMovieTitle,
+  NowPlayingActions,
+  DetailsLink,
+  NowPlayingActionsContainer,
   Buttons,
-} from './LandingPageStyles';
+} from './NowPlayingStyles';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-// import { CustomButton } from '../CustomButton/CustomButton';
 import { HorizontalOverlay } from '../HorizontalOverlay/HorizontalOverlay';
+import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
+import { useAlert } from 'react-alert';
+
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-const LandingPage = () => {
+const NowPlayingSlider = () => {
   const nowPlayingMovies = useSelector((state) => state.nowPlaying.results);
   const nowPlaying = nowPlayingMovies.results;
+  const alert = useAlert();
+  const userId = useSelector((state) => state.sessionId.sessionId);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchNowPlaying());
   }, [dispatch]);
 
+  const handleWatchList = (movieId) => {
+    if (!userId) return alert.show('You must login first...');
+    if (userId)
+      return addToWatchlist(
+        userId,
+        movieId,
+        alert.show('Movie added to the list!')
+      );
+  };
+
   return (
-    <LandingPageContainer>
+    <NowPlayingContainer>
       <Swiper
         slidesPerView={1}
         className="swiper"
@@ -50,15 +64,25 @@ const LandingPage = () => {
                     })`,
                   }}
                 >
-                  <LinkLanding to={`/details/${movie.id}`}>
-                    <LandingText>
-                      <LandingMovieTitle>{movie.title}</LandingMovieTitle>
+                  <NowPlayingActionsContainer>
+                    <NowPlayingActions>
+                      <DetailsLink to={`/details/${movie.id}`}>
+                        <PlayingMovieTitle>{movie.title}</PlayingMovieTitle>
+                      </DetailsLink>
                       <div>
-                        <Buttons primary>Details</Buttons>
-                        <Buttons secondary>Watchlist</Buttons>
+                        <DetailsLink to={`/details/${movie.id}`}>
+                          <Buttons primary>Details</Buttons>
+                        </DetailsLink>
+                        <Buttons
+                          onClick={() => handleWatchList(movie.id)}
+                          secondary
+                        >
+                          Watchlist
+                        </Buttons>
                       </div>
-                    </LandingText>
-                  </LinkLanding>
+                    </NowPlayingActions>
+                  </NowPlayingActionsContainer>
+
                   <HorizontalOverlay
                     overlay={
                       'linear-gradient(to right, rgb(7, 5, 8, 0.6) 15%, transparent 55%)'
@@ -68,8 +92,8 @@ const LandingPage = () => {
               );
             })}
       </Swiper>
-    </LandingPageContainer>
+    </NowPlayingContainer>
   );
 };
 
-export default LandingPage;
+export default NowPlayingSlider;
