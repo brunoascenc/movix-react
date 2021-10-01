@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNowPlaying } from '../../redux/movie-playing/nowPlayingActions';
+import { HorizontalOverlay } from '../HorizontalOverlay/HorizontalOverlay';
+import AlertMessage from '../../hooks/useAlertMessage';
 import {
   NowPlayingContainer,
   PlayingMovieTitle,
@@ -14,32 +16,19 @@ import {
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import { HorizontalOverlay } from '../HorizontalOverlay/HorizontalOverlay';
-import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
-import { useAlert } from 'react-alert';
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const NowPlayingSlider = () => {
   const nowPlayingMovies = useSelector((state) => state.nowPlaying.results);
   const nowPlaying = nowPlayingMovies.results;
-  const alert = useAlert();
+  const [addMovieToWatchlist] = AlertMessage();
   const userId = useSelector((state) => state.sessionId.sessionId);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchNowPlaying());
   }, [dispatch]);
-
-  const handleWatchList = (movieId) => {
-    if (!userId) return alert.show('You must login first...');
-    if (userId)
-      return addToWatchlist(
-        userId,
-        movieId,
-        alert.show('Movie added to the list!')
-      );
-  };
 
   return (
     <NowPlayingContainer>
@@ -74,7 +63,7 @@ const NowPlayingSlider = () => {
                           <Buttons primary>Details</Buttons>
                         </DetailsLink>
                         <Buttons
-                          onClick={() => handleWatchList(movie.id)}
+                          onClick={() => addMovieToWatchlist(movie.id, userId)}
                           secondary
                         >
                           Watchlist

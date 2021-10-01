@@ -3,20 +3,15 @@ import MovieDetails from '../../components/MovieDetails/MovieDetails';
 import MovieReviews from '../../components/MovieDetails/MovieReviews';
 import FullPageLoader from '../../components/FullPageLoader/FullPageLoader';
 import { useSelector, useDispatch } from 'react-redux';
-import { useAlert } from 'react-alert';
-import {
-  fetchDetailsRequest,
-  fetchMovieDetail,
-} from '../../redux/movie-details/movieDetailActions';
-import { addToWatchlist } from '../../redux/user-watchlist/watchlistUtils';
-import { addToFavorite } from '../../redux/user-favorites/favoritesUtils';
+import { fetchMovieDetail } from '../../redux/movie-details/movieDetailActions';
 import { MovieBanner, DetailsSection } from './DetailsPageStyles';
 import MoviesCarousel from '../../components/MoviesCarousel/MoviesCarousel';
 import { useParams } from 'react-router';
+import AlertMessage from '../../hooks/useAlertMessage';
 
 const Details = () => {
   //list buttons alert
-  const alert = useAlert();
+  const [addToFavoriteList, addMovieToWatchlist] = AlertMessage();
   const { movieId } = useParams();
   //redux data
   const dispatch = useDispatch();
@@ -27,10 +22,7 @@ const Details = () => {
   const dates = movieDate && movieDate.results;
 
   useEffect(() => {
-    dispatch(fetchDetailsRequest());
-    setTimeout(() => {
-      dispatch(fetchMovieDetail(movieId));
-    }, 500);
+    dispatch(fetchMovieDetail(movieId));
   }, [movieId, dispatch]);
 
   let genresList;
@@ -47,8 +39,6 @@ const Details = () => {
         </>
       ) : (
         <DetailsSection>
-          {/* <MovieBanner backdrop={movieDetail.backdrop_path} /> */}
-
           {loading ? (
             <FullPageLoader loading={loading} />
           ) : (
@@ -58,34 +48,10 @@ const Details = () => {
               movieCast={movieDetail.credits}
               dates={dates}
               movieTrailer={movieDetail.videos}
-              addToFavorite={
-                !userId
-                  ? () => {
-                      alert.show('You must login first...');
-                    }
-                  : () =>
-                      addToFavorite(
-                        userId,
-                        movieId,
-                        alert.show('Movie added to the list!')
-                      )
-              }
-              addToWatchlist={
-                !userId
-                  ? () => {
-                      alert.show('You must login first...');
-                    }
-                  : () =>
-                      addToWatchlist(
-                        userId,
-                        movieId,
-                        alert.show('Movie added to the list!')
-                      )
-              }
+              addToFavorite={() => addToFavoriteList(movieId, userId)}
+              addToWatchlist={() => addMovieToWatchlist(movieId, userId)}
             />
           )}
-
-          {/* similar movies */}
           <MoviesCarousel
             movieData={
               movieDetail.recommendations && movieDetail.recommendations.results
@@ -95,7 +61,6 @@ const Details = () => {
             prevMovie={'.prev-similar'}
             carouselName={'similar'}
           />
-          {/* movie reviews */}
           <MovieReviews
             movieReviews={movieDetail.reviews && movieDetail.reviews.results}
           />
