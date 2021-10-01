@@ -9,9 +9,10 @@ import {
   MovieInfo,
   ButtonStyle,
   ButtonsContainer,
-  MovieTitle,
+  ReleaseInfo,
   MovieActions,
   MovieCast,
+  Overview,
 } from './MovieDetailsStyles';
 
 const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
@@ -46,7 +47,7 @@ const MovieDetails = ({
         />
       </ImageContainer>
       <MovieInfo>
-        <MovieTitle
+        <ReleaseInfo
           certification={
             releaseInfo && releaseInfo[0]
               ? releaseInfo[0].release_dates[0].certification
@@ -70,7 +71,7 @@ const MovieDetails = ({
               <li>{timeConvert(movieDetail.runtime)}</li>
             </ul>
           </div>
-        </MovieTitle>
+        </ReleaseInfo>
         <MovieActions>
           <div className="vote-average">
             <span className="vote">{movieDetail.vote_average}</span>
@@ -91,12 +92,12 @@ const MovieDetails = ({
         <div className="tagline">
           <span>{movieDetail.tagline}</span>
         </div>
-        <div className="overview">
+        <Overview>
           <h2>Overview</h2>
           <article>
             <p>{movieDetail.overview}</p>
           </article>
-        </div>
+        </Overview>
         <MovieCast>
           {movieCast &&
             movieCast.cast.slice(0, 6).map((cast) => {

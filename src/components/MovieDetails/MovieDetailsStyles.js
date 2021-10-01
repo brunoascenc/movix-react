@@ -10,28 +10,29 @@ export const DetailsContainer = styled.div`
     align-items: center;
   }
 
-  .overview {
-    @media (max-width: 1050px) {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 15px;
-      p {
-        text-align: center;
-      }
-    }
-    h2 {
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-  }
   .tagline {
     margin-bottom: 12px;
     span {
       color: #787880;
       font-style: italic;
     }
+  }
+`;
+
+export const Overview = styled.div`
+  @media (max-width: 1050px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    p {
+      text-align: center;
+    }
+  }
+  h2 {
+    letter-spacing: 1px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -162,7 +163,7 @@ export const ButtonStyle = styled(CustomButton)`
   }
 `;
 
-export const MovieTitle = styled.div`
+export const ReleaseInfo = styled.div`
   @media (max-width: 1050px) {
     width: 100%;
     display: flex;
@@ -377,6 +378,12 @@ export const Modal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 3%;
+  }
+  .modal-video-close-btn {
+    @media (max-width: 1025px) {
+      right: 0;
+    }
   }
 `;
 
