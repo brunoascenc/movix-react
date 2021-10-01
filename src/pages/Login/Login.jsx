@@ -1,7 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchTokenAuth } from '../../redux/user-token/userTokenActions';
-import { LoginContainer, Button, LoginLink } from './LoginStyles';
+import {
+  LoginContainer,
+  Button,
+  LoginLink,
+  VideoBackground,
+  LoginContent,
+} from './LoginStyles';
 import BgVideo from '../../images/spider.mp4';
 import { HorizontalOverlay } from '../../components/HorizontalOverlay/HorizontalOverlay';
 
@@ -16,10 +22,10 @@ const Login = () => {
           'linear-gradient(to right, rgb(11, 9, 13, 0.8) 15%, transparent)'
         }
       ></HorizontalOverlay>
-      <video autoPlay loop muted>
+      <VideoBackground autoPlay loop muted>
         <source className="video-src" src={BgVideo} type="video/mp4" />
-      </video>
-      <div className="login-link">
+      </VideoBackground>
+      <LoginContent>
         <LoginLink>
           <h1>Login to your account</h1>
           <p>
@@ -29,7 +35,7 @@ const Login = () => {
             Login
           </Button>
         </LoginLink>
-      </div>
+      </LoginContent>
     </LoginContainer>
   );
 };

@@ -22,6 +22,7 @@ export const fetchFavoritesFailure = (error) => {
     payload: error,
   };
 };
+
 export const fetchFavoriteMovies = (id, order, currentPage) => {
   return (dispatch) => {
     dispatch(fetchFavoritesRequest());

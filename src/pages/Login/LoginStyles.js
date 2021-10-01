@@ -28,34 +28,6 @@ export const LoginContainer = styled.div`
     height: 60vh;
   }
 
-  video {
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-
-    .video-src {
-      margin-top: 1000px;
-    }
-  }
-
-  .login-link {
-    max-width: 1400px;
-    width: 100%;
-    padding: 0 3% 0 3%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-
-    @media (max-width: 585px) {
-      align-items: center;
-    }
-  }
-
   margin-bottom: -100px;
 `;
 
@@ -96,5 +68,29 @@ export const LoginLink = styled.div`
     @media (max-width: 350px) {
       font-size: 22px;
     }
+  }
+`;
+
+export const VideoBackground = styled.video`
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+`;
+
+export const LoginContent = styled.div`
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 3% 0 3%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 585px) {
+    align-items: center;
   }
 `;

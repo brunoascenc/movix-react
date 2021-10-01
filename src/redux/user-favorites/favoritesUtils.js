@@ -1,4 +1,5 @@
 const API_KEY = process.env.REACT_APP_MOVIEDB_KEY;
+
 export const addToFavorite = (id, movieId) => {
   fetch(
     `https://api.themoviedb.org/3/account/{account_id}/favorite?api_key=${API_KEY}&session_id=${id}`,
