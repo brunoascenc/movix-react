@@ -12,6 +12,7 @@ const FavoriteList = ({ userId }) => {
   const totalResults = useSelector(
     (state) => state.userFavorites.results.total_results
   );
+
   const totalPages = useSelector(
     (state) => state.userFavorites.results.total_pages
   );
@@ -33,6 +34,7 @@ const FavoriteList = ({ userId }) => {
       setCurrentPage={setCurrentPage}
       currentPage={currentPage}
       totalPages={totalPages}
+      favorites={favorites}
     />
   );
 };
