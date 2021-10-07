@@ -10,7 +10,7 @@ O Movix é um site para descobrir e pesquisar seus filmes favoritos. No app é p
 
 Para que seja possível adiconar filmes à sua lista lista, é necessário efetuar o login no movixapp.
 
-![](src/images/loginpage.png)
+![](src/images/login.png)
 
 ## Autenticação
 
