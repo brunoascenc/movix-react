@@ -45,7 +45,7 @@ const SearchResults = () => {
   return (
     <SearchContainer id="movies-component">
       {searchQuery === undefined || (search && search.length === 0) ? (
-        <ErrorComponent message={'Search not found'} />
+        <ErrorComponent message={'Nothing Found'} />
       ) : (
         <>
           <SectionTitle>You searched for {searchQuery}</SectionTitle>

@@ -10,7 +10,6 @@ import {
   Copy,
   FooterItems,
 } from './FooterStyles';
-import '../../App.css';
 
 const Footer = () => {
   return (
