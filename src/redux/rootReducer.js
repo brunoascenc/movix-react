@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import movieReducer from './popular-movies/popularMoviesReducer';
 import upcomingMovieReducer from './upcoming-movies/upcomingMovieReducers';
+import topRatedReducer from './top-rated/topRatedReducer';
 import movieDetail from './movie-details/detailReducer';
 import searchMoviesReducer from './movies-search/searchMoviesReducer';
 import filterMoviesReducer from './movies-filter/filterMoviesReducer';
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   user: user,
   userFavorites: userFavorites,
   userWatchlist: userWatchlist,
+  topRated: topRatedReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
