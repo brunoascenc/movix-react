@@ -26,7 +26,7 @@ const Footer = () => {
             <span>Movix © 2021</span>
             <span>
               Created by{' '}
-              <a href="https://brunoascencao.web.app/">Bruno Ascenção</a>
+              <a>Bruno Ascenção</a>
             </span>
           </Copy>
         </FooterContent>
